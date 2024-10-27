@@ -1,0 +1,17 @@
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Source.exe
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Source.deps.json
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Source.runtimeconfig.json
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Source.dll
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Source.pdb
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.MainForm.resources
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.csproj.GenerateResource.cache
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.AssemblyInfoInputs.cache
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.AssemblyInfo.cs
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.csproj.CoreCompileInputs.cache
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.sourcelink.json
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.dll
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\refint\Source.dll
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.pdb
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.genruntimeconfig.cache
+C:\Workspace\utc2-ecommerce-system\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\ref\Source.dll

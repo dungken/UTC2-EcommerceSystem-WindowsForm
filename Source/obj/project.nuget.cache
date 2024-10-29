@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jCiphC4Bi+A=",
+  "dgSpecHash": "TY7S+cLyuBQ=",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\utc2-ecommerce-system\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kupho\\.nuget\\packages\\fontawesome.sharp\\6.6.0\\fontawesome.sharp.6.6.0.nupkg.sha512"
+  ],
   "logs": []
 }

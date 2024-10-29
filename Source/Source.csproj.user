@@ -1,8 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Views\MainForm.cs">
+    <Compile Update="MyCustomControl\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="MyCustomControl\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Views\Custommer\HomeCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\OrderInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Custommer\ProductsCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Custommer\ProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Custommer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\MainFormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Resgister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

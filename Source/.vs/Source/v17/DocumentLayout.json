@@ -3,6 +3,29 @@
   "WorkspaceRootPath": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\mainformadmin.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\mainformadmin.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,23 +50,8 @@
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\loginwithgoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\loginwithgoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\requestproductsofcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\requestproductsofcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -52,10 +60,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\homecustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -73,7 +77,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -93,7 +97,55 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-30T15:51:58.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "DesignCustomer.cs [Design]",
+              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\DesignCustomer.cs",
+              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\DesignCustomer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T15:48:59.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Properties\\Resources.resx",
+              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.resx",
+              "RelativeToolTip": "Properties\\Resources.resx",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAqwHEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-10-30T15:30:20.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainFormAdmin.resx",
+              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.resx",
+              "RelativeDocumentMoniker": "Views\\MainFormAdmin.resx",
+              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.resx",
+              "RelativeToolTip": "Views\\MainFormAdmin.resx",
+              "ViewState": "AgIAAEohAAAAAAAAAAAAAEohAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-10-30T15:21:42.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "OrderInvoices.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\OrderInvoices.cs",
@@ -104,41 +156,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAMIUAAAAAAAAAAAkwMgUAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAANMVAAAAAAAAAAAQwN4VAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-10-30T09:48:21.137Z"
+              "WhenOpened": "2024-10-30T09:48:21.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
               "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
               "RelativeToolTip": "Views\\Custommer\\MainForm.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAIAxwIEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAADgv4EAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T09:45:56.847Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
               "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:45:54.763Z"
+              "WhenOpened": "2024-10-30T09:45:54.763Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -150,18 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginWithGoogle.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\LoginWithGoogle.cs",
-              "RelativeDocumentMoniker": "Views\\LoginWithGoogle.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\LoginWithGoogle.cs [Design]",
-              "RelativeToolTip": "Views\\LoginWithGoogle.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:41:08.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Resgister.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
               "RelativeDocumentMoniker": "Views\\Resgister.cs",
@@ -172,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
               "RelativeDocumentMoniker": "Views\\Login.cs",
@@ -185,18 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DesignCustomer.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\DesignCustomer.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\DesignCustomer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:25:01.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ProductsCustomer.cs",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\ProductsCustomer.cs",
@@ -209,18 +241,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "ProductsCustomer.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\ProductsCustomer.cs",
               "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\ProductsCustomer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T06:11:44.941Z"
+              "WhenOpened": "2024-10-30T06:11:44.941Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "HomeCustomer.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\HomeCustomer.cs",
@@ -231,29 +264,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
               "RelativeDocumentMoniker": "Views\\Login.cs",
               "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs [Design]",
               "RelativeToolTip": "Views\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T03:20:24.287Z"
+              "WhenOpened": "2024-10-30T03:20:24.287Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RequestProductsOfCustomer.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\RequestProductsOfCustomer.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\RequestProductsOfCustomer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T02:19:05.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ProfilePage.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\ProfilePage.cs",
@@ -264,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "MainFormAdmin.cs [Design]",
               "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs",
               "RelativeDocumentMoniker": "Views\\MainFormAdmin.cs",

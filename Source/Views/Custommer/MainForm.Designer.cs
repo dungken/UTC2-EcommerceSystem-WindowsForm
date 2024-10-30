@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             panel1 = new Panel();
             btnSetting = new Button();
@@ -74,6 +75,7 @@
             label1 = new Label();
             label10 = new Label();
             button6 = new Button();
+            imageList1 = new ImageList(components);
             panel1.SuspendLayout();
             pnlSubMenuProducts.SuspendLayout();
             panel4.SuspendLayout();
@@ -727,6 +729,12 @@
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = true;
             // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(11F, 20F);
@@ -803,5 +811,6 @@
         private Label label10;
         private Button button6;
         private Button button7;
+        private ImageList imageList1;
     }
 }

@@ -313,6 +313,16 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kinhlup {
+            get {
+                object obj = ResourceManager.GetObject("kinhlup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -326,6 +336,16 @@ namespace Source.Properties {
         internal static System.Drawing.Bitmap profile_3135715__1_ {
             get {
                 object obj = ResourceManager.GetObject("profile_3135715 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap snapedit_1730291828491 {
+            get {
+                object obj = ResourceManager.GetObject("snapedit_1730291828491", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

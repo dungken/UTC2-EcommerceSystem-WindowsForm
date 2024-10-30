@@ -45,6 +45,8 @@
             panel4 = new Panel();
             pictureBoxLogo = new PictureBox();
             panel2 = new Panel();
+            panel3 = new Panel();
+            pictureBox1 = new PictureBox();
             lblNavigationImage = new Label();
             lblNavigation = new Label();
             label6 = new Label();
@@ -63,8 +65,8 @@
             label8 = new Label();
             label7 = new Label();
             btnLogOutSubAvata = new Button();
-            panel3 = new Panel();
             pnlChildForm = new Panel();
+            pictureBox2 = new PictureBox();
             pnlSubNotifications = new Panel();
             button7 = new Button();
             button2 = new Button();
@@ -79,9 +81,11 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSubMenuAvata.SuspendLayout();
             panel5.SuspendLayout();
             pnlChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlSubNotifications.SuspendLayout();
             panel9.SuspendLayout();
             SuspendLayout();
@@ -288,6 +292,7 @@
             // 
             // btnProducts
             // 
+            btnProducts.Cursor = Cursors.Hand;
             btnProducts.Dock = DockStyle.Top;
             btnProducts.FlatAppearance.BorderSize = 0;
             btnProducts.FlatStyle = FlatStyle.Flat;
@@ -350,6 +355,8 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(162, 185, 237);
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(lblNavigationImage);
             panel2.Controls.Add(lblNavigation);
             panel2.Controls.Add(label6);
@@ -366,10 +373,28 @@
             panel2.Size = new Size(982, 72);
             panel2.TabIndex = 1;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(242, 62);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(290, 1);
+            panel3.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.imagesHome;
+            pictureBox1.Location = new Point(596, 18);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(56, 51);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // lblNavigationImage
             // 
             lblNavigationImage.Image = (Image)resources.GetObject("lblNavigationImage.Image");
-            lblNavigationImage.Location = new Point(10, 26);
+            lblNavigationImage.Location = new Point(5, 23);
             lblNavigationImage.Name = "lblNavigationImage";
             lblNavigationImage.Size = new Size(50, 40);
             lblNavigationImage.TabIndex = 8;
@@ -379,7 +404,7 @@
             // 
             lblNavigation.AutoSize = true;
             lblNavigation.ForeColor = Color.Transparent;
-            lblNavigation.Location = new Point(75, 38);
+            lblNavigation.Location = new Point(70, 35);
             lblNavigation.Name = "lblNavigation";
             lblNavigation.Size = new Size(58, 20);
             lblNavigation.TabIndex = 7;
@@ -388,7 +413,7 @@
             // label6
             // 
             label6.Image = (Image)resources.GetObject("label6.Image");
-            label6.Location = new Point(493, 26);
+            label6.Location = new Point(538, 27);
             label6.Name = "label6";
             label6.Size = new Size(50, 40);
             label6.TabIndex = 4;
@@ -396,10 +421,12 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(197, 35);
+            textBox1.BackColor = Color.White;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Location = new Point(242, 29);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Search products";
-            textBox1.Size = new Size(290, 27);
+            textBox1.Size = new Size(290, 20);
             textBox1.TabIndex = 6;
             // 
             // lblNotifications
@@ -576,25 +603,26 @@
             btnLogOutSubAvata.UseVisualStyleBackColor = true;
             btnLogOutSubAvata.Click += btnLogOutSubAvata_Click;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(162, 185, 237);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(221, 578);
-            panel3.Margin = new Padding(4, 3, 4, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(982, 50);
-            panel3.TabIndex = 2;
-            // 
             // pnlChildForm
             // 
+            pnlChildForm.Controls.Add(pictureBox2);
             pnlChildForm.Controls.Add(pnlSubMenuAvata);
             pnlChildForm.Controls.Add(pnlSubNotifications);
             pnlChildForm.Dock = DockStyle.Fill;
             pnlChildForm.Location = new Point(221, 72);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(982, 506);
+            pnlChildForm.Size = new Size(982, 556);
             pnlChildForm.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources._61bd063ab469c8234e0510991582a335;
+            pictureBox2.Location = new Point(0, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(881, 497);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // pnlSubNotifications
             // 
@@ -733,7 +761,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1203, 628);
             Controls.Add(pnlChildForm);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
@@ -746,10 +773,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSubMenuAvata.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             pnlChildForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlSubNotifications.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -760,7 +789,6 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
         private Panel panel4;
         private Button btnHome;
         private PictureBox pictureBoxLogo;
@@ -803,5 +831,8 @@
         private Label label10;
         private Button button6;
         private Button button7;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Panel panel3;
     }
 }

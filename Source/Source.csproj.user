@@ -7,6 +7,9 @@
     <Compile Update="MyCustomControl\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\DesignCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\HomeCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,10 +22,16 @@
     <Compile Update="Views\Custommer\ProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\RequestProductsOfCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Custommer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\LoginWithGoogle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\MainFormAdmin.cs">

@@ -122,6 +122,7 @@
             lblForget.Size = new Size(117, 20);
             lblForget.TabIndex = 49;
             lblForget.Text = "Forget Password";
+            lblForget.Click += lblForget_Click;
             // 
             // btnLoginWGoogle
             // 
@@ -134,6 +135,7 @@
             btnLoginWGoogle.TabIndex = 48;
             btnLoginWGoogle.Text = "Login with google";
             btnLoginWGoogle.UseVisualStyleBackColor = false;
+            btnLoginWGoogle.Click += btnLoginWGoogle_Click;
             // 
             // label6
             // 

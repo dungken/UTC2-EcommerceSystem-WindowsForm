@@ -81,6 +81,7 @@ namespace Source.Views
         {
             lblNavigationImage.Image = btnHome.Image;
             lblNavigation.Text = "Home";
+            openChildForm(new HomeCustomer());
             hideSubMenu();
         }
 
@@ -120,7 +121,12 @@ namespace Source.Views
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+
+          
+            //new Login().Show();
+            //this.Close();
+
+
         }
 
         private void lblAvarata_Click(object sender, EventArgs e)
@@ -143,22 +149,30 @@ namespace Source.Views
 
         private void btnBestSeller_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            lblNavigationImage.Image = btnHome.Image;
+            lblNavigation.Text = "Best-Seller";
+            openChildForm(new ProductsCustomer());
         }
 
         private void btnMenTop_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            lblNavigationImage.Image = btnHome.Image;
+            lblNavigation.Text = "Men's-top";
+            openChildForm(new ProductsCustomer());
         }
 
         private void btnPants_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            lblNavigationImage.Image = btnHome.Image;
+            lblNavigation.Text = "Pants";
+            openChildForm(new ProductsCustomer());
         }
 
         private void btnCustomDesign_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            lblNavigationImage.Image = btnHome.Image;
+            lblNavigation.Text = "Custom-Design";
+            openChildForm(new DesignCustomer());
         }
 
         private void lblNotifications_Click(object sender, EventArgs e)

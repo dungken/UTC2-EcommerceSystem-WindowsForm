@@ -43,3 +43,11 @@ D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\
 D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.HomeCustomer.resources
 D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.OrderInvoices.resources
 D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.ProductsCustomer.resources
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.DesignCustomer.resources
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Interop.WMPLib.dll
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\AxInterop.WMPLib.dll
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Interop.WMPLib.dll
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\AxInterop.WMPLib.dll
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.csproj.ResolveComReference.cache
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.RequestProductsOfCustomer.resources
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.LoginWithGoogle.resources

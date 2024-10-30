@@ -393,7 +393,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(144, 55);
+            pictureBox1.Location = new Point(349, 141);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(662, 368);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -421,9 +421,10 @@
             // pnlChildForm
             // 
             pnlChildForm.Controls.Add(pictureBox1);
-            pnlChildForm.Location = new Point(221, 76);
+            pnlChildForm.Dock = DockStyle.Fill;
+            pnlChildForm.Location = new Point(0, 0);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(982, 507);
+            pnlChildForm.Size = new Size(1203, 628);
             pnlChildForm.TabIndex = 7;
             // 
             // MainFormAdmin

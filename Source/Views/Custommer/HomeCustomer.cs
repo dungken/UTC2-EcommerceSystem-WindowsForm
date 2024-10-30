@@ -16,5 +16,11 @@ namespace Source.Views.Custommer
         {
             InitializeComponent();
         }
+
+        private void HomeCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

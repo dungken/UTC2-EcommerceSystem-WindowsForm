@@ -423,7 +423,7 @@
             pnlChildForm.Controls.Add(pictureBox1);
             pnlChildForm.Location = new Point(221, 76);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(982, 507);
+            pnlChildForm.Size = new Size(982, 585);
             pnlChildForm.TabIndex = 7;
             // 
             // MainFormAdmin

@@ -1,54 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\",
+  "WorkspaceRootPath": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\homecustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\homecustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\orderinvoices.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\orderinvoices.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\resgister.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\resgister.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\doanwinform\\utc2-ecommercesystem-windowsform\\source\\views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,179 +42,124 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Cart.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
+              "RelativeToolTip": "Views\\Custommer\\Cart.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAASwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T14:08:21.43Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cart.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Cart.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\Cart.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T13:14:29.715Z",
+              "EditorCaption": " [Design]"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderInvoices.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\OrderInvoices.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\OrderInvoices.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T09:25:44.869Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderInvoices.Designer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.Designer.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\OrderInvoices.Designer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.Designer.cs",
+              "RelativeToolTip": "Views\\Custommer\\OrderInvoices.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T06:34:08.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderInvoices.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\OrderInvoices.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs",
+              "RelativeToolTip": "Views\\Custommer\\OrderInvoices.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T15:58:49.315Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-29T12:57:00.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T12:47:37.072Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProfilePage.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\ProfilePage.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs*",
-              "RelativeToolTip": "Views\\Custommer\\ProfilePage.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA9wBUAAAAAAAAAAAAAAA==",
+              "Title": "HomeCustomer.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\HomeCustomer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\HomeCustomer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T12:34:45.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProfilePage.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\ProfilePage.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs [Design]*",
-              "RelativeToolTip": "Views\\Custommer\\ProfilePage.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T09:10:15.359Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
-              "RelativeToolTip": "Views\\Custommer\\MainForm.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAALEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T05:23:35.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
-              "RelativeDocumentMoniker": "Views\\Login.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs [Design]",
-              "RelativeToolTip": "Views\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T07:56:19.877Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Resgister.cs [Design]",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
-              "RelativeDocumentMoniker": "Views\\Resgister.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs [Design]",
-              "RelativeToolTip": "Views\\Resgister.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T08:46:51.444Z",
+              "WhenOpened": "2024-10-30T13:18:21.697Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
-              "RelativeDocumentMoniker": "Views\\Login.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
-              "RelativeToolTip": "Views\\Login.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAApwBoAAAAZAAAAAAAAAA==",
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T05:58:10.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:57:13.269Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 69,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Resgister.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
-              "RelativeDocumentMoniker": "Views\\Resgister.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
-              "RelativeToolTip": "Views\\Resgister.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAIAwwBYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T05:03:47.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Login.Designer.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Login.Designer.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.Designer.cs",
-              "RelativeToolTip": "Views\\Login.Designer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAIAwwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T05:58:59.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Resgister.Designer.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Resgister.Designer.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.Designer.cs",
-              "RelativeToolTip": "Views\\Resgister.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T05:03:57.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainFormAdmin.cs",
-              "DocumentMoniker": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs",
-              "RelativeDocumentMoniker": "Views\\MainFormAdmin.cs",
-              "ToolTip": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs",
-              "RelativeToolTip": "Views\\MainFormAdmin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBZwA4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T07:14:05.484Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

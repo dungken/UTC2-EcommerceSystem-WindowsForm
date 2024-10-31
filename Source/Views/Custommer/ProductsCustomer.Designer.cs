@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
+            textBox1 = new TextBox();
+            pnlMain = new Panel();
+            btnBuyNow = new Button();
+            btnAddTheCart = new Button();
+            panel20 = new Panel();
+            lblPriceMain = new Label();
+            lblCategoryMain = new Label();
+            lblNameMain = new Label();
+            pictureMain = new PictureBox();
             pnlProduct6 = new Panel();
             panel11 = new Panel();
             lblPriceProduct6 = new Label();
@@ -70,14 +80,10 @@
             lblNameProduct1 = new Label();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
-            pnlMain = new Panel();
-            btnBuyNow = new Button();
-            btnAddTheCart = new Button();
-            panel20 = new Panel();
-            lblPriceMain = new Label();
-            lblCategoryMain = new Label();
-            lblNameMain = new Label();
-            pictureMain = new PictureBox();
+            panel1.SuspendLayout();
+            pnlMain.SuspendLayout();
+            panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureMain).BeginInit();
             pnlProduct6.SuspendLayout();
             panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -96,10 +102,127 @@
             pnlProduct1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            pnlMain.SuspendLayout();
-            panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureMain).BeginInit();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(pnlMain);
+            panel1.Controls.Add(pnlProduct6);
+            panel1.Controls.Add(pnlProduct5);
+            panel1.Controls.Add(pnlProduct4);
+            panel1.Controls.Add(pnlProduct3);
+            panel1.Controls.Add(pnlProduct2);
+            panel1.Controls.Add(pnlProduct1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(964, 509);
+            panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(640, 13);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(214, 27);
+            textBox1.TabIndex = 31;
+            // 
+            // pnlMain
+            // 
+            pnlMain.BackColor = Color.FromArgb(235, 224, 234);
+            pnlMain.BorderStyle = BorderStyle.FixedSingle;
+            pnlMain.Controls.Add(btnBuyNow);
+            pnlMain.Controls.Add(btnAddTheCart);
+            pnlMain.Controls.Add(panel20);
+            pnlMain.Controls.Add(lblNameMain);
+            pnlMain.Controls.Add(pictureMain);
+            pnlMain.Location = new Point(21, 53);
+            pnlMain.Name = "pnlMain";
+            pnlMain.Size = new Size(247, 411);
+            pnlMain.TabIndex = 30;
+            // 
+            // btnBuyNow
+            // 
+            btnBuyNow.BackColor = Color.FromArgb(239, 189, 117);
+            btnBuyNow.Dock = DockStyle.Top;
+            btnBuyNow.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnBuyNow.ForeColor = Color.FromArgb(80, 40, 60);
+            btnBuyNow.Location = new Point(0, 359);
+            btnBuyNow.Name = "btnBuyNow";
+            btnBuyNow.Size = new Size(245, 55);
+            btnBuyNow.TabIndex = 7;
+            btnBuyNow.Text = "Buy Now";
+            btnBuyNow.UseVisualStyleBackColor = false;
+            // 
+            // btnAddTheCart
+            // 
+            btnAddTheCart.BackColor = Color.FromArgb(239, 189, 117);
+            btnAddTheCart.Dock = DockStyle.Top;
+            btnAddTheCart.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnAddTheCart.ForeColor = Color.FromArgb(80, 40, 60);
+            btnAddTheCart.Location = new Point(0, 304);
+            btnAddTheCart.Name = "btnAddTheCart";
+            btnAddTheCart.Size = new Size(245, 55);
+            btnAddTheCart.TabIndex = 6;
+            btnAddTheCart.Text = "Add The Cart";
+            btnAddTheCart.UseVisualStyleBackColor = false;
+            // 
+            // panel20
+            // 
+            panel20.Controls.Add(lblPriceMain);
+            panel20.Controls.Add(lblCategoryMain);
+            panel20.Dock = DockStyle.Top;
+            panel20.Location = new Point(0, 177);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(245, 127);
+            panel20.TabIndex = 4;
+            // 
+            // lblPriceMain
+            // 
+            lblPriceMain.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblPriceMain.AutoSize = true;
+            lblPriceMain.BackColor = SystemColors.Control;
+            lblPriceMain.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPriceMain.ForeColor = Color.Yellow;
+            lblPriceMain.Location = new Point(200, 46);
+            lblPriceMain.Name = "lblPriceMain";
+            lblPriceMain.Size = new Size(87, 41);
+            lblPriceMain.TabIndex = 6;
+            lblPriceMain.Text = "Price";
+            // 
+            // lblCategoryMain
+            // 
+            lblCategoryMain.AutoSize = true;
+            lblCategoryMain.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCategoryMain.ForeColor = Color.FromArgb(80, 40, 60);
+            lblCategoryMain.Location = new Point(3, 81);
+            lblCategoryMain.Name = "lblCategoryMain";
+            lblCategoryMain.Size = new Size(118, 31);
+            lblCategoryMain.TabIndex = 5;
+            lblCategoryMain.Text = "Category1";
+            // 
+            // lblNameMain
+            // 
+            lblNameMain.AutoSize = true;
+            lblNameMain.Dock = DockStyle.Top;
+            lblNameMain.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameMain.ForeColor = Color.FromArgb(80, 40, 60);
+            lblNameMain.Location = new Point(0, 139);
+            lblNameMain.Name = "lblNameMain";
+            lblNameMain.Size = new Size(111, 38);
+            lblNameMain.TabIndex = 3;
+            lblNameMain.Text = "Name1";
+            // 
+            // pictureMain
+            // 
+            pictureMain.Dock = DockStyle.Top;
+            pictureMain.Image = Properties.Resources.capybara3;
+            pictureMain.Location = new Point(0, 0);
+            pictureMain.Name = "pictureMain";
+            pictureMain.Size = new Size(245, 139);
+            pictureMain.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureMain.TabIndex = 1;
+            pictureMain.TabStop = false;
             // 
             // pnlProduct6
             // 
@@ -109,25 +232,23 @@
             pnlProduct6.Controls.Add(lblNameProduct6);
             pnlProduct6.Controls.Add(panel12);
             pnlProduct6.Controls.Add(pictureBox6);
-            pnlProduct6.Location = new Point(779, 265);
+            pnlProduct6.Location = new Point(775, 289);
             pnlProduct6.Name = "pnlProduct6";
-            pnlProduct6.Size = new Size(169, 208);
-            pnlProduct6.TabIndex = 21;
-            pnlProduct6.Click += pnlProduct6_Click;
+            pnlProduct6.Size = new Size(169, 206);
+            pnlProduct6.TabIndex = 29;
             // 
             // panel11
             // 
             panel11.Controls.Add(lblPriceProduct6);
             panel11.Controls.Add(lblCateProduct6);
             panel11.Dock = DockStyle.Bottom;
-            panel11.Location = new Point(0, 138);
+            panel11.Location = new Point(0, 136);
             panel11.Name = "panel11";
             panel11.Size = new Size(167, 68);
             panel11.TabIndex = 3;
             // 
             // lblPriceProduct6
             // 
-            lblPriceProduct6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblPriceProduct6.AutoSize = true;
             lblPriceProduct6.BackColor = SystemColors.ControlLightLight;
             lblPriceProduct6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -150,7 +271,6 @@
             // 
             // lblNameProduct6
             // 
-            lblNameProduct6.Anchor = AnchorStyles.Top;
             lblNameProduct6.AutoSize = true;
             lblNameProduct6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNameProduct6.ForeColor = Color.FromArgb(80, 40, 60);
@@ -172,6 +292,7 @@
             // pictureBox6
             // 
             pictureBox6.Dock = DockStyle.Top;
+            pictureBox6.Image = Properties.Resources.capybara3;
             pictureBox6.Location = new Point(0, 0);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(167, 107);
@@ -187,25 +308,23 @@
             pnlProduct5.Controls.Add(lblNameProduct5);
             pnlProduct5.Controls.Add(panel16);
             pnlProduct5.Controls.Add(pictureBox5);
-            pnlProduct5.Location = new Point(574, 265);
+            pnlProduct5.Location = new Point(570, 289);
             pnlProduct5.Name = "pnlProduct5";
-            pnlProduct5.Size = new Size(169, 208);
-            pnlProduct5.TabIndex = 20;
-            pnlProduct5.Click += pnlProduct5_Click;
+            pnlProduct5.Size = new Size(169, 206);
+            pnlProduct5.TabIndex = 28;
             // 
             // panel15
             // 
             panel15.Controls.Add(lblPriceProduct5);
             panel15.Controls.Add(lblCateProduct5);
             panel15.Dock = DockStyle.Bottom;
-            panel15.Location = new Point(0, 138);
+            panel15.Location = new Point(0, 136);
             panel15.Name = "panel15";
             panel15.Size = new Size(167, 68);
             panel15.TabIndex = 3;
             // 
             // lblPriceProduct5
             // 
-            lblPriceProduct5.Anchor = AnchorStyles.Top;
             lblPriceProduct5.AutoSize = true;
             lblPriceProduct5.BackColor = SystemColors.ControlLightLight;
             lblPriceProduct5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -228,7 +347,6 @@
             // 
             // lblNameProduct5
             // 
-            lblNameProduct5.Anchor = AnchorStyles.Top;
             lblNameProduct5.AutoSize = true;
             lblNameProduct5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNameProduct5.ForeColor = Color.FromArgb(80, 40, 60);
@@ -250,6 +368,7 @@
             // pictureBox5
             // 
             pictureBox5.Dock = DockStyle.Top;
+            pictureBox5.Image = Properties.Resources.capybara3;
             pictureBox5.Location = new Point(0, 0);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(167, 107);
@@ -265,18 +384,17 @@
             pnlProduct4.Controls.Add(lblNameProduct4);
             pnlProduct4.Controls.Add(panel19);
             pnlProduct4.Controls.Add(pictureBox4);
-            pnlProduct4.Location = new Point(370, 265);
+            pnlProduct4.Location = new Point(366, 289);
             pnlProduct4.Name = "pnlProduct4";
-            pnlProduct4.Size = new Size(169, 208);
-            pnlProduct4.TabIndex = 19;
-            pnlProduct4.Click += pnlProduct4_Click;
+            pnlProduct4.Size = new Size(169, 206);
+            pnlProduct4.TabIndex = 27;
             // 
             // panel18
             // 
             panel18.Controls.Add(lblPriceProduct4);
             panel18.Controls.Add(lblCateProduct4);
             panel18.Dock = DockStyle.Bottom;
-            panel18.Location = new Point(0, 138);
+            panel18.Location = new Point(0, 136);
             panel18.Name = "panel18";
             panel18.Size = new Size(167, 68);
             panel18.TabIndex = 3;
@@ -329,6 +447,7 @@
             // pictureBox4
             // 
             pictureBox4.Dock = DockStyle.Top;
+            pictureBox4.Image = Properties.Resources.capybara3;
             pictureBox4.Location = new Point(0, 0);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(167, 107);
@@ -344,25 +463,23 @@
             pnlProduct3.Controls.Add(lblNameProduct3);
             pnlProduct3.Controls.Add(panel9);
             pnlProduct3.Controls.Add(pictureBox3);
-            pnlProduct3.Location = new Point(778, 41);
+            pnlProduct3.Location = new Point(774, 65);
             pnlProduct3.Name = "pnlProduct3";
-            pnlProduct3.Size = new Size(169, 208);
-            pnlProduct3.TabIndex = 18;
-            pnlProduct3.Click += pnlProduct3_Click;
+            pnlProduct3.Size = new Size(169, 206);
+            pnlProduct3.TabIndex = 26;
             // 
             // panel8
             // 
             panel8.Controls.Add(lblPriceProduct3);
             panel8.Controls.Add(lblCateProduct3);
             panel8.Dock = DockStyle.Bottom;
-            panel8.Location = new Point(0, 138);
+            panel8.Location = new Point(0, 136);
             panel8.Name = "panel8";
             panel8.Size = new Size(167, 68);
             panel8.TabIndex = 3;
             // 
             // lblPriceProduct3
             // 
-            lblPriceProduct3.Anchor = AnchorStyles.Top;
             lblPriceProduct3.AutoSize = true;
             lblPriceProduct3.BackColor = SystemColors.ControlLightLight;
             lblPriceProduct3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -385,7 +502,6 @@
             // 
             // lblNameProduct3
             // 
-            lblNameProduct3.Anchor = AnchorStyles.Top;
             lblNameProduct3.AutoSize = true;
             lblNameProduct3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNameProduct3.ForeColor = Color.FromArgb(80, 40, 60);
@@ -407,6 +523,7 @@
             // pictureBox3
             // 
             pictureBox3.Dock = DockStyle.Top;
+            pictureBox3.Image = Properties.Resources.capybara3;
             pictureBox3.Location = new Point(0, 0);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(167, 107);
@@ -422,25 +539,23 @@
             pnlProduct2.Controls.Add(lblNameProduct2);
             pnlProduct2.Controls.Add(panel6);
             pnlProduct2.Controls.Add(pictureBox2);
-            pnlProduct2.Location = new Point(573, 41);
+            pnlProduct2.Location = new Point(569, 65);
             pnlProduct2.Name = "pnlProduct2";
-            pnlProduct2.Size = new Size(169, 208);
-            pnlProduct2.TabIndex = 17;
-            pnlProduct2.Click += pnlProduct2_Click;
+            pnlProduct2.Size = new Size(169, 206);
+            pnlProduct2.TabIndex = 25;
             // 
             // panel5
             // 
             panel5.Controls.Add(lblPriceProduct2);
             panel5.Controls.Add(lblCateProduct2);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 138);
+            panel5.Location = new Point(0, 136);
             panel5.Name = "panel5";
             panel5.Size = new Size(167, 68);
             panel5.TabIndex = 3;
             // 
             // lblPriceProduct2
             // 
-            lblPriceProduct2.Anchor = AnchorStyles.Top;
             lblPriceProduct2.AutoSize = true;
             lblPriceProduct2.BackColor = SystemColors.ControlLightLight;
             lblPriceProduct2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -463,7 +578,6 @@
             // 
             // lblNameProduct2
             // 
-            lblNameProduct2.Anchor = AnchorStyles.Top;
             lblNameProduct2.AutoSize = true;
             lblNameProduct2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNameProduct2.ForeColor = Color.FromArgb(80, 40, 60);
@@ -485,6 +599,7 @@
             // pictureBox2
             // 
             pictureBox2.Dock = DockStyle.Top;
+            pictureBox2.Image = Properties.Resources.capybara3;
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(167, 107);
@@ -499,19 +614,17 @@
             pnlProduct1.Controls.Add(lblNameProduct1);
             pnlProduct1.Controls.Add(panel3);
             pnlProduct1.Controls.Add(pictureBox1);
-            pnlProduct1.Location = new Point(370, 41);
+            pnlProduct1.Location = new Point(366, 65);
             pnlProduct1.Name = "pnlProduct1";
-            pnlProduct1.Size = new Size(169, 208);
-            pnlProduct1.TabIndex = 16;
-            pnlProduct1.Click += pnlProduct1_Click;
-            pnlProduct1.Paint += pnlProduct1_Paint;
+            pnlProduct1.Size = new Size(169, 206);
+            pnlProduct1.TabIndex = 24;
             // 
             // panel2
             // 
             panel2.Controls.Add(lblPriceProduct1);
             panel2.Controls.Add(lblCateProduct1);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 140);
+            panel2.Location = new Point(0, 138);
             panel2.Name = "panel2";
             panel2.Size = new Size(169, 68);
             panel2.TabIndex = 3;
@@ -564,6 +677,7 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Image = Properties.Resources.capybara3;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(169, 107);
@@ -571,117 +685,21 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pnlMain
-            // 
-            pnlMain.BackColor = Color.FromArgb(235, 224, 234);
-            pnlMain.BorderStyle = BorderStyle.FixedSingle;
-            pnlMain.Controls.Add(btnBuyNow);
-            pnlMain.Controls.Add(btnAddTheCart);
-            pnlMain.Controls.Add(panel20);
-            pnlMain.Controls.Add(lblNameMain);
-            pnlMain.Controls.Add(pictureMain);
-            pnlMain.Location = new Point(12, 52);
-            pnlMain.Name = "pnlMain";
-            pnlMain.Size = new Size(247, 411);
-            pnlMain.TabIndex = 22;
-            // 
-            // btnBuyNow
-            // 
-            btnBuyNow.BackColor = Color.FromArgb(239, 189, 117);
-            btnBuyNow.Dock = DockStyle.Top;
-            btnBuyNow.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnBuyNow.ForeColor = Color.FromArgb(80, 40, 60);
-            btnBuyNow.Location = new Point(0, 359);
-            btnBuyNow.Name = "btnBuyNow";
-            btnBuyNow.Size = new Size(245, 55);
-            btnBuyNow.TabIndex = 7;
-            btnBuyNow.Text = "Buy Now";
-            btnBuyNow.UseVisualStyleBackColor = false;
-            // 
-            // btnAddTheCart
-            // 
-            btnAddTheCart.BackColor = Color.FromArgb(239, 189, 117);
-            btnAddTheCart.Dock = DockStyle.Top;
-            btnAddTheCart.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnAddTheCart.ForeColor = Color.FromArgb(80, 40, 60);
-            btnAddTheCart.Location = new Point(0, 304);
-            btnAddTheCart.Name = "btnAddTheCart";
-            btnAddTheCart.Size = new Size(245, 55);
-            btnAddTheCart.TabIndex = 6;
-            btnAddTheCart.Text = "Add The Cart";
-            btnAddTheCart.UseVisualStyleBackColor = false;
-            // 
-            // panel20
-            // 
-            panel20.Controls.Add(lblPriceMain);
-            panel20.Controls.Add(lblCategoryMain);
-            panel20.Dock = DockStyle.Top;
-            panel20.Location = new Point(0, 177);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(245, 127);
-            panel20.TabIndex = 4;
-            // 
-            // lblPriceMain
-            // 
-            lblPriceMain.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblPriceMain.AutoSize = true;
-            lblPriceMain.BackColor = SystemColors.Control;
-            lblPriceMain.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPriceMain.ForeColor = Color.Yellow;
-            lblPriceMain.Location = new Point(155, 46);
-            lblPriceMain.Name = "lblPriceMain";
-            lblPriceMain.Size = new Size(87, 41);
-            lblPriceMain.TabIndex = 6;
-            lblPriceMain.Text = "Price";
-            // 
-            // lblCategoryMain
-            // 
-            lblCategoryMain.AutoSize = true;
-            lblCategoryMain.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCategoryMain.ForeColor = Color.FromArgb(80, 40, 60);
-            lblCategoryMain.Location = new Point(3, 81);
-            lblCategoryMain.Name = "lblCategoryMain";
-            lblCategoryMain.Size = new Size(118, 31);
-            lblCategoryMain.TabIndex = 5;
-            lblCategoryMain.Text = "Category1";
-            // 
-            // lblNameMain
-            // 
-            lblNameMain.AutoSize = true;
-            lblNameMain.Dock = DockStyle.Top;
-            lblNameMain.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNameMain.ForeColor = Color.FromArgb(80, 40, 60);
-            lblNameMain.Location = new Point(0, 139);
-            lblNameMain.Name = "lblNameMain";
-            lblNameMain.Size = new Size(111, 38);
-            lblNameMain.TabIndex = 3;
-            lblNameMain.Text = "Name1";
-            // 
-            // pictureMain
-            // 
-            pictureMain.Dock = DockStyle.Top;
-            pictureMain.Location = new Point(0, 0);
-            pictureMain.Name = "pictureMain";
-            pictureMain.Size = new Size(245, 139);
-            pictureMain.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureMain.TabIndex = 1;
-            pictureMain.TabStop = false;
-            pictureMain.Click += pictureMain_Click;
-            // 
             // ProductsCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(964, 501);
-            Controls.Add(pnlMain);
-            Controls.Add(pnlProduct6);
-            Controls.Add(pnlProduct5);
-            Controls.Add(pnlProduct4);
-            Controls.Add(pnlProduct3);
-            Controls.Add(pnlProduct2);
-            Controls.Add(pnlProduct1);
+            ClientSize = new Size(964, 509);
+            Controls.Add(panel1);
             Name = "ProductsCustomer";
             Text = "ProductsCustomer";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            pnlMain.ResumeLayout(false);
+            pnlMain.PerformLayout();
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureMain).EndInit();
             pnlProduct6.ResumeLayout(false);
             pnlProduct6.PerformLayout();
             panel11.ResumeLayout(false);
@@ -712,16 +730,21 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            pnlMain.ResumeLayout(false);
-            pnlMain.PerformLayout();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureMain).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private Panel panel1;
+        private TextBox textBox1;
+        private Panel pnlMain;
+        private Button btnBuyNow;
+        private Button btnAddTheCart;
+        private Panel panel20;
+        private Label lblPriceMain;
+        private Label lblCategoryMain;
+        private Label lblNameMain;
+        private PictureBox pictureMain;
         private Panel pnlProduct6;
         private Panel panel11;
         private Label lblPriceProduct6;
@@ -764,13 +787,5 @@
         private Label lblNameProduct1;
         private Panel panel3;
         private PictureBox pictureBox1;
-        private Panel pnlMain;
-        private Button btnBuyNow;
-        private Button btnAddTheCart;
-        private Panel panel20;
-        private Label lblPriceMain;
-        private Label lblCategoryMain;
-        private Label lblNameMain;
-        private PictureBox pictureMain;
     }
 }

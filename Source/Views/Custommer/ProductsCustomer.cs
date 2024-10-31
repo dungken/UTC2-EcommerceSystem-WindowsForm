@@ -92,5 +92,10 @@ namespace Source.Views.Custommer
         {
 
         }
+
+        private void lblNameProduct2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

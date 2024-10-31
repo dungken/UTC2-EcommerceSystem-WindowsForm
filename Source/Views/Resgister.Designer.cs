@@ -33,6 +33,7 @@
             label1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            checkBox1 = new CheckBox();
             label6 = new Label();
             textBox4 = new TextBox();
             panel6 = new Panel();
@@ -48,7 +49,6 @@
             panel7 = new Panel();
             label2 = new Label();
             lblExit = new Label();
-            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -58,7 +58,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.hinh_nen_ngau_6;
+            pictureBox1.Image = Properties.Resources.img_posterResgister;
             pictureBox1.Location = new Point(3, 62);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(188, 347);
@@ -122,6 +122,16 @@
             panel3.Size = new Size(368, 405);
             panel3.TabIndex = 21;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(38, 296);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(173, 24);
+            checkBox1.TabIndex = 35;
+            checkBox1.Text = "I agree all agreement";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -154,7 +164,7 @@
             // 
             label5.Anchor = AnchorStyles.None;
             label5.BackColor = Color.White;
-            label5.Image = Properties.Resources.profile_3135715__1_;
+            label5.Image = Properties.Resources.icon_mail;
             label5.Location = new Point(43, 97);
             label5.Name = "label5";
             label5.Size = new Size(30, 49);
@@ -196,7 +206,7 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.BackColor = Color.White;
-            label4.Image = Properties.Resources.profile_3135715__1_;
+            label4.Image = Properties.Resources.icon_lock;
             label4.Location = new Point(43, 247);
             label4.Name = "label4";
             label4.Size = new Size(30, 49);
@@ -226,7 +236,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.BackColor = Color.White;
-            label3.Image = Properties.Resources.profile_3135715__1_;
+            label3.Image = Properties.Resources.icon_lock;
             label3.Location = new Point(43, 174);
             label3.Name = "label3";
             label3.Size = new Size(30, 49);
@@ -257,7 +267,7 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.BackColor = Color.White;
-            label2.Image = Properties.Resources.profile_3135715__1_;
+            label2.Image = Properties.Resources.ImageAvarata1;
             label2.Location = new Point(43, 23);
             label2.Name = "label2";
             label2.Size = new Size(30, 49);
@@ -266,22 +276,11 @@
             // 
             // lblExit
             // 
-            lblExit.Image = Properties.Resources._352473_return_icon;
             lblExit.Location = new Point(6, 7);
             lblExit.Name = "lblExit";
             lblExit.Size = new Size(59, 51);
             lblExit.TabIndex = 20;
             lblExit.Click += lblExit_Click;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(38, 296);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(173, 24);
-            checkBox1.TabIndex = 35;
-            checkBox1.Text = "I agree all agreement";
-            checkBox1.UseVisualStyleBackColor = true;
             // 
             // Resgister
             // 

@@ -96,6 +96,7 @@ namespace Source.Views
         {
             lblNavigationImage.Image = btnCart.Image;
             lblNavigation.Text = "My Cart";
+            openChildForm(new Cart());
             hideSubMenu();
         }
 
@@ -108,6 +109,7 @@ namespace Source.Views
 
         private void btnSupport_Click(object sender, EventArgs e)
         {
+            lblNavigationImage.Image = btnAboutUs.Image;
             lblNavigation.Text = "Support";
             hideSubMenu();
         }
@@ -122,7 +124,6 @@ namespace Source.Views
         private void btnLogOut_Click(object sender, EventArgs e)
         {
 
-          
             //new Login().Show();
             //this.Close();
 
@@ -192,10 +193,15 @@ namespace Source.Views
 
         private void btnOrderInvoices_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new OrderInvoices());
         }
 
         private void btnLogOutSubAvata_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlSubMenuAvata_Paint(object sender, PaintEventArgs e)
         {
 
         }

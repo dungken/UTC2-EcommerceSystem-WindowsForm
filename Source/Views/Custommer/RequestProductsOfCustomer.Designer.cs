@@ -28,19 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel6 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
-            panel5 = new Panel();
-            pictureBox2 = new PictureBox();
-            label4 = new Label();
-            label5 = new Label();
-            panel4 = new Panel();
-            pictureBox1 = new PictureBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            pnlRequestProductsOfCustomer = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             panel10 = new Panel();
@@ -57,175 +45,51 @@
             textBox1 = new TextBox();
             label7 = new Label();
             label6 = new Label();
+            panel1 = new Panel();
+            pictureBox4 = new PictureBox();
+            panel6 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            panel5 = new Panel();
+            pictureBox2 = new PictureBox();
+            label4 = new Label();
+            label5 = new Label();
+            panel4 = new Panel();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pnlRequestProductsOfCustomer.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnlRequestProductsOfCustomer
             // 
-            panel1.BackColor = Color.FromArgb(47, 90, 207);
-            panel1.Controls.Add(panel6);
-            panel1.Controls.Add(panel5);
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(592, 526);
-            panel1.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(button2);
-            panel6.Controls.Add(button1);
-            panel6.Location = new Point(12, 325);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(553, 96);
-            panel6.TabIndex = 3;
-            // 
-            // button2
-            // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources._5282541_fb_social_media_facebook_facebook_logo_social_network_icon1;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(262, 22);
-            button2.Name = "button2";
-            button2.Size = new Size(262, 57);
-            button2.TabIndex = 1;
-            button2.Text = "Liên hệ qua Facebook";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.AutoSize = true;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources._5305172_tweet_twitter_twitter_logo_icon;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(216, 57);
-            button1.TabIndex = 0;
-            button1.Text = "Liên hệ qua Zalo";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(label4);
-            panel5.Controls.Add(label5);
-            panel5.Location = new Point(274, 209);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(291, 89);
-            panel5.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources._134146_mail_email_icon;
-            pictureBox2.Location = new Point(3, 52);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 34);
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.FlatStyle = FlatStyle.Flat;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(49, 52);
-            label4.Name = "label4";
-            label4.Size = new Size(217, 28);
-            label4.TabIndex = 1;
-            label4.Text = "coolmate@gmail.com";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Segoe UI", 12F);
-            label5.ForeColor = SystemColors.ActiveBorder;
-            label5.Location = new Point(49, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(59, 28);
-            label5.TabIndex = 0;
-            label5.Text = "Email";
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(pictureBox1);
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(label2);
-            panel4.Location = new Point(15, 209);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(216, 89);
-            panel4.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources._9025852_phone_call_icon;
-            pictureBox1.Location = new Point(3, 52);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 34);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.FlatStyle = FlatStyle.Flat;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(49, 52);
-            label3.Name = "label3";
-            label3.Size = new Size(108, 28);
-            label3.TabIndex = 1;
-            label3.Text = "19006069";
-            label3.Click += label3_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.FlatStyle = FlatStyle.Flat;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.ForeColor = SystemColors.ActiveBorder;
-            label2.Location = new Point(49, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Hotline";
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 107);
-            label1.Name = "label1";
-            label1.Size = new Size(589, 99);
-            label1.TabIndex = 0;
-            label1.Text = "Nếu bạn có bất kì thắc mắc gì về sản phẩm, đừng ngại liên lạc với chúng tôi nhé!";
+            pnlRequestProductsOfCustomer.Controls.Add(panel2);
+            pnlRequestProductsOfCustomer.Controls.Add(panel1);
+            pnlRequestProductsOfCustomer.Dock = DockStyle.Fill;
+            pnlRequestProductsOfCustomer.Location = new Point(0, 0);
+            pnlRequestProductsOfCustomer.Name = "pnlRequestProductsOfCustomer";
+            pnlRequestProductsOfCustomer.Size = new Size(964, 526);
+            pnlRequestProductsOfCustomer.TabIndex = 0;
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(47, 90, 207);
             panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(592, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(372, 526);
-            panel2.TabIndex = 1;
+            panel2.TabIndex = 3;
             // 
             // panel3
             // 
@@ -396,16 +260,183 @@
             label6.TabIndex = 0;
             label6.Text = "Gửi yêu cầu cho CoolxPrint";
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel1.BackColor = Color.FromArgb(47, 90, 207);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(592, 526);
+            panel1.TabIndex = 2;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBox4.BackColor = Color.White;
+            pictureBox4.Image = Properties.Resources.icon_exit1;
+            pictureBox4.Location = new Point(0, 479);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(53, 44);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click_1;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(button2);
+            panel6.Controls.Add(button1);
+            panel6.Location = new Point(12, 325);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(553, 96);
+            panel6.TabIndex = 3;
+            // 
+            // button2
+            // 
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Image = Properties.Resources.icon_facebook;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(262, 22);
+            button2.Name = "button2";
+            button2.Size = new Size(262, 57);
+            button2.TabIndex = 1;
+            button2.Text = "Liên hệ qua Facebook";
+            button2.TextAlign = ContentAlignment.MiddleRight;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Image = Properties.Resources.icon_twitter;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(3, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(216, 57);
+            button1.TabIndex = 0;
+            button1.Text = "Liên hệ qua Zalo";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(pictureBox2);
+            panel5.Controls.Add(label4);
+            panel5.Controls.Add(label5);
+            panel5.Location = new Point(274, 209);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(291, 89);
+            panel5.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.icon_mail;
+            pictureBox2.Location = new Point(3, 52);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 34);
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.FlatStyle = FlatStyle.Flat;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(49, 52);
+            label4.Name = "label4";
+            label4.Size = new Size(217, 28);
+            label4.TabIndex = 1;
+            label4.Text = "coolmate@gmail.com";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.FlatStyle = FlatStyle.Flat;
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.ForeColor = SystemColors.ActiveBorder;
+            label5.Location = new Point(49, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(59, 28);
+            label5.TabIndex = 0;
+            label5.Text = "Email";
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(pictureBox1);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(label2);
+            panel4.Location = new Point(15, 209);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(216, 89);
+            panel4.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.icon_phone;
+            pictureBox1.Location = new Point(3, 52);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(40, 34);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.FlatStyle = FlatStyle.Flat;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(49, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(108, 28);
+            label3.TabIndex = 1;
+            label3.Text = "19006069";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.ForeColor = SystemColors.ActiveBorder;
+            label2.Location = new Point(49, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(76, 28);
+            label2.TabIndex = 0;
+            label2.Text = "Hotline";
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(3, 107);
+            label1.Name = "label1";
+            label1.Size = new Size(589, 99);
+            label1.TabIndex = 0;
+            label1.Text = "Nếu bạn có bất kì thắc mắc gì về sản phẩm, đừng ngại liên lạc với chúng tôi nhé!";
+            // 
             // RequestProductsOfCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(964, 526);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(pnlRequestProductsOfCustomer);
             Name = "RequestProductsOfCustomer";
             Text = "RequestProductsOfCustomer";
+            pnlRequestProductsOfCustomer.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel5.ResumeLayout(false);
@@ -414,29 +445,19 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlRequestProductsOfCustomer;
         private Panel panel2;
-        private Label label1;
         private Panel panel3;
-        private Panel panel4;
-        private Label label3;
-        private Label label2;
-        private PictureBox pictureBox1;
-        private Panel panel5;
-        private PictureBox pictureBox2;
-        private Label label4;
-        private Label label5;
-        private Panel panel6;
-        private Button button1;
-        private Button button2;
+        private Panel panel10;
+        private Panel panel9;
+        private Panel panel8;
+        private Panel panel7;
+        private Button button3;
         private TextBox textBox4;
         private Label label10;
         private TextBox textBox3;
@@ -446,10 +467,19 @@
         private TextBox textBox1;
         private Label label7;
         private Label label6;
-        private Button button3;
-        private Panel panel8;
-        private Panel panel7;
-        private Panel panel10;
-        private Panel panel9;
+        private Panel panel1;
+        private PictureBox pictureBox4;
+        private Panel panel6;
+        private Button button2;
+        private Button button1;
+        private Panel panel5;
+        private PictureBox pictureBox2;
+        private Label label4;
+        private Label label5;
+        private Panel panel4;
+        private PictureBox pictureBox1;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }

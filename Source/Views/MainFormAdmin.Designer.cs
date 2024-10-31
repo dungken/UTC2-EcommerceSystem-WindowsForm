@@ -424,7 +424,7 @@
             pnlChildForm.Dock = DockStyle.Fill;
             pnlChildForm.Location = new Point(0, 0);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(1203, 628);
+            pnlChildForm.Size = new Size(982, 585);
             pnlChildForm.TabIndex = 7;
             // 
             // MainFormAdmin

@@ -53,6 +53,7 @@ namespace Source.Views.Custommer
             }
 
         }
+
         private void pnlProduct1_Click(object sender, EventArgs e)
         {
             changeInforMain(pnlProduct1);
@@ -81,21 +82,6 @@ namespace Source.Views.Custommer
         private void pnlProduct6_Click(object sender, EventArgs e)
         {
             changeInforMain(pnlProduct6);
-        }
-
-        private void pnlProduct1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureMain_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNameProduct2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

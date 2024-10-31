@@ -339,7 +339,7 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources._4714992_avatar_man_people_person_profile_icon;
+            pictureBox1.Image = Properties.Resources.capybara3;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(121, 92);
@@ -593,7 +593,7 @@
             // pictureBox2
             // 
             pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = Properties.Resources._4714992_avatar_man_people_person_profile_icon;
+            pictureBox2.Image = Properties.Resources.capybara3;
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(121, 92);
@@ -763,7 +763,7 @@
             // pictureBox3
             // 
             pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Image = Properties.Resources._4714992_avatar_man_people_person_profile_icon;
+            pictureBox3.Image = Properties.Resources.capybara3;
             pictureBox3.Location = new Point(0, 0);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(121, 92);

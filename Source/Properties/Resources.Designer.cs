@@ -223,6 +223,26 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_invoice {
+            get {
+                object obj = ResourceManager.GetObject("icon_invoice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_locatton {
+            get {
+                object obj = ResourceManager.GetObject("icon_locatton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_lock {
             get {
                 object obj = ResourceManager.GetObject("icon_lock", resourceCulture);
@@ -246,6 +266,16 @@ namespace Source.Properties {
         internal static System.Drawing.Bitmap icon_mail1 {
             get {
                 object obj = ResourceManager.GetObject("icon_mail1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_money {
+            get {
+                object obj = ResourceManager.GetObject("icon_money", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +343,39 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap img_banner {
+            get {
+                object obj = ResourceManager.GetObject("img_banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_posterResgister {
             get {
                 object obj = ResourceManager.GetObject("img_posterResgister", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_promotionVourcher {
+            get {
+                object obj = ResourceManager.GetObject("img_promotionVourcher", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_promotionVourcher2 {
+            get {
+                object obj = ResourceManager.GetObject("img_promotionVourcher2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

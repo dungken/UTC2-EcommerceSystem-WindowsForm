@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            pictureBox2 = new PictureBox();
-            label1 = new Label();
+            pnlHomeCustomer = new Panel();
+            pnlHomeCustomerChild = new Panel();
             pnlVourcher = new Panel();
             panel7 = new Panel();
             panel8 = new Panel();
@@ -60,8 +59,11 @@
             pnlImgVourcher1 = new Panel();
             pictureBoxImage = new PictureBox();
             label2 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1 = new Panel();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
+            pnlHomeCustomer.SuspendLayout();
+            pnlHomeCustomerChild.SuspendLayout();
             pnlVourcher.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
@@ -78,39 +80,27 @@
             pnlInfroVourcher1.SuspendLayout();
             pnlImgVourcher1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlHomeCustomer
             // 
-            panel1.BackColor = Color.FromArgb(235, 224, 234);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(369, 509);
-            panel1.TabIndex = 1;
+            pnlHomeCustomer.Controls.Add(pnlHomeCustomerChild);
+            pnlHomeCustomer.Dock = DockStyle.Fill;
+            pnlHomeCustomer.Location = new Point(0, 0);
+            pnlHomeCustomer.Name = "pnlHomeCustomer";
+            pnlHomeCustomer.Size = new Size(964, 509);
+            pnlHomeCustomer.TabIndex = 0;
             // 
-            // pictureBox2
+            // pnlHomeCustomerChild
             // 
-            pictureBox2.Image = Properties.Resources.img_banner;
-            pictureBox2.Location = new Point(3, 82);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(360, 361);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(12, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(337, 50);
-            label1.TabIndex = 1;
-            label1.Text = "Welcome to our store";
-            label1.Click += label1_Click;
+            pnlHomeCustomerChild.Controls.Add(pnlVourcher);
+            pnlHomeCustomerChild.Controls.Add(panel1);
+            pnlHomeCustomerChild.Location = new Point(0, 0);
+            pnlHomeCustomerChild.Name = "pnlHomeCustomerChild";
+            pnlHomeCustomerChild.Size = new Size(964, 509);
+            pnlHomeCustomerChild.TabIndex = 0;
             // 
             // pnlVourcher
             // 
@@ -123,7 +113,7 @@
             pnlVourcher.Location = new Point(369, 0);
             pnlVourcher.Name = "pnlVourcher";
             pnlVourcher.Size = new Size(595, 509);
-            pnlVourcher.TabIndex = 2;
+            pnlVourcher.TabIndex = 4;
             // 
             // panel7
             // 
@@ -152,10 +142,11 @@
             button3.ForeColor = Color.FromArgb(244, 118, 122);
             button3.Location = new Point(9, 47);
             button3.Name = "button3";
-            button3.Size = new Size(120, 27);
+            button3.Size = new Size(120, 30);
             button3.TabIndex = 0;
-            button3.Text = "Dùng sau";
+            button3.Text = "Dùng ngay";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // panel9
             // 
@@ -243,10 +234,11 @@
             button2.ForeColor = Color.FromArgb(244, 118, 122);
             button2.Location = new Point(9, 45);
             button2.Name = "button2";
-            button2.Size = new Size(120, 27);
+            button2.Size = new Size(120, 30);
             button2.TabIndex = 0;
-            button2.Text = "Dùng sau";
+            button2.Text = "Dùng ngay";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // panel5
             // 
@@ -333,10 +325,11 @@
             button1.ForeColor = Color.FromArgb(244, 118, 122);
             button1.Location = new Point(9, 44);
             button1.Name = "button1";
-            button1.Size = new Size(120, 27);
+            button1.Size = new Size(120, 29);
             button1.TabIndex = 0;
-            button1.Text = "Dùng sau";
+            button1.Text = "Dùng ngay";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pnlInfroVourcher1
             // 
@@ -406,18 +399,47 @@
             label2.TabIndex = 1;
             label2.Text = "Kho Vourcher";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(235, 224, 234);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(369, 509);
+            panel1.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.img_banner;
+            pictureBox2.Location = new Point(3, 82);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(360, 361);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(12, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(337, 50);
+            label1.TabIndex = 1;
+            label1.Text = "Welcome to our store";
+            // 
             // HomeCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(964, 509);
-            Controls.Add(pnlVourcher);
-            Controls.Add(panel1);
+            Controls.Add(pnlHomeCustomer);
             Name = "HomeCustomer";
             Text = "HomeCustomer";
-            Load += HomeCustomer_Load;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            pnlHomeCustomer.ResumeLayout(false);
+            pnlHomeCustomerChild.ResumeLayout(false);
             pnlVourcher.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
@@ -434,33 +456,16 @@
             pnlInfroVourcher1.ResumeLayout(false);
             pnlImgVourcher1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panel1;
+
+        private Panel pnlHomeCustomer;
+        private Panel pnlHomeCustomerChild;
         private Panel pnlVourcher;
-        private Label label1;
-        private Label label2;
-        private PictureBox pictureBox2;
-        private Panel pnlVourcher1;
-        private Panel pnlImgVourcher1;
-        private Panel pnlInfroVourcher1;
-        private PictureBox pictureBoxImage;
-        private Label label3;
-        private Label label5;
-        private Label label4;
-        private Panel panel2;
-        private Button button1;
-        private Panel panel3;
-        private Panel panel4;
-        private Button button2;
-        private Panel panel5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Panel panel6;
-        private PictureBox pictureBox1;
         private Panel panel7;
         private Panel panel8;
         private Button button3;
@@ -470,5 +475,27 @@
         private Label label11;
         private Panel panel10;
         private PictureBox pictureBox3;
+        private Panel panel3;
+        private Panel panel4;
+        private Button button2;
+        private Panel panel5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Panel panel6;
+        private PictureBox pictureBox1;
+        private Panel pnlVourcher1;
+        private Panel panel2;
+        private Button button1;
+        private Panel pnlInfroVourcher1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Panel pnlImgVourcher1;
+        private PictureBox pictureBoxImage;
+        private Label label2;
+        private Panel panel1;
+        private PictureBox pictureBox2;
+        private Label label1;
     }
 }

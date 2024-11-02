@@ -143,9 +143,9 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             label2.ForeColor = Color.FromArgb(80, 40, 60);
-            label2.Location = new Point(66, 91);
+            label2.Location = new Point(3, 91);
             label2.Name = "label2";
-            label2.Size = new Size(249, 64);
+            label2.Size = new Size(405, 64);
             label2.TabIndex = 1;
             label2.Text = "Đặt sản xuất chưa bao giờ đơn giản đến vậy ";
             // 

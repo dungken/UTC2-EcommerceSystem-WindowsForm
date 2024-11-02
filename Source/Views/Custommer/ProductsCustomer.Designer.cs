@@ -77,9 +77,9 @@
             lblCategoryMain = new Label();
             panel7 = new Panel();
             panel10 = new Panel();
-            button2 = new Button();
-            label2 = new Label();
-            button1 = new Button();
+            btnIncrease = new Button();
+            lblQuantity = new Label();
+            btnDecrease = new Button();
             label1 = new Label();
             panel4 = new Panel();
             lblPriceMain = new Label();
@@ -665,44 +665,46 @@
             // 
             // panel10
             // 
-            panel10.Controls.Add(button2);
-            panel10.Controls.Add(label2);
-            panel10.Controls.Add(button1);
+            panel10.Controls.Add(btnIncrease);
+            panel10.Controls.Add(lblQuantity);
+            panel10.Controls.Add(btnDecrease);
             panel10.Dock = DockStyle.Right;
             panel10.Location = new Point(171, 0);
             panel10.Name = "panel10";
             panel10.Size = new Size(87, 39);
             panel10.TabIndex = 8;
             // 
-            // button2
+            // btnIncrease
             // 
-            button2.Dock = DockStyle.Right;
-            button2.Location = new Point(56, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(31, 39);
-            button2.TabIndex = 33;
-            button2.Text = "+";
-            button2.UseVisualStyleBackColor = true;
+            btnIncrease.Dock = DockStyle.Right;
+            btnIncrease.Location = new Point(56, 0);
+            btnIncrease.Name = "btnIncrease";
+            btnIncrease.Size = new Size(31, 39);
+            btnIncrease.TabIndex = 33;
+            btnIncrease.Text = "+";
+            btnIncrease.UseVisualStyleBackColor = true;
+            btnIncrease.Click += btnIncrease_Click;
             // 
-            // label2
+            // lblQuantity
             // 
-            label2.Dock = DockStyle.Left;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(31, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(23, 39);
-            label2.TabIndex = 33;
-            label2.Text = "1";
+            lblQuantity.Dock = DockStyle.Left;
+            lblQuantity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblQuantity.Location = new Point(31, 0);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(23, 39);
+            lblQuantity.TabIndex = 33;
+            lblQuantity.Text = "1";
             // 
-            // button1
+            // btnDecrease
             // 
-            button1.Dock = DockStyle.Left;
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(31, 39);
-            button1.TabIndex = 32;
-            button1.Text = "-";
-            button1.UseVisualStyleBackColor = true;
+            btnDecrease.Dock = DockStyle.Left;
+            btnDecrease.Location = new Point(0, 0);
+            btnDecrease.Name = "btnDecrease";
+            btnDecrease.Size = new Size(31, 39);
+            btnDecrease.TabIndex = 32;
+            btnDecrease.Text = "-";
+            btnDecrease.UseVisualStyleBackColor = true;
+            btnDecrease.Click += btnDecrease_Click;
             // 
             // label1
             // 
@@ -908,9 +910,9 @@
         private Label label1;
         private Panel panel4;
         private Panel panel10;
-        private Label label2;
-        private Button button1;
-        private Button button2;
+        private Label lblQuantity;
+        private Button btnDecrease;
+        private Button btnIncrease;
         private PictureBox pictureBox7;
     }
 }

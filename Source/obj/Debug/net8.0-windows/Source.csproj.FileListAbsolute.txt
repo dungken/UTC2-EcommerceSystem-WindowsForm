@@ -38,3 +38,4 @@ D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\
 D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.AboutUs.resources
 D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.Setting.resources
 D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.Support.resources
+D:\DoAnWinform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.PaymentCustomer.resources

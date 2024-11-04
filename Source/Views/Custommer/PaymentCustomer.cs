@@ -17,6 +17,10 @@ namespace Source.Views.Custommer
             InitializeComponent();
         }
 
-      
+        private void btnPaymentMethod_Click(object sender, EventArgs e)
+        {
+            pnlSubPaymentMethod.Visible = true;
+            pnlSubPaymentMethod.Location = new Point(0, 271);
+        }
     }
 }

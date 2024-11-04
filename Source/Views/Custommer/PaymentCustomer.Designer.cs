@@ -30,6 +30,9 @@
         {
             pnlPaymentCustomer = new Panel();
             pnlVourcher_Detail = new Panel();
+            pnlSubPaymentMethod = new Panel();
+            button6 = new Button();
+            button1 = new Button();
             panel8 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
@@ -40,7 +43,7 @@
             label6 = new Label();
             panel5 = new Panel();
             button3 = new Button();
-            button4 = new Button();
+            btnPaymentMethod = new Button();
             panel2 = new Panel();
             lblCurrentPrice = new Label();
             lblOldPrice = new Label();
@@ -74,6 +77,7 @@
             pictureBox1 = new PictureBox();
             pnlPaymentCustomer.SuspendLayout();
             pnlVourcher_Detail.SuspendLayout();
+            pnlSubPaymentMethod.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
@@ -102,6 +106,7 @@
             // pnlVourcher_Detail
             // 
             pnlVourcher_Detail.BorderStyle = BorderStyle.FixedSingle;
+            pnlVourcher_Detail.Controls.Add(pnlSubPaymentMethod);
             pnlVourcher_Detail.Controls.Add(panel8);
             pnlVourcher_Detail.Controls.Add(panel6);
             pnlVourcher_Detail.Controls.Add(label14);
@@ -116,6 +121,48 @@
             pnlVourcher_Detail.Name = "pnlVourcher_Detail";
             pnlVourcher_Detail.Size = new Size(490, 509);
             pnlVourcher_Detail.TabIndex = 1;
+            // 
+            // pnlSubPaymentMethod
+            // 
+            pnlSubPaymentMethod.Controls.Add(button6);
+            pnlSubPaymentMethod.Controls.Add(button1);
+            pnlSubPaymentMethod.Location = new Point(0, 271);
+            pnlSubPaymentMethod.Name = "pnlSubPaymentMethod";
+            pnlSubPaymentMethod.Size = new Size(489, 87);
+            pnlSubPaymentMethod.TabIndex = 1;
+            pnlSubPaymentMethod.Visible = false;
+            // 
+            // button6
+            // 
+            button6.Dock = DockStyle.Top;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.FromArgb(128, 64, 0);
+            button6.Image = Properties.Resources.icon_money;
+            button6.ImageAlign = ContentAlignment.MiddleLeft;
+            button6.Location = new Point(0, 43);
+            button6.Name = "button6";
+            button6.Size = new Size(489, 43);
+            button6.TabIndex = 11;
+            button6.Text = "         Payment by Bank Code                                                                       >";
+            button6.TextAlign = ContentAlignment.MiddleLeft;
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Top;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(128, 64, 0);
+            button1.Image = Properties.Resources.icon_money;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(489, 43);
+            button1.TabIndex = 10;
+            button1.Text = "         Cash on Delivery(COD)                                                                       >";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -205,7 +252,7 @@
             // panel5
             // 
             panel5.Controls.Add(button3);
-            panel5.Controls.Add(button4);
+            panel5.Controls.Add(btnPaymentMethod);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 185);
             panel5.Name = "panel5";
@@ -222,27 +269,28 @@
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(0, 0);
             button3.Name = "button3";
-            button3.Size = new Size(488, 39);
+            button3.Size = new Size(488, 40);
             button3.TabIndex = 8;
             button3.Text = "         Coolmate Vourcher                                                                   >";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnPaymentMethod
             // 
-            button4.Dock = DockStyle.Bottom;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.FromArgb(128, 64, 0);
-            button4.Image = Properties.Resources.icon_money;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(0, 40);
-            button4.Name = "button4";
-            button4.Size = new Size(488, 43);
-            button4.TabIndex = 9;
-            button4.Text = "         Payment method                                                                       >";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
+            btnPaymentMethod.Dock = DockStyle.Bottom;
+            btnPaymentMethod.FlatStyle = FlatStyle.Flat;
+            btnPaymentMethod.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPaymentMethod.ForeColor = Color.FromArgb(128, 64, 0);
+            btnPaymentMethod.Image = Properties.Resources.icon_money;
+            btnPaymentMethod.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPaymentMethod.Location = new Point(0, 39);
+            btnPaymentMethod.Name = "btnPaymentMethod";
+            btnPaymentMethod.Size = new Size(488, 44);
+            btnPaymentMethod.TabIndex = 9;
+            btnPaymentMethod.Text = "         Payment method                                                                       >";
+            btnPaymentMethod.TextAlign = ContentAlignment.MiddleLeft;
+            btnPaymentMethod.UseVisualStyleBackColor = true;
+            btnPaymentMethod.Click += btnPaymentMethod_Click;
             // 
             // panel2
             // 
@@ -582,6 +630,7 @@
             pnlPaymentCustomer.ResumeLayout(false);
             pnlVourcher_Detail.ResumeLayout(false);
             pnlVourcher_Detail.PerformLayout();
+            pnlSubPaymentMethod.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
@@ -638,7 +687,7 @@
         private Button button3;
         private Label label13;
         private Label label12;
-        private Button button4;
+        private Button btnPaymentMethod;
         private Panel panel5;
         private Label label14;
         private Panel panel6;
@@ -649,5 +698,8 @@
         private Button button5;
         private Panel panel9;
         private Label label17;
+        private Panel pnlSubPaymentMethod;
+        private Button button6;
+        private Button button1;
     }
 }

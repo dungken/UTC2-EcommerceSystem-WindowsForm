@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblHeader = new Label();
-            pnProduct = new Panel();
-            pnTop = new Panel();
-            pnImage = new Panel();
-            imageProduct = new PictureBox();
-            lblQuantity = new Label();
-            lblColorSize = new Label();
-            lblClassify = new Label();
-            lblNameProduct = new Label();
+            pnlReviewProduct = new Panel();
+            btnReturn = new Button();
+            pnReview = new Panel();
+            lblNote = new Label();
+            tbxReview = new TextBox();
+            btnDone = new Button();
             pnQuality = new Panel();
             lblQuality = new Label();
             pnStar = new Panel();
@@ -46,15 +43,17 @@
             pictureBox3 = new PictureBox();
             picbxStar = new PictureBox();
             lblChatLuong = new Label();
-            pnReview = new Panel();
-            tbxReview = new TextBox();
-            lblNote = new Label();
-            btnDone = new Button();
-            btnReturn = new Button();
-            pnProduct.SuspendLayout();
-            pnTop.SuspendLayout();
-            pnImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)imageProduct).BeginInit();
+            pnProduct = new Panel();
+            pnTop = new Panel();
+            pnImage = new Panel();
+            imageProduct = new PictureBox();
+            lblQuantity = new Label();
+            lblColorSize = new Label();
+            lblClassify = new Label();
+            lblNameProduct = new Label();
+            lblHeader = new Label();
+            pnlReviewProduct.SuspendLayout();
+            pnReview.SuspendLayout();
             pnQuality.SuspendLayout();
             pnStar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -62,110 +61,91 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picbxStar).BeginInit();
-            pnReview.SuspendLayout();
+            pnProduct.SuspendLayout();
+            pnTop.SuspendLayout();
+            pnImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imageProduct).BeginInit();
             SuspendLayout();
             // 
-            // lblHeader
+            // pnlReviewProduct
             // 
-            lblHeader.AutoSize = true;
-            lblHeader.Cursor = Cursors.IBeam;
-            lblHeader.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHeader.Location = new Point(47, 9);
-            lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(246, 32);
-            lblHeader.TabIndex = 0;
-            lblHeader.Text = "Đánh giá sản phẩm";
+            pnlReviewProduct.Controls.Add(btnReturn);
+            pnlReviewProduct.Controls.Add(pnReview);
+            pnlReviewProduct.Controls.Add(btnDone);
+            pnlReviewProduct.Controls.Add(pnQuality);
+            pnlReviewProduct.Controls.Add(pnProduct);
+            pnlReviewProduct.Controls.Add(lblHeader);
+            pnlReviewProduct.Dock = DockStyle.Fill;
+            pnlReviewProduct.Location = new Point(0, 0);
+            pnlReviewProduct.Name = "pnlReviewProduct";
+            pnlReviewProduct.Size = new Size(827, 538);
+            pnlReviewProduct.TabIndex = 0;
             // 
-            // pnProduct
+            // btnReturn
             // 
-            pnProduct.Controls.Add(pnTop);
-            pnProduct.Location = new Point(47, 60);
-            pnProduct.Name = "pnProduct";
-            pnProduct.Size = new Size(753, 80);
-            pnProduct.TabIndex = 1;
+            btnReturn.AutoSize = true;
+            btnReturn.Cursor = Cursors.Hand;
+            btnReturn.Location = new Point(460, 482);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(109, 46);
+            btnReturn.TabIndex = 26;
+            btnReturn.Text = "Trở lại";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
             // 
-            // pnTop
+            // pnReview
             // 
-            pnTop.BackColor = Color.White;
-            pnTop.Controls.Add(pnImage);
-            pnTop.Controls.Add(lblQuantity);
-            pnTop.Controls.Add(lblColorSize);
-            pnTop.Controls.Add(lblClassify);
-            pnTop.Controls.Add(lblNameProduct);
-            pnTop.Cursor = Cursors.Hand;
-            pnTop.Location = new Point(3, 3);
-            pnTop.Name = "pnTop";
-            pnTop.Size = new Size(750, 78);
-            pnTop.TabIndex = 1;
+            pnReview.BackColor = Color.WhiteSmoke;
+            pnReview.Controls.Add(lblNote);
+            pnReview.Controls.Add(tbxReview);
+            pnReview.Location = new Point(37, 222);
+            pnReview.Name = "pnReview";
+            pnReview.Size = new Size(753, 237);
+            pnReview.TabIndex = 24;
             // 
-            // pnImage
+            // lblNote
             // 
-            pnImage.Controls.Add(imageProduct);
-            pnImage.Dock = DockStyle.Left;
-            pnImage.Location = new Point(0, 0);
-            pnImage.Name = "pnImage";
-            pnImage.Size = new Size(149, 78);
-            pnImage.TabIndex = 6;
+            lblNote.AutoSize = true;
+            lblNote.Cursor = Cursors.IBeam;
+            lblNote.ForeColor = SystemColors.ControlDarkDark;
+            lblNote.Location = new Point(278, 203);
+            lblNote.Name = "lblNote";
+            lblNote.Size = new Size(449, 22);
+            lblNote.TabIndex = 1;
+            lblNote.Text = "Hãy nhập tối thiểu 50 ký tự để đánh giá được duyệt nhé!";
             // 
-            // imageProduct
+            // tbxReview
             // 
-            imageProduct.Dock = DockStyle.Fill;
-            imageProduct.Image = Properties.Resources.capybara3;
-            imageProduct.Location = new Point(0, 0);
-            imageProduct.Name = "imageProduct";
-            imageProduct.Size = new Size(149, 78);
-            imageProduct.SizeMode = PictureBoxSizeMode.Zoom;
-            imageProduct.TabIndex = 0;
-            imageProduct.TabStop = false;
+            tbxReview.Cursor = Cursors.IBeam;
+            tbxReview.Location = new Point(28, 18);
+            tbxReview.Multiline = true;
+            tbxReview.Name = "tbxReview";
+            tbxReview.PlaceholderText = "  Hãy chia sẻ những điều bạn thích về sản phẩm này với những người mua khác nhé.";
+            tbxReview.Size = new Size(699, 163);
+            tbxReview.TabIndex = 0;
             // 
-            // lblQuantity
+            // btnDone
             // 
-            lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(155, 56);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(29, 22);
-            lblQuantity.TabIndex = 5;
-            lblQuantity.Text = "x1";
-            // 
-            // lblColorSize
-            // 
-            lblColorSize.AutoSize = true;
-            lblColorSize.ForeColor = SystemColors.ControlDarkDark;
-            lblColorSize.Location = new Point(288, 34);
-            lblColorSize.Name = "lblColorSize";
-            lblColorSize.Size = new Size(55, 22);
-            lblColorSize.TabIndex = 3;
-            lblColorSize.Text = "Đỏ, L";
-            // 
-            // lblClassify
-            // 
-            lblClassify.AutoSize = true;
-            lblClassify.ForeColor = SystemColors.ControlDarkDark;
-            lblClassify.Location = new Point(155, 34);
-            lblClassify.Name = "lblClassify";
-            lblClassify.Size = new Size(136, 22);
-            lblClassify.TabIndex = 2;
-            lblClassify.Text = "Phân loại hàng: ";
-            // 
-            // lblNameProduct
-            // 
-            lblNameProduct.AutoSize = true;
-            lblNameProduct.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNameProduct.Location = new Point(155, 9);
-            lblNameProduct.Name = "lblNameProduct";
-            lblNameProduct.Size = new Size(260, 25);
-            lblNameProduct.TabIndex = 1;
-            lblNameProduct.Text = "Khăn lau mặt dùng 1 lần";
+            btnDone.BackColor = Color.OrangeRed;
+            btnDone.Cursor = Cursors.Hand;
+            btnDone.FlatStyle = FlatStyle.Flat;
+            btnDone.ForeColor = Color.White;
+            btnDone.Location = new Point(594, 482);
+            btnDone.Name = "btnDone";
+            btnDone.Size = new Size(196, 46);
+            btnDone.TabIndex = 25;
+            btnDone.Text = "Hoàn thành";
+            btnDone.UseVisualStyleBackColor = false;
             // 
             // pnQuality
             // 
             pnQuality.Controls.Add(lblQuality);
             pnQuality.Controls.Add(pnStar);
             pnQuality.Controls.Add(lblChatLuong);
-            pnQuality.Location = new Point(47, 158);
+            pnQuality.Location = new Point(37, 160);
             pnQuality.Name = "pnQuality";
             pnQuality.Size = new Size(753, 47);
-            pnQuality.TabIndex = 2;
+            pnQuality.TabIndex = 23;
             // 
             // lblQuality
             // 
@@ -246,60 +226,97 @@
             lblChatLuong.TabIndex = 0;
             lblChatLuong.Text = "Chất lượng sản phẩm";
             // 
-            // pnReview
+            // pnProduct
             // 
-            pnReview.BackColor = Color.WhiteSmoke;
-            pnReview.Controls.Add(lblNote);
-            pnReview.Controls.Add(tbxReview);
-            pnReview.Location = new Point(47, 220);
-            pnReview.Name = "pnReview";
-            pnReview.Size = new Size(753, 237);
-            pnReview.TabIndex = 3;
+            pnProduct.Controls.Add(pnTop);
+            pnProduct.Location = new Point(37, 62);
+            pnProduct.Name = "pnProduct";
+            pnProduct.Size = new Size(753, 80);
+            pnProduct.TabIndex = 22;
             // 
-            // tbxReview
+            // pnTop
             // 
-            tbxReview.Cursor = Cursors.IBeam;
-            tbxReview.Location = new Point(28, 18);
-            tbxReview.Multiline = true;
-            tbxReview.Name = "tbxReview";
-            tbxReview.PlaceholderText = "  Hãy chia sẻ những điều bạn thích về sản phẩm này với những người mua khác nhé.";
-            tbxReview.Size = new Size(699, 163);
-            tbxReview.TabIndex = 0;
+            pnTop.BackColor = Color.White;
+            pnTop.Controls.Add(pnImage);
+            pnTop.Controls.Add(lblQuantity);
+            pnTop.Controls.Add(lblColorSize);
+            pnTop.Controls.Add(lblClassify);
+            pnTop.Controls.Add(lblNameProduct);
+            pnTop.Cursor = Cursors.Hand;
+            pnTop.Location = new Point(3, 3);
+            pnTop.Name = "pnTop";
+            pnTop.Size = new Size(750, 78);
+            pnTop.TabIndex = 1;
             // 
-            // lblNote
+            // pnImage
             // 
-            lblNote.AutoSize = true;
-            lblNote.Cursor = Cursors.IBeam;
-            lblNote.ForeColor = SystemColors.ControlDarkDark;
-            lblNote.Location = new Point(278, 203);
-            lblNote.Name = "lblNote";
-            lblNote.Size = new Size(449, 22);
-            lblNote.TabIndex = 1;
-            lblNote.Text = "Hãy nhập tối thiểu 50 ký tự để đánh giá được duyệt nhé!";
+            pnImage.Controls.Add(imageProduct);
+            pnImage.Dock = DockStyle.Left;
+            pnImage.Location = new Point(0, 0);
+            pnImage.Name = "pnImage";
+            pnImage.Size = new Size(149, 78);
+            pnImage.TabIndex = 6;
             // 
-            // btnDone
+            // imageProduct
             // 
-            btnDone.BackColor = Color.OrangeRed;
-            btnDone.Cursor = Cursors.Hand;
-            btnDone.FlatStyle = FlatStyle.Flat;
-            btnDone.ForeColor = Color.White;
-            btnDone.Location = new Point(604, 480);
-            btnDone.Name = "btnDone";
-            btnDone.Size = new Size(196, 46);
-            btnDone.TabIndex = 19;
-            btnDone.Text = "Hoàn thành";
-            btnDone.UseVisualStyleBackColor = false;
+            imageProduct.Dock = DockStyle.Fill;
+            imageProduct.Image = Properties.Resources.capybara3;
+            imageProduct.Location = new Point(0, 0);
+            imageProduct.Name = "imageProduct";
+            imageProduct.Size = new Size(149, 78);
+            imageProduct.SizeMode = PictureBoxSizeMode.Zoom;
+            imageProduct.TabIndex = 0;
+            imageProduct.TabStop = false;
             // 
-            // btnReturn
+            // lblQuantity
             // 
-            btnReturn.AutoSize = true;
-            btnReturn.Cursor = Cursors.Hand;
-            btnReturn.Location = new Point(470, 480);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(109, 46);
-            btnReturn.TabIndex = 20;
-            btnReturn.Text = "Trở lại";
-            btnReturn.UseVisualStyleBackColor = true;
+            lblQuantity.AutoSize = true;
+            lblQuantity.Location = new Point(155, 56);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(29, 22);
+            lblQuantity.TabIndex = 5;
+            lblQuantity.Text = "x1";
+            // 
+            // lblColorSize
+            // 
+            lblColorSize.AutoSize = true;
+            lblColorSize.ForeColor = SystemColors.ControlDarkDark;
+            lblColorSize.Location = new Point(288, 34);
+            lblColorSize.Name = "lblColorSize";
+            lblColorSize.Size = new Size(55, 22);
+            lblColorSize.TabIndex = 3;
+            lblColorSize.Text = "Đỏ, L";
+            // 
+            // lblClassify
+            // 
+            lblClassify.AutoSize = true;
+            lblClassify.ForeColor = SystemColors.ControlDarkDark;
+            lblClassify.Location = new Point(155, 34);
+            lblClassify.Name = "lblClassify";
+            lblClassify.Size = new Size(136, 22);
+            lblClassify.TabIndex = 2;
+            lblClassify.Text = "Phân loại hàng: ";
+            // 
+            // lblNameProduct
+            // 
+            lblNameProduct.AutoSize = true;
+            lblNameProduct.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameProduct.Location = new Point(155, 9);
+            lblNameProduct.Name = "lblNameProduct";
+            lblNameProduct.Size = new Size(260, 25);
+            lblNameProduct.TabIndex = 1;
+            lblNameProduct.Text = "Khăn lau mặt dùng 1 lần";
+            // 
+            // lblHeader
+            // 
+            lblHeader.AutoSize = true;
+            lblHeader.Cursor = Cursors.IBeam;
+            lblHeader.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHeader.Location = new Point(37, 11);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(246, 32);
+            lblHeader.TabIndex = 21;
+            lblHeader.Text = "Đánh giá sản phẩm";
             // 
             // ReviewProduct
             // 
@@ -307,21 +324,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(827, 538);
-            Controls.Add(btnReturn);
-            Controls.Add(btnDone);
-            Controls.Add(pnReview);
-            Controls.Add(pnQuality);
-            Controls.Add(pnProduct);
-            Controls.Add(lblHeader);
+            Controls.Add(pnlReviewProduct);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
             Name = "ReviewProduct";
             Text = "ReviewProduct";
-            pnProduct.ResumeLayout(false);
-            pnTop.ResumeLayout(false);
-            pnTop.PerformLayout();
-            pnImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)imageProduct).EndInit();
+            pnlReviewProduct.ResumeLayout(false);
+            pnlReviewProduct.PerformLayout();
+            pnReview.ResumeLayout(false);
+            pnReview.PerformLayout();
             pnQuality.ResumeLayout(false);
             pnQuality.PerformLayout();
             pnStar.ResumeLayout(false);
@@ -330,15 +341,31 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picbxStar).EndInit();
-            pnReview.ResumeLayout(false);
-            pnReview.PerformLayout();
+            pnProduct.ResumeLayout(false);
+            pnTop.ResumeLayout(false);
+            pnTop.PerformLayout();
+            pnImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)imageProduct).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label lblHeader;
+        private Panel pnlReviewProduct;
+        private Button btnReturn;
+        private Panel pnReview;
+        private Label lblNote;
+        private TextBox tbxReview;
+        private Button btnDone;
+        private Panel pnQuality;
+        private Label lblQuality;
+        private Panel pnStar;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox picbxStar;
+        private Label lblChatLuong;
         private Panel pnProduct;
         private Panel pnTop;
         private Panel pnImage;
@@ -347,19 +374,6 @@
         private Label lblColorSize;
         private Label lblClassify;
         private Label lblNameProduct;
-        private Panel pnQuality;
-        private Label lblChatLuong;
-        private Label lblQuality;
-        private Panel pnStar;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox picbxStar;
-        private Panel pnReview;
-        private TextBox tbxReview;
-        private Label lblNote;
-        private Button btnDone;
-        private Button btnReturn;
+        private Label lblHeader;
     }
 }

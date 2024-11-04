@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj": {}
+    "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj": {
+    "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
+        "projectUniqueName": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
         "projectName": "Source",
-        "projectPath": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\obj\\",
+        "projectPath": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
+        "packagesPath": "C:\\Users\\kupho\\.nuget\\packages\\",
+        "outputPath": "D:\\DoAnWinform\\UTC2-EcommerceSystem-WindowsForm\\Source\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kupho\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

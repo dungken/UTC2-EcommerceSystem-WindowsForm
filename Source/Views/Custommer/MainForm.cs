@@ -205,5 +205,10 @@ namespace Source.Views
         {
 
         }
+
+        private void MainForm_ClientSizeChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("HI");
+        }
     }
 }

@@ -8,7 +8,8 @@
 *.suo
 *.userosscache
 *.sln.docstates
-
+bin/
+obj/
 # Ignore build directories
 bin/
 obj/

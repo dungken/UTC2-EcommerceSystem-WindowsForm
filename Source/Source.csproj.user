@@ -25,6 +25,9 @@
     <Compile Update="Views\Custommer\PaymentCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\ProductDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\ProductsCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,10 +37,16 @@
     <Compile Update="Views\Custommer\RequestProductsOfCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\ReviewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\Setting.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Custommer\Support.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Custommer\WatchReview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Login.cs">

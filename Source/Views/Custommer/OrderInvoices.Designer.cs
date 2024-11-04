@@ -201,7 +201,7 @@
             // imgSearch
             // 
             imgSearch.Dock = DockStyle.Left;
-            imgSearch.Image = Properties.Resources.snapedit_1730291828491;
+            imgSearch.Image = Properties.Resources.kinhlup;
             imgSearch.Location = new Point(0, 0);
             imgSearch.Name = "imgSearch";
             imgSearch.Size = new Size(88, 31);
@@ -383,11 +383,11 @@
             // imageProduct
             // 
             imageProduct.Dock = DockStyle.Fill;
-            imageProduct.Image = Properties.Resources._2533010_avatar_character_halloween_skeleton_skull_icon;
+            imageProduct.Image = Properties.Resources.capybara3;
             imageProduct.Location = new Point(0, 0);
             imageProduct.Name = "imageProduct";
             imageProduct.Size = new Size(149, 78);
-            imageProduct.SizeMode = PictureBoxSizeMode.CenterImage;
+            imageProduct.SizeMode = PictureBoxSizeMode.Zoom;
             imageProduct.TabIndex = 0;
             imageProduct.TabStop = false;
             // 
@@ -604,11 +604,11 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources._2533010_avatar_character_halloween_skeleton_skull_icon;
+            pictureBox1.Image = Properties.Resources.capybara3;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(149, 78);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 

@@ -61,7 +61,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.hinh_nen_ngau_6;
+            pictureBox1.Image = Properties.Resources.img_posterResgister;
             pictureBox1.Location = new Point(3, 66);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(188, 347);
@@ -122,6 +122,7 @@
             lblForget.Size = new Size(117, 20);
             lblForget.TabIndex = 49;
             lblForget.Text = "Forget Password";
+            lblForget.Click += lblForget_Click;
             // 
             // btnLoginWGoogle
             // 
@@ -132,8 +133,9 @@
             btnLoginWGoogle.Name = "btnLoginWGoogle";
             btnLoginWGoogle.Size = new Size(297, 44);
             btnLoginWGoogle.TabIndex = 48;
-            btnLoginWGoogle.Text = "Login with google";
+            btnLoginWGoogle.Text = "Login with Google";
             btnLoginWGoogle.UseVisualStyleBackColor = false;
+            btnLoginWGoogle.Click += btnLoginWGoogle_Click;
             // 
             // label6
             // 
@@ -180,7 +182,7 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.BackColor = Color.White;
-            label3.Image = Properties.Resources.profile_3135715__1_;
+            label3.Image = Properties.Resources.icon_lock;
             label3.Location = new Point(151, 174);
             label3.Name = "label3";
             label3.Size = new Size(30, 49);
@@ -210,7 +212,7 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.BackColor = Color.White;
-            label2.Image = Properties.Resources.profile_3135715__1_;
+            label2.Image = Properties.Resources.ImageAvarata;
             label2.Location = new Point(151, 89);
             label2.Name = "label2";
             label2.Size = new Size(30, 49);

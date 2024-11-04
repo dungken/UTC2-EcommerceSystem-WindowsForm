@@ -15,6 +15,7 @@ namespace Source
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
+         //   Application.Run(new Login());
             //Application.Run(new OrderInvoices());
             //Application.Run(new Cart());
         }

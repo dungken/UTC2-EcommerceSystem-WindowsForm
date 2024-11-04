@@ -16,5 +16,39 @@ namespace Source.Views.Custommer
         {
             InitializeComponent();
         }
+
+        // Tạo Form con 
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlHomeCustomer.Controls.Add(childForm);
+            pnlHomeCustomer.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProductsCustomer());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProductsCustomer());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProductsCustomer());
+        }
     }
 }

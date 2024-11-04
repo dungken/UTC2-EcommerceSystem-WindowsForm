@@ -118,14 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="4714992_avatar_man_people_person_profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4714992_avatar_man_people_person_profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3521345_basket_cart_shop_shopping_icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3521345_basket_cart_shop_shopping_icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="462537943_1082668596824276_4792925063775631168_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\462537943_1082668596824276_4792925063775631168_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,76 +130,94 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3521345_basket_cart_shop_shopping_icon (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3521345_basket_cart_shop_shopping_icon (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="7581538_product_refund_return_service_product recall_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7581538_product_refund_return_service_product recall_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_facebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_facebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2533010_avatar_character_halloween_skeleton_skull_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2533010_avatar_character_halloween_skeleton_skull_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_promotionVourcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_promotionVourcher.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="352473_return_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\352473_return_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="45506_box_delivery_package_product_shipment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\45506_box_delivery_package_product_shipment_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1695635068266-COOLMATE-FULL-LOGO---BLACK-(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1695635068266-COOLMATE-FULL-LOGO---BLACK-(2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImageAvarata1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAvarata1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8324223_ui_essential_app_avatar_profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8324223_ui_essential_app_avatar_profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_aboutUs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_aboutUs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6a38724140f67412cc7172f30df367f41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6a38724140f67412cc7172f30df367f41.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3521345_basket_cart_shop_shopping_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3521345_basket_cart_shop_shopping_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6a38724140f67412cc7172f30df367f42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6a38724140f67412cc7172f30df367f42.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hinh-nen-ngau-44" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hinh-nen-ngau-44.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kinhlup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kinhlup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hinh-nen-ngau-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hinh-nen-ngau-6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images_coolmate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images_coolmate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GioHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GioHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HinhNendep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HinhNendep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_locatton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_locatton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_mail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_mail1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3521345_basket_cart_shop_shopping_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3521345_basket_cart_shop_shopping_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hinhnensaukhidangnhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinhnensaukhidangnhap.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6a38724140f67412cc7172f30df367f4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6a38724140f67412cc7172f30df367f4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imagesHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagesHome.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="b46d0d4adf7cecfb9b7633fc3e096714" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\b46d0d4adf7cecfb9b7633fc3e096714.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="58928c362c80f405cce3f8ac2981d81f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\58928c362c80f405cce3f8ac2981d81f.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="profile_3135715 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profile_3135715 (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_posterResgister" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_posterResgister.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2533010_avatar_character_halloween_skeleton_skull_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2533010_avatar_character_halloween_skeleton_skull_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hinh-nen-ngau-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hinh-nen-ngau-96.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capybara3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\capybara3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="snapedit_1730291828491" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\snapedit_1730291828491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_twitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageAvarata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAvarata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_promotionVourcher2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_promotionVourcher2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_invoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

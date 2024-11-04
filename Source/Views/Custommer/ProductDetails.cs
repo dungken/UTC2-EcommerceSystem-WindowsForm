@@ -10,13 +10,21 @@ using System.Windows.Forms;
 
 namespace Source.Views.Custommer
 {
-    public partial class PaymentCustomer : Form
+    public partial class ProductDetails : Form
     {
-        public PaymentCustomer()
+        public ProductDetails()
         {
             InitializeComponent();
         }
 
-      
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDecrease_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

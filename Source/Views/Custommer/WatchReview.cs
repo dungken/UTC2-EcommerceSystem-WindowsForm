@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Source.Views.Custommer
 {
-    public partial class PaymentCustomer : Form
+    public partial class WatchReview : Form
     {
-        public PaymentCustomer()
+        public WatchReview()
         {
             InitializeComponent();
         }
-
-      
     }
 }

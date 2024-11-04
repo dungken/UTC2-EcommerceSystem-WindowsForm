@@ -36,7 +36,6 @@
             panel13 = new Panel();
             label8 = new Label();
             label9 = new Label();
-            numericUpDown2 = new NumericUpDown();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
@@ -53,7 +52,6 @@
             panel6 = new Panel();
             label1 = new Label();
             label2 = new Label();
-            numericUpDown1 = new NumericUpDown();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -78,7 +76,6 @@
             pnLeftLine = new Panel();
             lblDelete = new Label();
             lblPriceProduct = new Label();
-            numProduct = new NumericUpDown();
             lblCurrentPrice = new Label();
             lblOldPrice = new Label();
             lblColorSize = new Label();
@@ -95,24 +92,36 @@
             lblDonGia = new Label();
             lblSanPham = new Label();
             cbxAll = new CheckBox();
+            pnQuantuty = new Panel();
+            btnIncrease = new Button();
+            lblQuantity = new Label();
+            btnDecrease = new Button();
+            panel16 = new Panel();
+            button1 = new Button();
+            label15 = new Label();
+            button2 = new Button();
+            panel17 = new Panel();
+            button3 = new Button();
+            label16 = new Label();
+            button4 = new Button();
             pnlCart.SuspendLayout();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             panel14.SuspendLayout();
             panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnFooter.SuspendLayout();
             pnProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numProduct).BeginInit();
             pnNameProduct.SuspendLayout();
             pnImgProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnHeader.SuspendLayout();
+            pnQuantuty.SuspendLayout();
+            panel16.SuspendLayout();
+            panel17.SuspendLayout();
             SuspendLayout();
             // 
             // pnlCart
@@ -132,13 +141,13 @@
             // 
             panel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel9.BackColor = Color.White;
+            panel9.Controls.Add(panel17);
             panel9.Controls.Add(panel10);
             panel9.Controls.Add(panel11);
             panel9.Controls.Add(panel12);
             panel9.Controls.Add(panel13);
             panel9.Controls.Add(label8);
             panel9.Controls.Add(label9);
-            panel9.Controls.Add(numericUpDown2);
             panel9.Controls.Add(label10);
             panel9.Controls.Add(label11);
             panel9.Controls.Add(label12);
@@ -186,6 +195,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Cursor = Cursors.Hand;
             label8.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
             label8.Location = new Point(894, 49);
@@ -197,6 +207,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.Cursor = Cursors.IBeam;
             label9.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.OrangeRed;
             label9.Location = new Point(794, 49);
@@ -205,16 +216,10 @@
             label9.TabIndex = 15;
             label9.Text = "160.00";
             // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Location = new Point(672, 49);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(82, 30);
-            numericUpDown2.TabIndex = 14;
-            // 
             // label10
             // 
             label10.AutoSize = true;
+            label10.Cursor = Cursors.IBeam;
             label10.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Black;
             label10.Location = new Point(578, 51);
@@ -226,6 +231,7 @@
             // label11
             // 
             label11.AutoSize = true;
+            label11.Cursor = Cursors.IBeam;
             label11.Font = new Font("Times New Roman", 12F, FontStyle.Strikeout, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ControlDarkDark;
             label11.Location = new Point(507, 51);
@@ -246,6 +252,7 @@
             // label13
             // 
             label13.AutoSize = true;
+            label13.Cursor = Cursors.Hand;
             label13.ForeColor = SystemColors.ControlDarkDark;
             label13.Location = new Point(357, 29);
             label13.Name = "label13";
@@ -263,6 +270,7 @@
             // 
             // label14
             // 
+            label14.Cursor = Cursors.Hand;
             label14.Location = new Point(-5, 0);
             label14.Name = "label14";
             label14.Size = new Size(161, 92);
@@ -280,6 +288,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Dock = DockStyle.Fill;
             pictureBox3.Image = Properties.Resources.capybara3;
             pictureBox3.Location = new Point(0, 0);
@@ -303,13 +312,13 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(panel16);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(numericUpDown1);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label5);
@@ -357,6 +366,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Cursor = Cursors.Hand;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(894, 49);
@@ -368,6 +378,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Cursor = Cursors.IBeam;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.OrangeRed;
             label2.Location = new Point(794, 49);
@@ -376,16 +387,10 @@
             label2.TabIndex = 15;
             label2.Text = "160.00";
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(672, 49);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(82, 30);
-            numericUpDown1.TabIndex = 14;
-            // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Cursor = Cursors.IBeam;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(578, 51);
@@ -397,6 +402,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Cursor = Cursors.IBeam;
             label4.Font = new Font("Times New Roman", 12F, FontStyle.Strikeout, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlDarkDark;
             label4.Location = new Point(507, 51);
@@ -417,6 +423,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.Cursor = Cursors.Hand;
             label6.ForeColor = SystemColors.ControlDarkDark;
             label6.Location = new Point(357, 29);
             label6.Name = "label6";
@@ -434,6 +441,7 @@
             // 
             // label7
             // 
+            label7.Cursor = Cursors.Hand;
             label7.Location = new Point(-5, 0);
             label7.Name = "label7";
             label7.Size = new Size(161, 92);
@@ -451,6 +459,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Dock = DockStyle.Fill;
             pictureBox2.Image = Properties.Resources.capybara3;
             pictureBox2.Location = new Point(0, 0);
@@ -496,6 +505,7 @@
             // lblTotalProduct
             // 
             lblTotalProduct.AutoSize = true;
+            lblTotalProduct.Cursor = Cursors.IBeam;
             lblTotalProduct.Location = new Point(396, 29);
             lblTotalProduct.Name = "lblTotalProduct";
             lblTotalProduct.Size = new Size(250, 22);
@@ -505,6 +515,7 @@
             // lblTotalPrice
             // 
             lblTotalPrice.AutoSize = true;
+            lblTotalPrice.Cursor = Cursors.IBeam;
             lblTotalPrice.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalPrice.ForeColor = Color.OrangeRed;
             lblTotalPrice.Location = new Point(660, 26);
@@ -516,6 +527,7 @@
             // btnBuy
             // 
             btnBuy.BackColor = Color.OrangeRed;
+            btnBuy.Cursor = Cursors.Hand;
             btnBuy.FlatStyle = FlatStyle.Flat;
             btnBuy.ForeColor = Color.White;
             btnBuy.Location = new Point(744, 17);
@@ -529,6 +541,7 @@
             // lblDelMul
             // 
             lblDelMul.AutoSize = true;
+            lblDelMul.Cursor = Cursors.Hand;
             lblDelMul.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDelMul.ForeColor = Color.Black;
             lblDelMul.Location = new Point(219, 29);
@@ -540,6 +553,7 @@
             // lblCount
             // 
             lblCount.AutoSize = true;
+            lblCount.Cursor = Cursors.IBeam;
             lblCount.Location = new Point(58, 31);
             lblCount.Name = "lblCount";
             lblCount.Size = new Size(137, 22);
@@ -560,13 +574,13 @@
             // 
             pnProduct.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnProduct.BackColor = Color.White;
+            pnProduct.Controls.Add(pnQuantuty);
             pnProduct.Controls.Add(pnTopLine);
             pnProduct.Controls.Add(pnRightLine);
             pnProduct.Controls.Add(pnBotLine);
             pnProduct.Controls.Add(pnLeftLine);
             pnProduct.Controls.Add(lblDelete);
             pnProduct.Controls.Add(lblPriceProduct);
-            pnProduct.Controls.Add(numProduct);
             pnProduct.Controls.Add(lblCurrentPrice);
             pnProduct.Controls.Add(lblOldPrice);
             pnProduct.Controls.Add(lblColorSize);
@@ -614,6 +628,7 @@
             // lblDelete
             // 
             lblDelete.AutoSize = true;
+            lblDelete.Cursor = Cursors.Hand;
             lblDelete.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDelete.ForeColor = Color.Black;
             lblDelete.Location = new Point(894, 49);
@@ -625,6 +640,7 @@
             // lblPriceProduct
             // 
             lblPriceProduct.AutoSize = true;
+            lblPriceProduct.Cursor = Cursors.IBeam;
             lblPriceProduct.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPriceProduct.ForeColor = Color.OrangeRed;
             lblPriceProduct.Location = new Point(794, 49);
@@ -633,16 +649,10 @@
             lblPriceProduct.TabIndex = 15;
             lblPriceProduct.Text = "160.00";
             // 
-            // numProduct
-            // 
-            numProduct.Location = new Point(672, 49);
-            numProduct.Name = "numProduct";
-            numProduct.Size = new Size(82, 30);
-            numProduct.TabIndex = 14;
-            // 
             // lblCurrentPrice
             // 
             lblCurrentPrice.AutoSize = true;
+            lblCurrentPrice.Cursor = Cursors.IBeam;
             lblCurrentPrice.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCurrentPrice.ForeColor = Color.Black;
             lblCurrentPrice.Location = new Point(578, 51);
@@ -654,6 +664,7 @@
             // lblOldPrice
             // 
             lblOldPrice.AutoSize = true;
+            lblOldPrice.Cursor = Cursors.IBeam;
             lblOldPrice.Font = new Font("Times New Roman", 12F, FontStyle.Strikeout, GraphicsUnit.Point, 0);
             lblOldPrice.ForeColor = SystemColors.ControlDarkDark;
             lblOldPrice.Location = new Point(507, 51);
@@ -674,6 +685,7 @@
             // lblPLH
             // 
             lblPLH.AutoSize = true;
+            lblPLH.Cursor = Cursors.Hand;
             lblPLH.ForeColor = SystemColors.ControlDarkDark;
             lblPLH.Location = new Point(357, 29);
             lblPLH.Name = "lblPLH";
@@ -691,6 +703,7 @@
             // 
             // lblNameProduct
             // 
+            lblNameProduct.Cursor = Cursors.Hand;
             lblNameProduct.Location = new Point(-5, 0);
             lblNameProduct.Name = "lblNameProduct";
             lblNameProduct.Size = new Size(161, 92);
@@ -708,6 +721,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = Properties.Resources.capybara3;
             pictureBox1.Location = new Point(0, 0);
@@ -745,6 +759,7 @@
             // lblThaoTac
             // 
             lblThaoTac.AutoSize = true;
+            lblThaoTac.Cursor = Cursors.IBeam;
             lblThaoTac.ForeColor = SystemColors.ControlDarkDark;
             lblThaoTac.Location = new Point(876, 16);
             lblThaoTac.Name = "lblThaoTac";
@@ -755,6 +770,7 @@
             // lblSoLuong
             // 
             lblSoLuong.AutoSize = true;
+            lblSoLuong.Cursor = Cursors.IBeam;
             lblSoLuong.ForeColor = SystemColors.ControlDarkDark;
             lblSoLuong.Location = new Point(675, 16);
             lblSoLuong.Name = "lblSoLuong";
@@ -765,6 +781,7 @@
             // lblSoTien
             // 
             lblSoTien.AutoSize = true;
+            lblSoTien.Cursor = Cursors.IBeam;
             lblSoTien.ForeColor = SystemColors.ControlDarkDark;
             lblSoTien.Location = new Point(797, 16);
             lblSoTien.Name = "lblSoTien";
@@ -775,6 +792,7 @@
             // lblDonGia
             // 
             lblDonGia.AutoSize = true;
+            lblDonGia.Cursor = Cursors.IBeam;
             lblDonGia.ForeColor = SystemColors.ControlDarkDark;
             lblDonGia.Location = new Point(554, 16);
             lblDonGia.Name = "lblDonGia";
@@ -785,6 +803,7 @@
             // lblSanPham
             // 
             lblSanPham.AutoSize = true;
+            lblSanPham.Cursor = Cursors.IBeam;
             lblSanPham.Location = new Point(46, 18);
             lblSanPham.Name = "lblSanPham";
             lblSanPham.Size = new Size(86, 22);
@@ -801,6 +820,138 @@
             cbxAll.TextAlign = ContentAlignment.MiddleCenter;
             cbxAll.UseVisualStyleBackColor = true;
             // 
+            // pnQuantuty
+            // 
+            pnQuantuty.Controls.Add(btnIncrease);
+            pnQuantuty.Controls.Add(lblQuantity);
+            pnQuantuty.Controls.Add(btnDecrease);
+            pnQuantuty.Location = new Point(675, 45);
+            pnQuantuty.Name = "pnQuantuty";
+            pnQuantuty.Size = new Size(87, 40);
+            pnQuantuty.TabIndex = 17;
+            // 
+            // btnIncrease
+            // 
+            btnIncrease.Cursor = Cursors.Hand;
+            btnIncrease.Dock = DockStyle.Right;
+            btnIncrease.Location = new Point(56, 0);
+            btnIncrease.Name = "btnIncrease";
+            btnIncrease.Size = new Size(31, 40);
+            btnIncrease.TabIndex = 33;
+            btnIncrease.Text = "+";
+            btnIncrease.UseVisualStyleBackColor = true;
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.Cursor = Cursors.IBeam;
+            lblQuantity.Dock = DockStyle.Left;
+            lblQuantity.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblQuantity.Location = new Point(31, 0);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(23, 40);
+            lblQuantity.TabIndex = 33;
+            lblQuantity.Text = "1";
+            lblQuantity.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnDecrease
+            // 
+            btnDecrease.Cursor = Cursors.Hand;
+            btnDecrease.Dock = DockStyle.Left;
+            btnDecrease.Location = new Point(0, 0);
+            btnDecrease.Name = "btnDecrease";
+            btnDecrease.Size = new Size(31, 40);
+            btnDecrease.TabIndex = 32;
+            btnDecrease.Text = "-";
+            btnDecrease.UseVisualStyleBackColor = true;
+            // 
+            // panel16
+            // 
+            panel16.Controls.Add(button1);
+            panel16.Controls.Add(label15);
+            panel16.Controls.Add(button2);
+            panel16.Location = new Point(675, 45);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(87, 40);
+            panel16.TabIndex = 17;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Dock = DockStyle.Right;
+            button1.Location = new Point(56, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(31, 40);
+            button1.TabIndex = 33;
+            button1.Text = "+";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            label15.Cursor = Cursors.IBeam;
+            label15.Dock = DockStyle.Left;
+            label15.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.Location = new Point(31, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(23, 40);
+            label15.TabIndex = 33;
+            label15.Text = "1";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Dock = DockStyle.Left;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(31, 40);
+            button2.TabIndex = 32;
+            button2.Text = "-";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(button3);
+            panel17.Controls.Add(label16);
+            panel17.Controls.Add(button4);
+            panel17.Location = new Point(675, 45);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(87, 40);
+            panel17.TabIndex = 17;
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.Dock = DockStyle.Right;
+            button3.Location = new Point(56, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(31, 40);
+            button3.TabIndex = 33;
+            button3.Text = "+";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            label16.Cursor = Cursors.IBeam;
+            label16.Dock = DockStyle.Left;
+            label16.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(31, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(23, 40);
+            label16.TabIndex = 33;
+            label16.Text = "1";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button4
+            // 
+            button4.Cursor = Cursors.Hand;
+            button4.Dock = DockStyle.Left;
+            button4.Location = new Point(0, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(31, 40);
+            button4.TabIndex = 32;
+            button4.Text = "-";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // Cart
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -815,13 +966,11 @@
             pnlCart.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             panel14.ResumeLayout(false);
             panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -829,12 +978,14 @@
             pnFooter.PerformLayout();
             pnProduct.ResumeLayout(false);
             pnProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numProduct).EndInit();
             pnNameProduct.ResumeLayout(false);
             pnImgProduct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
+            pnQuantuty.ResumeLayout(false);
+            panel16.ResumeLayout(false);
+            panel17.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -848,7 +999,6 @@
         private Panel panel13;
         private Label label8;
         private Label label9;
-        private NumericUpDown numericUpDown2;
         private Label label10;
         private Label label11;
         private Label label12;
@@ -865,7 +1015,6 @@
         private Panel panel6;
         private Label label1;
         private Label label2;
-        private NumericUpDown numericUpDown1;
         private Label label3;
         private Label label4;
         private Label label5;
@@ -890,7 +1039,6 @@
         private Panel pnLeftLine;
         private Label lblDelete;
         private Label lblPriceProduct;
-        private NumericUpDown numProduct;
         private Label lblCurrentPrice;
         private Label lblOldPrice;
         private Label lblColorSize;
@@ -907,5 +1055,17 @@
         private Label lblDonGia;
         private Label lblSanPham;
         private CheckBox cbxAll;
+        private Panel panel17;
+        private Button button3;
+        private Label label16;
+        private Button button4;
+        private Panel panel16;
+        private Button button1;
+        private Label label15;
+        private Button button2;
+        private Panel pnQuantuty;
+        private Button btnIncrease;
+        private Label lblQuantity;
+        private Button btnDecrease;
     }
 }

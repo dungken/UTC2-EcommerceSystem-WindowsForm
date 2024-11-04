@@ -118,6 +118,7 @@
             // lblReturn
             // 
             lblReturn.AutoSize = true;
+            lblReturn.Cursor = Cursors.Hand;
             lblReturn.Location = new Point(792, 21);
             lblReturn.Name = "lblReturn";
             lblReturn.Size = new Size(160, 22);
@@ -127,6 +128,7 @@
             // lblCancel
             // 
             lblCancel.AutoSize = true;
+            lblCancel.Cursor = Cursors.Hand;
             lblCancel.Location = new Point(704, 21);
             lblCancel.Name = "lblCancel";
             lblCancel.Size = new Size(65, 22);
@@ -136,6 +138,7 @@
             // lblWaitTran
             // 
             lblWaitTran.AutoSize = true;
+            lblWaitTran.Cursor = Cursors.Hand;
             lblWaitTran.Location = new Point(419, 21);
             lblWaitTran.Name = "lblWaitTran";
             lblWaitTran.Size = new Size(123, 22);
@@ -145,6 +148,7 @@
             // lblFinish
             // 
             lblFinish.AutoSize = true;
+            lblFinish.Cursor = Cursors.Hand;
             lblFinish.Location = new Point(571, 21);
             lblFinish.Name = "lblFinish";
             lblFinish.Size = new Size(98, 22);
@@ -154,6 +158,7 @@
             // lblTran
             // 
             lblTran.AutoSize = true;
+            lblTran.Cursor = Cursors.Hand;
             lblTran.Location = new Point(281, 21);
             lblTran.Name = "lblTran";
             lblTran.Size = new Size(100, 22);
@@ -163,6 +168,7 @@
             // lblWaitPay
             // 
             lblWaitPay.AutoSize = true;
+            lblWaitPay.Cursor = Cursors.Hand;
             lblWaitPay.Location = new Point(114, 21);
             lblWaitPay.Name = "lblWaitPay";
             lblWaitPay.Size = new Size(127, 22);
@@ -172,6 +178,7 @@
             // lblAll
             // 
             lblAll.AutoSize = true;
+            lblAll.Cursor = Cursors.Hand;
             lblAll.Location = new Point(23, 21);
             lblAll.Name = "lblAll";
             lblAll.Size = new Size(59, 22);
@@ -192,6 +199,7 @@
             // 
             tbxSearch.BackColor = Color.FromArgb(234, 234, 234);
             tbxSearch.BorderStyle = BorderStyle.None;
+            tbxSearch.Cursor = Cursors.IBeam;
             tbxSearch.Location = new Point(94, 3);
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Bạn có thể tìm kiếm theo tên đơn hàng hoặc tên sản phẩm";
@@ -242,6 +250,7 @@
             // lblTotalPrice
             // 
             lblTotalPrice.AutoSize = true;
+            lblTotalPrice.Cursor = Cursors.IBeam;
             lblTotalPrice.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotalPrice.ForeColor = Color.Red;
             lblTotalPrice.Location = new Point(835, 0);
@@ -276,6 +285,7 @@
             // btnAdd
             // 
             btnAdd.AutoSize = true;
+            btnAdd.Cursor = Cursors.Hand;
             btnAdd.Location = new Point(835, 8);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(87, 32);
@@ -286,6 +296,7 @@
             // btnRefund
             // 
             btnRefund.AutoSize = true;
+            btnRefund.Cursor = Cursors.Hand;
             btnRefund.Location = new Point(601, 8);
             btnRefund.Name = "btnRefund";
             btnRefund.Size = new Size(228, 32);
@@ -297,6 +308,7 @@
             // 
             btnReview.AutoSize = true;
             btnReview.BackColor = Color.FromArgb(220, 89, 58);
+            btnReview.Cursor = Cursors.Hand;
             btnReview.FlatStyle = FlatStyle.Flat;
             btnReview.ForeColor = Color.White;
             btnReview.Location = new Point(501, 8);
@@ -309,6 +321,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Cursor = Cursors.IBeam;
             label1.ForeColor = Color.OrangeRed;
             label1.Location = new Point(207, 14);
             label1.Name = "label1";
@@ -328,6 +341,7 @@
             // lblStatus
             // 
             lblStatus.AutoSize = true;
+            lblStatus.Cursor = Cursors.IBeam;
             lblStatus.ForeColor = Color.SeaGreen;
             lblStatus.Location = new Point(12, 14);
             lblStatus.Name = "lblStatus";
@@ -345,6 +359,7 @@
             pnTop.Controls.Add(lblColorSize);
             pnTop.Controls.Add(lblClassify);
             pnTop.Controls.Add(lblNameProduct);
+            pnTop.Cursor = Cursors.Hand;
             pnTop.Location = new Point(3, 3);
             pnTop.Name = "pnTop";
             pnTop.Size = new Size(959, 78);
@@ -463,6 +478,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Cursor = Cursors.IBeam;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Red;
             label2.Location = new Point(835, 0);
@@ -497,6 +513,7 @@
             // button1
             // 
             button1.AutoSize = true;
+            button1.Cursor = Cursors.Hand;
             button1.Location = new Point(835, 8);
             button1.Name = "button1";
             button1.Size = new Size(87, 32);
@@ -507,6 +524,7 @@
             // button2
             // 
             button2.AutoSize = true;
+            button2.Cursor = Cursors.Hand;
             button2.Location = new Point(601, 8);
             button2.Name = "button2";
             button2.Size = new Size(228, 32);
@@ -518,6 +536,7 @@
             // 
             button3.AutoSize = true;
             button3.BackColor = Color.FromArgb(220, 89, 58);
+            button3.Cursor = Cursors.Hand;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.White;
             button3.Location = new Point(501, 8);
@@ -530,6 +549,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Cursor = Cursors.IBeam;
             label4.ForeColor = Color.OrangeRed;
             label4.Location = new Point(207, 14);
             label4.Name = "label4";
@@ -549,6 +569,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Cursor = Cursors.IBeam;
             label5.ForeColor = Color.SeaGreen;
             label5.Location = new Point(12, 14);
             label5.Name = "label5";
@@ -566,6 +587,7 @@
             panel6.Controls.Add(label9);
             panel6.Controls.Add(label10);
             panel6.Controls.Add(label11);
+            panel6.Cursor = Cursors.Hand;
             panel6.Location = new Point(3, 3);
             panel6.Name = "panel6";
             panel6.Size = new Size(959, 78);

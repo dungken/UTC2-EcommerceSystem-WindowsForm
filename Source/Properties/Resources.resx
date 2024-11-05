@@ -148,29 +148,32 @@
   <data name="4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4552616_glass_loupe_magnifier_magnifying_magnifying glass_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CartIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CartIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_facebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_facebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img_promotionVourcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_promotionVourcher.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImageAvarata1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAvarata1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="45506_box_delivery_package_product_shipment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\45506_box_delivery_package_product_shipment_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImageAvarata1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImageAvarata1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CartIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CartIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_aboutUs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_aboutUs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LiitleStar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LiitleStar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CartIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CartIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,6 +229,9 @@
   <data name="PreviousIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PreviousIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_tickGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_tickGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ImageAvarata" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImageAvarata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,7 +247,7 @@
   <data name="img_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LiitleStar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LiitleStar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_motorbike" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_motorbike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

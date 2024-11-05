@@ -303,6 +303,16 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_motorbike {
+            get {
+                object obj = ResourceManager.GetObject("icon_motorbike", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_phone {
             get {
                 object obj = ResourceManager.GetObject("icon_phone", resourceCulture);
@@ -316,6 +326,16 @@ namespace Source.Properties {
         internal static System.Drawing.Bitmap icon_setting {
             get {
                 object obj = ResourceManager.GetObject("icon_setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_tickGreen {
+            get {
+                object obj = ResourceManager.GetObject("icon_tickGreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

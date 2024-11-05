@@ -39,16 +39,15 @@
             label14 = new Label();
             label6 = new Label();
             panel5 = new Panel();
-            button3 = new Button();
+            btnOptionVourcher = new Button();
             button4 = new Button();
             panel2 = new Panel();
             lblCurrentPrice = new Label();
             lblOldPrice = new Label();
-            panel4 = new Panel();
             panel3 = new Panel();
             textBox1 = new TextBox();
             label11 = new Label();
-            button2 = new Button();
+            btnOptionShippingMethod = new Button();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -57,6 +56,7 @@
             label10 = new Label();
             pnlInfor_Adress = new Panel();
             pnlInforProducts = new Panel();
+            pnlProduct1 = new Panel();
             pnlPicture_LableProduct1 = new Panel();
             panel9 = new Panel();
             label17 = new Label();
@@ -65,6 +65,8 @@
             label3 = new Label();
             label2 = new Label();
             pictureBox2 = new PictureBox();
+            panel11 = new Panel();
+            panel10 = new Panel();
             pnlAdresss = new Panel();
             pnlInforAdress = new Panel();
             lblAdress = new Label();
@@ -80,6 +82,7 @@
             panel2.SuspendLayout();
             pnlInfor_Adress.SuspendLayout();
             pnlInforProducts.SuspendLayout();
+            pnlProduct1.SuspendLayout();
             pnlPicture_LableProduct1.SuspendLayout();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -93,7 +96,6 @@
             // 
             pnlPaymentCustomer.Controls.Add(pnlVourcher_Detail);
             pnlPaymentCustomer.Controls.Add(pnlInfor_Adress);
-            pnlPaymentCustomer.Dock = DockStyle.Fill;
             pnlPaymentCustomer.Location = new Point(0, 0);
             pnlPaymentCustomer.Name = "pnlPaymentCustomer";
             pnlPaymentCustomer.Size = new Size(964, 509);
@@ -204,29 +206,30 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(button3);
+            panel5.Controls.Add(btnOptionVourcher);
             panel5.Controls.Add(button4);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 185);
+            panel5.Location = new Point(0, 187);
             panel5.Name = "panel5";
-            panel5.Size = new Size(488, 83);
+            panel5.Size = new Size(488, 78);
             panel5.TabIndex = 10;
             // 
-            // button3
+            // btnOptionVourcher
             // 
-            button3.Dock = DockStyle.Top;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(128, 64, 0);
-            button3.Image = Properties.Resources.GioHang;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(0, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(488, 39);
-            button3.TabIndex = 8;
-            button3.Text = "         Coolmate Vourcher                                                                   >";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = true;
+            btnOptionVourcher.Dock = DockStyle.Top;
+            btnOptionVourcher.FlatStyle = FlatStyle.Flat;
+            btnOptionVourcher.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOptionVourcher.ForeColor = Color.FromArgb(128, 64, 0);
+            btnOptionVourcher.Image = Properties.Resources.GioHang;
+            btnOptionVourcher.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOptionVourcher.Location = new Point(0, 0);
+            btnOptionVourcher.Name = "btnOptionVourcher";
+            btnOptionVourcher.Size = new Size(488, 40);
+            btnOptionVourcher.TabIndex = 8;
+            btnOptionVourcher.Text = "         Coolmate Vourcher                                                                   >";
+            btnOptionVourcher.TextAlign = ContentAlignment.MiddleLeft;
+            btnOptionVourcher.UseVisualStyleBackColor = true;
+            btnOptionVourcher.Click += btnOptionVourcher_Click;
             // 
             // button4
             // 
@@ -236,9 +239,9 @@
             button4.ForeColor = Color.FromArgb(128, 64, 0);
             button4.Image = Properties.Resources.icon_money;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(0, 40);
+            button4.Location = new Point(0, 39);
             button4.Name = "button4";
-            button4.Size = new Size(488, 43);
+            button4.Size = new Size(488, 39);
             button4.TabIndex = 9;
             button4.Text = "         Payment method                                                                       >";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -248,18 +251,17 @@
             // 
             panel2.Controls.Add(lblCurrentPrice);
             panel2.Controls.Add(lblOldPrice);
-            panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(button2);
+            panel2.Controls.Add(btnOptionShippingMethod);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(488, 185);
+            panel2.Size = new Size(488, 187);
             panel2.TabIndex = 3;
             // 
             // lblCurrentPrice
@@ -283,15 +285,6 @@
             lblOldPrice.Size = new Size(75, 22);
             lblOldPrice.TabIndex = 14;
             lblOldPrice.Text = "đ289.00";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = SystemColors.ActiveCaptionText;
-            panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 184);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(488, 1);
-            panel4.TabIndex = 11;
             // 
             // panel3
             // 
@@ -323,18 +316,19 @@
             label11.TabIndex = 8;
             label11.Text = "Lời nhắn cho Shop";
             // 
-            // button2
+            // btnOptionShippingMethod
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(128, 64, 0);
-            button2.Location = new Point(13, 104);
-            button2.Name = "button2";
-            button2.Size = new Size(465, 38);
-            button2.TabIndex = 7;
-            button2.Text = "Hoặc chọn Hỏa tốc để Nhận hàng vào ngày mai                         >";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
+            btnOptionShippingMethod.FlatStyle = FlatStyle.Flat;
+            btnOptionShippingMethod.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOptionShippingMethod.ForeColor = Color.FromArgb(128, 64, 0);
+            btnOptionShippingMethod.Location = new Point(13, 104);
+            btnOptionShippingMethod.Name = "btnOptionShippingMethod";
+            btnOptionShippingMethod.Size = new Size(465, 38);
+            btnOptionShippingMethod.TabIndex = 7;
+            btnOptionShippingMethod.Text = "Hoặc chọn Hỏa tốc để Nhận hàng vào ngày mai                         >";
+            btnOptionShippingMethod.TextAlign = ContentAlignment.MiddleLeft;
+            btnOptionShippingMethod.UseVisualStyleBackColor = true;
+            btnOptionShippingMethod.Click += btnOptionShippingMethod_Click;
             // 
             // label9
             // 
@@ -378,13 +372,12 @@
             // 
             // label12
             // 
-            label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.Image = Properties.Resources.icon_invoice;
             label12.ImageAlign = ContentAlignment.MiddleLeft;
-            label12.Location = new Point(-1, 271);
+            label12.Location = new Point(3, 271);
             label12.Name = "label12";
-            label12.Size = new Size(153, 23);
+            label12.Size = new Size(153, 37);
             label12.TabIndex = 2;
             label12.Text = "        Detail Invoice";
             // 
@@ -410,12 +403,23 @@
             // pnlInforProducts
             // 
             pnlInforProducts.AutoScroll = true;
-            pnlInforProducts.Controls.Add(pnlPicture_LableProduct1);
+            pnlInforProducts.Controls.Add(pnlProduct1);
+            pnlInforProducts.Controls.Add(panel10);
             pnlInforProducts.Dock = DockStyle.Top;
             pnlInforProducts.Location = new Point(0, 142);
             pnlInforProducts.Name = "pnlInforProducts";
             pnlInforProducts.Size = new Size(474, 367);
             pnlInforProducts.TabIndex = 1;
+            // 
+            // pnlProduct1
+            // 
+            pnlProduct1.Controls.Add(pnlPicture_LableProduct1);
+            pnlProduct1.Controls.Add(panel11);
+            pnlProduct1.Dock = DockStyle.Top;
+            pnlProduct1.Location = new Point(0, 1);
+            pnlProduct1.Name = "pnlProduct1";
+            pnlProduct1.Size = new Size(474, 133);
+            pnlProduct1.TabIndex = 3;
             // 
             // pnlPicture_LableProduct1
             // 
@@ -428,7 +432,7 @@
             pnlPicture_LableProduct1.Dock = DockStyle.Top;
             pnlPicture_LableProduct1.Location = new Point(0, 0);
             pnlPicture_LableProduct1.Name = "pnlPicture_LableProduct1";
-            pnlPicture_LableProduct1.Size = new Size(474, 133);
+            pnlPicture_LableProduct1.Size = new Size(474, 130);
             pnlPicture_LableProduct1.TabIndex = 0;
             // 
             // panel9
@@ -496,10 +500,28 @@
             pictureBox2.Image = Properties.Resources.capybara3;
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(144, 133);
+            pictureBox2.Size = new Size(144, 130);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.Black;
+            panel11.Dock = DockStyle.Bottom;
+            panel11.Location = new Point(0, 132);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(474, 1);
+            panel11.TabIndex = 2;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.Black;
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(474, 1);
+            panel10.TabIndex = 1;
             // 
             // pnlAdresss
             // 
@@ -590,6 +612,7 @@
             panel2.PerformLayout();
             pnlInfor_Adress.ResumeLayout(false);
             pnlInforProducts.ResumeLayout(false);
+            pnlProduct1.ResumeLayout(false);
             pnlPicture_LableProduct1.ResumeLayout(false);
             pnlPicture_LableProduct1.PerformLayout();
             panel9.ResumeLayout(false);
@@ -628,14 +651,13 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private Button button2;
+        private Button btnOptionShippingMethod;
         private TextBox textBox1;
         private Label label11;
         private Panel panel3;
-        private Panel panel4;
         private Label lblCurrentPrice;
         private Label lblOldPrice;
-        private Button button3;
+        private Button btnOptionVourcher;
         private Label label13;
         private Label label12;
         private Button button4;
@@ -649,5 +671,8 @@
         private Button button5;
         private Panel panel9;
         private Label label17;
+        private Panel panel10;
+        private Panel pnlProduct1;
+        private Panel panel11;
     }
 }

@@ -30,6 +30,10 @@
         {
             pnlCart = new Panel();
             panel9 = new Panel();
+            panel17 = new Panel();
+            button3 = new Button();
+            label16 = new Label();
+            button4 = new Button();
             panel10 = new Panel();
             panel11 = new Panel();
             panel12 = new Panel();
@@ -46,6 +50,10 @@
             pictureBox3 = new PictureBox();
             checkBox2 = new CheckBox();
             panel2 = new Panel();
+            panel16 = new Panel();
+            button1 = new Button();
+            label15 = new Label();
+            button2 = new Button();
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
@@ -70,6 +78,10 @@
             lblCount = new Label();
             cbxAllBot = new CheckBox();
             pnProduct = new Panel();
+            pnQuantuty = new Panel();
+            btnIncrease = new Button();
+            lblQuantity = new Label();
+            btnDecrease = new Button();
             pnTopLine = new Panel();
             pnRightLine = new Panel();
             pnBotLine = new Panel();
@@ -92,36 +104,24 @@
             lblDonGia = new Label();
             lblSanPham = new Label();
             cbxAll = new CheckBox();
-            pnQuantuty = new Panel();
-            btnIncrease = new Button();
-            lblQuantity = new Label();
-            btnDecrease = new Button();
-            panel16 = new Panel();
-            button1 = new Button();
-            label15 = new Label();
-            button2 = new Button();
-            panel17 = new Panel();
-            button3 = new Button();
-            label16 = new Label();
-            button4 = new Button();
             pnlCart.SuspendLayout();
             panel9.SuspendLayout();
+            panel17.SuspendLayout();
             panel14.SuspendLayout();
             panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
+            panel16.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnFooter.SuspendLayout();
             pnProduct.SuspendLayout();
+            pnQuantuty.SuspendLayout();
             pnNameProduct.SuspendLayout();
             pnImgProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnHeader.SuspendLayout();
-            pnQuantuty.SuspendLayout();
-            panel16.SuspendLayout();
-            panel17.SuspendLayout();
             SuspendLayout();
             // 
             // pnlCart
@@ -134,6 +134,7 @@
             pnlCart.Dock = DockStyle.Fill;
             pnlCart.Location = new Point(0, 0);
             pnlCart.Name = "pnlCart";
+            pnlCart.RightToLeft = RightToLeft.Yes;
             pnlCart.Size = new Size(964, 538);
             pnlCart.TabIndex = 0;
             // 
@@ -159,6 +160,50 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(964, 125);
             panel9.TabIndex = 15;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(button3);
+            panel17.Controls.Add(label16);
+            panel17.Controls.Add(button4);
+            panel17.Location = new Point(675, 45);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(87, 40);
+            panel17.TabIndex = 17;
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.Dock = DockStyle.Right;
+            button3.Location = new Point(56, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(31, 40);
+            button3.TabIndex = 33;
+            button3.Text = "+";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            label16.Cursor = Cursors.IBeam;
+            label16.Dock = DockStyle.Left;
+            label16.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(31, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(23, 40);
+            label16.TabIndex = 33;
+            label16.Text = "1";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button4
+            // 
+            button4.Cursor = Cursors.Hand;
+            button4.Dock = DockStyle.Left;
+            button4.Location = new Point(0, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(31, 40);
+            button4.TabIndex = 32;
+            button4.Text = "-";
+            button4.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
@@ -330,6 +375,50 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(964, 125);
             panel2.TabIndex = 14;
+            // 
+            // panel16
+            // 
+            panel16.Controls.Add(button1);
+            panel16.Controls.Add(label15);
+            panel16.Controls.Add(button2);
+            panel16.Location = new Point(675, 45);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(87, 40);
+            panel16.TabIndex = 17;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Dock = DockStyle.Right;
+            button1.Location = new Point(56, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(31, 40);
+            button1.TabIndex = 33;
+            button1.Text = "+";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            label15.Cursor = Cursors.IBeam;
+            label15.Dock = DockStyle.Left;
+            label15.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.Location = new Point(31, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(23, 40);
+            label15.TabIndex = 33;
+            label15.Text = "1";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Dock = DockStyle.Left;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(31, 40);
+            button2.TabIndex = 32;
+            button2.Text = "-";
+            button2.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -593,6 +682,50 @@
             pnProduct.Size = new Size(964, 125);
             pnProduct.TabIndex = 12;
             // 
+            // pnQuantuty
+            // 
+            pnQuantuty.Controls.Add(btnIncrease);
+            pnQuantuty.Controls.Add(lblQuantity);
+            pnQuantuty.Controls.Add(btnDecrease);
+            pnQuantuty.Location = new Point(675, 45);
+            pnQuantuty.Name = "pnQuantuty";
+            pnQuantuty.Size = new Size(87, 40);
+            pnQuantuty.TabIndex = 17;
+            // 
+            // btnIncrease
+            // 
+            btnIncrease.Cursor = Cursors.Hand;
+            btnIncrease.Dock = DockStyle.Right;
+            btnIncrease.Location = new Point(56, 0);
+            btnIncrease.Name = "btnIncrease";
+            btnIncrease.Size = new Size(31, 40);
+            btnIncrease.TabIndex = 33;
+            btnIncrease.Text = "+";
+            btnIncrease.UseVisualStyleBackColor = true;
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.Cursor = Cursors.IBeam;
+            lblQuantity.Dock = DockStyle.Left;
+            lblQuantity.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblQuantity.Location = new Point(31, 0);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(23, 40);
+            lblQuantity.TabIndex = 33;
+            lblQuantity.Text = "1";
+            lblQuantity.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnDecrease
+            // 
+            btnDecrease.Cursor = Cursors.Hand;
+            btnDecrease.Dock = DockStyle.Left;
+            btnDecrease.Location = new Point(0, 0);
+            btnDecrease.Name = "btnDecrease";
+            btnDecrease.Size = new Size(31, 40);
+            btnDecrease.TabIndex = 32;
+            btnDecrease.Text = "-";
+            btnDecrease.UseVisualStyleBackColor = true;
+            // 
             // pnTopLine
             // 
             pnTopLine.BackColor = Color.Silver;
@@ -820,138 +953,6 @@
             cbxAll.TextAlign = ContentAlignment.MiddleCenter;
             cbxAll.UseVisualStyleBackColor = true;
             // 
-            // pnQuantuty
-            // 
-            pnQuantuty.Controls.Add(btnIncrease);
-            pnQuantuty.Controls.Add(lblQuantity);
-            pnQuantuty.Controls.Add(btnDecrease);
-            pnQuantuty.Location = new Point(675, 45);
-            pnQuantuty.Name = "pnQuantuty";
-            pnQuantuty.Size = new Size(87, 40);
-            pnQuantuty.TabIndex = 17;
-            // 
-            // btnIncrease
-            // 
-            btnIncrease.Cursor = Cursors.Hand;
-            btnIncrease.Dock = DockStyle.Right;
-            btnIncrease.Location = new Point(56, 0);
-            btnIncrease.Name = "btnIncrease";
-            btnIncrease.Size = new Size(31, 40);
-            btnIncrease.TabIndex = 33;
-            btnIncrease.Text = "+";
-            btnIncrease.UseVisualStyleBackColor = true;
-            // 
-            // lblQuantity
-            // 
-            lblQuantity.Cursor = Cursors.IBeam;
-            lblQuantity.Dock = DockStyle.Left;
-            lblQuantity.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblQuantity.Location = new Point(31, 0);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(23, 40);
-            lblQuantity.TabIndex = 33;
-            lblQuantity.Text = "1";
-            lblQuantity.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnDecrease
-            // 
-            btnDecrease.Cursor = Cursors.Hand;
-            btnDecrease.Dock = DockStyle.Left;
-            btnDecrease.Location = new Point(0, 0);
-            btnDecrease.Name = "btnDecrease";
-            btnDecrease.Size = new Size(31, 40);
-            btnDecrease.TabIndex = 32;
-            btnDecrease.Text = "-";
-            btnDecrease.UseVisualStyleBackColor = true;
-            // 
-            // panel16
-            // 
-            panel16.Controls.Add(button1);
-            panel16.Controls.Add(label15);
-            panel16.Controls.Add(button2);
-            panel16.Location = new Point(675, 45);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(87, 40);
-            panel16.TabIndex = 17;
-            // 
-            // button1
-            // 
-            button1.Cursor = Cursors.Hand;
-            button1.Dock = DockStyle.Right;
-            button1.Location = new Point(56, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(31, 40);
-            button1.TabIndex = 33;
-            button1.Text = "+";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            label15.Cursor = Cursors.IBeam;
-            label15.Dock = DockStyle.Left;
-            label15.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.Location = new Point(31, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(23, 40);
-            label15.TabIndex = 33;
-            label15.Text = "1";
-            label15.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button2
-            // 
-            button2.Cursor = Cursors.Hand;
-            button2.Dock = DockStyle.Left;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(31, 40);
-            button2.TabIndex = 32;
-            button2.Text = "-";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // panel17
-            // 
-            panel17.Controls.Add(button3);
-            panel17.Controls.Add(label16);
-            panel17.Controls.Add(button4);
-            panel17.Location = new Point(675, 45);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(87, 40);
-            panel17.TabIndex = 17;
-            // 
-            // button3
-            // 
-            button3.Cursor = Cursors.Hand;
-            button3.Dock = DockStyle.Right;
-            button3.Location = new Point(56, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(31, 40);
-            button3.TabIndex = 33;
-            button3.Text = "+";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            label16.Cursor = Cursors.IBeam;
-            label16.Dock = DockStyle.Left;
-            label16.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(31, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(23, 40);
-            label16.TabIndex = 33;
-            label16.Text = "1";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button4
-            // 
-            button4.Cursor = Cursors.Hand;
-            button4.Dock = DockStyle.Left;
-            button4.Location = new Point(0, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(31, 40);
-            button4.TabIndex = 32;
-            button4.Text = "-";
-            button4.UseVisualStyleBackColor = true;
-            // 
             // Cart
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -966,11 +967,13 @@
             pnlCart.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
+            panel17.ResumeLayout(false);
             panel14.ResumeLayout(false);
             panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel16.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -978,14 +981,12 @@
             pnFooter.PerformLayout();
             pnProduct.ResumeLayout(false);
             pnProduct.PerformLayout();
+            pnQuantuty.ResumeLayout(false);
             pnNameProduct.ResumeLayout(false);
             pnImgProduct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
-            pnQuantuty.ResumeLayout(false);
-            panel16.ResumeLayout(false);
-            panel17.ResumeLayout(false);
             ResumeLayout(false);
         }
 

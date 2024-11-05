@@ -1,97 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\",
+  "WorkspaceRootPath": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\refund.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\refund.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\reviewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\reviewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\watchreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\watchreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\productdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\productdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\orderinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\productdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\productdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\watchreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\watchreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\loginwithgoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\loginwithgoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\loginwithgoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\mycustomcontrol\\rjtogglebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\mycustomcontrol\\rjtogglebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:mycustomcontrol\\rjtogglebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\mycustomcontrol\\rjdatepicker .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\mycustomcontrol\\rjdatepicker .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:mycustomcontrol\\rjdatepicker .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\productscustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\productscustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\productscustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\productscustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\productscustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\productscustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\homecustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\homecustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\homecustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\paymentcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\paymentcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\paymentcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\cart.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform1\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\requestproductsofcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\documents\\shop_winform2\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\requestproductsofcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\requestproductsofcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -102,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -111,22 +119,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "WatchReview.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\WatchReview.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\WatchReview.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\WatchReview.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\WatchReview.cs [Design]",
+              "Title": "Refund.Designer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.Designer.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Refund.Designer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.Designer.cs*",
+              "RelativeToolTip": "Views\\Custommer\\Refund.Designer.cs*",
+              "ViewState": "AgIAALEBAAAAAAAAAAAqwLIBAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T18:16:17.752Z",
+              "WhenOpened": "2024-11-05T15:27:43.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Refund.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Refund.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs*",
+              "RelativeToolTip": "Views\\Custommer\\Refund.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAAvwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T15:04:57.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Refund.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Refund.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs [Design]*",
+              "RelativeToolTip": "Views\\Custommer\\Refund.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T14:32:00.042Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Cart.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\Cart.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs [Design]",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\Cart.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T17:38:57.107Z",
@@ -134,23 +168,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewProduct.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ReviewProduct.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\ReviewProduct.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ReviewProduct.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\ReviewProduct.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T17:29:05.631Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ProductDetails.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductDetails.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductDetails.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\ProductDetails.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductDetails.cs [Design]",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductDetails.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\ProductDetails.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T14:42:50.867Z",
@@ -158,13 +180,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T16:09:01.393Z",
               "EditorCaption": ""
@@ -173,9 +195,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "OrderInvoices.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\OrderInvoices.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs [Design]",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\OrderInvoices.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T17:35:32.012Z",
@@ -183,46 +205,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T11:10:06.184Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
-              "RelativeDocumentMoniker": "Views\\Login.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs [Design]",
-              "RelativeToolTip": "Views\\Login.cs [Design]",
+              "Title": "WatchReview.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\WatchReview.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\WatchReview.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\WatchReview.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\WatchReview.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T01:00:11.163Z",
+              "WhenOpened": "2024-11-02T18:16:17.752Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T11:10:06.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
+              "RelativeDocumentMoniker": "Views\\Login.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T01:00:11.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "LoginWithGoogle.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\LoginWithGoogle.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\LoginWithGoogle.cs",
               "RelativeDocumentMoniker": "Views\\LoginWithGoogle.cs",
               "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\LoginWithGoogle.cs [Design]*",
-              "RelativeToolTip": "Views\\LoginWithGoogle.cs [Design]*",
+              "RelativeToolTip": "..\\..\\..\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\LoginWithGoogle.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T13:38:09.544Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "RJToggleButton.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJToggleButton.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJToggleButton.cs",
               "RelativeDocumentMoniker": "MyCustomControl\\RJToggleButton.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJToggleButton.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJToggleButton.cs",
               "RelativeToolTip": "MyCustomControl\\RJToggleButton.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAADwv4MAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -230,11 +262,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "RJDatePicker .cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJDatePicker .cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJDatePicker .cs",
               "RelativeDocumentMoniker": "MyCustomControl\\RJDatePicker .cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJDatePicker .cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\MyCustomControl\\RJDatePicker .cs",
               "RelativeToolTip": "MyCustomControl\\RJDatePicker .cs",
               "ViewState": "AgIAALQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -242,33 +274,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "MainFormAdmin.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs",
               "RelativeDocumentMoniker": "Views\\MainFormAdmin.cs",
               "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs [Design]",
-              "RelativeToolTip": "Views\\MainFormAdmin.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T13:38:06.684Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Resgister.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
               "RelativeDocumentMoniker": "Views\\Resgister.cs",
               "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs [Design]",
-              "RelativeToolTip": "Views\\Resgister.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T13:38:00.939Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "PaymentCustomer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\PaymentCustomer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\PaymentCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\PaymentCustomer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\PaymentCustomer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\PaymentCustomer.cs",
               "RelativeToolTip": "Views\\Custommer\\PaymentCustomer.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAlwBMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -276,11 +308,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "DesignCustomer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\DesignCustomer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
               "RelativeToolTip": "Views\\Custommer\\DesignCustomer.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAlwCsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -288,11 +320,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
               "RelativeToolTip": "Views\\Custommer\\MainForm.cs",
               "ViewState": "AgIAACIAAAAAAAAAAIAwwCcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -300,11 +332,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Login.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
               "RelativeDocumentMoniker": "Views\\Login.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
               "RelativeToolTip": "Views\\Login.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAArwBUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -312,11 +344,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "RequestProductsOfCustomer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\RequestProductsOfCustomer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.cs",
               "RelativeToolTip": "Views\\Custommer\\RequestProductsOfCustomer.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -324,11 +356,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Cart.Designer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.Designer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.Designer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\Cart.Designer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.Designer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.Designer.cs",
               "RelativeToolTip": "Views\\Custommer\\Cart.Designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAAwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -337,11 +369,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Cart.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\Cart.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
               "RelativeToolTip": "Views\\Custommer\\Cart.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAtwCwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -349,24 +381,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ProductsCustomer.Designer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.Designer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.Designer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\ProductsCustomer.Designer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.Designer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.Designer.cs",
               "RelativeToolTip": "Views\\Custommer\\ProductsCustomer.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T16:39:43.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T16:39:43.201Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ProductsCustomer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\ProductsCustomer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
               "RelativeToolTip": "Views\\Custommer\\ProductsCustomer.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -374,11 +405,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "HomeCustomer.cs",
-              "DocumentMoniker": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs",
+              "DocumentMoniker": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\HomeCustomer.cs",
-              "ToolTip": "D:\\Documents\\Shop_WinForm1\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs",
+              "ToolTip": "D:\\Documents\\Shop_WinForm2\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\HomeCustomer.cs",
               "RelativeToolTip": "Views\\Custommer\\HomeCustomer.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAlwDIAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -34,6 +34,9 @@
     <Compile Update="Views\Custommer\ProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\Refund.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\RequestProductsOfCustomer.cs">
       <SubType>Form</SubType>
     </Compile>

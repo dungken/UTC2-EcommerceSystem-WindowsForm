@@ -1,9 +1,28 @@
 /vs/
 /obj/
+# Visual Studio
+.vs/
+.vsconfig
+.vscode/
+.idea/
 
-# Ignore Visual Studio temporary files
-Source/.vs/
+# Cấu hình người dùng
+Source/*.user
 
-# Ignore build output files
-Source/bin/
-Source/obj/
+# Thư mục build
+bin/
+obj/
+
+# Tệp biên dịch và các tệp hệ thống khác
+Source/*.exe
+Source/*.dll
+Source/*.pdb
+Source/*.json
+
+# Các tệp cache và backup
+Source/.vs/Source/DesignTimeBuild/.dtbcache.v2
+Source/.vs/Source/v17/.futdcache.v2
+Source/.vs/Source/v17/.suo
+Source/.vs/Source/v17/DocumentLayout.backup.json
+Source/.vs/Source/v17/DocumentLayout.json
+

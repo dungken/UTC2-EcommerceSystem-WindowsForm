@@ -23,7 +23,7 @@ namespace Source
             //Application.Run(new ProductDetails());
             //Application.Run(new ReviewProduct());
             //Application.Run(new WatchReview());
-            Application.Run(new Refund());
+            Application.Run(new MainForm());
         }
     }
 

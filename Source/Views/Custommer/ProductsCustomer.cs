@@ -18,6 +18,7 @@ namespace Source.Views.Custommer
         public ProductsCustomer()
         {
             InitializeComponent();
+            btnDecrease.Enabled = false;
         }
 
         private void changeInforMain(System.Windows.Forms.Panel panela)
@@ -53,6 +54,7 @@ namespace Source.Views.Custommer
             }
 
         }
+
         private void pnlProduct1_Click(object sender, EventArgs e)
         {
             changeInforMain(pnlProduct1);
@@ -83,19 +85,22 @@ namespace Source.Views.Custommer
             changeInforMain(pnlProduct6);
         }
 
-        private void pnlProduct1_Paint(object sender, PaintEventArgs e)
+        private void btnDecrease_Click(object sender, EventArgs e)
         {
-
+            if (Convert.ToInt32(lblQuantity.Text) > 1)
+            {
+                lblQuantity.Text = Convert.ToString(Convert.ToInt32(lblQuantity.Text) - 1);
+            }
+            if (Convert.ToInt32(lblQuantity.Text) == 1)
+            {
+                btnDecrease.Enabled = false;
+            }
         }
 
-        private void pictureMain_Click(object sender, EventArgs e)
+        private void btnIncrease_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblNameProduct2_Click(object sender, EventArgs e)
-        {
-
+            btnDecrease.Enabled = true;
+            lblQuantity.Text = Convert.ToString(Convert.ToInt32(lblQuantity.Text) + 1);
         }
     }
 }

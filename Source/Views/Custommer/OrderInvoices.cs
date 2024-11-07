@@ -71,6 +71,29 @@ namespace Source.Views.Custommer
                 lbl.ForeColor = Color.Black; // Đổi màu chữ khi chuột ra
             }
         }
+        // Tạo Form con 
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlOrderInvoices.Controls.Add(childForm);
+            pnlOrderInvoices.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+
+        private void btnReview_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ReviewProduct());
+        }
     }
 
 

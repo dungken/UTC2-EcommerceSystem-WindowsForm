@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace Source.Views.Custommer
 {
-    public partial class HomeCustomer : Form
+    public partial class ReviewProduct : Form
     {
-        public HomeCustomer()
+        public ReviewProduct()
         {
             InitializeComponent();
         }
-
         // Tạo Form con 
         private Form? activeForm = null;
         private void openChildForm(Form childForm)
@@ -29,26 +28,15 @@ namespace Source.Views.Custommer
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            pnlHomeCustomer.Controls.Add(childForm);
-            pnlHomeCustomer.Tag = childForm;
+            pnlReviewProduct.Controls.Add(childForm);
+            pnlReviewProduct.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            openChildForm(new ProductsCustomer());
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ProductsCustomer());
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ProductsCustomer());
+            openChildForm(new OrderInvoices());
         }
     }
 }

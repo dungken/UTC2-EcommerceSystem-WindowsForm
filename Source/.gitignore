@@ -1,4 +1,9 @@
 /vs/
 /obj/
+
+# Ignore Visual Studio temporary files
 Source/.vs/
+
+# Ignore build output files
+Source/bin/
 Source/obj/

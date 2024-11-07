@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
   <ItemGroup>
     <Compile Update="MyCustomControl\RJButton.cs">
       <SubType>Component</SubType>
@@ -19,6 +20,9 @@
     <Compile Update="Views\Custommer\HomeCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Custommer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\OrderInvoices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -32,6 +36,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Custommer\ProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Custommer\Refund.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Custommer\RequestProductsOfCustomer.cs">
@@ -52,9 +59,6 @@
     <Compile Update="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Custommer\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Views\LoginWithGoogle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,9 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainFormAdmin.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

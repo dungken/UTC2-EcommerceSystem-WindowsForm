@@ -63,7 +63,6 @@
             label7 = new Label();
             btnLogOutSubAvata = new Button();
             pnlChildForm = new Panel();
-            pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
             pnlSubNotifications = new Panel();
             button7 = new Button();
@@ -84,7 +83,6 @@
             pnlSubMenuAvata.SuspendLayout();
             panel5.SuspendLayout();
             pnlChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlSubNotifications.SuspendLayout();
             panel9.SuspendLayout();
@@ -118,7 +116,7 @@
             btnSetting.ForeColor = Color.White;
             btnSetting.Image = Properties.Resources.icon_setting;
             btnSetting.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSetting.Location = new Point(0, 494);
+            btnSetting.Location = new Point(0, 444);
             btnSetting.Margin = new Padding(4, 3, 4, 3);
             btnSetting.Name = "btnSetting";
             btnSetting.Size = new Size(221, 50);
@@ -137,7 +135,7 @@
             btnSupport.ForeColor = Color.White;
             btnSupport.Image = Properties.Resources.icon_help;
             btnSupport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSupport.Location = new Point(0, 444);
+            btnSupport.Location = new Point(0, 394);
             btnSupport.Margin = new Padding(4, 3, 4, 3);
             btnSupport.Name = "btnSupport";
             btnSupport.Size = new Size(221, 50);
@@ -156,7 +154,7 @@
             btnAboutUs.ForeColor = Color.White;
             btnAboutUs.Image = Properties.Resources.icon_aboutUs;
             btnAboutUs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAboutUs.Location = new Point(0, 394);
+            btnAboutUs.Location = new Point(0, 344);
             btnAboutUs.Margin = new Padding(4, 3, 4, 3);
             btnAboutUs.Name = "btnAboutUs";
             btnAboutUs.Size = new Size(221, 50);
@@ -194,7 +192,7 @@
             btnCart.ForeColor = Color.White;
             btnCart.Image = Properties.Resources.GioHang;
             btnCart.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCart.Location = new Point(0, 344);
+            btnCart.Location = new Point(0, 294);
             btnCart.Margin = new Padding(4, 3, 4, 3);
             btnCart.Name = "btnCart";
             btnCart.Size = new Size(221, 50);
@@ -211,7 +209,7 @@
             pnlSubMenuProducts.Controls.Add(btnMenTop);
             pnlSubMenuProducts.Controls.Add(btnBestSeller);
             pnlSubMenuProducts.Dock = DockStyle.Top;
-            pnlSubMenuProducts.Location = new Point(0, 181);
+            pnlSubMenuProducts.Location = new Point(0, 131);
             pnlSubMenuProducts.Margin = new Padding(4, 3, 4, 3);
             pnlSubMenuProducts.Name = "pnlSubMenuProducts";
             pnlSubMenuProducts.Size = new Size(221, 163);
@@ -301,7 +299,7 @@
             btnProducts.ForeColor = Color.White;
             btnProducts.Image = Properties.Resources._45506_box_delivery_package_product_shipment_icon;
             btnProducts.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProducts.Location = new Point(0, 131);
+            btnProducts.Location = new Point(0, 81);
             btnProducts.Margin = new Padding(4, 3, 4, 3);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(221, 50);
@@ -313,8 +311,8 @@
             // 
             // btnHome
             // 
+            btnHome.Anchor = AnchorStyles.Left;
             btnHome.Cursor = Cursors.Hand;
-            btnHome.Dock = DockStyle.Top;
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
@@ -343,6 +341,7 @@
             // 
             // pictureBoxLogo
             // 
+            pictureBoxLogo.Anchor = AnchorStyles.Left;
             pictureBoxLogo.Image = Properties.Resources.logo;
             pictureBoxLogo.Location = new Point(0, 1);
             pictureBoxLogo.Margin = new Padding(4, 3, 4, 3);
@@ -368,16 +367,17 @@
             panel2.Location = new Point(221, 0);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(982, 72);
+            panel2.Size = new Size(1015, 72);
             panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.imagesHome;
-            pictureBox1.Location = new Point(600, 0);
+            pictureBox1.Location = new Point(637, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(70, 63);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(80, 72);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
@@ -402,8 +402,9 @@
             // 
             // lblNotifications
             // 
+            lblNotifications.Anchor = AnchorStyles.Right;
             lblNotifications.Image = Properties.Resources.bell;
-            lblNotifications.Location = new Point(750, 26);
+            lblNotifications.Location = new Point(783, 26);
             lblNotifications.Name = "lblNotifications";
             lblNotifications.Size = new Size(32, 40);
             lblNotifications.TabIndex = 4;
@@ -412,10 +413,11 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(799, 46);
+            label4.Location = new Point(832, 46);
             label4.Name = "label4";
             label4.Size = new Size(82, 20);
             label4.TabIndex = 5;
@@ -423,9 +425,10 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(799, 26);
+            label3.Location = new Point(832, 26);
             label3.Name = "label3";
             label3.Size = new Size(59, 20);
             label3.TabIndex = 4;
@@ -433,8 +436,9 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Right;
             label2.Image = Properties.Resources.circle;
-            label2.Location = new Point(691, 26);
+            label2.Location = new Point(724, 26);
             label2.Name = "label2";
             label2.Size = new Size(42, 40);
             label2.TabIndex = 3;
@@ -442,9 +446,10 @@
             // 
             // lblAvarata
             // 
+            lblAvarata.Anchor = AnchorStyles.Right;
             lblAvarata.Cursor = Cursors.Hand;
             lblAvarata.Image = Properties.Resources.ImageAvarata;
-            lblAvarata.Location = new Point(899, 29);
+            lblAvarata.Location = new Point(932, 29);
             lblAvarata.Name = "lblAvarata";
             lblAvarata.Size = new Size(42, 40);
             lblAvarata.TabIndex = 0;
@@ -464,7 +469,6 @@
             pnlSubMenuAvata.Name = "pnlSubMenuAvata";
             pnlSubMenuAvata.Size = new Size(200, 195);
             pnlSubMenuAvata.TabIndex = 1;
-            pnlSubMenuAvata.Paint += pnlSubMenuAvata_Paint;
             // 
             // btnProfilePage
             // 
@@ -573,40 +577,27 @@
             btnLogOutSubAvata.Text = "Log out";
             btnLogOutSubAvata.TextAlign = ContentAlignment.MiddleLeft;
             btnLogOutSubAvata.UseVisualStyleBackColor = true;
-            btnLogOutSubAvata.Click += btnLogOutSubAvata_Click;
             // 
             // pnlChildForm
             // 
-            pnlChildForm.Controls.Add(pictureBox4);
             pnlChildForm.Controls.Add(pictureBox2);
             pnlChildForm.Controls.Add(pnlSubMenuAvata);
             pnlChildForm.Controls.Add(pnlSubNotifications);
             pnlChildForm.Dock = DockStyle.Fill;
             pnlChildForm.Location = new Point(221, 72);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(982, 556);
+            pnlChildForm.Size = new Size(1015, 556);
             pnlChildForm.TabIndex = 3;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.White;
-            pictureBox4.Image = Properties.Resources.icon_exit1;
-            pictureBox4.Location = new Point(3, 512);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(53, 44);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
-            pictureBox4.Visible = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = Properties.Resources.HinhNendep;
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(55, 39);
+            pictureBox2.Location = new Point(0, -3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(858, 487);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.Size = new Size(1015, 561);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
@@ -751,7 +742,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1203, 628);
+            ClientSize = new Size(1236, 628);
             Controls.Add(pnlChildForm);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -771,7 +762,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             pnlChildForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlSubNotifications.ResumeLayout(false);
             panel9.ResumeLayout(false);
@@ -826,6 +816,5 @@
         private PictureBox pictureBox1;
         private ImageList imageList1;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox4;
     }
 }

@@ -47,7 +47,7 @@ namespace Source.Views.Custommer
         {
             int mouseX = e.X;
             int mouseY = e.Y;
-
+            pictureBoxTickGreen1.Visible = false;
             MessageBox.Show($"Mouse clicked at ({mouseX}, {mouseY}) in Panel.");
         }
 

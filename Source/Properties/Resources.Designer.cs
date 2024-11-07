@@ -123,15 +123,9 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap cat_1 {
-            get {
-                object obj = ResourceManager.GetObject("cat-1", resourceCulture);
-=======
         internal static System.Drawing.Bitmap CartIcon {
             get {
                 object obj = ResourceManager.GetObject("CartIcon", resourceCulture);
->>>>>>> c91ca119bf5bb312ba2865233390d2c300d7e044
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -139,7 +133,26 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
+        internal static System.Drawing.Bitmap CartIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("CartIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cat_1 {
+            get {
+                object obj = ResourceManager.GetObject("cat-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cat_2 {
             get {
                 object obj = ResourceManager.GetObject("cat-2", resourceCulture);
@@ -163,11 +176,6 @@ namespace Source.Properties {
         internal static System.Drawing.Bitmap cat_4 {
             get {
                 object obj = ResourceManager.GetObject("cat-4", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap CartIcon1 {
-            get {
-                object obj = ResourceManager.GetObject("CartIcon1", resourceCulture);
->>>>>>> c91ca119bf5bb312ba2865233390d2c300d7e044
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

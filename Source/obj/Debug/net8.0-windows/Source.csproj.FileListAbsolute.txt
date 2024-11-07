@@ -77,5 +77,10 @@ D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\
 D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.pdb
 D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.genruntimeconfig.cache
 D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\ref\Source.dll
-D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.ChatbotService.resources
 D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.PaymentCustomer.resources
+D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.ProductDetails.resources
+D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.Refund.resources
+D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.ReviewProduct.resources
+D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.Support.resources
+D:\BTL_Winform\UTC2-EcommerceSystem-WindowsForm\Source\obj\Debug\net8.0-windows\Source.Views.Custommer.WatchReview.resources

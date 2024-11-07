@@ -3,107 +3,36 @@
   "WorkspaceRootPath": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\support.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\support.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\support.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\support.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\support.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\support.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\aboutus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\aboutus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\productscustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\productscustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\setting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\setting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\mainformadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\resgister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\orderinvoices.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\orderinvoices.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\designcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\requestproductsofcustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\requestproductsofcustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\source.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:source.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\aboutus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|d:\\btl_winform\\utc2-ecommercesystem-windowsform\\source\\views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F46C305-E5D3-4A83-B5C7-9EAC637AA240}|Source.csproj|solutionrelative:views\\custommer\\refund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,309 +47,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Support.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Support.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\Support.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Support.cs",
-              "RelativeToolTip": "Views\\Custommer\\Support.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T12:24:02.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Support.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Support.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\Support.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Support.Designer.cs",
-              "RelativeToolTip": "Views\\Custommer\\Support.Designer.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAwwFoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T12:23:22.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Support.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Support.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\Support.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Support.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\Support.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T12:23:12.174Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Setting.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Setting.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\Setting.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Setting.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\Setting.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T04:32:21.566Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:22:00.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AboutUs.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\AboutUs.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.Designer.cs",
-              "RelativeToolTip": "Views\\Custommer\\AboutUs.Designer.cs",
-              "ViewState": "AgIAAAgBAAAAAAAAAAAYwAAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:58:29.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs",
-              "RelativeDocumentMoniker": "Views\\Login.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Login.cs [Design]",
-              "RelativeToolTip": "Views\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:30:27.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductsCustomer.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\ProductsCustomer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProductsCustomer.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\ProductsCustomer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T02:27:57.502Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "AboutUs.cs [Design]",
               "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\AboutUs.cs",
               "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\AboutUs.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:43:53.543Z"
+              "WhenOpened": "2024-11-07T07:54:43.249Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProfilePage.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\ProfilePage.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\ProfilePage.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Properties\\Resources.resx",
+              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.resx",
+              "RelativeToolTip": "Properties\\Resources.resx",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAAUBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-11-07T07:46:49.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
+              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
+              "RelativeToolTip": "Views\\Custommer\\MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T08:23:46.924Z"
+              "WhenOpened": "2024-11-07T07:46:03.27Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AboutUs.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\AboutUs.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.cs",
-              "RelativeToolTip": "Views\\Custommer\\AboutUs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:42:40.258Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 4,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
               "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
               "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs [Design]",
               "RelativeToolTip": "Views\\Custommer\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T04:23:10.774Z"
+              "WhenOpened": "2024-11-07T07:45:59.625Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Setting.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Setting.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\Setting.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Setting.Designer.cs",
-              "RelativeToolTip": "Views\\Custommer\\Setting.Designer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAUwBYAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T04:28:49.697Z",
+              "WhenOpened": "2024-11-07T07:45:41.565Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Cart.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\Cart.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Cart.cs [Design]",
-              "RelativeToolTip": "Views\\Custommer\\Cart.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "AboutUs.cs",
+              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\AboutUs.cs",
+              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\AboutUs.cs",
+              "RelativeToolTip": "Views\\Custommer\\AboutUs.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T08:34:13.896Z"
+              "WhenOpened": "2024-11-07T07:45:33.041Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MainFormAdmin.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs",
-              "RelativeDocumentMoniker": "Views\\MainFormAdmin.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\MainFormAdmin.cs [Design]",
-              "RelativeToolTip": "Views\\MainFormAdmin.cs [Design]",
+              "DocumentIndex": 6,
+              "Title": "Refund.cs [Design]",
+              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Refund.cs",
+              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs [Design]",
+              "RelativeToolTip": "Views\\Custommer\\Refund.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:30:46.326Z"
+              "WhenOpened": "2024-11-07T07:44:29.316Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Resgister.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs",
-              "RelativeDocumentMoniker": "Views\\Resgister.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Resgister.cs [Design]",
-              "RelativeToolTip": "Views\\Resgister.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:30:44.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OrderInvoices.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\OrderInvoices.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\OrderInvoices.Designer.cs",
-              "RelativeToolTip": "Views\\Custommer\\OrderInvoices.Designer.cs",
-              "ViewState": "AgIAACABAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T08:36:48.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ProfilePage.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\ProfilePage.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\ProfilePage.cs",
-              "RelativeToolTip": "Views\\Custommer\\ProfilePage.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAArwC0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T08:31:24.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "RequestProductsOfCustomer.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\RequestProductsOfCustomer.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\RequestProductsOfCustomer.Designer.cs",
-              "RelativeToolTip": "Views\\Custommer\\RequestProductsOfCustomer.Designer.cs",
-              "ViewState": "AgIAABkBAAAAAAAAAAAUwCIBAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T08:12:25.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DesignCustomer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\DesignCustomer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\DesignCustomer.cs",
-              "RelativeToolTip": "Views\\Custommer\\DesignCustomer.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAiwCsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T08:04:18.89Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Source.csproj",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
-              "RelativeDocumentMoniker": "Source.csproj",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Source.csproj",
-              "RelativeToolTip": "Source.csproj",
+              "DocumentIndex": 7,
+              "Title": "Refund.cs",
+              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs",
+              "RelativeDocumentMoniker": "Views\\Custommer\\Refund.cs",
+              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\Refund.cs",
+              "RelativeToolTip": "Views\\Custommer\\Refund.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-31T07:04:59.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Resources.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.Designer.cs",
-              "RelativeDocumentMoniker": "Properties\\Resources.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.Designer.cs",
-              "RelativeToolTip": "Properties\\Resources.Designer.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T04:05:58.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "MainForm.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.Designer.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.Designer.cs",
-              "RelativeToolTip": "Views\\Custommer\\MainForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T04:04:27.528Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
-              "RelativeDocumentMoniker": "Views\\Custommer\\MainForm.cs",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Views\\Custommer\\MainForm.cs",
-              "RelativeToolTip": "Views\\Custommer\\MainForm.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAArwE0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T04:03:41.891Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "Properties\\Resources.resx",
-              "ToolTip": "D:\\BTL_Winform\\UTC2-EcommerceSystem-WindowsForm\\Source\\Properties\\Resources.resx",
-              "RelativeToolTip": "Properties\\Resources.resx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-10-31T04:03:23.724Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAGINAAAAAAAAAAAmwFQNAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-10-31T04:03:01.394Z"
+              "WhenOpened": "2024-11-07T07:44:15.101Z",
+              "EditorCaption": ""
             }
           ]
         }

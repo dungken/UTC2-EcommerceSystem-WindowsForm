@@ -92,14 +92,14 @@
             pnTop.Cursor = Cursors.Hand;
             pnTop.Location = new Point(0, 38);
             pnTop.Name = "pnTop";
-            pnTop.Size = new Size(946, 83);
+            pnTop.Size = new Size(767, 83);
             pnTop.TabIndex = 0;
             // 
             // lblCurrentPrice
             // 
             lblCurrentPrice.AutoSize = true;
             lblCurrentPrice.ForeColor = SystemColors.ControlDarkDark;
-            lblCurrentPrice.Location = new Point(844, 56);
+            lblCurrentPrice.Location = new Point(690, 56);
             lblCurrentPrice.Name = "lblCurrentPrice";
             lblCurrentPrice.Size = new Size(65, 22);
             lblCurrentPrice.TabIndex = 8;
@@ -110,7 +110,7 @@
             lblOldPrice.AutoSize = true;
             lblOldPrice.Font = new Font("Times New Roman", 12F, FontStyle.Strikeout, GraphicsUnit.Point, 0);
             lblOldPrice.ForeColor = SystemColors.ControlDarkDark;
-            lblOldPrice.Location = new Point(773, 56);
+            lblOldPrice.Location = new Point(619, 56);
             lblOldPrice.Name = "lblOldPrice";
             lblOldPrice.Size = new Size(65, 22);
             lblOldPrice.TabIndex = 7;
@@ -139,7 +139,7 @@
             // lblQuantity
             // 
             lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(880, 24);
+            lblQuantity.Location = new Point(726, 24);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(29, 22);
             lblQuantity.TabIndex = 5;
@@ -183,7 +183,7 @@
             pnProduct.Controls.Add(pnTop);
             pnProduct.Location = new Point(2, 0);
             pnProduct.Name = "pnProduct";
-            pnProduct.Size = new Size(946, 124);
+            pnProduct.Size = new Size(769, 124);
             pnProduct.TabIndex = 3;
             // 
             // pnDescription
@@ -197,7 +197,7 @@
             pnDescription.Controls.Add(lblHeader2);
             pnDescription.Location = new Point(2, 130);
             pnDescription.Name = "pnDescription";
-            pnDescription.Size = new Size(946, 189);
+            pnDescription.Size = new Size(769, 189);
             pnDescription.TabIndex = 4;
             // 
             // lblCountTezt
@@ -276,7 +276,7 @@
             pnInfor.Controls.Add(lblHeader3);
             pnInfor.Location = new Point(2, 325);
             pnInfor.Name = "pnInfor";
-            pnInfor.Size = new Size(946, 165);
+            pnInfor.Size = new Size(769, 165);
             pnInfor.TabIndex = 5;
             // 
             // btnDone
@@ -285,7 +285,7 @@
             btnDone.Cursor = Cursors.Hand;
             btnDone.FlatStyle = FlatStyle.Flat;
             btnDone.ForeColor = Color.White;
-            btnDone.Location = new Point(758, 113);
+            btnDone.Location = new Point(583, 116);
             btnDone.Name = "btnDone";
             btnDone.Size = new Size(172, 46);
             btnDone.TabIndex = 19;
@@ -298,7 +298,7 @@
             label3.Cursor = Cursors.IBeam;
             label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.OrangeRed;
-            label3.Location = new Point(713, 74);
+            label3.Location = new Point(611, 70);
             label3.Name = "label3";
             label3.Size = new Size(73, 26);
             label3.TabIndex = 15;
@@ -308,7 +308,7 @@
             // 
             lblNhanDuoc.AutoSize = true;
             lblNhanDuoc.Cursor = Cursors.IBeam;
-            lblNhanDuoc.Location = new Point(472, 77);
+            lblNhanDuoc.Location = new Point(352, 74);
             lblNhanDuoc.Name = "lblNhanDuoc";
             lblNhanDuoc.Size = new Size(220, 22);
             lblNhanDuoc.TabIndex = 14;
@@ -320,7 +320,7 @@
             lblRefundableAmount.Cursor = Cursors.IBeam;
             lblRefundableAmount.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRefundableAmount.ForeColor = SystemColors.ControlDarkDark;
-            lblRefundableAmount.Location = new Point(727, 31);
+            lblRefundableAmount.Location = new Point(619, 30);
             lblRefundableAmount.Name = "lblRefundableAmount";
             lblRefundableAmount.Size = new Size(59, 20);
             lblRefundableAmount.TabIndex = 13;
@@ -329,7 +329,7 @@
             // pnLine
             // 
             pnLine.BackColor = Color.Silver;
-            pnLine.Location = new Point(455, 0);
+            pnLine.Location = new Point(332, 0);
             pnLine.Name = "pnLine";
             pnLine.Size = new Size(1, 159);
             pnLine.TabIndex = 12;
@@ -340,7 +340,7 @@
             lblCoThe.Cursor = Cursors.IBeam;
             lblCoThe.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCoThe.ForeColor = SystemColors.ControlDarkDark;
-            lblCoThe.Location = new Point(472, 31);
+            lblCoThe.Location = new Point(352, 31);
             lblCoThe.Name = "lblCoThe";
             lblCoThe.Size = new Size(165, 19);
             lblCoThe.TabIndex = 11;
@@ -410,7 +410,7 @@
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(946, 491);
+            ClientSize = new Size(771, 491);
             Controls.Add(pnInfor);
             Controls.Add(pnDescription);
             Controls.Add(pnProduct);

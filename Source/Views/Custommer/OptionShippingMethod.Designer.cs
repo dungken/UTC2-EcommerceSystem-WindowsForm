@@ -104,7 +104,7 @@
             // 
             // pictureBoxTickGreen1
             // 
-            pictureBoxTickGreen1.Image = Properties.Resources.icon_tickGreen;
+            //pictureBoxTickGreen1.Image = Properties.Resources.icon_tickGreen;
             pictureBoxTickGreen1.Location = new Point(653, 39);
             pictureBoxTickGreen1.Name = "pictureBoxTickGreen1";
             pictureBoxTickGreen1.Size = new Size(35, 35);
@@ -197,7 +197,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semilight", 9F);
             label11.ForeColor = Color.MediumSeaGreen;
-            label11.Image = Properties.Resources.icon_motorbike;
+            //label11.Image = Properties.Resources.icon_motorbike;
             label11.ImageAlign = ContentAlignment.MiddleLeft;
             label11.Location = new Point(29, 54);
             label11.Name = "label11";
@@ -207,7 +207,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icon_tickGreen;
+            //pictureBox1.Image = Properties.Resources.icon_tickGreen;
             pictureBox1.Location = new Point(653, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(35, 35);

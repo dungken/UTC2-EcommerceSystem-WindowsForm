@@ -326,6 +326,7 @@
             ClientSize = new Size(827, 538);
             Controls.Add(pnlReviewProduct);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "ReviewProduct";
             Text = "ReviewProduct";

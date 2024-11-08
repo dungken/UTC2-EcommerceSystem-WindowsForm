@@ -233,6 +233,16 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_Done {
+            get {
+                object obj = ResourceManager.GetObject("icon_Done", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_exit {
             get {
                 object obj = ResourceManager.GetObject("icon_exit", resourceCulture);
@@ -333,9 +343,9 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_money {
+        internal static System.Drawing.Bitmap icon_Momo {
             get {
-                object obj = ResourceManager.GetObject("icon_money", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_Momo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +353,9 @@ namespace Source.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_motorbike {
+        internal static System.Drawing.Bitmap icon_money {
             get {
-                object obj = ResourceManager.GetObject("icon_motorbike", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_money", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,16 +376,6 @@ namespace Source.Properties {
         internal static System.Drawing.Bitmap icon_setting {
             get {
                 object obj = ResourceManager.GetObject("icon_setting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_tickGreen {
-            get {
-                object obj = ResourceManager.GetObject("icon_tickGreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +526,16 @@ namespace Source.Properties {
         internal static System.Drawing.Bitmap PreviousIcon {
             get {
                 object obj = ResourceManager.GetObject("PreviousIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap receiver {
+            get {
+                object obj = ResourceManager.GetObject("receiver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

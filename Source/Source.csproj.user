@@ -8,6 +8,12 @@
     <Compile Update="MyCustomControl\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Views\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\ConfirmDeleteAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\AboutUs.cs">
       <SubType>Form</SubType>
     </Compile>

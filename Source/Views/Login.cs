@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Source.Dtos.Account;
+using Source.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +14,46 @@ namespace Source.Views
 {
     public partial class Login : Form
     {
+        private readonly AccountService _authenRepository;
         public Login()
-        {
+        { 
             InitializeComponent();
+            _authenRepository = new AccountService();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new MainForm().Show();
+            try
+            {
+                var emailOrUsername = txtUsername.Text;
+                var password = txtPassWord.Text;
+                var loginUserDto = new LoginUserDto
+                {
+                    EmailOrUsername = emailOrUsername,
+                    Password = password
+                };
+
+                var response = await _authenRepository.LoginAsync(loginUserDto);
+                // If token is null, login failed
+                if (response == null)
+                {
+                    MessageBox.Show("Your information is not corret");
+                }
+                else
+                {
+                    MessageBox.Show("Login successful! Token: " + response.Data.Token);
+                    // Handle successful login
+                    new MainForm().Show();
+                    this.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Login failed: " + ex.Message);
+            }
+            
+           
            
         }
 

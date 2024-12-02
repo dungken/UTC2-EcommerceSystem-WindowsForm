@@ -1,5 +1,6 @@
 ﻿using Source.Models;
 using Source.Repository;
+using Source.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,17 +15,16 @@ namespace Source.Views
 {
     public partial class Test1 : Form
     {
-        private readonly CategoryRepository _categoryRepository;
+        private readonly AccountService _accountService;
         public Test1()
         {
             InitializeComponent();
-            _categoryRepository = new CategoryRepository();
+            _accountService = new AccountService();
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            //var category = await _categoryRepository.GetCategoryByIdAsync(Guid.Parse("661A73EE-B485-45E0-9898-0D83BE47E58B"));
-
+            _accountService.Enable2FA();
             //MessageBox.Show("Category name: " + category.Name);
         }
     }

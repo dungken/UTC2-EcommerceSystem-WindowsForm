@@ -14,11 +14,11 @@ namespace Source.Views
 {
     public partial class Login : Form
     {
-        private readonly AccountService _authenRepository;
+        private readonly AccountService _AccountService;
         public Login()
         { 
             InitializeComponent();
-            _authenRepository = new AccountService();
+            _AccountService = new AccountService();
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -33,7 +33,9 @@ namespace Source.Views
                     Password = password
                 };
 
-                var response = await _authenRepository.LoginAsync(loginUserDto);
+                var response = await _AccountService.LoginAsync(loginUserDto);
+
+              
                 // If token is null, login failed
                 if (response == null)
                 {

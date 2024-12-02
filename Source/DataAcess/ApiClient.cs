@@ -31,21 +31,32 @@ namespace Source.DataAcess
             return response.Data;
         }
 
-        public async Task<T> PostAsync<T>(string endpoint, object body)
+        public async Task<T> PostAsync<T>(string endpoint, object body = null)
         {
             var request = new RestRequest(endpoint, Method.Post);
-            request.AddJsonBody(body);
+            if(body != null)
+            {
+                request.AddJsonBody(body);
+            }
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                var formattedJson = FormatJson(response.Content) ;
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
-
+                if(response.Content != null)
+                {
+                    var formattedJson = FormatJson(response.Content);
+                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
                 throw new Exception($"API Errorr: {response.ErrorMessage}");
             }
             return response.Data;
         }
+       
+    
         public async Task<T> PutAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Put);

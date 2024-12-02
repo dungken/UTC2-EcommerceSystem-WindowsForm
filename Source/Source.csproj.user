@@ -8,6 +8,36 @@
     <Compile Update="MyCustomControl\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Views\Admin\CategoriesAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\CategoriesEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\CouponsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\CouponsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\CouponsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\CustomersDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\CustomersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\OrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\OrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Custommer\AboutUs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,7 +101,7 @@
     <Compile Update="Views\LoginWithGoogle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\MainFormAdmin.cs">
+    <Compile Update="Views\Admin\MainFormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Resgister.cs">

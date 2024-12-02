@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Source.Views
+namespace Source.Views.Admin
 {
-    public partial class MainFormAdmin : Form
+    public partial class CouponsAdd : Form
     {
-        public MainFormAdmin()
+        public CouponsAdd()
         {
             InitializeComponent();
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

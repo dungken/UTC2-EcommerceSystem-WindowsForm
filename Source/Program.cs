@@ -1,6 +1,7 @@
 
 
 using Source.Views;
+using Source.Views.Admin;
 using Source.Views.Custommer;
 
 namespace Source
@@ -23,7 +24,16 @@ namespace Source
             //Application.Run(new ProductDetails());
             //Application.Run(new ReviewProduct());
             //Application.Run(new WatchReview());
-            Application.Run(new Login());
+            //Application.Run(new MainFormAdmin());
+            //Application.Run(new CategoryList());
+            //Application.Run(new CategoriesEdit());
+            //Application.Run(new CouponsList());
+            //Application.Run(new CouponsEdit());
+            //Application.Run(new OrdersList());
+            //Application.Run(new OrderDetails());
+            //Application.Run(new CustomersList());
+            Application.Run(new CustomersDetails());
+            //Application.Run(new MainForm());
         }
     }
 

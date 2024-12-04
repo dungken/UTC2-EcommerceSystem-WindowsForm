@@ -22,7 +22,7 @@ namespace Source.Views
         private readonly ImageService _imageService;
         public Test1()
         {
-            InitializeComponent();
+         //   InitializeComponent();
             _accountService = new AccountService();
             _imageService = new ImageService();
         }

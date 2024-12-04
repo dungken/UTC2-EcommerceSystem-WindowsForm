@@ -34,10 +34,10 @@ namespace Source.Service
         }
 
         // Get User by Id
-        public async Task<BaseResponse<User>> GetUserById(Guid id)
-        {
-            return await _apiClient.GetAsync<BaseResponse<User>>($"User/{id}");
-        }
+        //public async Task<BaseResponse<User>> GetUserById(Guid id)
+        //{
+        //    return await _apiClient.GetAsync<BaseResponse<User>>($"User/{id}");
+        //}
 
     }
 }

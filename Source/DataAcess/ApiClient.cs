@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
+using Source.Views;
 namespace Source.DataAcess
 {
     public class ApiClient
@@ -72,7 +73,7 @@ namespace Source.DataAcess
             return response.Data;
         }
 
-        public async Task DeleteAsync(string endpoint)
+        public async Task<bool> DeleteAsync(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Delete);
             var response = await _client.ExecuteAsync(request);
@@ -83,6 +84,7 @@ namespace Source.DataAcess
                 MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
+            return true;
         }
 
         public async Task<T> PatchAsync<T>(string endpoint, object body)
@@ -111,6 +113,5 @@ namespace Source.DataAcess
                 return json; // Trả về JSON gốc nếu không thể định dạng
             }
         }
-
     }
 }

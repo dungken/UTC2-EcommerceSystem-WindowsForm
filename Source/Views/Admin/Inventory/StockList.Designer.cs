@@ -47,13 +47,14 @@
             lblSearch = new Label();
             pnSearch = new Panel();
             pnHeader = new Panel();
-            Status = new DataGridViewTextBoxColumn();
-            Instock = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
-            DateAdded = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Products = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
+            Products = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            DateAdded = new DataGridViewTextBoxColumn();
+            Stock = new DataGridViewTextBoxColumn();
+            Instock = new DataGridViewTextBoxColumn();
+            ProductColor = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             pnTitle.SuspendLayout();
             pnPage.SuspendLayout();
             pnFotter.SuspendLayout();
@@ -172,7 +173,7 @@
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Products, Category, DateAdded, Stock, Instock, Status });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Products, Category, DateAdded, Stock, Instock, ProductColor, Status });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 3);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -283,40 +284,12 @@
             pnHeader.Size = new Size(963, 47);
             pnHeader.TabIndex = 7;
             // 
-            // Status
+            // Id
             // 
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.Width = 125;
-            // 
-            // Instock
-            // 
-            Instock.HeaderText = "Instock";
-            Instock.MinimumWidth = 6;
-            Instock.Name = "Instock";
-            Instock.Width = 125;
-            // 
-            // Stock
-            // 
-            Stock.HeaderText = "Stock";
-            Stock.MinimumWidth = 6;
-            Stock.Name = "Stock";
-            Stock.Width = 125;
-            // 
-            // DateAdded
-            // 
-            DateAdded.HeaderText = "Date Added";
-            DateAdded.MinimumWidth = 6;
-            DateAdded.Name = "DateAdded";
-            DateAdded.Width = 125;
-            // 
-            // Category
-            // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.Width = 125;
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.Width = 125;
             // 
             // Products
             // 
@@ -325,12 +298,47 @@
             Products.Name = "Products";
             Products.Width = 125;
             // 
-            // Id
+            // Category
             // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.Width = 125;
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.Width = 125;
+            // 
+            // DateAdded
+            // 
+            DateAdded.HeaderText = "Date Added";
+            DateAdded.MinimumWidth = 6;
+            DateAdded.Name = "DateAdded";
+            DateAdded.Width = 125;
+            // 
+            // Stock
+            // 
+            Stock.HeaderText = "Stock";
+            Stock.MinimumWidth = 6;
+            Stock.Name = "Stock";
+            Stock.Width = 125;
+            // 
+            // Instock
+            // 
+            Instock.HeaderText = "Instock";
+            Instock.MinimumWidth = 6;
+            Instock.Name = "Instock";
+            Instock.Width = 125;
+            // 
+            // ProductColor
+            // 
+            ProductColor.HeaderText = "ProductColor";
+            ProductColor.MinimumWidth = 6;
+            ProductColor.Name = "ProductColor";
+            ProductColor.Width = 125;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.Width = 125;
             // 
             // StockList
             // 
@@ -389,6 +397,7 @@
         private DataGridViewTextBoxColumn DateAdded;
         private DataGridViewTextBoxColumn Stock;
         private DataGridViewTextBoxColumn Instock;
+        private DataGridViewTextBoxColumn ProductColor;
         private DataGridViewTextBoxColumn Status;
     }
 }

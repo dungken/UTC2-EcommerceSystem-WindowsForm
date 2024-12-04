@@ -35,9 +35,10 @@ namespace Source
             //Application.Run(new CustomersList());
             //Application.Run(new CustomersDetails());
             //Application.Run(new StockList());
-            Application.Run(new Test1());
+            //Application.Run(new Test1());
+            //Application.Run(new TestAccountService());
+            Application.Run(new PhuongAnh_Test());
             //Application.Run(new MainForm());
-            Application.Run(new TestAccountService());
         }
     }
 

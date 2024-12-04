@@ -1,6 +1,6 @@
 ﻿namespace Source.Views
 {
-    partial class Test1
+    partial class TestAccountService
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -41,13 +42,24 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Test1
+            // button2
+            // 
+            button2.Location = new Point(232, 193);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 1;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // TestAccountService
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(button1);
-            Name = "Test1";
+            Name = "TestAccountService";
             Text = "Test1";
             ResumeLayout(false);
         }
@@ -55,5 +67,6 @@
         #endregion
 
         private Button button1;
+        private Button button2;
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
-using Source.Views;
+using Source.Views.Custommer;
 namespace Source.DataAcess
 {
     public class ApiClient
@@ -35,7 +35,7 @@ namespace Source.DataAcess
         public async Task<T> PostAsync<T>(string endpoint, object body = null)
         {
             var request = new RestRequest(endpoint, Method.Post);
-            if(body != null)
+            if (body != null)
             {
                 request.AddJsonBody(body);
             }
@@ -43,7 +43,7 @@ namespace Source.DataAcess
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                if(response.Content != null)
+                if (response.Content != null)
                 {
                     var formattedJson = FormatJson(response.Content);
                     MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
@@ -53,11 +53,12 @@ namespace Source.DataAcess
                     MessageBox.Show(response.StatusCode.ToString());
                 }
                 throw new Exception($"API Errorr: {response.ErrorMessage}");
+
             }
             return response.Data;
         }
-       
-    
+
+
         public async Task<T> PutAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Put);

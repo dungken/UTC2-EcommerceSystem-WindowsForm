@@ -113,6 +113,9 @@
     <Compile Update="Views\Resgister.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Test1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\TestAccountService.cs">
       <SubType>Form</SubType>
     </Compile>

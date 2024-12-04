@@ -2,6 +2,7 @@
 
 using Source.Views;
 using Source.Views.Admin;
+using Source.Views.Admin.Inventory;
 using Source.Views.Custommer;
 
 namespace Source
@@ -32,7 +33,9 @@ namespace Source
             //Application.Run(new OrdersList());
             //Application.Run(new OrderDetails());
             //Application.Run(new CustomersList());
-            Application.Run(new CustomersDetails());
+            //Application.Run(new CustomersDetails());
+            //Application.Run(new StockList());
+            Application.Run(new Test1());
             //Application.Run(new MainForm());
         }
     }

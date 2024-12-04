@@ -8,6 +8,9 @@
     <Compile Update="MyCustomControl\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Views\2StepVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Admin\CategoriesAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -27,6 +30,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\CustomersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Inventory\StockList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\OrderDetails.cs">

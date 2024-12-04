@@ -35,7 +35,7 @@ namespace Source.DataAcess
         public async Task<T> PostAsync<T>(string endpoint, object body = null)
         {
             var request = new RestRequest(endpoint, Method.Post);
-            if(body != null)
+            if (body != null)
             {
                 request.AddJsonBody(body);
             }
@@ -43,7 +43,7 @@ namespace Source.DataAcess
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                if(response.Content != null)
+                if (response.Content != null)
                 {
                     var formattedJson = FormatJson(response.Content);
                     MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
@@ -57,8 +57,8 @@ namespace Source.DataAcess
             }
             return response.Data;
         }
-       
-    
+
+
         public async Task<T> PutAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Put);
@@ -114,6 +114,5 @@ namespace Source.DataAcess
                 return json; // Trả về JSON gốc nếu không thể định dạng
             }
         }
-
     }
 }

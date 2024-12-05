@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Source.Service
@@ -18,9 +19,10 @@ namespace Source.Service
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
         // Create a new color
-        public async Task<BaseResponse<ColorDTO>> CreateCollorAsync(ColorDTO collorDto)
+        public async Task<ColorDTO> CreateCollorAsync(ColorDTO colorDto)
         {
-            return await _apiClient.PostAsync<BaseResponse<ColorDTO>>("colors", collorDto);
+            return await _apiClient.PostAsync<ColorDTO>("Colors/Create", colorDto);
+          
         }
 
         public async Task<BaseResponse<ColorDTO>> GetColorByIdAsync(Guid id)

@@ -32,7 +32,7 @@ namespace Source.DataAcess
             return response.Data;
         }
 
-        public async Task<T> PostAsync<T>(string endpoint, object body = null)
+        public async Task<T> PostAsync<T>(string endpoint, object? body = null)
         {
             var request = new RestRequest(endpoint, Method.Post);
             if (body != null)
@@ -55,6 +55,7 @@ namespace Source.DataAcess
                 throw new Exception($"API Errorr: {response.ErrorMessage}");
 
             }
+            MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -87,7 +88,7 @@ namespace Source.DataAcess
             }
             return true;
         }
-
+      
         public async Task<T> PatchAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Patch);

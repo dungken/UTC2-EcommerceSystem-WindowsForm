@@ -17,9 +17,9 @@ namespace Source.Service
         {
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
-        public async Task<BaseResponse<PermissionRespone>> GetPermissions()
+        public async Task<BaseResponse<IEnumerable<GetPermissionsDto>>> GetPermissions()
         {
-            return await _apiClient.GetAsync<BaseResponse<PermissionRespone>>("Permission/GetAll");
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetPermissionsDto>>>("Permission/GetAll");
         }
         public async Task<BaseResponse<PermissionWithRolesDto>> GetPermissionsWithRoles()
         {

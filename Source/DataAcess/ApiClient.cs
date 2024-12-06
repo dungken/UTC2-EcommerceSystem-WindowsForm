@@ -21,6 +21,7 @@ namespace Source.DataAcess
         {
             var request = new RestRequest(endpoint, Method.Get);
             var response = await _client.ExecuteAsync<T>(request);
+
             if (!response.IsSuccessful)
             {
                 // Format JSON response

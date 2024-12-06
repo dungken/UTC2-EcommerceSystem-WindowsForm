@@ -110,6 +110,9 @@
     <Compile Update="Views\Admin\MainFormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\PhuongAnh%27Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Resgister.cs">
       <SubType>Form</SubType>
     </Compile>

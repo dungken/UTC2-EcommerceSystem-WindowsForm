@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Source.Dtos.Order;
-using Source.Dtos.Product;
+using Source.Dtos.Image;
 
 namespace Source.Dtos.Reponse
 {
-    public class OrderRespone
+    public class UpdateImagesRespone
     {
-        public List<OrderDto> orderList { get; set; }
+        public List<UpdateImagesDTO> updateImages { get; set; }
     }
 }

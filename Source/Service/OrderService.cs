@@ -18,15 +18,15 @@ namespace Source.Service
         }
         public async Task<BaseResponse<CreateOrderDto>> CreateOrder(CreateOrderDto model)
         {
-            return await _apiClient.PostAsync<BaseResponse<CreateOrderDto>>("Order/UploadMultiple", model);
+            return await _apiClient.PostAsync<BaseResponse<CreateOrderDto>>("Order", model);
         }
         public async Task<BaseResponse<OrderDto>> GetOrderById(Guid id)
         {
             return await _apiClient.GetAsync<BaseResponse<OrderDto>>($"Order/{id}");
         }
-        public async Task<BaseResponse<OrderRespone>> GetAllOrders()
+        public async Task<BaseResponse<IEnumerable<OrderDto>>> GetAllOrders()
         {
-            return await _apiClient.GetAsync<BaseResponse<OrderRespone>>("Order");
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<OrderDto>>>("Order");
         }
         public async Task<bool> UpdateOrderStatus(Guid orderId, string status)
         {

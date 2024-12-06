@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Source.Dtos.Order;
-using Source.Dtos.Role;
+using Source.Dtos.Image;
 
 namespace Source.Dtos.Reponse
 {
-    public class PermissionRespone
+    public class UploadImagesResponse
     {
-        public List<PermissionDto> permissionList { get; set; }
+        public List<UploadImagesDTO> uploadImages { get; set; }
     }
 }

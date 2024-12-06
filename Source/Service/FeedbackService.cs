@@ -16,8 +16,10 @@ namespace Source.Service
         {
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
+
+       
         // Create a new feedback
-        public async Task<BaseResponse<FeedbackDTO>> CreateFeedbackAsync(CreateFeedbackDto feedbackDto, string token)
+        public async Task<BaseResponse<FeedbackDTO>> CreateFeedbackAsync(CreateFeedbackDto feedbackDto)
         {
             return await _apiClient.PostAsync<BaseResponse<FeedbackDTO>>("Feedback", feedbackDto);
         }

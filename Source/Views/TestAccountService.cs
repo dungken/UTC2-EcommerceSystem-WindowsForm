@@ -133,13 +133,14 @@ namespace Source.Views
         {
             LoginUserDto loginDto = new LoginUserDto
             {
-                EmailOrUsername = "xyz",
-                Password = "123"
+                EmailOrUsername = "duoc14525@gmail.com",
+                Password = "123456aA@"
             };
             var response = await _accountService.LoginAsync(loginDto);
             if (response != null && response.Success)
             {
                 MessageBox.Show($"Message: {response.Message}\nToken: {response.Data.Token}\nUser: {response.Data.User.UserName}");
+                Utils.Config.token = response.Data.Token;
             }
             else
             {
@@ -341,6 +342,7 @@ namespace Source.Views
                 if (response != null)
                 {
                     MessageBox.Show($"Discount Created Successfully\nMessage: \nDiscount: {response.Name}");
+               
                 }
                 else
                 {
@@ -511,6 +513,7 @@ namespace Source.Views
                 Rating = 5,
                 Comment = "Great product!"
             };
+    
             var response = await _feedbackService.CreateFeedbackAsync(createFeedbackDto);
             if (response != null && response.Success)
             {
@@ -752,18 +755,18 @@ namespace Source.Views
 
         private async void btnAccount_Click(object sender, EventArgs e)
         {
-            await TestRegisterAsync();
+            //await TestRegisterAsync();
             await TestLoginAsync();
-            await TestConfirmEmailAsync();
-            await TestLogoutAsync();
-            await TestSocialLoginAsync();
-            await TestEnable2FAAsync();
-            await TestVerify2FAAsync();
-            await TestDisable2FAAsync();
-            await TestGetTwoFAStatusAsync();
-            await TestForgotPasswordAsync();
-            await TestResetPasswordAsync();
-            await TestChangePasswordAsync();
+            //await TestConfirmEmailAsync();
+            //await TestLogoutAsync();
+            //await TestSocialLoginAsync();
+            //await TestEnable2FAAsync();
+            //await TestVerify2FAAsync();
+            //await TestDisable2FAAsync();
+            //await TestGetTwoFAStatusAsync();
+            //await TestForgotPasswordAsync();
+            //await TestResetPasswordAsync();
+            //await TestChangePasswordAsync();
 
         }
 
@@ -812,7 +815,7 @@ namespace Source.Views
         private async void btnFeedBack_Click(object sender, EventArgs e)
         {
             // Create Feedback
-            await TestCreateFeedbackAsync();
+            await TestCreateFeedbackAsync(); // it do not macth with the api
 
             //// Assuming you have the feedbackId from the create response
             //Guid feedbackId = Guid.Parse("54820FE4-0F3B-418A-B0E8-05F549FCE5C8");
@@ -857,5 +860,7 @@ namespace Source.Views
             await TestGetProductsByCategoryAsync(categoryId);
 
         }
+
+       
     }
 }

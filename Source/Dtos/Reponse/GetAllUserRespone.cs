@@ -13,7 +13,7 @@ namespace Source.Dtos.Reponse
         public int TotalPages { get; set; }
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }
-        public UserForResponeDto Users { get; set; }
+        public List<UserForResponeDto> Users { get; set; }
 
     }
 }

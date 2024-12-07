@@ -1,7 +1,12 @@
-﻿using Source.Dtos.Account;
+﻿using api.Dtos.Product;
+using Microsoft.AspNetCore.Http;
+using Moq;
+using Source.Dtos.Account;
 using Source.Dtos.Category;
 using Source.Dtos.Discount;
 using Source.Dtos.Product;
+using Source.Dtos.Role;
+using Source.Dtos.User;
 using Source.Models;
 using Source.Repository;
 using Source.Service;
@@ -25,7 +30,9 @@ namespace Source.Views
         private readonly ProductService _productService;
         private readonly DiscountsService _discountService;
         private readonly FeedbackService _feedbackService;
-
+        private readonly RoleService _roleService;
+        private readonly SizeService _sizeService;
+        private readonly UserService _userService;
         public TestAccountService()
         {
             InitializeComponent();
@@ -35,6 +42,9 @@ namespace Source.Views
             _productService = new ProductService();
             _discountService = new DiscountsService();
             _feedbackService = new FeedbackService();
+            _roleService = new RoleService();
+            _sizeService = new SizeService();
+            _userService = new UserService();
 
         }
         #region test _categoriesService
@@ -342,7 +352,7 @@ namespace Source.Views
                 if (response != null)
                 {
                     MessageBox.Show($"Discount Created Successfully\nMessage: \nDiscount: {response.Name}");
-               
+
                 }
                 else
                 {
@@ -513,7 +523,7 @@ namespace Source.Views
                 Rating = 5,
                 Comment = "Great product!"
             };
-    
+
             var response = await _feedbackService.CreateFeedbackAsync(createFeedbackDto);
             if (response != null && response.Success)
             {
@@ -588,7 +598,12 @@ namespace Source.Views
 
         #endregion
 
+
+
         #region test _productService
+
+
+
 
         private async Task TestCreateProductAsync()
         {
@@ -599,7 +614,7 @@ namespace Source.Views
                 Description = "This is a new product",
                 Price = 100.0m,
                 StockQuantity = 50,
-                CategoryId = Guid.Parse("C0CA6AA4-2787-4EEE-9A16-10B21C3322D0"),
+                CategoryId = Guid.Parse("6E5F65C5-2936-4626-A24C-A1E880DA7737"),
                 Status = "Active",
                 Colors = new List<ColorDTO>
         {
@@ -731,6 +746,458 @@ namespace Source.Views
         #endregion
 
 
+
+
+        #region test Role service 
+        private async Task TestCreateRoleAsync()
+        {
+            CreateRoleDto createRoleDto = new CreateRoleDto
+            {
+                Name = "New Role",
+                Permissions = new List<Guid> { Guid.Parse("39A94C5C-85F2-427D-99A9-08DD0207DCCF") } // Add appropriate permission IDs
+            };
+            var response = await _roleService.CreateRoleAsync(createRoleDto);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Role Created Successfully\nMessage: {response.Message}\nRole: {response.Data.RolePermissions}");
+            }
+            else
+            {
+                MessageBox.Show($"Role Creation Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestGetRoleByIdAsync(Guid roleId)
+        {
+            var response = await _roleService.GetRoleByIdAsync(roleId);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Role Retrieved Successfully\nMessage: {response.Message}\nRole: {response.Data.Name}");
+            }
+            else
+            {
+                MessageBox.Show($"Get Role Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestUpdateRoleAsync()
+        {
+            CreateRoleDto updateRoleDto = new CreateRoleDto
+            {
+                Name = "Updated Role",
+                Permissions = new List<Guid> { Guid.Parse("0cfe4110-d263-4b24-99ac-08dd0207dccf") } // Add appropriate permission IDs
+            };
+            var response = await _roleService.CreateRoleAsync(updateRoleDto);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Role Updated Successfully\nMessage: {response.Message}\nRole: {response.Data}");
+            }
+            else
+            {
+                MessageBox.Show($"Role Update Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestDeleteRoleAsync(Guid roleId)
+        {
+            var response = await _roleService.DeleteRole(roleId);
+            if (response)
+            {
+                MessageBox.Show($"Role Deleted Successfully");
+            }
+            else
+            {
+                MessageBox.Show($"Role Deletion Failed");
+            }
+        }
+
+        private async Task TestGetAllRolesAsync()
+        {
+            var response = await _roleService.GetAllRoles();
+            if (response != null && response.Success)
+            {
+                foreach (var item in response.Data)
+                {
+                    MessageBox.Show($"Role: {item.Name}");
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Get All Roles Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+
+
+        #endregion
+
+
+
+        #region test _sizeService
+        private async Task TestCreateSizeAsync()
+        {
+            CreateSizeforProductDto sizeDto = new CreateSizeforProductDto
+            {
+                Id = Guid.NewGuid(),
+                Name = "New Size",
+                ProductId = Guid.Parse("AB3A1D7B-23A7-45BD-9E75-1EA2640F9D2B")
+
+            };
+            var response = await _sizeService.CreateSizeAsync(sizeDto);
+            if (response != null )
+            {
+                MessageBox.Show($"Size Created Successfully\nMessage: \nSize: {response.Name}");
+            }
+            else
+            {
+                MessageBox.Show($"Size Creation Failed\nError: Can not create size");
+            }
+        }
+
+        private async Task TestGetSizeByIdAsync(Guid sizeId)
+        {
+            var response = await _sizeService.GetSizeByIdAsync(sizeId);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Size Retrieved Successfully\nMessage: {response.Message}\nSize: {response.Data.Id}");
+            }
+            else
+            {
+                MessageBox.Show($"Get Size Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestGetAllSizesAsync()
+        {
+            var response = await _sizeService.GetAllSizes();
+            if (response != null && response.Success)
+            {
+                foreach (var item in response.Data)
+                {
+                    MessageBox.Show($"Size: {item.Name}");
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Get All Sizes Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestUpdateSizeAsync(Guid sizeId)
+        {
+            CreateSizeforProductDto sizeDto = new CreateSizeforProductDto
+            {
+                Id = sizeId,
+                Name = "Updated Size",
+                ProductId = Guid.Parse("AB3A1D7B-23A7-45BD-9E75-1EA2640F9D2B")
+            };
+            var response = await _sizeService.UpdateSize(sizeId, sizeDto);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Size Updated Successfully\nMessage: {response.Message}\nSize: {response.Data.Name}");
+            }
+            else
+            {
+                MessageBox.Show($"Size Update Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestDeleteSizeAsync(Guid sizeId)
+        {
+            var response = await _sizeService.DeleteSize(sizeId);
+            if (response)
+            {
+                MessageBox.Show($"Size Deleted Successfully");
+            }
+            else
+            {
+                MessageBox.Show($"Size Deletion Failed");
+            }
+        }
+
+        #endregion
+
+
+        #region test _userService
+
+
+        private async Task TestGenerateSignatureAsync()
+        {
+            var parameters = new Dictionary<string, string>
+            {
+                { "param1", "value1" },
+                { "param2", "value2" }
+            };
+            var response = await _userService.GenerateSignature(parameters);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Signature Generated Successfully\nSignature: {response.Data.Signature}");
+            }
+            else
+            {
+                MessageBox.Show($"Signature Generation Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestUploadImageAsync(IFormFile file, string? username = null)
+        {
+            var response = await _userService.UploadImage(file, username);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Image Uploaded Successfully\nMessage: {response.Data.Message}");
+            }
+            else
+            {
+                MessageBox.Show($"Image Upload Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestGetUserByIdAsync(Guid userId)
+        {
+            var response = await _userService.GetUserById(userId);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"User Retrieved Successfully\nUser: 1");
+            }
+            else
+            {
+                MessageBox.Show($"Get User Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestGetAllUserAsync()
+        {
+            var response = await _userService.GetAllUser();
+            if (response != null && response.Success)
+            {
+                foreach (var user in response.Data.Users)
+                {
+                    MessageBox.Show($"User: {user.UserName}");
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Get All Users Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestCreateUserAsync()
+        {
+            AddUserDto newUser = new AddUserDto
+            {
+                UserName = "newuser",
+                Password = "password123",
+                Email = "newuser@example.com",
+                FirstName = "New",
+                LastName = "User",
+                PhoneNumber = "1234567890",
+                Gender = "Male",
+                DateOfBirth = DateTime.Now.AddYears(-25),
+                ProvinceCode = "01",
+                DistrictCode = "001",
+                CommuneCode = "0001",
+                FullAddress = "123 New Street",
+                Status = "Active",
+                RoleName = "User"
+            };
+            var response = await _userService.CreateUser(newUser);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"User Created Successfully\nUser: {response.Data.UserName}");
+            }
+            else
+            {
+                MessageBox.Show($"User Creation Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestUpdateUserAsync()
+        {
+            UpdateUserDto updateUser = new UpdateUserDto
+            {
+                Id = "sampleUserId",
+                UserName = "updateduser",
+                Email = "updateduser@example.com",
+                FirstName = "Updated",
+                LastName = "User",
+                PhoneNumber = "0987654321",
+                Gender = "Female",
+                DateOfBirth = DateTime.Now.AddYears(-30),
+                ProvinceCode = "02",
+                DistrictCode = "002",
+                CommuneCode = "0002",
+                FullAddress = "456 Updated Street",
+                Status = "Active",
+                RoleName = "Admin"
+            };
+            var response = await _userService.UpdateUser(updateUser);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"User Updated Successfully\nUser: {response.Data.UserName}");
+            }
+            else
+            {
+                MessageBox.Show($"User Update Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        //private async Task TestGetPersonalInformationAsync()
+        //{
+        //    var response = await _userService.GetPersonalInformation();
+        //    if (response != null && response.Success)
+        //    {
+        //        MessageBox.Show($"Personal Information Retrieved Successfully\nUser: {response.Data.User.UserName}");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show($"Get Personal Information Failed\nError: {string.Join(", ", response.Errors)}");
+        //    }
+        //}
+
+        private async Task TestUpdatePersonalInformationAsync()
+        {
+            UpdatePersonalInfoDto updatePersonalInfo = new UpdatePersonalInfoDto
+            {
+                FirstName = "Updated",
+                LastName = "Info",
+                PhoneNumber = "1234567890",
+                Gender = "Non-binary",
+                DateOfBirth = DateTime.Now.AddYears(-28),
+                ProvinceCode = "03",
+                DistrictCode = "003",
+                CommuneCode = "0003",
+                FullAddress = "789 Updated Info Street"
+            };
+            var response = await _userService.UpdatePersonalInformation(updatePersonalInfo);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Personal Information Updated Successfully\nUser: {response.Data.FirstName} {response.Data.LastName}");
+            }
+            else
+            {
+                MessageBox.Show($"Update Personal Information Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestDeleteAccountAsync()
+        {
+            var response = await _userService.DeleteAccount();
+            if (response)
+            {
+                MessageBox.Show($"Account Deleted Successfully");
+            }
+            else
+            {
+                MessageBox.Show($"Account Deletion Failed");
+            }
+        }
+
+        private async Task TestBulkSoftDeleteAsync()
+        {
+            List<string> userIds = new List<string> { "userId1", "userId2" };
+            var response = await _userService.BulkSoftDelete(userIds);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Users Soft Deleted Successfully\nUsers: {string.Join(", ", response.Data)}");
+            }
+            else
+            {
+                MessageBox.Show($"Bulk Soft Delete Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestBulkRestoreUserAsync()
+        {
+            List<string> userIds = new List<string> { "userId1", "userId2" };
+            var response = await _userService.BulkRestoreUser(userIds);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Users Restored Successfully\nUsers: {string.Join(", ", response.Data)}");
+            }
+            else
+            {
+                MessageBox.Show($"Bulk Restore Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestRestoreUserAsync()
+        {
+            RestoreUserDto restoreUserDto = new RestoreUserDto
+            {
+                Email = "deleteduser@example.com"
+            };
+            var response = await _userService.RestoreUser(restoreUserDto);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"User Restored Successfully\nUser: {response.Data.UserName}");
+            }
+            else
+            {
+                MessageBox.Show($"User Restore Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestExportUserToExcelAsync()
+        {
+            var response = await _userService.ExportUserToExcel();
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"User Data Exported to Excel Successfully");
+                // You can save the byte array to a file if needed
+            }
+            else
+            {
+                MessageBox.Show($"Export User to Excel Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestCheckEmailUsernameExistAsync()
+        {
+            var response = await _userService.CheckEmailUsernameExist("test@example.com", "testuser");
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Check Email/Username Exist Successful\nEmail Exists: {response.Data.IsEmailExists}\nUsername Exists: {response.Data.IsUsernameExists}");
+            }
+            else
+            {
+                MessageBox.Show($"Check Email/Username Exist Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestAssignRoleToUserAsync()
+        {
+            AssignRoleToUserRequest assignRoleRequest = new AssignRoleToUserRequest
+            {
+                UserId = Guid.Parse("sampleUserId"),
+                RoleId = Guid.Parse("sampleRoleId")
+            };
+            var response = await _userService.AssignRoleToUser(assignRoleRequest);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Role Assigned to User Successfully\nUser: {response.Data.UserName}");
+            }
+            else
+            {
+                MessageBox.Show($"Assign Role to User Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private async Task TestSearchUserAsync()
+        {
+            var response = await _userService.SearchUser("searchTerm");
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"User Search Successful\nUser: {response.Data.UserName}");
+            }
+            else
+            {
+                MessageBox.Show($"User Search Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+
+
+        #endregion
         private async void btnCate_Click(object sender, EventArgs e)
         {
             // Create Category
@@ -838,29 +1305,100 @@ namespace Source.Views
         private async void btnProduct_Click(object sender, EventArgs e)
         {
             // Create Product
-            await TestCreateProductAsync();
+            //   await TestCreateProductAsync();
 
             // Assuming you have the productId from the create response
-            Guid productId = Guid.Parse("02D3CBE5-17AC-4307-AF8A-1459F357CAF4");
+            Guid productId = Guid.Parse("2420F977-195E-4988-BB22-D3C042BCA040");
 
             // Get Product by ID
-            await TestGetProductByIdAsync(productId);
+            //   await TestGetProductByIdAsync(productId);
 
-            // Update Product
-            await TestUpdateProductAsync(productId);
+            //// Update Product
+            //await TestUpdateProductAsync(productId);
 
-            // Delete Product
-            await TestDeleteProductAsync(productId);
+            //// Delete Product
+            //await TestDeleteProductAsync(productId);
 
             // Get All Products
-            await TestGetAllProductsAsync();
+            //await TestGetAllProductsAsync();
 
             // Get Products by Category
-            Guid categoryId = Guid.Parse("C0CA6AA4-2787-4EEE-9A16-10B21C3322D0");
-            await TestGetProductsByCategoryAsync(categoryId);
+            //Guid categoryId = Guid.Parse("6E5F65C5-2936-4626-A24C-A1E880DA7737");
+            //await TestGetProductsByCategoryAsync(categoryId);
 
         }
 
-       
+        private async void btnRoles_Click(object sender, EventArgs e)
+        {
+            // Create Role
+            //await TestCreateRoleAsync();
+
+            // Assuming you have the roleId from the create response
+            Guid roleId = Guid.Parse("37D2EC38-D0B3-452D-E6AA-08DD169D8BB3");
+
+            //// Get Role by ID
+            //     await TestGetRoleByIdAsync(roleId);
+
+            //// Update Role
+            //   await TestUpdateRoleAsync();
+
+            // Delete Role
+            //    await TestDeleteRoleAsync(roleId);
+
+            // Get All Roles
+            await TestGetAllRolesAsync();
+        }
+
+        private async void btnSize_Click(object sender, EventArgs e)
+        {
+            //await  TestCreateSizeAsync();
+
+            Guid sizeId = Guid.Parse("82E08524-7DE5-4216-88C1-03BD0F5995D0");
+            await TestGetSizeByIdAsync(sizeId);
+
+            await TestUpdateSizeAsync(sizeId);
+            await TestDeleteSizeAsync(sizeId);
+            await TestGetAllSizesAsync();
+        }
+
+
+        private IFormFile CreateMockFormFile(string content, string fileName)
+        {
+            var fileMock = new Mock<IFormFile>();
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(content));
+            ms.Position = 0;
+            fileMock.Setup(f => f.OpenReadStream()).Returns(ms);
+            fileMock.Setup(f => f.FileName).Returns(fileName);
+            fileMock.Setup(f => f.Length).Returns(ms.Length);
+            return fileMock.Object;
+        }
+        private async void btnUser_Click(object sender, EventArgs e)
+        {
+            //  TestGenerateSignatureAsync();
+
+            // This is error bug but i dont know how to fix it, so i will fix it later
+            //IFormFile file = CreateMockFormFile("file content", "testfile.txt");
+            //string username = "testuser"; // Replace with actual username if needed
+            //await TestUploadImageAsync(file, username);
+
+
+            //await TestGetUserByIdAsync(Guid.Parse("02F185E3-B0F5-4197-1A59-08DD12E751B0"));
+
+            //await TestGetAllUserAsync();
+
+            // await TestCreateUserAsync(); // it can fix the bug
+
+            //await TestUpdateUserAsync();
+            //await TestGetPersonalInformationAsync();
+            //await TestUpdatePersonalInformationAsync();
+            //await TestDeleteAccountAsync();
+            //await TestBulkSoftDeleteAsync();
+            //await TestBulkRestoreUserAsync();
+            //await TestRestoreUserAsync();
+            //await TestExportUserToExcelAsync();
+            //await TestCheckEmailUsernameExistAsync();
+            //await TestAssignRoleToUserAsync();
+            //await TestSearchUserAsync();
+        }
     }
 }

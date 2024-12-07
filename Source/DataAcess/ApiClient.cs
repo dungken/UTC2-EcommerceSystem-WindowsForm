@@ -16,9 +16,14 @@ namespace Source.DataAcess
         private readonly RestClient _client;
       
         public ApiClient(string baseUrl)
-        {      
-            _client = new RestClient(Utils.Config.BaseUrl);   
-
+        {
+            var authenticator = new JwtAuthenticator(Utils.Config.token);
+            var options = new RestClientOptions(Utils.Config.BaseUrl)
+            {
+                Authenticator = authenticator
+            };
+            _client = new RestClient(options);
+           
         }
 
         public async Task<T> GetAsync<T>(string endpoint)
@@ -42,7 +47,7 @@ namespace Source.DataAcess
         {
             var request = new RestRequest(endpoint,Method.Post);
             request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
-            request.Authenticator = new JwtAuthenticator(Utils.Config.token);
+            //request.Authenticator = new JwtAuthenticator(Utils.Config.token);
             if (body != null)
             {
                 request.AddJsonBody(body);

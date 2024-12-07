@@ -34,6 +34,9 @@
             btnDiscount = new Button();
             btnFeedBack = new Button();
             btnProduct = new Button();
+            btnRoles = new Button();
+            btnSize = new Button();
+            btnUser = new Button();
             SuspendLayout();
             // 
             // btnAccount
@@ -96,11 +99,44 @@
             btnProduct.UseVisualStyleBackColor = true;
             btnProduct.Click += btnProduct_Click;
             // 
+            // btnRoles
+            // 
+            btnRoles.Location = new Point(82, 87);
+            btnRoles.Name = "btnRoles";
+            btnRoles.Size = new Size(235, 29);
+            btnRoles.TabIndex = 6;
+            btnRoles.Text = "Test Roles";
+            btnRoles.UseVisualStyleBackColor = true;
+            btnRoles.Click += btnRoles_Click;
+            // 
+            // btnSize
+            // 
+            btnSize.Location = new Point(392, 87);
+            btnSize.Name = "btnSize";
+            btnSize.Size = new Size(235, 29);
+            btnSize.TabIndex = 7;
+            btnSize.Text = "Test Size";
+            btnSize.UseVisualStyleBackColor = true;
+            btnSize.Click += btnSize_Click;
+            // 
+            // btnUser
+            // 
+            btnUser.Location = new Point(247, 336);
+            btnUser.Name = "btnUser";
+            btnUser.Size = new Size(235, 29);
+            btnUser.TabIndex = 8;
+            btnUser.Text = "Test Users";
+            btnUser.UseVisualStyleBackColor = true;
+            btnUser.Click += btnUser_Click;
+            // 
             // TestAccountService
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnUser);
+            Controls.Add(btnSize);
+            Controls.Add(btnRoles);
             Controls.Add(btnProduct);
             Controls.Add(btnFeedBack);
             Controls.Add(btnDiscount);
@@ -120,5 +156,8 @@
         private Button btnDiscount;
         private Button btnFeedBack;
         private Button btnProduct;
+        private Button btnRoles;
+        private Button btnSize;
+        private Button btnUser;
     }
 }

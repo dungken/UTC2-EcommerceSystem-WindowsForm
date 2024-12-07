@@ -177,8 +177,8 @@ namespace Source.Views
             var registerResponse = await _orderService.GetAllOrders();
             if (registerResponse != null && registerResponse.Success)
             {
-                MessageBox.Show($"Registration Successful\nMessage: {registerResponse.Message}\nUser: {registerResponse.Data.Select(item => item.Id).ToList()}");
-
+                var orderIds = registerResponse.Data.Select(item => item.Id).ToList();
+                MessageBox.Show($"Registration Successful\nMessage: {registerResponse.Message}\nOrder IDs: {string.Join("\n ", orderIds)}");
             }
             else
             {
@@ -187,7 +187,7 @@ namespace Source.Views
         }
         private async void TestUpdateOrderStatus()
         {
-            string s = "5451221C-1148-4739-81B9-05E6DC3C62DF";
+            string s = "C4585F87-368E-4577-B96B-43DC8033E0CC";
             Guid guid = Guid.Parse(s);
             var registerResponse = await _orderService.UpdateOrderStatus(guid, "Completed");
             if (registerResponse != null)
@@ -331,8 +331,8 @@ namespace Source.Views
 
             //TestCreateOrder();
             //TestGetOrderById();
-            //TestGetAllOrders();  //cung ra ma hoi la 
-            //TestUpdateOrderStatus();         //loi lay ra duoc ma khong dinh dang duoc
+            //TestGetAllOrders();  
+            TestUpdateOrderStatus();         //loi lay ra duoc ma khong dinh dang duoc
 
             //TestCreatePayment(); // Them duoc ma bao loi j a
             //TestGetPaymentByOrderId();

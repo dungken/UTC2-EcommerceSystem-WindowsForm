@@ -35,7 +35,7 @@ namespace Source.Service
         // Get role by id
         public async Task<BaseResponse<RoleDto>> GetRoleByIdAsync(Guid roleId)
         {
-            return await _apiClient.GetAsync<BaseResponse<RoleDto>>($"Role/GetById/{roleId}");
+            return await _apiClient.GetAsync<BaseResponse<RoleDto>>($"Role/{roleId}");
         }
 
         // Assignment Permission to Role

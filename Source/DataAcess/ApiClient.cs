@@ -6,20 +6,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Source.Views.Custommer;
+using Newtonsoft.Json.Linq;
+using RestSharp.Authenticators;
+using System.Net.Http.Headers;
 namespace Source.DataAcess
 {
     public class ApiClient
     {
         private readonly RestClient _client;
-
+      
         public ApiClient(string baseUrl)
         {
-            _client = new RestClient(baseUrl);
+            var authenticator = new JwtAuthenticator(Utils.Config.token);
+            var options = new RestClientOptions(Utils.Config.BaseUrl)
+            {
+                Authenticator = authenticator
+            };
+            _client = new RestClient(options);
+           
         }
 
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Get);
+           
             var response = await _client.ExecuteAsync<T>(request);
 
             if (!response.IsSuccessful)
@@ -33,9 +43,11 @@ namespace Source.DataAcess
             return response.Data;
         }
 
-        public async Task<T> PostAsync<T>(string endpoint, object body = null)
+        public async Task<T> PostAsync<T>(string endpoint, object? body = null)
         {
-            var request = new RestRequest(endpoint, Method.Post);
+            var request = new RestRequest(endpoint,Method.Post);
+            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            //request.Authenticator = new JwtAuthenticator(Utils.Config.token);
             if (body != null)
             {
                 request.AddJsonBody(body);
@@ -53,16 +65,18 @@ namespace Source.DataAcess
                 {
                     MessageBox.Show(response.StatusCode.ToString());
                 }
-                throw new Exception($"API Errorr: {response.ErrorMessage}");
-
+                throw new Exception($"API Error: {response.ErrorMessage}");
             }
+            MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
+
 
 
         public async Task<T> PutAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Put);
+
             request.AddJsonBody(body);
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
@@ -78,6 +92,7 @@ namespace Source.DataAcess
         public async Task<bool> DeleteAsync(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Delete);
+           
             var response = await _client.ExecuteAsync(request);
             if (!response.IsSuccessful)
             {
@@ -88,10 +103,11 @@ namespace Source.DataAcess
             }
             return true;
         }
-
+      
         public async Task<T> PatchAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Patch);
+          
             request.AddJsonBody(body);
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)

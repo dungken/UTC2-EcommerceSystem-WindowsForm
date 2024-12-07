@@ -18,9 +18,9 @@ namespace Source.Service
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
         // Create a new discount
-        public async Task<BaseResponse<DiscountDto>> CreateDiscountAsync(CreateDiscountDto discountDto)
+        public async Task<DiscountDto> CreateDiscountAsync(CreateDiscountDto discountDto)
         {
-            return await _apiClient.PostAsync<BaseResponse<DiscountDto>>("Discounts", discountDto);
+            return await _apiClient.PostAsync<DiscountDto>("Discounts", discountDto);
         }
         // Get all discounts
         public async Task<BaseResponse<IEnumerable<DiscountDto>>> GetAllDiscounts()

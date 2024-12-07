@@ -1,4 +1,5 @@
-﻿using Source.DataAcess;
+﻿using api.Dtos.Product;
+using Source.DataAcess;
 using Source.Dtos.Product;
 using Source.Dtos.Reponse;
 using System;
@@ -17,9 +18,9 @@ namespace Source.Service
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
         // Create a new size
-        public async Task<BaseResponse<SizeDTO>> CreateSizeAsync(SizeDTO sizeDto)
+        public async Task<CreateSizeforProductDto> CreateSizeAsync(CreateSizeforProductDto sizeDto)
         {
-            return await _apiClient.PostAsync<BaseResponse<SizeDTO>>("Sizes", sizeDto);
+            return await _apiClient.PostAsync<CreateSizeforProductDto>("Sizes", sizeDto);
         }
 
         // Get size by id
@@ -35,9 +36,9 @@ namespace Source.Service
         }
 
         // Update size
-        public async Task<BaseResponse<SizeDTO>> UpdateSize(Guid id, SizeDTO sizeDto)
+        public async Task<BaseResponse<CreateSizeforProductDto>> UpdateSize(Guid id, CreateSizeforProductDto sizeDto)
         {
-            return await _apiClient.PutAsync<BaseResponse<SizeDTO>>($"Sizes/{id}", sizeDto);
+            return await _apiClient.PutAsync<BaseResponse<CreateSizeforProductDto>>($"Sizes/{id}", sizeDto);
         }
 
         // Delete size

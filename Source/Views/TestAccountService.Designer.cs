@@ -145,6 +145,7 @@
             Controls.Add(btnAccount);
             Name = "TestAccountService";
             Text = "Test1";
+            Load += TestAccountService_Load;
             ResumeLayout(false);
         }
 

@@ -43,9 +43,17 @@
             Category = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Remove = new DataGridViewButtonColumn();
             pnFotter = new Panel();
+            lblEntrie = new Label();
+            lblOf = new Label();
+            lblTo = new Label();
+            lblEntries = new Label();
+            lblEntriesEnd = new Label();
+            lblEntriesStart = new Label();
             pnPage = new Panel();
+            labelPageInfo = new Label();
             btnNext = new MyCustomControl.RJButton();
             btnPre = new MyCustomControl.RJButton();
             lblShowing = new Label();
@@ -133,6 +141,7 @@
             cbxShow.Name = "cbxShow";
             cbxShow.Size = new Size(43, 30);
             cbxShow.TabIndex = 1;
+            cbxShow.SelectedIndexChanged += cbxShow_SelectedIndexChanged;
             // 
             // lblShow
             // 
@@ -167,10 +176,11 @@
             // 
             // gridView
             // 
+            gridView.AllowUserToOrderColumns = true;
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Category, Date, Status, Action });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Category, Date, Status, Edit, Remove });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 3);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -179,44 +189,73 @@
             gridView.RowHeadersWidth = 51;
             gridView.Size = new Size(953, 328);
             gridView.TabIndex = 0;
+            gridView.CellClick += gridView_CellClick;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
             // Id
             // 
+            Id.DataPropertyName = "Id";
             Id.HeaderText = "Id";
             Id.MinimumWidth = 6;
             Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
             Id.Width = 125;
             // 
             // Category
             // 
+            Category.DataPropertyName = "CategoryName";
             Category.HeaderText = "Category";
             Category.MinimumWidth = 6;
             Category.Name = "Category";
+            Category.SortMode = DataGridViewColumnSortMode.Programmatic;
             Category.Width = 125;
             // 
             // Date
             // 
+            Date.DataPropertyName = "Date";
             Date.HeaderText = "Date";
             Date.MinimumWidth = 6;
             Date.Name = "Date";
+            Date.SortMode = DataGridViewColumnSortMode.Programmatic;
             Date.Width = 125;
             // 
             // Status
             // 
+            Status.DataPropertyName = "Status";
             Status.HeaderText = "Status";
             Status.MinimumWidth = 6;
             Status.Name = "Status";
+            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
             Status.Width = 125;
             // 
-            // Action
+            // Edit
             // 
-            Action.HeaderText = "Action";
-            Action.MinimumWidth = 6;
-            Action.Name = "Action";
-            Action.Width = 125;
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.Text = "Edit";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 125;
+            // 
+            // Remove
+            // 
+            Remove.HeaderText = "Remove";
+            Remove.MinimumWidth = 6;
+            Remove.Name = "Remove";
+            Remove.Resizable = DataGridViewTriState.True;
+            Remove.Text = "Remove";
+            Remove.UseColumnTextForButtonValue = true;
+            Remove.Width = 125;
             // 
             // pnFotter
             // 
+            pnFotter.Controls.Add(lblEntrie);
+            pnFotter.Controls.Add(lblOf);
+            pnFotter.Controls.Add(lblTo);
+            pnFotter.Controls.Add(lblEntries);
+            pnFotter.Controls.Add(lblEntriesEnd);
+            pnFotter.Controls.Add(lblEntriesStart);
             pnFotter.Controls.Add(pnPage);
             pnFotter.Controls.Add(lblShowing);
             pnFotter.Location = new Point(2, 389);
@@ -225,15 +264,78 @@
             pnFotter.Size = new Size(957, 47);
             pnFotter.TabIndex = 0;
             // 
+            // lblEntrie
+            // 
+            lblEntrie.AutoSize = true;
+            lblEntrie.Location = new Point(263, 14);
+            lblEntrie.Name = "lblEntrie";
+            lblEntrie.Size = new Size(63, 22);
+            lblEntrie.TabIndex = 7;
+            lblEntrie.Text = "entries";
+            // 
+            // lblOf
+            // 
+            lblOf.AutoSize = true;
+            lblOf.Location = new Point(195, 14);
+            lblOf.Name = "lblOf";
+            lblOf.Size = new Size(26, 22);
+            lblOf.TabIndex = 6;
+            lblOf.Text = "of";
+            // 
+            // lblTo
+            // 
+            lblTo.AutoSize = true;
+            lblTo.Location = new Point(125, 14);
+            lblTo.Name = "lblTo";
+            lblTo.Size = new Size(25, 22);
+            lblTo.TabIndex = 5;
+            lblTo.Text = "to";
+            // 
+            // lblEntries
+            // 
+            lblEntries.AutoSize = true;
+            lblEntries.Location = new Point(227, 14);
+            lblEntries.Name = "lblEntries";
+            lblEntries.Size = new Size(30, 22);
+            lblEntries.TabIndex = 4;
+            lblEntries.Text = "13";
+            // 
+            // lblEntriesEnd
+            // 
+            lblEntriesEnd.AutoSize = true;
+            lblEntriesEnd.Location = new Point(156, 14);
+            lblEntriesEnd.Name = "lblEntriesEnd";
+            lblEntriesEnd.Size = new Size(30, 22);
+            lblEntriesEnd.TabIndex = 3;
+            lblEntriesEnd.Text = "10";
+            // 
+            // lblEntriesStart
+            // 
+            lblEntriesStart.AutoSize = true;
+            lblEntriesStart.Location = new Point(99, 14);
+            lblEntriesStart.Name = "lblEntriesStart";
+            lblEntriesStart.Size = new Size(20, 22);
+            lblEntriesStart.TabIndex = 2;
+            lblEntriesStart.Text = "1";
+            // 
             // pnPage
             // 
+            pnPage.Controls.Add(labelPageInfo);
             pnPage.Controls.Add(btnNext);
             pnPage.Controls.Add(btnPre);
-            pnPage.Location = new Point(655, 3);
+            pnPage.Location = new Point(641, 3);
             pnPage.Margin = new Padding(2, 3, 2, 3);
             pnPage.Name = "pnPage";
-            pnPage.Size = new Size(299, 45);
+            pnPage.Size = new Size(313, 45);
             pnPage.TabIndex = 1;
+            // 
+            // labelPageInfo
+            // 
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
             // 
             // btnNext
             // 
@@ -246,7 +348,7 @@
             btnNext.FlatAppearance.BorderSize = 0;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.MediumSlateBlue;
-            btnNext.Location = new Point(194, 1);
+            btnNext.Location = new Point(213, 1);
             btnNext.Margin = new Padding(2, 3, 2, 3);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(108, 42);
@@ -254,6 +356,7 @@
             btnNext.Text = "Next";
             btnNext.TextColor = Color.MediumSlateBlue;
             btnNext.UseVisualStyleBackColor = false;
+            btnNext.Click += btnNext_Click;
             // 
             // btnPre
             // 
@@ -274,6 +377,7 @@
             btnPre.Text = "Previous";
             btnPre.TextColor = Color.MediumSlateBlue;
             btnPre.UseVisualStyleBackColor = false;
+            btnPre.Click += btnPre_Click;
             // 
             // lblShowing
             // 
@@ -282,9 +386,9 @@
             lblShowing.Location = new Point(23, 14);
             lblShowing.Margin = new Padding(2, 0, 2, 0);
             lblShowing.Name = "lblShowing";
-            lblShowing.Size = new Size(243, 22);
+            lblShowing.Size = new Size(84, 22);
             lblShowing.TabIndex = 0;
-            lblShowing.Text = "Showing 1 to 10 of 13 entries";
+            lblShowing.Text = "Showing ";
             // 
             // pnLine
             // 
@@ -325,6 +429,7 @@
             btnAdd.Text = "Add Categories";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // lblHeader
             // 
@@ -352,6 +457,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "CategoryList";
             Text = "CategoryList";
+            Load += CategoryList_Load;
             pnHeader.ResumeLayout(false);
             pnSearch.ResumeLayout(false);
             pnSearch.PerformLayout();
@@ -363,6 +469,7 @@
             pnFotter.ResumeLayout(false);
             pnFotter.PerformLayout();
             pnPage.ResumeLayout(false);
+            pnPage.PerformLayout();
             pnTitle.ResumeLayout(false);
             pnTitle.PerformLayout();
             ResumeLayout(false);
@@ -390,10 +497,18 @@
         private Panel pnTitle;
         private MyCustomControl.RJButton btnAdd;
         private Label lblHeader;
+        private Label lblTo;
+        private Label lblEntries;
+        private Label lblEntriesEnd;
+        private Label lblEntriesStart;
+        private Label lblEntrie;
+        private Label lblOf;
+        private Label labelPageInfo;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn Action;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Remove;
     }
 }

@@ -38,11 +38,11 @@
             rbtnPending = new RadioButton();
             lblStatus = new Label();
             pnParentCategory = new Panel();
-            listBox1 = new ListBox();
+            lbxParent = new ListBox();
             label1 = new Label();
             lblCategories = new Label();
             pnBasicInfor = new Panel();
-            tbxdescription = new TextBox();
+            tbxDescription = new TextBox();
             lblDescription = new Label();
             tbxName = new TextBox();
             lblName = new Label();
@@ -93,6 +93,7 @@
             btnSave.Text = "Save";
             btnSave.TextColor = Color.White;
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // lblHeader
             // 
@@ -165,7 +166,7 @@
             // pnParentCategory
             // 
             pnParentCategory.BackColor = Color.White;
-            pnParentCategory.Controls.Add(listBox1);
+            pnParentCategory.Controls.Add(lbxParent);
             pnParentCategory.Controls.Add(label1);
             pnParentCategory.Controls.Add(lblCategories);
             pnParentCategory.Location = new Point(12, 304);
@@ -173,15 +174,15 @@
             pnParentCategory.Size = new Size(314, 203);
             pnParentCategory.TabIndex = 7;
             // 
-            // listBox1
+            // lbxParent
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 22;
-            listBox1.Items.AddRange(new object[] { "Quần short", "Áo thun", "Tất cả quần áo nam", "Quần thể thao" });
-            listBox1.Location = new Point(13, 86);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(277, 70);
-            listBox1.TabIndex = 2;
+            lbxParent.FormattingEnabled = true;
+            lbxParent.ItemHeight = 22;
+            lbxParent.Items.AddRange(new object[] { "Quần short", "Áo thun", "Tất cả quần áo nam", "Quần thể thao" });
+            lbxParent.Location = new Point(13, 86);
+            lbxParent.Name = "lbxParent";
+            lbxParent.Size = new Size(277, 70);
+            lbxParent.TabIndex = 2;
             // 
             // label1
             // 
@@ -208,7 +209,7 @@
             // pnBasicInfor
             // 
             pnBasicInfor.BackColor = Color.White;
-            pnBasicInfor.Controls.Add(tbxdescription);
+            pnBasicInfor.Controls.Add(tbxDescription);
             pnBasicInfor.Controls.Add(lblDescription);
             pnBasicInfor.Controls.Add(tbxName);
             pnBasicInfor.Controls.Add(lblName);
@@ -218,13 +219,13 @@
             pnBasicInfor.Size = new Size(616, 400);
             pnBasicInfor.TabIndex = 8;
             // 
-            // tbxdescription
+            // tbxDescription
             // 
-            tbxdescription.Location = new Point(28, 154);
-            tbxdescription.Multiline = true;
-            tbxdescription.Name = "tbxdescription";
-            tbxdescription.Size = new Size(556, 229);
-            tbxdescription.TabIndex = 4;
+            tbxDescription.Location = new Point(28, 154);
+            tbxDescription.Multiline = true;
+            tbxDescription.Name = "tbxDescription";
+            tbxDescription.Size = new Size(556, 229);
+            tbxDescription.TabIndex = 4;
             // 
             // lblDescription
             // 
@@ -280,6 +281,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "CategoriesEdit";
             Text = "CategoryEdit";
+            Load += CategoriesEdit_Load;
             pnTitle.ResumeLayout(false);
             pnTitle.PerformLayout();
             pnStatus.ResumeLayout(false);
@@ -305,10 +307,10 @@
         private Panel pnParentCategory;
         private Label label1;
         private Label lblCategories;
-        private ListBox listBox1;
+        private ListBox lbxParent;
         private Panel pnBasicInfor;
         private Label lblBasic;
-        private TextBox tbxdescription;
+        private TextBox tbxDescription;
         private Label lblDescription;
         private TextBox tbxName;
         private Label lblName;

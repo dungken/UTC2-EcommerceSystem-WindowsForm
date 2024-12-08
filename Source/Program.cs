@@ -26,7 +26,7 @@ namespace Source
             //Application.Run(new ReviewProduct());
             //Application.Run(new WatchReview());
             //Application.Run(new MainFormAdmin());
-            //Application.Run(new CategoryList());
+            Application.Run(new CategoryList());
             //Application.Run(new CategoriesEdit());
             //Application.Run(new CouponsList());
             //Application.Run(new CouponsEdit());
@@ -35,9 +35,8 @@ namespace Source
             //Application.Run(new CustomersList());
             //Application.Run(new CustomersDetails());
             //Application.Run(new StockList());
-            //Application.Run(new TestAccountService());
-            //Application.Run(new TestAccountService());
-            Application.Run(new PhuongAnh_Test());
+            //plication.Run(new TestAccountService());
+            //Application.Run(new PhuongAnh_Test());
             //Application.Run(new MainForm());
         }
     }

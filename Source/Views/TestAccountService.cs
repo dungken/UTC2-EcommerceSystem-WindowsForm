@@ -844,7 +844,7 @@ namespace Source.Views
 
             };
             var response = await _sizeService.CreateSizeAsync(sizeDto);
-            if (response != null )
+            if (response != null)
             {
                 MessageBox.Show($"Size Created Successfully\nMessage: \nSize: {response.Name}");
             }
@@ -1201,19 +1201,19 @@ namespace Source.Views
         private async void btnCate_Click(object sender, EventArgs e)
         {
             // Create Category
-            await CreateCategoryAsync();
+            //await CreateCategoryAsync();
 
-            // Assuming you have the categoryId from the create response
-            Guid categoryId = Guid.Parse("C0CA6AA4-2787-4EEE-9A16-10B21C3322D0");
+            //// Assuming you have the categoryId from the create response
+            //Guid categoryId = Guid.Parse("C0CA6AA4-2787-4EEE-9A16-10B21C3322D0");
 
-            // Get Category by ID
-            //await GetCategoryByIdAsync(categoryId);
+            //// Get Category by ID
+            ////await GetCategoryByIdAsync(categoryId);
 
-            // Update Category
-            await UpdateCategoryAsync(categoryId);
+            //// Update Category
+            //await UpdateCategoryAsync(categoryId);
 
-            // Delete Category
-            await DeleteCategoryAsync(categoryId);
+            //// Delete Category
+            //await DeleteCategoryAsync(categoryId);
 
             // Get All Categories
             await GetAllCategoriesAsync();
@@ -1399,6 +1399,11 @@ namespace Source.Views
             //await TestCheckEmailUsernameExistAsync();
             //await TestAssignRoleToUserAsync();
             //await TestSearchUserAsync();
+        }
+
+        private void TestAccountService_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

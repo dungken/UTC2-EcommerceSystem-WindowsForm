@@ -17,9 +17,9 @@ namespace Source.Service
         {
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
-        public async Task<BaseResponse<CreatePaymentDto>> CreatePayment(CreatePaymentDto model)
+        public async Task<CreatePaymentDto> CreatePayment(CreatePaymentDto model)
         {
-            return await _apiClient.PostAsync<BaseResponse<CreatePaymentDto>>("Payment", model);
+            return await _apiClient.PostAsync<CreatePaymentDto>("Payment", model);
         }
         public async Task<BaseResponse<PaymentDto>> GetPaymentByOrderId(Guid orderId)
         {

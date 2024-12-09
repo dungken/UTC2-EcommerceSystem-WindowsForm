@@ -28,9 +28,9 @@ namespace Source.Service
         {
             return await _apiClient.GetAsync<BaseResponse<IEnumerable<OrderDto>>>("Order");
         }
-        public async Task<bool> UpdateOrderStatus(Guid orderId, string status)
+        public async Task<BaseResponse<UpdateOrderDto>> UpdateOrderStatus(Guid id, UpdateOrderDto status)
         {
-            return await _apiClient.PatchAsync<bool>($"Order/{orderId}/status", status);
+            return await _apiClient.PutAsync<BaseResponse<UpdateOrderDto>>($"Order/status/{id}", status);
         }
 
     }

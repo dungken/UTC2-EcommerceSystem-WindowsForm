@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
 using Source.Dtos.Image;
 using Source.Dtos.Order;
 using Source.Dtos.Payment;
@@ -36,7 +38,51 @@ namespace Source.Views
         // Test Image Service
         private async void TestUploadMultipleImages()
         {
-            
+            var formFiles = new List<IFormFile>();
+
+            // Tạo file giả lập đầu tiên
+            byte[] imageData1 = File.ReadAllBytes("D:\\31sua.png");
+            var fileStream1 = new MemoryStream(imageData1);
+            formFiles.Add(new FormFile(
+                baseStream: fileStream1,
+                baseStreamOffset: 0,
+                length: fileStream1.Length,
+                name: "file1",
+                fileName: "image1.png"
+            )
+            {
+                Headers = new HeaderDictionary(),
+                ContentType = "image/png"
+            });
+
+            // Tạo file giả lập thứ hai
+            byte[] imageData2 = File.ReadAllBytes("D:\\31sua.png");
+            var fileStream2 = new MemoryStream(imageData2);
+            formFiles.Add(new FormFile(
+                baseStream: fileStream2,
+                baseStreamOffset: 0,
+                length: fileStream2.Length,
+                name: "file2",
+                fileName: "image2.png"
+            )
+            {
+                Headers = new HeaderDictionary(),
+                ContentType = "image/png"
+            });
+            var response = await _imageService.UploadMultipleImages(formFiles.ToArray(), Guid.Parse("AB3A1D7B-23A7-45BD-9E75-1EA2640F9D2B"), "altText");
+            if(response != null && response.Success)
+            {
+                MessageBox.Show($"Registration Successful\nMessage: {response.Message}");
+                foreach (var item in response.Data)
+                {
+                    MessageBox.Show($"{item.CreatedAt}: {item.Url}");
+                }
+          
+            }
+            else
+            {
+                MessageBox.Show($"Registration Failed\nError: {string.Join(", ", response.Errors)}");
+            }   
         }
         private async void TestGetImagesByProductId()
         {
@@ -53,8 +99,59 @@ namespace Source.Views
                 MessageBox.Show($"Registration Failed\nError: {string.Join(", ", registerResponse.Errors)}");
             }
         }
+     
+        
         private async void TestUpdateImages()
         {
+            var newFiles = new List<IFormFile>();
+            // Tạo file giả lập đầu tiên
+            byte[] imageData1 = File.ReadAllBytes("D:\\31sua.png");
+            var fileStream1 = new MemoryStream(imageData1);
+            newFiles.Add(new FormFile(
+                baseStream: fileStream1,
+                baseStreamOffset: 0,
+                length: fileStream1.Length,
+                name: "file3",
+                fileName: "image3.png"
+            )
+            {
+                Headers = new HeaderDictionary(),
+                ContentType = "image/png"
+            });
+
+            // Tạo file giả lập thứ hai
+            byte[] imageData2 = File.ReadAllBytes("D:\\31sua.png");
+            var fileStream2 = new MemoryStream(imageData2);
+            newFiles.Add(new FormFile(
+                baseStream: fileStream2,
+                baseStreamOffset: 0,
+                length: fileStream2.Length,
+                name: "file4",
+                fileName: "image4.png"
+            )
+            {
+                Headers = new HeaderDictionary(),
+                ContentType = "image/png"
+            });
+            var productId = Guid.Parse("AB3A1D7B-23A7-45BD-9E75-1EA2640F9D2B");
+            string altText = "Updated product images";
+            var imageIdsToDelete = new List<Guid> { Guid.Parse("75215F36-6F91-4F47-B92B-C6883C2D2F18"), Guid.Parse("BE25D2D8-F23F-45B6-B9FD-C9A61D0F8DC1") }; // 
+
+
+            // Gọi hàm cập nhật ảnh
+            var response = await _imageService.UpdateImages(productId, newFiles.ToArray(), imageIdsToDelete, altText);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Registration Successful\nMessage: {response.Message}");
+                foreach (var item in response.Data)
+                {
+                    MessageBox.Show($"Id: {item.Id} \n  {item.UpdatedAt}: {item.Url}");
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Registration Failed\nError: {string.Join(", ", response.Errors)}");
+            }
 
         }
         private async void TestDeleteImage()
@@ -185,12 +282,13 @@ namespace Source.Views
                 MessageBox.Show($"Registration Failed\nError: {string.Join(", ", registerResponse.Errors)}");
             }
         }
-        private async void TestUpdateOrderStatus()
+        private async Task TestUpdateOrderStatus()
         {
-            string s = "C4585F87-368E-4577-B96B-43DC8033E0CC";
+            string s = "3925AF8E-3EBA-4F95-87BA-AF64F060DC78";
             Guid guid = Guid.Parse(s);
-            var registerResponse = await _orderService.UpdateOrderStatus(guid, "Completed");
-            if (registerResponse != null)
+            UpdateOrderDto status = new UpdateOrderDto { status = "Completed"  };
+            var registerResponse = await _orderService.UpdateOrderStatus(guid, status);
+            if (registerResponse != null && registerResponse.Success)
             {
                 MessageBox.Show($"Successful\nMessage: {registerResponse}");
 
@@ -204,20 +302,20 @@ namespace Source.Views
         {
             CreatePaymentDto paymentDto = new CreatePaymentDto()
             {
-                OrderId = Guid.Parse("FB2EE1A1-5E43-4419-AFF6-09F80DD016F4"),
+                OrderId = Guid.Parse("C4585F87-368E-4577-B96B-43DC8033E0CC"),
                 Amount = 16.6m,
                 PaymentMethod = "TienMat"
             };
             var registerResponse = await _paymentService.CreatePayment(paymentDto);
 
-            if (registerResponse != null && registerResponse.Success)
+            if (registerResponse != null )
             {
-                MessageBox.Show($"Registration Successful\nMessage: {registerResponse.Message}\nUser: {registerResponse.Data.OrderId}");
+                MessageBox.Show($"Registration Successful \nUser: {registerResponse.PaymentMethod}");
 
             }
             else
             {
-                MessageBox.Show($"Registration Failed\nError: {string.Join(", ", registerResponse.Errors)}");
+                MessageBox.Show($"Registration Failed\nError: can not add payment for order");
             }
 
         }
@@ -324,21 +422,21 @@ namespace Source.Views
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
-            //TestUploadMultipleImages();  // chua lam duoc do co IFormFile[]
+            //TestUploadMultipleImages();
             //TestGetImagesByProductId();
-            //TestUpdateImages();  // chua lam duoc do co IFormFile[]
+            //TestUpdateImages(); 
             //TestDeleteImage();
 
             //TestCreateOrder();
             //TestGetOrderById();
             //TestGetAllOrders();  
-            TestUpdateOrderStatus();         //loi lay ra duoc ma khong dinh dang duoc
+            //TestUpdateOrderStatus();
 
-            //TestCreatePayment(); // Them duoc ma bao loi j a
+            //TestCreatePayment(); 
             //TestGetPaymentByOrderId();
 
-            //TestGetPermissions();           //loi lay ra duoc ma khong dinh dang duoc
-            //TestGetPermissionsWithRoles(); //loi lay ra duoc ma khong dinh dang duoc
+            //TestGetPermissions();           
+            //TestGetPermissionsWithRoles(); 
             //TestGetById();
             //TestCreateOrUpdatePermission();
             //TestDeletePermission();

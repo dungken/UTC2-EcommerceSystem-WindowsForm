@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Source.DataAcess;
 using Source.Dtos.Account;
 using Source.Dtos.Image;
@@ -19,17 +20,18 @@ namespace Source.Service
         {
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
-        public async Task<BaseResponse<UploadImagesResponse>> UploadMultipleImages(UploadImagesResponse model)
+        public async Task<BaseResponse<IEnumerable<ImageDTO>>> UploadMultipleImages(IFormFile[] files, Guid productId, string altText)
         {
-            return await _apiClient.PostAsync<BaseResponse<UploadImagesResponse>>("Images/UploadMultiple", model);
+            return await _apiClient.PostAsync<BaseResponse<IEnumerable<ImageDTO>>>("Images/UploadMultiple",  files, productId, altText);
         }
         public async Task<BaseResponse<ImageDTO>> GetImagesByProductId(Guid productId)
         {
             return await _apiClient.GetAsync<BaseResponse<ImageDTO>>($"Images/GetByProductId/{productId}");
         }
-        public async Task<BaseResponse<UpdateImagesRespone>> UpdateImages(UpdateImagesRespone model)
+        public async Task<BaseResponse<IEnumerable<ImageDTO>>> UpdateImages(Guid productId, IFormFile[] newFiles, IEnumerable<Guid> imageIdsToDelete, string altText)
         {
-            return await _apiClient.PutAsync<BaseResponse<UpdateImagesRespone>>("Images/UploadMultiple", model);
+
+            return await _apiClient.PutAsync<BaseResponse<IEnumerable<ImageDTO>>>("Images/UpdateMultiple", productId, newFiles, imageIdsToDelete, altText);
         }
         public async Task<bool> DeleteImage(Guid id)
         {

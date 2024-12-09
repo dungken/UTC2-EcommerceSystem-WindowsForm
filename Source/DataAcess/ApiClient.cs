@@ -9,6 +9,8 @@ using Source.Views.Custommer;
 using Newtonsoft.Json.Linq;
 using RestSharp.Authenticators;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
 namespace Source.DataAcess
 {
     public class ApiClient
@@ -69,8 +71,49 @@ namespace Source.DataAcess
             }
             MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
+        } 
+        
+        public async Task<T> PostAsync<T>(string endpoint, IFormFile[] files, Guid productId, string altText)
+        {
+            var request = new RestRequest(endpoint, Method.Post);
+            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            //request.Authenticator = new JwtAuthenticator(Utils.Config.token);
+            foreach (var file in files)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    using var memoryStream = new MemoryStream();
+                    await file.CopyToAsync(memoryStream);
+                    var fileBytes = memoryStream.ToArray();
+
+                    // Tên trường phải là "files"
+                    request.AddFile("files", fileBytes, file.FileName, file.ContentType);
+                }
+            }
+
+            request.AddParameter("productId", productId);
+            request.AddParameter("altText", altText);
+
+            var response = await _client.ExecuteAsync<T>(request);
+            if (!response.IsSuccessful)
+            {
+                // Format JSON response
+                if (response.Content != null)
+                {
+                    var formattedJson = FormatJson(response.Content);
+                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+                throw new Exception($"API Error: {response.ErrorMessage}");
+            }
+            MessageBox.Show(response.StatusCode.ToString());
+            return response.Data;
         }
 
+      
 
 
         public async Task<T> PutAsync<T>(string endpoint, object body)
@@ -78,6 +121,54 @@ namespace Source.DataAcess
             var request = new RestRequest(endpoint, Method.Put);
 
             request.AddJsonBody(body);
+            var response = await _client.ExecuteAsync<T>(request);
+            if (!response.IsSuccessful)
+            {
+                // Format JSON response
+                var formattedJson = FormatJson(response.Content);
+                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                throw new Exception($"API Error: {response.ErrorMessage}");
+            }
+            return response.Data;
+        }
+        public async Task<T> PutAsync<T>(string endpoint, Guid productId, IFormFile[] newFiles,  IEnumerable<Guid> imageIdsToDelete, string altText)
+        {
+            var request = new RestRequest(endpoint, Method.Put);
+            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+           
+            // Thêm các tệp mới vào form-data
+            if (newFiles != null && newFiles.Length > 0)
+            {
+                foreach (var file in newFiles)
+                {
+                    if (file != null && file.Length > 0)
+                    {
+                        using var memoryStream = new MemoryStream();
+                        await file.CopyToAsync(memoryStream);
+                        var fileBytes = memoryStream.ToArray();
+
+                        // Thêm từng file với field name là "newFiles"
+                        request.AddFile("newFiles", fileBytes, file.FileName, file.ContentType);
+                    }
+                }
+            }
+
+            // Thêm danh sách imageIdsToDelete vào form-data
+            if (imageIdsToDelete != null && imageIdsToDelete.Any())
+            {
+               
+                foreach (var id in imageIdsToDelete)
+                {
+                    request.AddParameter("imageIdsToDelete", id);
+                }
+               
+               
+            }
+          
+            // Thêm các tham số khác
+            request.AddParameter("productId", productId);
+            request.AddParameter("altText", altText);
+
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
             {

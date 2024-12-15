@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Source.Models;
+using api.Dtos.Product;
 
 namespace Source.Service
 {
@@ -45,5 +47,31 @@ namespace Source.Service
         {
             return await _apiClient.DeleteAsync($"Discounts/{id}");
         }
+
+        // Add new product to discount
+        public async Task<Product> AddNewProductToDiscount(Guid discountId, CreateProductDto product)
+        {
+            return await _apiClient.PostAsync<Product>($"Discounts/{discountId}/AddNewProduct", product);
+        }
+
+        // Add existing product to discount
+        public async Task<string> AddExistingProductToDiscount(Guid discountId, Guid productId)
+        {
+            return await _apiClient.PostAsync<string>($"Discounts/{discountId}/AddExistingProduct/{productId}");
+        }
+
+        // Remove product from discount
+        public async Task<bool> RemoveProductFromDiscount(Guid discountId, Guid productId)
+        {
+            return await _apiClient.DeleteAsync($"Discounts/{discountId}/RemoveProduct/{productId}");
+        }
+
+        // Get products in discount
+        public async Task<IEnumerable<Product>> GetProductsInDiscount(Guid discountId)
+        {
+            return await _apiClient.GetAsync<IEnumerable<Product>>($"Discounts/{discountId}/GetProducts");
+        }
+
+       
     }
 }

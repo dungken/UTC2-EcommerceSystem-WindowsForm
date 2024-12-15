@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
+﻿using Source.Dtos.Product;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Source.Dtos.Discount;
 
-namespace Source.Dtos.Product
+namespace api.Dtos.Product
 {
-    public class ProductDTO
+    public class CreateProductDto
     {
-        public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,12 +12,11 @@ namespace Source.Dtos.Product
         public decimal Price { get; set; }
         [Required]
         public int StockQuantity { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
         public Guid CategoryId { get; set; }
+       
         public string Status { get; set; }
-        public byte[]? RowVersion { get; set; }
         public Guid? DiscountId { get; set; }
+        public byte[]? RowVersion { get; set; }
 
         public List<ColorDTO> Colors { get; set; } = new List<ColorDTO>();
         public List<SizeDTO> Sizes { get; set; } = new List<SizeDTO>();

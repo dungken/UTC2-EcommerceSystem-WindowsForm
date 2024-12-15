@@ -9,6 +9,7 @@ namespace Source.Dtos.Order
     {
         public List<CreateOrderDetailDto> OrderDetails { get; set; }
         public string Status { get; set; } // Pending, Completed, etc.
-        public decimal TotalAmount { get; set; }
+        public string ShippingAddress { get; set; }
+        public Guid UserId { get; set; }
     }
 }

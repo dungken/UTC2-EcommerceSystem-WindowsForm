@@ -13,8 +13,9 @@ namespace Source.Models
         public decimal DiscountAmount { get; set; } // Discount applied to this item
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
+        public string Size { get; set; }
+        public string Color { get; set; }
 
-      
 
         // Computed Property
         public decimal Total => Quantity * UnitPrice - DiscountAmount; // Total price for this order detail

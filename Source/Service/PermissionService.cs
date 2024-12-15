@@ -17,7 +17,7 @@ namespace Source.Service
         {
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
-        public async Task<BaseResponse<IEnumerable<GetPermissionsDto>>> GetPermissions()
+        public async Task<BaseResponse<IEnumerable<GetPermissionsDto>>> GetPermissionsAsync()
         {
             return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetPermissionsDto>>>("Permission/GetAll");
         }
@@ -25,13 +25,13 @@ namespace Source.Service
         {
             return await _apiClient.GetAsync<BaseResponse<PermissionWithRolesDto>>("Permission/GetAllWithRoles");
         }
-        public async Task<BaseResponse<PermissionDto>> GetById(Guid permissionId)
+        public async Task<BaseResponse<PermissionDto>> GetPermissionByIdAsync(Guid permissionId)
         {
             return await _apiClient.GetAsync<BaseResponse<PermissionDto>>($"Permission/{permissionId}");
         }
-        public async Task<BaseResponse<CreatePermissionDto>> CreateOrUpdatePermission(CreatePermissionDto model)
+        public async Task<BaseResponse<PermissionDto>> CreateOrUpdatePermission(CreatePermissionDto model)
         {
-            return await _apiClient.PostAsync<BaseResponse<CreatePermissionDto>>("Permission/CreateOrUpdate", model);
+            return await _apiClient.PostAsync<BaseResponse<PermissionDto>>("Permission/CreateOrUpdate", model);
         }
         public async Task<bool> DeletePermission(Guid permissionId)
         {

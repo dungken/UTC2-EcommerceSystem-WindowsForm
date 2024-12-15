@@ -19,31 +19,31 @@ namespace Source.Service
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
         // Create a new color
-        public async Task<ColorDTO> CreateCollorAsync(ColorDTO colorDto)
+        public async Task<Models.Color> CreateCollorAsync(ColorDTO colorDto)
         {
-            return await _apiClient.PostAsync<ColorDTO>("Colors/Create", colorDto);
+            return await _apiClient.PostAsync<Models.Color>("Colors/Create", colorDto);
           
         }
 
-        public async Task<BaseResponse<ColorDTO>> GetColorByIdAsync(Guid id)
+        public async Task<BaseResponse<Models.Color>> GetColorByIdAsync(Guid id)
         {
-            return await _apiClient.GetAsync<BaseResponse<ColorDTO>>($"colors/{id}");
+            return await _apiClient.GetAsync<BaseResponse<Models.Color>>($"colors/{id}");
         }
         
-        public async Task<BaseResponse<IEnumerable<ColorDTO>>> GetAllColors()
+        public async Task<BaseResponse<IEnumerable<Models.Color>>> GetAllColorsAsync()
         {
-            return await _apiClient.GetAsync<BaseResponse<IEnumerable<ColorDTO>>>($"colors");
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<Models.Color>>>($"colors");
         }
-        public async Task<BaseResponse<ColorDTO>> UpdateColor(Guid id, ColorDTO colorDto)
+        public async Task<BaseResponse<ColorDTO>> UpdateColorAsync(Guid id, ColorDTO colorDto)
         {
             return await _apiClient.PutAsync<BaseResponse<ColorDTO>>($"colors/{id}", colorDto);
         }
-        public async Task<bool> DeleteColor(Guid id)
+        public async Task<bool> DeleteColorAsync(Guid id)
         {
             return await _apiClient.DeleteAsync($"colors/{id}");
         }
 
-
+      
 
     }
 }

@@ -1,6 +1,9 @@
-﻿using Source.DataAcess;
+﻿using api.Dtos.Product;
+using Source.DataAcess;
+using Source.Dtos.Order;
 using Source.Dtos.Product;
 using Source.Dtos.Reponse;
+using Source.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +20,7 @@ namespace Source.Service
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
         // Create a new product
-        public async Task<BaseResponse<ProductDTO>> CreateProductAsync(ProductDTO productDto)
+        public async Task<BaseResponse<ProductDTO>> CreateProductAsync(CreateProductDto productDto)
         {
             return await _apiClient.PostAsync<BaseResponse<ProductDTO>>("Products/Create", productDto);
         }
@@ -27,7 +30,7 @@ namespace Source.Service
             return await _apiClient.GetAsync<BaseResponse<ProductDTO>>($"Products/{id}");
         }
         // Get all products
-        public async Task<BaseResponse<IEnumerable<ProductDTO>>> GetAllProducts()
+        public async Task<BaseResponse<IEnumerable<ProductDTO>>> GetAllProductsAsync()
         {
             return await _apiClient.GetAsync<BaseResponse<IEnumerable<ProductDTO>>>($"Products");
         }
@@ -38,15 +41,51 @@ namespace Source.Service
         }
 
         // Update product
-        public async Task<BaseResponse<ProductDTO>> UpdateProduct(Guid id, ProductDTO productDto)
+        public async Task<BaseResponse<Product>> UpdateProductAsync(Guid id, UpdateProductDTO productDto)
         {
-            return await _apiClient.PutAsync<BaseResponse<ProductDTO>>($"Products/{id}", productDto);
+            return await _apiClient.PutAsync<BaseResponse<Product>>($"Products/{id}", productDto);
         }
 
         // Delete product
-        public async Task<bool> DeleteProduct(Guid id)
+        public async Task<bool> DeleteProductAsync(Guid id)
         {
             return await _apiClient.DeleteAsync($"Products/{id}");
+        }
+
+        // Get all colors from product by id
+        public async Task<BaseResponse<IEnumerable<GetColorDto>>> GetAllColorsFromProductById(Guid productId)
+        {
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetColorDto>>>($"Products/{productId}/Colors");
+        }
+
+        // Get all sizes from product by id
+        public async Task<BaseResponse<IEnumerable<GetSizeDto>>> GetAllSizesFromProductById(Guid productId)
+        {
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetSizeDto>>>($"Products/{productId}/Sizes");
+        }
+
+        // Get all images from product by id
+        public async Task<BaseResponse<IEnumerable<GetImageDto>>> GetAllImagesFromProductById(Guid productId)
+        {
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetImageDto>>>($"Products/{productId}/Images");
+        }
+
+        // Get all feedbacks from product by id
+        public async Task<BaseResponse<IEnumerable<GetFeedbackDto>>> GetAllFeedbacksFromProductById(Guid productId)
+        {
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetFeedbackDto>>>($"Products/{productId}/Feedbacks");
+        }
+
+        // Get order details from product by id
+        public async Task<BaseResponse<IEnumerable<GetOrderDetailDto>>> GetOrderDetailsFromProductById(Guid productId)
+        {
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<GetOrderDetailDto>>>($"Products/{productId}/OrderDetails");
+        }
+
+        // Add existing color to product
+        public async Task<BaseResponse<ProductDTO>> AddExistingColorToProduct(Guid productId, Guid colorId)
+        {
+            return await _apiClient.PostAsync<BaseResponse<ProductDTO>>($"Products/{productId}/AddExistingColorToProduct/{colorId}");
         }
     }
 }

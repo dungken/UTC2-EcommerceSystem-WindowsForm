@@ -33,11 +33,16 @@ namespace Source.Service
             return await _apiClient.GetAsync<BaseResponse<IEnumerable<CategoryDto>>>($"Categories");
         } 
         
-        public async Task<BaseResponse<CategoryDto>> GetSubCategories(Guid parentCategoryId)
+        public async Task<BaseResponse<IEnumerable<CategoryDto>>> GetSubCategories(Guid parentCategoryId)
         {
-            return await _apiClient.GetAsync<BaseResponse<CategoryDto>>($"Categories/subcategories/{parentCategoryId}");
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<CategoryDto>>>($"Categories/subcategories/{parentCategoryId}");
         }
-         public async Task<BaseResponse<CategoryDto>> UpdateCategory(Guid id, UpdateCategoryDto categoryDto)
+
+        public async Task<BaseResponse<IEnumerable<ProductDTO>>> GetProductsByCategoryIdAsync(Guid id)
+        {
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<ProductDTO>>>($"Categories/{id}/products");
+        }
+         public async Task<BaseResponse<CategoryDto>> UpdateCategoryAsync(Guid id, UpdateCategoryDto categoryDto)
         {
             return await _apiClient.PutAsync<BaseResponse<CategoryDto>>($"Categories/{id}", categoryDto);
         }

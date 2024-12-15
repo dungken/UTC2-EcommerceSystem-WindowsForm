@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,23 @@ namespace Source.Models
         public DateTime OrderDate { get; set; } // Order date
         public string Status { get; set; } // Order status (Pending, Completed, Cancelled)
         public decimal TotalAmount { get; set; } // Total order amount
+
+        public string ShippingAddress { get; set; } // Shipping address
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-      
+        // Navigation Properties
+        public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+        public Payment Payment { get; set; }
+
+        // Foreign Keys
+        public Guid UserId { get; set; }
+        public User User { get; set; }
+
+        public Guid? VoucherID { get; set; }
+        public Voucher? Voucher { get; set; }
+
+
     }
 }

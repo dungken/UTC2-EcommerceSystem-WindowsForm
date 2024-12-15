@@ -30,19 +30,19 @@ namespace Source.Service
         }
 
         // Get all feedbacks for a product
-        public async Task<BaseResponse<IEnumerable<FeedbackDTO>>> GetAllFeedbacksForAProduct(Guid productId)
+        public async Task<BaseResponse<IEnumerable<FeedbackDTO>>> GetAllFeedbacksForAProductAsync(Guid productId)
         {
             return await _apiClient.GetAsync<BaseResponse<IEnumerable<FeedbackDTO>>>($"Feedback/product/{productId}");
         }
 
         // Update feedback
-        public async Task<BaseResponse<FeedbackDTO>> UpdateFeedback(Guid id, UpdateFeedbackDto feedbackDto)
+        public async Task<BaseResponse<FeedbackDTO>> UpdateFeedbackAsync(Guid id, UpdateFeedbackDto feedbackDto)
         {
             return await _apiClient.PutAsync<BaseResponse<FeedbackDTO>>($"Feedback/{id}", feedbackDto);
         }
 
         // Delete feedback
-        public async Task<bool> DeleteFeedback(Guid id)
+        public async Task<bool> DeleteFeedbackAsync(Guid id)
         {
             return await _apiClient.DeleteAsync($"Feedback/{id}");
         }

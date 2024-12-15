@@ -12,7 +12,9 @@ namespace Source.Models
         public string ColorCode { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
+        // Foreign Key
+        public Guid? ProductId { get; set; }
+        public Product? Product { get; set; }
 
-      
     }
 }

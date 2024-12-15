@@ -144,7 +144,7 @@ namespace Source.Views.Admin
             }
 
             // Gọi API để cập nhật
-            var result = await _categoriesService.UpdateCategory(_category.Id, new UpdateCategoryDto
+            var result = await _categoriesService.UpdateCategoryAsync(_category.Id, new UpdateCategoryDto
             {
                 Name = _category.Name,
                 Description = _category.Description,

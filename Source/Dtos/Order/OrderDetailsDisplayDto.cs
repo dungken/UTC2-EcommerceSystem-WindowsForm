@@ -9,6 +9,7 @@ namespace Source.Dtos.Order
     public class OrderDetailsDisplayDto
     {
         public Guid Id { get; set; }
+        public string ProductName { get; set; } 
         public int Quantity { get; set; } // Quantity of product
         public decimal UnitPrice { get; set; } // Price per unit
     }

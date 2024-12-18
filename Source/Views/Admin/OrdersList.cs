@@ -37,11 +37,12 @@ namespace Source.Views.Admin
         private void CustomizeDataGridView()
         {
             gridView.Columns[0].Width = 190;
-            gridView.Columns[1].Width = 190;
-            gridView.Columns[2].Width = 100;
+            gridView.Columns[1].Width = 150;
+            gridView.Columns[2].Width = 190;
             gridView.Columns[3].Width = 100;
-            gridView.Columns[4].Width = 80;
+            gridView.Columns[4].Width = 100;
             gridView.Columns[5].Width = 80;
+            gridView.Columns[6].Width = 80;
             gridView.AutoGenerateColumns = false;
         }
         private void InitializeShowing()
@@ -61,29 +62,27 @@ namespace Source.Views.Admin
             await LoadOrders();
         }
 
-        //private async Task<string> GetUserNameById(Guid? userId = null)
-        //{
-        //    if (!userId.HasValue)
-        //    {
-        //        // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
-        //        return null;
-        //    }
+        private async Task<string> GetUserNameById(Guid? userId = null)
+        {
+            if (!userId.HasValue)
+            {
+                // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
+                return null;
+            }
 
-        //    var response = await _usersService.GetAllUser();
+            var response = await _usersService.GetUserById(userId.Value);
 
-        //    // Kiểm tra kết quả trả về
-        //    if (response?.Success == true && response.Data?.Users != null)
-        //    {
-        //        // Tìm người dùng có userId tương ứng
-        //        var user = response.Data.Users.FirstOrDefault(u => u.Id == userId.Value);
+            // Kiểm tra kết quả trả về
+            if (response?.Success == true && response.Data?.user.FirstName != null && response.Data?.user.LastName != null)
+            {
+                return (response.Data.user.FirstName + " " + response.Data.user.LastName);
+            }
 
-        //        // Nếu tìm thấy người dùng, trả về tên người dùng, nếu không trả về null
-        //        return user?.UserName;
-        //    }
 
-        //    // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
-        //    return null;
-        //}
+            // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
+            return null;
+        }
+        
         private async Task LoadOrders()
         {
             try
@@ -92,13 +91,20 @@ namespace Source.Views.Admin
                 if (response != null && response.Data != null)
                 {
                     // Ánh xạ dữ liệu sang OrderDisplayDto
-                    _originalData = response.Data.Select(order => new OrderDisplayDto
+                    _originalData = new List<OrderDisplayDto>();
+
+                    foreach (var order in response.Data)
                     {
-                        Id = order.Id,
-                        OrderDate = order.OrderDate,
-                        Status = order.Status,
-                        TotalAmount = order.TotalAmount,
-                    }).ToList();
+                        var userName = await GetUserNameById(order.UserId); // Lấy tên người dùng
+                        _originalData.Add(new OrderDisplayDto
+                        {
+                            Id = order.Id,
+                            OrderDate = order.OrderDate,
+                            Status = order.Status,
+                            TotalAmount = order.TotalAmount,
+                            CustomerName = userName // Thêm tên khách hàng
+                        });
+                    }
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize); // Tính tổng số trang
                     DisplayPage(_currentPage); // Hiển thị trang đầu tiên

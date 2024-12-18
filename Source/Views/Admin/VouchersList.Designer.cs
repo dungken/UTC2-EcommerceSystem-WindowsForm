@@ -1,6 +1,6 @@
 ﻿namespace Source.Views.Admin
 {
-    partial class CouponsList
+    partial class VouchersList
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,23 @@
             pnTitle = new Panel();
             btnAdd = new MyCustomControl.RJButton();
             lblShowing = new Label();
-            btnNext = new MyCustomControl.RJButton();
-            btnPre = new MyCustomControl.RJButton();
-            pnPage = new Panel();
             pnFotter = new Panel();
             gridView = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Code = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            StartDate = new DataGridViewTextBoxColumn();
+            EndDate = new DataGridViewTextBoxColumn();
+            MinOrder = new DataGridViewTextBoxColumn();
+            Limit = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Remove = new DataGridViewButtonColumn();
             pnList = new Panel();
             pnMain = new Panel();
+            pnPage = new Panel();
+            labelPageInfo = new Label();
+            btnNext = new MyCustomControl.RJButton();
+            btnPre = new MyCustomControl.RJButton();
             btnEntries = new Label();
             cbxShow = new ComboBox();
             lblShow = new Label();
@@ -48,18 +58,12 @@
             lblSearch = new Label();
             pnSearch = new Panel();
             pnHeader = new Panel();
-            Id = new DataGridViewTextBoxColumn();
-            NameCoupons = new DataGridViewTextBoxColumn();
-            Percentage = new DataGridViewTextBoxColumn();
-            StartDate = new DataGridViewTextBoxColumn();
-            EndDate = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewTextBoxColumn();
             pnTitle.SuspendLayout();
-            pnPage.SuspendLayout();
             pnFotter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             pnList.SuspendLayout();
             pnMain.SuspendLayout();
+            pnPage.SuspendLayout();
             pnLeftHeader.SuspendLayout();
             pnSearch.SuspendLayout();
             pnHeader.SuspendLayout();
@@ -73,9 +77,9 @@
             lblHeader.Location = new Point(23, 27);
             lblHeader.Margin = new Padding(2, 0, 2, 0);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(186, 35);
+            lblHeader.Size = new Size(188, 35);
             lblHeader.TabIndex = 0;
-            lblHeader.Text = "Coupons List";
+            lblHeader.Text = "Vouchers List";
             // 
             // pnLine
             // 
@@ -113,9 +117,10 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(251, 50);
             btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add Categories";
+            btnAdd.Text = "Add Vouchers";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // lblShowing
             // 
@@ -128,6 +133,154 @@
             lblShowing.TabIndex = 0;
             lblShowing.Text = "Showing 1 to 10 of 13 entries";
             // 
+            // pnFotter
+            // 
+            pnFotter.Controls.Add(lblShowing);
+            pnFotter.Location = new Point(2, 389);
+            pnFotter.Margin = new Padding(2, 3, 2, 3);
+            pnFotter.Name = "pnFotter";
+            pnFotter.Size = new Size(957, 47);
+            pnFotter.TabIndex = 0;
+            // 
+            // gridView
+            // 
+            gridView.AllowUserToOrderColumns = true;
+            gridView.BorderStyle = BorderStyle.None;
+            gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Code, Amount, StartDate, EndDate, MinOrder, Limit, Edit, Remove });
+            gridView.GridColor = Color.Gray;
+            gridView.Location = new Point(5, 3);
+            gridView.Margin = new Padding(2, 3, 2, 3);
+            gridView.Name = "gridView";
+            gridView.RowHeadersVisible = false;
+            gridView.RowHeadersWidth = 51;
+            gridView.Size = new Size(953, 328);
+            gridView.TabIndex = 0;
+            gridView.CellClick += gridView_CellClick;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Code
+            // 
+            Code.DataPropertyName = "Code";
+            Code.HeaderText = "Code";
+            Code.MinimumWidth = 6;
+            Code.Name = "Code";
+            Code.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Code.Width = 125;
+            // 
+            // Amount
+            // 
+            Amount.DataPropertyName = "Amount";
+            Amount.HeaderText = "Amount";
+            Amount.MinimumWidth = 6;
+            Amount.Name = "Amount";
+            Amount.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Amount.Width = 125;
+            // 
+            // StartDate
+            // 
+            StartDate.DataPropertyName = "StartDate";
+            StartDate.HeaderText = "Start Date";
+            StartDate.MinimumWidth = 6;
+            StartDate.Name = "StartDate";
+            StartDate.SortMode = DataGridViewColumnSortMode.Programmatic;
+            StartDate.Width = 125;
+            // 
+            // EndDate
+            // 
+            EndDate.DataPropertyName = "EndDate";
+            EndDate.HeaderText = "End Date";
+            EndDate.MinimumWidth = 6;
+            EndDate.Name = "EndDate";
+            EndDate.SortMode = DataGridViewColumnSortMode.Programmatic;
+            EndDate.Width = 125;
+            // 
+            // MinOrder
+            // 
+            MinOrder.DataPropertyName = "MinOrder";
+            MinOrder.HeaderText = "Min Order ";
+            MinOrder.MinimumWidth = 6;
+            MinOrder.Name = "MinOrder";
+            MinOrder.SortMode = DataGridViewColumnSortMode.Programmatic;
+            MinOrder.Width = 125;
+            // 
+            // Limit
+            // 
+            Limit.DataPropertyName = "Limit";
+            Limit.HeaderText = "Limit";
+            Limit.MinimumWidth = 6;
+            Limit.Name = "Limit";
+            Limit.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Limit.Width = 125;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 125;
+            // 
+            // Remove
+            // 
+            Remove.HeaderText = "Remove";
+            Remove.MinimumWidth = 6;
+            Remove.Name = "Remove";
+            Remove.Resizable = DataGridViewTriState.True;
+            Remove.UseColumnTextForButtonValue = true;
+            Remove.Width = 125;
+            // 
+            // pnList
+            // 
+            pnList.Controls.Add(gridView);
+            pnList.Cursor = Cursors.IBeam;
+            pnList.Location = new Point(-2, 51);
+            pnList.Margin = new Padding(2, 3, 2, 3);
+            pnList.Name = "pnList";
+            pnList.Size = new Size(966, 336);
+            pnList.TabIndex = 1;
+            // 
+            // pnMain
+            // 
+            pnMain.BackColor = Color.White;
+            pnMain.Controls.Add(pnPage);
+            pnMain.Controls.Add(pnList);
+            pnMain.Controls.Add(pnFotter);
+            pnMain.Location = new Point(1, 101);
+            pnMain.Margin = new Padding(2, 3, 2, 3);
+            pnMain.Name = "pnMain";
+            pnMain.Size = new Size(963, 440);
+            pnMain.TabIndex = 10;
+            // 
+            // pnPage
+            // 
+            pnPage.Controls.Add(labelPageInfo);
+            pnPage.Controls.Add(btnNext);
+            pnPage.Controls.Add(btnPre);
+            pnPage.Location = new Point(643, 388);
+            pnPage.Margin = new Padding(2, 3, 2, 3);
+            pnPage.Name = "pnPage";
+            pnPage.Size = new Size(313, 45);
+            pnPage.TabIndex = 2;
+            // 
+            // labelPageInfo
+            // 
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
+            // 
             // btnNext
             // 
             btnNext.BackColor = Color.FromArgb(249, 251, 253);
@@ -139,7 +292,7 @@
             btnNext.FlatAppearance.BorderSize = 0;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.MediumSlateBlue;
-            btnNext.Location = new Point(194, 1);
+            btnNext.Location = new Point(213, 1);
             btnNext.Margin = new Padding(2, 3, 2, 3);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(108, 42);
@@ -147,6 +300,7 @@
             btnNext.Text = "Next";
             btnNext.TextColor = Color.MediumSlateBlue;
             btnNext.UseVisualStyleBackColor = false;
+            btnNext.Click += btnNext_Click;
             // 
             // btnPre
             // 
@@ -167,62 +321,7 @@
             btnPre.Text = "Previous";
             btnPre.TextColor = Color.MediumSlateBlue;
             btnPre.UseVisualStyleBackColor = false;
-            // 
-            // pnPage
-            // 
-            pnPage.Controls.Add(btnNext);
-            pnPage.Controls.Add(btnPre);
-            pnPage.Location = new Point(655, 3);
-            pnPage.Margin = new Padding(2, 3, 2, 3);
-            pnPage.Name = "pnPage";
-            pnPage.Size = new Size(299, 45);
-            pnPage.TabIndex = 1;
-            // 
-            // pnFotter
-            // 
-            pnFotter.Controls.Add(pnPage);
-            pnFotter.Controls.Add(lblShowing);
-            pnFotter.Location = new Point(2, 389);
-            pnFotter.Margin = new Padding(2, 3, 2, 3);
-            pnFotter.Name = "pnFotter";
-            pnFotter.Size = new Size(957, 47);
-            pnFotter.TabIndex = 0;
-            // 
-            // gridView
-            // 
-            gridView.BorderStyle = BorderStyle.None;
-            gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, NameCoupons, Percentage, StartDate, EndDate, Action });
-            gridView.GridColor = Color.Gray;
-            gridView.Location = new Point(5, 3);
-            gridView.Margin = new Padding(2, 3, 2, 3);
-            gridView.Name = "gridView";
-            gridView.RowHeadersVisible = false;
-            gridView.RowHeadersWidth = 51;
-            gridView.Size = new Size(953, 328);
-            gridView.TabIndex = 0;
-            // 
-            // pnList
-            // 
-            pnList.Controls.Add(gridView);
-            pnList.Cursor = Cursors.IBeam;
-            pnList.Location = new Point(-2, 51);
-            pnList.Margin = new Padding(2, 3, 2, 3);
-            pnList.Name = "pnList";
-            pnList.Size = new Size(966, 336);
-            pnList.TabIndex = 1;
-            // 
-            // pnMain
-            // 
-            pnMain.BackColor = Color.White;
-            pnMain.Controls.Add(pnList);
-            pnMain.Controls.Add(pnFotter);
-            pnMain.Location = new Point(1, 101);
-            pnMain.Margin = new Padding(2, 3, 2, 3);
-            pnMain.Name = "pnMain";
-            pnMain.Size = new Size(963, 440);
-            pnMain.TabIndex = 10;
+            btnPre.Click += btnPre_Click;
             // 
             // btnEntries
             // 
@@ -242,6 +341,7 @@
             cbxShow.Name = "cbxShow";
             cbxShow.Size = new Size(43, 30);
             cbxShow.TabIndex = 1;
+            cbxShow.SelectedIndexChanged += cbxShow_SelectedIndexChanged;
             // 
             // lblShow
             // 
@@ -304,49 +404,7 @@
             pnHeader.Size = new Size(963, 47);
             pnHeader.TabIndex = 7;
             // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.Width = 125;
-            // 
-            // Name
-            // 
-            NameCoupons.HeaderText = "Name";
-            NameCoupons.MinimumWidth = 6;
-            NameCoupons.Name = "Name";
-            NameCoupons.Width = 125;
-            // 
-            // Percentage
-            // 
-            Percentage.HeaderText = "Percentage";
-            Percentage.MinimumWidth = 6;
-            Percentage.Name = "Percentage";
-            Percentage.Width = 125;
-            // 
-            // StartDate
-            // 
-            StartDate.HeaderText = "StartDate";
-            StartDate.MinimumWidth = 6;
-            StartDate.Name = "StartDate";
-            StartDate.Width = 125;
-            // 
-            // EndDate
-            // 
-            EndDate.HeaderText = "EndDate";
-            EndDate.MinimumWidth = 6;
-            EndDate.Name = "EndDate";
-            EndDate.Width = 125;
-            // 
-            // Action
-            // 
-            Action.HeaderText = "Action";
-            Action.MinimumWidth = 6;
-            Action.Name = "Action";
-            Action.Width = 125;
-            // 
-            // CouponsList
+            // VouchersList
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -358,16 +416,18 @@
             Controls.Add(pnMain);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
-            Name = "CouponsList";
+            Name = "VouchersList";
             Text = "CouponsList";
+            Load += VouchersList_Load;
             pnTitle.ResumeLayout(false);
             pnTitle.PerformLayout();
-            pnPage.ResumeLayout(false);
             pnFotter.ResumeLayout(false);
             pnFotter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnList.ResumeLayout(false);
             pnMain.ResumeLayout(false);
+            pnPage.ResumeLayout(false);
+            pnPage.PerformLayout();
             pnLeftHeader.ResumeLayout(false);
             pnLeftHeader.PerformLayout();
             pnSearch.ResumeLayout(false);
@@ -383,17 +443,8 @@
         private Panel pnTitle;
         private MyCustomControl.RJButton btnAdd;
         private Label lblShowing;
-        private MyCustomControl.RJButton btnNext;
-        private MyCustomControl.RJButton btnPre;
-        private Panel pnPage;
         private Panel pnFotter;
         private DataGridView gridView;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn NameCoupons;
-        private DataGridViewTextBoxColumn Percentage;
-        private DataGridViewTextBoxColumn StartDate;
-        private DataGridViewTextBoxColumn EndDate;
-        private DataGridViewTextBoxColumn Action;
         private Panel pnList;
         private Panel pnMain;
         private Label btnEntries;
@@ -404,5 +455,18 @@
         private Label lblSearch;
         private Panel pnSearch;
         private Panel pnHeader;
+        private Panel pnPage;
+        private Label labelPageInfo;
+        private MyCustomControl.RJButton btnNext;
+        private MyCustomControl.RJButton btnPre;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Code;
+        private DataGridViewTextBoxColumn Amount;
+        private DataGridViewTextBoxColumn StartDate;
+        private DataGridViewTextBoxColumn EndDate;
+        private DataGridViewTextBoxColumn MinOrder;
+        private DataGridViewTextBoxColumn Limit;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Remove;
     }
 }

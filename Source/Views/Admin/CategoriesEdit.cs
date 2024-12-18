@@ -122,6 +122,11 @@ namespace Source.Views.Admin
             {
                 parentCategoryId = selectedItem.Value;
             }
+            if (string.IsNullOrEmpty(tbxDescription.Text))
+            {
+                MessageBox.Show("Category description cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Lấy dữ liệu đã chỉnh sửa
             _category.Name = tbxName.Text;
             _category.Description = tbxDescription.Text;

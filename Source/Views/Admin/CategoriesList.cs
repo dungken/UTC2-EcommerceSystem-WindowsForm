@@ -35,14 +35,13 @@ namespace Source.Views.Admin
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.GridColor = Color.Silver;
-            gridView.Columns[0].Width = 220;
-            gridView.Columns[1].Width = 240;
-            gridView.Columns[2].Width = 200;
+            gridView.Columns[0].Width = 230;
+            gridView.Columns[1].Width = 150;
+            gridView.Columns[2].Width = 300;
             gridView.Columns[3].Width = 120;
             gridView.Columns[4].Width = 80;
             gridView.Columns[5].Width = 80;
             gridView.AutoGenerateColumns = false;
-
         }
         private void InitializeShowing()
         {
@@ -72,7 +71,7 @@ namespace Source.Views.Admin
                     {
                         Id = category.Id,
                         CategoryName = category.Name,
-                        //Date = category., 
+                        Description = category.Description,
                         Status = category.Status
                     }).ToList();
 
@@ -134,6 +133,11 @@ namespace Source.Views.Admin
 
         private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            // Kiểm tra nếu cột không cho phép click vào header
+            if (gridView.Columns[e.ColumnIndex].Name == "Edit" || (gridView.Columns[e.ColumnIndex].Name == "Remove"))
+            {
+                return; // Ngăn click vào header
+            }
             // Lấy tên cột được nhấn
             string columnName = gridView.Columns[e.ColumnIndex].DataPropertyName;
 
@@ -200,10 +204,7 @@ namespace Source.Views.Admin
             // Kiểm tra nếu người dùng nhấn vào cột "Remove"
             if (columnName == "Remove")
             {
-                // Lấy ID của hàng được chọn
-                var id = (Guid)selectedRow.Cells["Id"].Value; // Cột "Id" phải chứa GUID
-
-                // Hiển thị hộp thoại xác nhận xóa
+                 // Hiển thị hộp thoại xác nhận xóa
                 var confirmResult = MessageBox.Show("Are you sure you want to remove this item?",
                                                     "Confirm Delete",
                                                     MessageBoxButtons.YesNo,
@@ -212,7 +213,7 @@ namespace Source.Views.Admin
                 if (confirmResult == DialogResult.Yes)
                 {
                     // Gọi hàm xóa từ service
-                    var isDeleted = await _categoriesService.DeleteCategory(id);
+                    var isDeleted = await _categoriesService.DeleteCategory(categoryId);
 
                     if (isDeleted)
                     {
@@ -233,11 +234,8 @@ namespace Source.Views.Admin
             // Kiểm tra xem có phải cột Edit hay không
             else if (columnName == "Edit")
             {
-                // Lấy Id từ DataGridView
-                var selectedRowId = (Guid)selectedRow.Cells["Id"].Value;
-
                 // Gọi dịch vụ để lấy thông tin chi tiết
-                var response = await _categoriesService.GetCategoryByIdAsync(selectedRowId);
+                var response = await _categoriesService.GetCategoryByIdAsync(categoryId);
 
                 if (response.Success)
                 {

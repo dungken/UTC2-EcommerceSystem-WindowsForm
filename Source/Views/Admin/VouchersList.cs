@@ -8,40 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Source.Dtos.Category;
-using Source.Dtos.Order;
-using Source.Models;
+using Source.Dtos.Voucher;
 using Source.Service;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Source.Views.Admin
 {
-    public partial class OrdersList : Form
+    public partial class VouchersList : Form
     {
-        private readonly OrderService _ordersService;
-        private readonly UserService _usersService;  
-        private List<OrderDisplayDto> _originalData; // Dữ liệu gốc
+        private readonly VoucherService _vouchersService;
+        private List<VoucherDisplayDto> _originalData; // Dữ liệu gốc
         private int _pageSize = 5;                    // Số hàng trên mỗi trang
         private int _currentPage = 1;                 // Trang hiện tại
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
-        public OrdersList()
+        public VouchersList()
         {
             InitializeComponent();
-            _ordersService = new OrderService();
-            _usersService = new UserService();
-            _originalData = new List<OrderDisplayDto>();
+            _vouchersService = new VoucherService();
+            _originalData = new List<VoucherDisplayDto>();
             CustomizeDataGridView();
             InitializeShowing();
         }
         private void CustomizeDataGridView()
         {
-            gridView.Columns[0].Width = 190;
-            gridView.Columns[1].Width = 190;
+            gridView.BorderStyle = BorderStyle.None;
+            gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            gridView.GridColor = Color.Silver;
+            gridView.Columns[0].Width = 100;
+            gridView.Columns[1].Width = 100;
             gridView.Columns[2].Width = 100;
-            gridView.Columns[3].Width = 100;
-            gridView.Columns[4].Width = 80;
-            gridView.Columns[5].Width = 80;
+            gridView.Columns[3].Width = 150;
+            gridView.Columns[4].Width = 150;
+            gridView.Columns[5].Width = 100;
+            gridView.Columns[6].Width = 100;
+            gridView.Columns[7].Width = 80;
+            gridView.Columns[8].Width = 80;
             gridView.AutoGenerateColumns = false;
         }
         private void InitializeShowing()
@@ -56,48 +58,28 @@ namespace Source.Views.Admin
             cbxShow.SelectedIndex = 4; // Mặc định chọn 5 hàng trên mỗi trang
         }
 
-        private async void OrdersList_Load(object sender, EventArgs e)
+        private async void VouchersList_Load(object sender, EventArgs e)
         {
-            await LoadOrders();
+            await LoadVouchers();
         }
-
-        //private async Task<string> GetUserNameById(Guid? userId = null)
-        //{
-        //    if (!userId.HasValue)
-        //    {
-        //        // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
-        //        return null;
-        //    }
-
-        //    var response = await _usersService.GetAllUser();
-
-        //    // Kiểm tra kết quả trả về
-        //    if (response?.Success == true && response.Data?.Users != null)
-        //    {
-        //        // Tìm người dùng có userId tương ứng
-        //        var user = response.Data.Users.FirstOrDefault(u => u.Id == userId.Value);
-
-        //        // Nếu tìm thấy người dùng, trả về tên người dùng, nếu không trả về null
-        //        return user?.UserName;
-        //    }
-
-        //    // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
-        //    return null;
-        //}
-        private async Task LoadOrders()
+        private async Task LoadVouchers()
         {
             try
             {
-                var response = await _ordersService.GetAllOrdersAsync();
+                var response = await _vouchersService.GetAllVouchersAsync();
                 if (response != null && response.Data != null)
                 {
-                    // Ánh xạ dữ liệu sang OrderDisplayDto
-                    _originalData = response.Data.Select(order => new OrderDisplayDto
+                    // Ánh xạ dữ liệu sang VoucherDisplayDto
+                    _originalData = response.Data.Select(voucher => new VoucherDisplayDto
                     {
-                        Id = order.Id,
-                        OrderDate = order.OrderDate,
-                        Status = order.Status,  
-                        TotalAmount = order.TotalAmount,
+                        Id = voucher.VoucherID,
+                        Code = voucher.VoucherCode,
+                        Amount = voucher.DiscountAmount,
+                        StartDate = voucher.StartDate,
+                        EndDate = voucher.EndDate,
+                        MinOrder = voucher.MinimumOrderValue,
+                        Limit = voucher.UsageLimit,
+
                     }).ToList();
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize); // Tính tổng số trang
@@ -105,7 +87,7 @@ namespace Source.Views.Admin
                 }
                 else
                 {
-                    MessageBox.Show("Không thể tải dữ liệu order.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không thể tải dữ liệu voucher.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -127,7 +109,7 @@ namespace Source.Views.Admin
             labelPageInfo.Text = $"Page {pageNumber} of {_totalPages}";
         }
 
-        private void rjButton2_Click(object sender, EventArgs e)
+        private void btnPre_Click(object sender, EventArgs e)
         {
             if (_currentPage > 1)
             {
@@ -135,8 +117,7 @@ namespace Source.Views.Admin
                 DisplayPage(_currentPage);
             }
         }
-
-        private void rjButton1_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             if (_currentPage < _totalPages)
             {
@@ -159,7 +140,7 @@ namespace Source.Views.Admin
         private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Kiểm tra nếu cột không cho phép click vào header
-            if (gridView.Columns[e.ColumnIndex].Name == "Edit" || gridView.Columns[e.ColumnIndex].Name == "Detail")
+            if (gridView.Columns[e.ColumnIndex].Name == "Edit" || (gridView.Columns[e.ColumnIndex].Name == "Remove"))
             {
                 return; // Ngăn click vào header
             }
@@ -224,23 +205,54 @@ namespace Source.Views.Admin
 
             // Lấy thông tin hàng hiện tại
             var selectedRow = gridView.Rows[e.RowIndex];
-            var orderId = (Guid)selectedRow.Cells["Id"].Value;
-             // Kiểm tra xem có phải cột Edit hay không
-            if (columnName == "Edit")
+            var voucherId = (Guid)selectedRow.Cells["Id"].Value;
+
+            // Kiểm tra nếu người dùng nhấn vào cột "Remove"
+            if (columnName == "Remove")
+            {
+                // Hiển thị hộp thoại xác nhận xóa
+                var confirmResult = MessageBox.Show("Are you sure you want to remove this item?",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Gọi hàm xóa từ service
+                    var isDeleted = await _vouchersService.DeleteVoucherAsync(voucherId);
+
+                    if (isDeleted.Success)
+                    {
+                        MessageBox.Show("Item removed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Xóa hàng khỏi DataGridView
+                        await LoadVouchers();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to remove the item. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+
+
+            //Kiểm tra xem có phải cột Edit hay không
+            else if (columnName == "Edit")
             {
                 // Gọi dịch vụ để lấy thông tin chi tiết
-                var response = await _ordersService.GetOrderByIdAsync(orderId);
+                var response = await _vouchersService.GetVoucherByIdAsync(voucherId);
 
                 if (response.Success)
                 {
-                    var order = response.Data;
+                    var voucher = response.Data;
 
                     // Mở form Edit với dữ liệu lấy từ dịch vụ
-                    using (var editForm = new OrdersEdit(order))
+                    using (var editForm = new VouchersEdit(voucher))
                     {
                         if (editForm.ShowDialog() == DialogResult.OK)
                         {
-                            await LoadOrders(); // Cập nhật lại dữ liệu trong DataGridView
+                            await LoadVouchers(); // Cập nhật lại dữ liệu trong DataGridView
                         }
                     }
                 }
@@ -249,30 +261,22 @@ namespace Source.Views.Admin
                     MessageBox.Show("Failed to retrieve category details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
 
-            else if (columnName == "Detail")
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // Mở form AddCategoryForm
+            var addVoucherForm = new VouchersAdd();
+
+            // Nếu người dùng thêm thành công, form sẽ đóng lại và danh sách cần được cập nhật
+            if (addVoucherForm.ShowDialog() == DialogResult.OK)
             {
-                // Gọi dịch vụ để lấy thông tin chi tiết
-                var response = await _ordersService.GetOrderByIdAsync(orderId);
-
-                if (response.Success)
-                {
-                    var order = response.Data;
-
-                    // Mở form Edit với dữ liệu lấy từ dịch vụ
-                    using (var detailForm = new OrderDetails(order))
-                    {
-                        if (detailForm.ShowDialog() == DialogResult.OK)
-                        {
-                            await LoadOrders(); // Cập nhật lại dữ liệu trong DataGridView
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to retrieve category details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                // Cập nhật lại danh sách (ví dụ: refresh lại DataGridView hoặc ListBox)
+                LoadVouchers();
             }
+
+            // Đóng form hiện tại (CategoryListForm)
+            this.Close();
         }
     }
 }

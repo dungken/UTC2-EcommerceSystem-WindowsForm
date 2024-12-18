@@ -31,38 +31,38 @@
             lblHeader = new Label();
             pnLine = new Panel();
             pnTitle = new Panel();
-            btnAdd = new MyCustomControl.RJButton();
             lblShowing = new Label();
-            btnNext = new MyCustomControl.RJButton();
-            btnPre = new MyCustomControl.RJButton();
-            pnPage = new Panel();
             pnFotter = new Panel();
+            panel1 = new Panel();
+            labelPageInfo = new Label();
+            rjButton1 = new MyCustomControl.RJButton();
+            rjButton2 = new MyCustomControl.RJButton();
             gridView = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            CustomerName = new DataGridViewTextBoxColumn();
-            TotalAmount = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewTextBoxColumn();
             pnList = new Panel();
             pnMain = new Panel();
+            pnHeader = new Panel();
+            pnSearch = new Panel();
+            tbxSearch = new TextBox();
+            lblSearch = new Label();
+            pnLeftHeader = new Panel();
             btnEntries = new Label();
             cbxShow = new ComboBox();
             lblShow = new Label();
-            pnLeftHeader = new Panel();
-            tbxSearch = new TextBox();
-            lblSearch = new Label();
-            pnSearch = new Panel();
-            pnHeader = new Panel();
+            Id = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            TotalAmount = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Detail = new DataGridViewButtonColumn();
             pnTitle.SuspendLayout();
-            pnPage.SuspendLayout();
             pnFotter.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             pnList.SuspendLayout();
             pnMain.SuspendLayout();
-            pnLeftHeader.SuspendLayout();
-            pnSearch.SuspendLayout();
             pnHeader.SuspendLayout();
+            pnSearch.SuspendLayout();
+            pnLeftHeader.SuspendLayout();
             SuspendLayout();
             // 
             // lblHeader
@@ -89,33 +89,12 @@
             // 
             // pnTitle
             // 
-            pnTitle.Controls.Add(btnAdd);
             pnTitle.Controls.Add(lblHeader);
             pnTitle.Location = new Point(0, -2);
             pnTitle.Margin = new Padding(2, 3, 2, 3);
             pnTitle.Name = "pnTitle";
             pnTitle.Size = new Size(964, 91);
             pnTitle.TabIndex = 8;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.MediumSlateBlue;
-            btnAdd.BackgroundColor = Color.MediumSlateBlue;
-            btnAdd.BorderColor = Color.PaleVioletRed;
-            btnAdd.BorderRadius = 20;
-            btnAdd.BorderSize = 0;
-            btnAdd.Cursor = Cursors.Hand;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(684, 24);
-            btnAdd.Margin = new Padding(2, 3, 2, 3);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(251, 50);
-            btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add Categories";
-            btnAdd.TextColor = Color.White;
-            btnAdd.UseVisualStyleBackColor = false;
             // 
             // lblShowing
             // 
@@ -128,59 +107,9 @@
             lblShowing.TabIndex = 0;
             lblShowing.Text = "Showing 1 to 10 of 13 entries";
             // 
-            // btnNext
-            // 
-            btnNext.BackColor = Color.FromArgb(249, 251, 253);
-            btnNext.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnNext.BorderColor = Color.PaleVioletRed;
-            btnNext.BorderRadius = 20;
-            btnNext.BorderSize = 0;
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.FlatAppearance.BorderSize = 0;
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.ForeColor = Color.MediumSlateBlue;
-            btnNext.Location = new Point(194, 1);
-            btnNext.Margin = new Padding(2, 3, 2, 3);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(108, 42);
-            btnNext.TabIndex = 1;
-            btnNext.Text = "Next";
-            btnNext.TextColor = Color.MediumSlateBlue;
-            btnNext.UseVisualStyleBackColor = false;
-            // 
-            // btnPre
-            // 
-            btnPre.BackColor = Color.FromArgb(249, 251, 253);
-            btnPre.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnPre.BorderColor = Color.PaleVioletRed;
-            btnPre.BorderRadius = 20;
-            btnPre.BorderSize = 0;
-            btnPre.Cursor = Cursors.Hand;
-            btnPre.FlatAppearance.BorderSize = 0;
-            btnPre.FlatStyle = FlatStyle.Flat;
-            btnPre.ForeColor = Color.MediumSlateBlue;
-            btnPre.Location = new Point(2, 1);
-            btnPre.Margin = new Padding(2, 3, 2, 3);
-            btnPre.Name = "btnPre";
-            btnPre.Size = new Size(108, 42);
-            btnPre.TabIndex = 0;
-            btnPre.Text = "Previous";
-            btnPre.TextColor = Color.MediumSlateBlue;
-            btnPre.UseVisualStyleBackColor = false;
-            // 
-            // pnPage
-            // 
-            pnPage.Controls.Add(btnNext);
-            pnPage.Controls.Add(btnPre);
-            pnPage.Location = new Point(655, 3);
-            pnPage.Margin = new Padding(2, 3, 2, 3);
-            pnPage.Name = "pnPage";
-            pnPage.Size = new Size(299, 45);
-            pnPage.TabIndex = 1;
-            // 
             // pnFotter
             // 
-            pnFotter.Controls.Add(pnPage);
+            pnFotter.Controls.Add(panel1);
             pnFotter.Controls.Add(lblShowing);
             pnFotter.Location = new Point(2, 389);
             pnFotter.Margin = new Padding(2, 3, 2, 3);
@@ -188,12 +117,73 @@
             pnFotter.Size = new Size(957, 47);
             pnFotter.TabIndex = 0;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(labelPageInfo);
+            panel1.Controls.Add(rjButton1);
+            panel1.Controls.Add(rjButton2);
+            panel1.Location = new Point(644, 0);
+            panel1.Margin = new Padding(2, 3, 2, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(313, 45);
+            panel1.TabIndex = 2;
+            // 
+            // labelPageInfo
+            // 
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.Cursor = Cursors.Hand;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.MediumSlateBlue;
+            rjButton1.Location = new Point(213, 1);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(108, 42);
+            rjButton1.TabIndex = 1;
+            rjButton1.Text = "Next";
+            rjButton1.TextColor = Color.MediumSlateBlue;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 20;
+            rjButton2.BorderSize = 0;
+            rjButton2.Cursor = Cursors.Hand;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.MediumSlateBlue;
+            rjButton2.Location = new Point(2, 1);
+            rjButton2.Margin = new Padding(2, 3, 2, 3);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(108, 42);
+            rjButton2.TabIndex = 0;
+            rjButton2.Text = "Previous";
+            rjButton2.TextColor = Color.MediumSlateBlue;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
+            // 
             // gridView
             // 
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Status, CustomerName, TotalAmount, Action });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Status, TotalAmount, Edit, Detail });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 3);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -202,48 +192,8 @@
             gridView.RowHeadersWidth = 51;
             gridView.Size = new Size(953, 328);
             gridView.TabIndex = 0;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.Width = 125;
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 6;
-            Date.Name = "Date";
-            Date.Width = 125;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.Width = 125;
-            // 
-            // CustomerName
-            // 
-            CustomerName.HeaderText = "Customer Name";
-            CustomerName.MinimumWidth = 6;
-            CustomerName.Name = "CustomerName";
-            CustomerName.Width = 125;
-            // 
-            // TotalAmount
-            // 
-            TotalAmount.HeaderText = "Total Amount";
-            TotalAmount.MinimumWidth = 6;
-            TotalAmount.Name = "TotalAmount";
-            TotalAmount.Width = 125;
-            // 
-            // Action
-            // 
-            Action.HeaderText = "Action";
-            Action.MinimumWidth = 6;
-            Action.Name = "Action";
-            Action.Width = 125;
+            gridView.CellClick += gridView_CellClick;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
             // pnList
             // 
@@ -267,45 +217,26 @@
             pnMain.Size = new Size(963, 440);
             pnMain.TabIndex = 10;
             // 
-            // btnEntries
+            // pnHeader
             // 
-            btnEntries.AutoSize = true;
-            btnEntries.Location = new Point(119, 12);
-            btnEntries.Margin = new Padding(2, 0, 2, 0);
-            btnEntries.Name = "btnEntries";
-            btnEntries.Size = new Size(63, 22);
-            btnEntries.TabIndex = 2;
-            btnEntries.Text = "entries";
+            pnHeader.BackColor = Color.White;
+            pnHeader.Controls.Add(pnSearch);
+            pnHeader.Controls.Add(pnLeftHeader);
+            pnHeader.Location = new Point(0, 0);
+            pnHeader.Margin = new Padding(2, 3, 2, 3);
+            pnHeader.Name = "pnHeader";
+            pnHeader.Size = new Size(963, 47);
+            pnHeader.TabIndex = 7;
             // 
-            // cbxShow
+            // pnSearch
             // 
-            cbxShow.FormattingEnabled = true;
-            cbxShow.Location = new Point(67, 5);
-            cbxShow.Margin = new Padding(2, 3, 2, 3);
-            cbxShow.Name = "cbxShow";
-            cbxShow.Size = new Size(43, 30);
-            cbxShow.TabIndex = 1;
-            // 
-            // lblShow
-            // 
-            lblShow.AutoSize = true;
-            lblShow.Location = new Point(6, 13);
-            lblShow.Margin = new Padding(2, 0, 2, 0);
-            lblShow.Name = "lblShow";
-            lblShow.Size = new Size(55, 22);
-            lblShow.TabIndex = 0;
-            lblShow.Text = "Show";
-            // 
-            // pnLeftHeader
-            // 
-            pnLeftHeader.Controls.Add(btnEntries);
-            pnLeftHeader.Controls.Add(cbxShow);
-            pnLeftHeader.Controls.Add(lblShow);
-            pnLeftHeader.Location = new Point(12, 3);
-            pnLeftHeader.Margin = new Padding(2, 3, 2, 3);
-            pnLeftHeader.Name = "pnLeftHeader";
-            pnLeftHeader.Size = new Size(191, 42);
-            pnLeftHeader.TabIndex = 0;
+            pnSearch.Controls.Add(tbxSearch);
+            pnSearch.Controls.Add(lblSearch);
+            pnSearch.Location = new Point(596, 0);
+            pnSearch.Margin = new Padding(2, 3, 2, 3);
+            pnSearch.Name = "pnSearch";
+            pnSearch.Size = new Size(363, 45);
+            pnSearch.TabIndex = 1;
             // 
             // tbxSearch
             // 
@@ -326,26 +257,101 @@
             lblSearch.TabIndex = 0;
             lblSearch.Text = "Search:";
             // 
-            // pnSearch
+            // pnLeftHeader
             // 
-            pnSearch.Controls.Add(tbxSearch);
-            pnSearch.Controls.Add(lblSearch);
-            pnSearch.Location = new Point(596, 0);
-            pnSearch.Margin = new Padding(2, 3, 2, 3);
-            pnSearch.Name = "pnSearch";
-            pnSearch.Size = new Size(363, 45);
-            pnSearch.TabIndex = 1;
+            pnLeftHeader.Controls.Add(btnEntries);
+            pnLeftHeader.Controls.Add(cbxShow);
+            pnLeftHeader.Controls.Add(lblShow);
+            pnLeftHeader.Location = new Point(12, 3);
+            pnLeftHeader.Margin = new Padding(2, 3, 2, 3);
+            pnLeftHeader.Name = "pnLeftHeader";
+            pnLeftHeader.Size = new Size(191, 42);
+            pnLeftHeader.TabIndex = 0;
             // 
-            // pnHeader
+            // btnEntries
             // 
-            pnHeader.BackColor = Color.White;
-            pnHeader.Controls.Add(pnSearch);
-            pnHeader.Controls.Add(pnLeftHeader);
-            pnHeader.Location = new Point(0, 0);
-            pnHeader.Margin = new Padding(2, 3, 2, 3);
-            pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(963, 47);
-            pnHeader.TabIndex = 7;
+            btnEntries.AutoSize = true;
+            btnEntries.Location = new Point(119, 12);
+            btnEntries.Margin = new Padding(2, 0, 2, 0);
+            btnEntries.Name = "btnEntries";
+            btnEntries.Size = new Size(63, 22);
+            btnEntries.TabIndex = 2;
+            btnEntries.Text = "entries";
+            // 
+            // cbxShow
+            // 
+            cbxShow.FormattingEnabled = true;
+            cbxShow.Location = new Point(67, 5);
+            cbxShow.Margin = new Padding(2, 3, 2, 3);
+            cbxShow.Name = "cbxShow";
+            cbxShow.Size = new Size(43, 30);
+            cbxShow.TabIndex = 1;
+            cbxShow.SelectedIndexChanged += cbxShow_SelectedIndexChanged;
+            // 
+            // lblShow
+            // 
+            lblShow.AutoSize = true;
+            lblShow.Location = new Point(6, 13);
+            lblShow.Margin = new Padding(2, 0, 2, 0);
+            lblShow.Name = "lblShow";
+            lblShow.Size = new Size(55, 22);
+            lblShow.TabIndex = 0;
+            lblShow.Text = "Show";
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "OrderDate";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 6;
+            Date.Name = "Date";
+            Date.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Date.Width = 125;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Status.Width = 125;
+            // 
+            // TotalAmount
+            // 
+            TotalAmount.DataPropertyName = "TotalAmount";
+            TotalAmount.HeaderText = "Total Amount";
+            TotalAmount.MinimumWidth = 6;
+            TotalAmount.Name = "TotalAmount";
+            TotalAmount.SortMode = DataGridViewColumnSortMode.Programmatic;
+            TotalAmount.Width = 125;
+            // 
+            // Edit
+            // 
+            Edit.DataPropertyName = "Edit";
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 125;
+            // 
+            // Detail
+            // 
+            Detail.HeaderText = "Detail";
+            Detail.MinimumWidth = 6;
+            Detail.Name = "Detail";
+            Detail.Resizable = DataGridViewTriState.True;
+            Detail.UseColumnTextForButtonValue = true;
+            Detail.Width = 125;
             // 
             // OrdersList
             // 
@@ -360,19 +366,21 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "OrdersList";
             Text = "OrdersList";
+            Load += OrdersList_Load;
             pnTitle.ResumeLayout(false);
             pnTitle.PerformLayout();
-            pnPage.ResumeLayout(false);
             pnFotter.ResumeLayout(false);
             pnFotter.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnList.ResumeLayout(false);
             pnMain.ResumeLayout(false);
-            pnLeftHeader.ResumeLayout(false);
-            pnLeftHeader.PerformLayout();
+            pnHeader.ResumeLayout(false);
             pnSearch.ResumeLayout(false);
             pnSearch.PerformLayout();
-            pnHeader.ResumeLayout(false);
+            pnLeftHeader.ResumeLayout(false);
+            pnLeftHeader.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -381,11 +389,7 @@
         private Label lblHeader;
         private Panel pnLine;
         private Panel pnTitle;
-        private MyCustomControl.RJButton btnAdd;
         private Label lblShowing;
-        private MyCustomControl.RJButton btnNext;
-        private MyCustomControl.RJButton btnPre;
-        private Panel pnPage;
         private Panel pnFotter;
         private DataGridView gridView;
         private Panel pnList;
@@ -398,11 +402,15 @@
         private Label lblSearch;
         private Panel pnSearch;
         private Panel pnHeader;
+        private Panel panel1;
+        private Label labelPageInfo;
+        private MyCustomControl.RJButton rjButton1;
+        private MyCustomControl.RJButton rjButton2;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn CustomerName;
         private DataGridViewTextBoxColumn TotalAmount;
-        private DataGridViewTextBoxColumn Action;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Detail;
     }
 }

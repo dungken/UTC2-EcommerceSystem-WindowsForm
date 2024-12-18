@@ -33,17 +33,14 @@
             cbxOrderId = new ComboBox();
             lblOrderId = new Label();
             lblHeader = new Label();
-            pnPage = new Panel();
-            btnNext = new MyCustomControl.RJButton();
-            btnPre = new MyCustomControl.RJButton();
             pnList = new Panel();
             lblOrderSummary = new Label();
             gridView = new DataGridView();
-            ProductImage = new DataGridViewTextBoxColumn();
-            ProductName = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
             pnMain = new Panel();
+            panel1 = new Panel();
+            labelPageInfo = new Label();
+            rjButton1 = new MyCustomControl.RJButton();
+            rjButton2 = new MyCustomControl.RJButton();
             pnPrice = new Panel();
             pnLineShort = new Panel();
             lblTotalValue = new Label();
@@ -68,11 +65,14 @@
             lblDate = new Label();
             rbtnOrderDate = new MyCustomControl.RJButton();
             pictureBox1 = new PictureBox();
+            Id = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            UnitPrice = new DataGridViewTextBoxColumn();
             pnTitle.SuspendLayout();
-            pnPage.SuspendLayout();
             pnList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             pnMain.SuspendLayout();
+            panel1.SuspendLayout();
             pnPrice.SuspendLayout();
             pnInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -133,56 +133,6 @@
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Orders Details:";
             // 
-            // pnPage
-            // 
-            pnPage.Controls.Add(btnNext);
-            pnPage.Controls.Add(btnPre);
-            pnPage.Location = new Point(306, 396);
-            pnPage.Margin = new Padding(2, 3, 2, 3);
-            pnPage.Name = "pnPage";
-            pnPage.Size = new Size(299, 45);
-            pnPage.TabIndex = 1;
-            // 
-            // btnNext
-            // 
-            btnNext.BackColor = Color.FromArgb(249, 251, 253);
-            btnNext.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnNext.BorderColor = Color.PaleVioletRed;
-            btnNext.BorderRadius = 20;
-            btnNext.BorderSize = 0;
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.FlatAppearance.BorderSize = 0;
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.ForeColor = Color.MediumSlateBlue;
-            btnNext.Location = new Point(191, 3);
-            btnNext.Margin = new Padding(2, 3, 2, 3);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(108, 42);
-            btnNext.TabIndex = 1;
-            btnNext.Text = "Next";
-            btnNext.TextColor = Color.MediumSlateBlue;
-            btnNext.UseVisualStyleBackColor = false;
-            // 
-            // btnPre
-            // 
-            btnPre.BackColor = Color.FromArgb(249, 251, 253);
-            btnPre.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnPre.BorderColor = Color.PaleVioletRed;
-            btnPre.BorderRadius = 20;
-            btnPre.BorderSize = 0;
-            btnPre.Cursor = Cursors.Hand;
-            btnPre.FlatAppearance.BorderSize = 0;
-            btnPre.FlatStyle = FlatStyle.Flat;
-            btnPre.ForeColor = Color.MediumSlateBlue;
-            btnPre.Location = new Point(2, 1);
-            btnPre.Margin = new Padding(2, 3, 2, 3);
-            btnPre.Name = "btnPre";
-            btnPre.Size = new Size(108, 42);
-            btnPre.TabIndex = 0;
-            btnPre.Text = "Previous";
-            btnPre.TextColor = Color.MediumSlateBlue;
-            btnPre.UseVisualStyleBackColor = false;
-            // 
             // pnList
             // 
             pnList.Controls.Add(lblOrderSummary);
@@ -209,7 +159,7 @@
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { ProductImage, ProductName, Quantity, Price });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Quantity, UnitPrice });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 54);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -219,39 +169,11 @@
             gridView.Size = new Size(602, 246);
             gridView.TabIndex = 0;
             // 
-            // ProductImage
-            // 
-            ProductImage.HeaderText = "Product Image";
-            ProductImage.MinimumWidth = 6;
-            ProductImage.Name = "ProductImage";
-            ProductImage.Width = 125;
-            // 
-            // ProductName
-            // 
-            ProductName.HeaderText = "Product Name";
-            ProductName.MinimumWidth = 6;
-            ProductName.Name = "ProductName";
-            ProductName.Width = 125;
-            // 
-            // Quantity
-            // 
-            Quantity.HeaderText = "Quantity";
-            Quantity.MinimumWidth = 6;
-            Quantity.Name = "Quantity";
-            Quantity.Width = 125;
-            // 
-            // Price
-            // 
-            Price.HeaderText = "Price";
-            Price.MinimumWidth = 6;
-            Price.Name = "Price";
-            Price.Width = 125;
-            // 
             // pnMain
             // 
             pnMain.BackColor = Color.White;
+            pnMain.Controls.Add(panel1);
             pnMain.Controls.Add(pnPrice);
-            pnMain.Controls.Add(pnPage);
             pnMain.Controls.Add(pnInformation);
             pnMain.Controls.Add(pictureBox1);
             pnMain.Controls.Add(pnList);
@@ -260,6 +182,67 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(963, 456);
             pnMain.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(labelPageInfo);
+            panel1.Controls.Add(rjButton1);
+            panel1.Controls.Add(rjButton2);
+            panel1.Location = new Point(292, 399);
+            panel1.Margin = new Padding(2, 3, 2, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(313, 45);
+            panel1.TabIndex = 7;
+            // 
+            // labelPageInfo
+            // 
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.Cursor = Cursors.Hand;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.MediumSlateBlue;
+            rjButton1.Location = new Point(213, 1);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(108, 42);
+            rjButton1.TabIndex = 1;
+            rjButton1.Text = "Next";
+            rjButton1.TextColor = Color.MediumSlateBlue;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 20;
+            rjButton2.BorderSize = 0;
+            rjButton2.Cursor = Cursors.Hand;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.MediumSlateBlue;
+            rjButton2.Location = new Point(2, 1);
+            rjButton2.Margin = new Padding(2, 3, 2, 3);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(108, 42);
+            rjButton2.TabIndex = 0;
+            rjButton2.Text = "Previous";
+            rjButton2.TextColor = Color.MediumSlateBlue;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
             // 
             // pnPrice
             // 
@@ -310,9 +293,9 @@
             lblShippingCostValue.AutoSize = true;
             lblShippingCostValue.Location = new Point(204, 68);
             lblShippingCostValue.Name = "lblShippingCostValue";
-            lblShippingCostValue.Size = new Size(65, 22);
+            lblShippingCostValue.Size = new Size(55, 22);
             lblShippingCostValue.TabIndex = 5;
-            lblShippingCostValue.Text = "$12.00";
+            lblShippingCostValue.Text = "00.00";
             // 
             // lblTotal
             // 
@@ -548,6 +531,30 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.Width = 125;
+            // 
+            // Quantity
+            // 
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity";
+            Quantity.MinimumWidth = 6;
+            Quantity.Name = "Quantity";
+            Quantity.Width = 125;
+            // 
+            // UnitPrice
+            // 
+            UnitPrice.DataPropertyName = "UnitPrice";
+            UnitPrice.HeaderText = "Unit Price";
+            UnitPrice.MinimumWidth = 6;
+            UnitPrice.Name = "UnitPrice";
+            UnitPrice.Width = 125;
+            // 
             // OrderDetails
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -562,11 +569,12 @@
             Text = "OrderDetails";
             pnTitle.ResumeLayout(false);
             pnTitle.PerformLayout();
-            pnPage.ResumeLayout(false);
             pnList.ResumeLayout(false);
             pnList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnMain.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             pnPrice.ResumeLayout(false);
             pnPrice.PerformLayout();
             pnInformation.ResumeLayout(false);
@@ -582,9 +590,6 @@
         private ComboBox cbxOrderId;
         private Label lblOrderId;
         private Label lblHeader;
-        private Panel pnPage;
-        private MyCustomControl.RJButton btnNext;
-        private MyCustomControl.RJButton btnPre;
         private Panel pnList;
         private DataGridView gridView;
         private Panel pnMain;
@@ -601,10 +606,6 @@
         private Label lblAddress;
         private Label lblAddressValue;
         private Label lblOrderSummary;
-        private DataGridViewTextBoxColumn ProductImage;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn Price;
         private Label lblPhone;
         private Label label1;
         private Panel pnPrice;
@@ -617,5 +618,12 @@
         private Label lblDiscountValue;
         private Panel pnLineShort;
         private Label lblTotalValue;
+        private Panel panel1;
+        private Label labelPageInfo;
+        private MyCustomControl.RJButton rjButton1;
+        private MyCustomControl.RJButton rjButton2;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn UnitPrice;
     }
 }

@@ -58,7 +58,11 @@ namespace Source.Views.Admin
                 MessageBox.Show("Category name cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (string.IsNullOrEmpty(tbxDescription.Text))
+            {
+                MessageBox.Show("Category description cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Lấy thông tin từ form
             _categoryName = tbxName.Text;
             _categoryDescription = tbxDescription.Text;

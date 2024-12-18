@@ -8,8 +8,8 @@ namespace Source.Dtos.Reponse
 {
     public class GetUserRespone
     {
-        Source.Models.User user { get; set; }
-        IList<string> Roles { get; set; }
-        List<string> Permissions { get; set; }
+        public Source.Models.User user { get; set; }
+        public IList<string> Roles { get; set; }
+        public List<string> Permissions { get; set; }
     }
 }

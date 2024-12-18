@@ -17,13 +17,16 @@
     <Compile Update="Views\Admin\CategoriesEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Admin\CouponsAdd.cs">
+    <Compile Update="Views\Admin\OrdersEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Admin\CouponsEdit.cs">
+    <Compile Update="Views\Admin\VouchersAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Admin\CouponsList.cs">
+    <Compile Update="Views\Admin\VouchersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\VouchersList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\CustomersDetails.cs">

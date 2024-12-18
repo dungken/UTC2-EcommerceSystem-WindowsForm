@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Source.Dtos.Payment;
 
-namespace Source.Dtos.Category
+namespace Source.Dtos.Order
 {
-    public class CategoryDisplayDto
+    public class OrderDisplayDto
     {
         public Guid Id { get; set; }
-        public string CategoryName { get; set; }
-        public string Description { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime OrderDate { get; set; }
         public string Status { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }

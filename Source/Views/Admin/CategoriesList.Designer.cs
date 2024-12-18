@@ -39,12 +39,6 @@
             pnMain = new Panel();
             pnList = new Panel();
             gridView = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
-            Remove = new DataGridViewButtonColumn();
             pnFotter = new Panel();
             lblEntrie = new Label();
             lblOf = new Label();
@@ -61,6 +55,12 @@
             pnTitle = new Panel();
             btnAdd = new MyCustomControl.RJButton();
             lblHeader = new Label();
+            Id = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Remove = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnSearch.SuspendLayout();
             pnLeftHeader.SuspendLayout();
@@ -180,7 +180,7 @@
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Category, Date, Status, Edit, Remove });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Category, Description, Status, Edit, Remove });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 3);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -191,62 +191,6 @@
             gridView.TabIndex = 0;
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
-            // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Id.Width = 125;
-            // 
-            // Category
-            // 
-            Category.DataPropertyName = "CategoryName";
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Category.Width = 125;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 6;
-            Date.Name = "Date";
-            Date.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Date.Width = 125;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Status.Width = 125;
-            // 
-            // Edit
-            // 
-            Edit.HeaderText = "Edit";
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.Resizable = DataGridViewTriState.True;
-            Edit.Text = "Edit";
-            Edit.UseColumnTextForButtonValue = true;
-            Edit.Width = 125;
-            // 
-            // Remove
-            // 
-            Remove.HeaderText = "Remove";
-            Remove.MinimumWidth = 6;
-            Remove.Name = "Remove";
-            Remove.Resizable = DataGridViewTriState.True;
-            Remove.Text = "Remove";
-            Remove.UseColumnTextForButtonValue = true;
-            Remove.Width = 125;
             // 
             // pnFotter
             // 
@@ -443,6 +387,62 @@
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Categories List";
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Category
+            // 
+            Category.DataPropertyName = "CategoryName";
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Category.Width = 125;
+            // 
+            // Description
+            // 
+            Description.DataPropertyName = "Description";
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            Description.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Description.Width = 125;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Status.Width = 125;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.Text = "Edit";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 125;
+            // 
+            // Remove
+            // 
+            Remove.HeaderText = "Remove";
+            Remove.MinimumWidth = 6;
+            Remove.Name = "Remove";
+            Remove.Resizable = DataGridViewTriState.True;
+            Remove.Text = "Remove";
+            Remove.UseColumnTextForButtonValue = true;
+            Remove.Width = 125;
+            // 
             // CategoryList
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -506,7 +506,7 @@
         private Label labelPageInfo;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Category;
-        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Description;
         private DataGridViewTextBoxColumn Status;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Remove;

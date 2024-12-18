@@ -28,16 +28,16 @@ namespace Source
             //Application.Run(new MainFormAdmin());
             //Application.Run(new CategoryList());
             //Application.Run(new CategoriesEdit());
-            //Application.Run(new CouponsList());
+            //Application.Run(new VouchersList());
             //Application.Run(new CouponsEdit());
-            //Application.Run(new OrdersList());
+            Application.Run(new OrdersList());
             //Application.Run(new OrderDetails());
             //Application.Run(new CustomersList());
             //Application.Run(new CustomersDetails());
             //Application.Run(new StockList());
             //Application.Run(new TestAccountService());
             //Application.Run(new PhuongAnh_Test());
-            Application.Run(new MainForm());
+            //Application.Run(new MainForm());
         }
     }
 

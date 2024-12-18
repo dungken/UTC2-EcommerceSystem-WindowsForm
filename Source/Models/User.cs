@@ -14,6 +14,7 @@ namespace Source.Models
         public string? ProvinceCode { get; set; }
         public string? DistrictCode { get; set; }
         public string? CommuneCode { get; set; }
+        public string? PhoneNumber { get; set; }
         public string? FullAddress { get; set; }
         public string? Gender { get; set; }
         public DateTime? DateOfBirth { get; set; }

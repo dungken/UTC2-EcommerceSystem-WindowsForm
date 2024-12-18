@@ -18,7 +18,7 @@ namespace Source.Views.Admin
     public partial class OrdersList : Form
     {
         private readonly OrderService _ordersService;
-        private readonly UserService _usersService;  
+        private readonly UserService _usersService;
         private List<OrderDisplayDto> _originalData; // Dữ liệu gốc
         private int _pageSize = 5;                    // Số hàng trên mỗi trang
         private int _currentPage = 1;                 // Trang hiện tại
@@ -96,7 +96,7 @@ namespace Source.Views.Admin
                     {
                         Id = order.Id,
                         OrderDate = order.OrderDate,
-                        Status = order.Status,  
+                        Status = order.Status,
                         TotalAmount = order.TotalAmount,
                     }).ToList();
 
@@ -225,7 +225,7 @@ namespace Source.Views.Admin
             // Lấy thông tin hàng hiện tại
             var selectedRow = gridView.Rows[e.RowIndex];
             var orderId = (Guid)selectedRow.Cells["Id"].Value;
-             // Kiểm tra xem có phải cột Edit hay không
+            // Kiểm tra xem có phải cột Edit hay không
             if (columnName == "Edit")
             {
                 // Gọi dịch vụ để lấy thông tin chi tiết
@@ -274,5 +274,7 @@ namespace Source.Views.Admin
                 }
             }
         }
+
+    
     }
 }

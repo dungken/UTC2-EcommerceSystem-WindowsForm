@@ -49,7 +49,7 @@ namespace Source.Views.Admin
             gridView.Columns[0].Width = 150;
             gridView.Columns[1].Width = 150;
             gridView.Columns[2].Width = 150;
-            gridView.Columns[3].Width = 150;
+            //gridView.Columns[3].Width = 150;
         }
         //private async void LoadOrdersId()
         //{
@@ -88,26 +88,30 @@ namespace Source.Views.Admin
             // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
             return null;
         }
-        //private async Task<string> GetUserPhoneById(Guid? userId = null)
-        //{
-        //    if (!userId.HasValue)
-        //    {
-        //        // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
-        //        return null;
-        //    }
+        private async Task<string> GetUserPhoneById(Guid? userId = null)
+        {
+            if (!userId.HasValue)
+            {
+                // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
+                return null;
+            }
 
-        //    // Gọi API thông qua GetUserById
-        //    var response = await _usersService.GetUserById(userId.Value);
+            // Gọi API thông qua GetUserById
+            var response = await _usersService.GetUserById(userId.Value);
 
-        //    // Kiểm tra kết quả trả về
-        //    if (response?.Success == true && response.Data?.user != null)
-        //    {
-        //        return response.Data.user.; // Trả về số điện thoại nếu tìm thấy
-        //    }
+            // Kiểm tra kết quả trả về
+            if (response?.Success == true && response.Data?.user != null)
+            {
+                if (response.Data.user.PhoneNumber == null)
+                {
+                    return "Chưa cập nhật";
+                }
+                return response.Data.user.PhoneNumber; // Trả về số điện thoại nếu tìm thấy
+            }
 
-        //    // Trả về null nếu không tìm thấy hoặc dữ liệu không hợp lệ
-        //    return null;
-        //}
+            // Trả về null nếu không tìm thấy hoặc dữ liệu không hợp lệ
+            return null;
+        }
         private async Task LoadOrderDetaills(Guid orderId)
         {
             try
@@ -179,11 +183,12 @@ namespace Source.Views.Admin
             // get date
             lblDate.Text = _order.OrderDate.ToString();
             // get name
-            //lblNameValue.Text = await GetUserNameById(_order.UserId); // dang loi
+
+            lblNameValue.Text = await GetUserNameById(_order.UserId); 
             // get address
             lblAddressValue.Text = _order.shippingAddress.ToString();
             // get phone
-            //lblPhone.Text = await GetUserPhoneById(_order.UserId); // chua co sdt
+            lblPhone.Text = await GetUserPhoneById(_order.UserId); // chua co sdt
             //get summary product
             LoadOrderDetaills(_order.Id);
             //get payment

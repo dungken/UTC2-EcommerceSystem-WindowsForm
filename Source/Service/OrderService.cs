@@ -32,9 +32,9 @@ namespace Source.Service
             return await _apiClient.GetAsync<BaseResponse<IEnumerable<OrderDto>>>("Order");
         }
 
-        public async Task<BaseResponse<UpdateOrderDto>> UpdateOrderStatus(Guid id, UpdateOrderDto status)
+        public async Task<BaseResponse<bool>> UpdateOrderStatus(Guid id, UpdateOrderDto status)
         {
-            return await _apiClient.PutAsync<BaseResponse<UpdateOrderDto>>($"Order/status/{id}", status);
+            return await _apiClient.PutAsync<BaseResponse<bool>>($"Order/status/{id}", status);
         }
 
         public async Task<BaseResponse<IEnumerable<OrderDto>>> GetAllOrdersByUserIdAsync(Guid userId)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
+            lblCustomerOrder = new Label();
             pnHeader = new Panel();
             pnSearch = new Panel();
             tbxSearch = new TextBox();
@@ -39,34 +40,34 @@
             lblShow = new Label();
             pnList = new Panel();
             gridView = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            TotalAmount = new DataGridViewTextBoxColumn();
             pnFotter = new Panel();
-            pnPage = new Panel();
-            btnNext = new MyCustomControl.RJButton();
-            btnPre = new MyCustomControl.RJButton();
+            panel1 = new Panel();
+            labelPageInfo = new Label();
+            rjButton1 = new MyCustomControl.RJButton();
+            rjButton2 = new MyCustomControl.RJButton();
             lblShowing = new Label();
             lblHeader = new Label();
             pnLine = new Panel();
             pnProfile = new Panel();
             lblGender = new Label();
             lblAddress = new Label();
-            label2 = new Label();
+            lblEmail = new Label();
             lblDateOfBirth = new Label();
             lblPhone = new Label();
             lblName = new Label();
             lblId = new Label();
             picbxProfile = new PictureBox();
             lblProfile = new Label();
-            lblCustomerOrder = new Label();
             pnStatus = new Panel();
-            lblCmtProductValue = new Label();
-            lblProductBuyValue = new Label();
-            lblCmtProduct = new Label();
-            lblProductBuy = new Label();
+            lblReviewProductV = new Label();
+            lblOrderBuyV = new Label();
+            lblReviewProduct = new Label();
+            lblOrderBuy = new Label();
             lblStatus = new Label();
+            Id = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            TotalAmount = new DataGridViewTextBoxColumn();
             pnMain.SuspendLayout();
             pnHeader.SuspendLayout();
             pnSearch.SuspendLayout();
@@ -74,7 +75,7 @@
             pnList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             pnFotter.SuspendLayout();
-            pnPage.SuspendLayout();
+            panel1.SuspendLayout();
             pnProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picbxProfile).BeginInit();
             pnStatus.SuspendLayout();
@@ -90,6 +91,17 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(575, 464);
             pnMain.TabIndex = 11;
+            // 
+            // lblCustomerOrder
+            // 
+            lblCustomerOrder.AutoSize = true;
+            lblCustomerOrder.Cursor = Cursors.IBeam;
+            lblCustomerOrder.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCustomerOrder.Location = new Point(7, 4);
+            lblCustomerOrder.Name = "lblCustomerOrder";
+            lblCustomerOrder.Size = new Size(188, 25);
+            lblCustomerOrder.TabIndex = 15;
+            lblCustomerOrder.Text = "Customer Orders";
             // 
             // pnHeader
             // 
@@ -160,6 +172,7 @@
             cbxShow.Name = "cbxShow";
             cbxShow.Size = new Size(43, 30);
             cbxShow.TabIndex = 1;
+            cbxShow.SelectedIndexChanged += cbxShow_SelectedIndexChanged;
             // 
             // lblShow
             // 
@@ -195,38 +208,11 @@
             gridView.RowHeadersWidth = 51;
             gridView.Size = new Size(567, 328);
             gridView.TabIndex = 0;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.Width = 125;
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 6;
-            Date.Name = "Date";
-            Date.Width = 125;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.Width = 125;
-            // 
-            // TotalAmount
-            // 
-            TotalAmount.HeaderText = "Total Amount";
-            TotalAmount.MinimumWidth = 6;
-            TotalAmount.Name = "TotalAmount";
-            TotalAmount.Width = 125;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
             // pnFotter
             // 
-            pnFotter.Controls.Add(pnPage);
+            pnFotter.Controls.Add(panel1);
             pnFotter.Controls.Add(lblShowing);
             pnFotter.Location = new Point(388, 489);
             pnFotter.Margin = new Padding(2, 3, 2, 3);
@@ -234,55 +220,66 @@
             pnFotter.Size = new Size(569, 47);
             pnFotter.TabIndex = 0;
             // 
-            // pnPage
+            // panel1
             // 
-            pnPage.Controls.Add(btnNext);
-            pnPage.Controls.Add(btnPre);
-            pnPage.Location = new Point(270, 0);
-            pnPage.Margin = new Padding(2, 3, 2, 3);
-            pnPage.Name = "pnPage";
-            pnPage.Size = new Size(299, 45);
-            pnPage.TabIndex = 1;
+            panel1.Controls.Add(labelPageInfo);
+            panel1.Controls.Add(rjButton1);
+            panel1.Controls.Add(rjButton2);
+            panel1.Location = new Point(294, 0);
+            panel1.Margin = new Padding(2, 3, 2, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(271, 45);
+            panel1.TabIndex = 3;
             // 
-            // btnNext
+            // labelPageInfo
             // 
-            btnNext.BackColor = Color.FromArgb(249, 251, 253);
-            btnNext.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnNext.BorderColor = Color.PaleVioletRed;
-            btnNext.BorderRadius = 20;
-            btnNext.BorderSize = 0;
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.FlatAppearance.BorderSize = 0;
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.ForeColor = Color.MediumSlateBlue;
-            btnNext.Location = new Point(194, 1);
-            btnNext.Margin = new Padding(2, 3, 2, 3);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(108, 42);
-            btnNext.TabIndex = 1;
-            btnNext.Text = "Next";
-            btnNext.TextColor = Color.MediumSlateBlue;
-            btnNext.UseVisualStyleBackColor = false;
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
             // 
-            // btnPre
+            // rjButton1
             // 
-            btnPre.BackColor = Color.FromArgb(249, 251, 253);
-            btnPre.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnPre.BorderColor = Color.PaleVioletRed;
-            btnPre.BorderRadius = 20;
-            btnPre.BorderSize = 0;
-            btnPre.Cursor = Cursors.Hand;
-            btnPre.FlatAppearance.BorderSize = 0;
-            btnPre.FlatStyle = FlatStyle.Flat;
-            btnPre.ForeColor = Color.MediumSlateBlue;
-            btnPre.Location = new Point(2, 1);
-            btnPre.Margin = new Padding(2, 3, 2, 3);
-            btnPre.Name = "btnPre";
-            btnPre.Size = new Size(108, 42);
-            btnPre.TabIndex = 0;
-            btnPre.Text = "Previous";
-            btnPre.TextColor = Color.MediumSlateBlue;
-            btnPre.UseVisualStyleBackColor = false;
+            rjButton1.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.Cursor = Cursors.Hand;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.MediumSlateBlue;
+            rjButton1.Location = new Point(209, 1);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(60, 42);
+            rjButton1.TabIndex = 1;
+            rjButton1.Text = "Next";
+            rjButton1.TextColor = Color.MediumSlateBlue;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 20;
+            rjButton2.BorderSize = 0;
+            rjButton2.Cursor = Cursors.Hand;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.MediumSlateBlue;
+            rjButton2.Location = new Point(2, 1);
+            rjButton2.Margin = new Padding(2, 3, 2, 3);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(91, 42);
+            rjButton2.TabIndex = 0;
+            rjButton2.Text = "Previous";
+            rjButton2.TextColor = Color.MediumSlateBlue;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
             // 
             // lblShowing
             // 
@@ -321,7 +318,7 @@
             // 
             pnProfile.Controls.Add(lblGender);
             pnProfile.Controls.Add(lblAddress);
-            pnProfile.Controls.Add(label2);
+            pnProfile.Controls.Add(lblEmail);
             pnProfile.Controls.Add(lblDateOfBirth);
             pnProfile.Controls.Add(lblPhone);
             pnProfile.Controls.Add(lblName);
@@ -347,25 +344,25 @@
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(44, 282);
+            lblAddress.Location = new Point(44, 281);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(328, 22);
             lblAddress.TabIndex = 7;
             lblAddress.Text = "2734 West Fork Street,EASTON 02334.";
             // 
-            // label2
+            // lblEmail
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(44, 246);
-            label2.Name = "label2";
-            label2.Size = new Size(124, 22);
-            label2.TabIndex = 6;
-            label2.Text = "202-555-0174";
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(44, 209);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(124, 22);
+            lblEmail.TabIndex = 6;
+            lblEmail.Text = "202-555-0174";
             // 
             // lblDateOfBirth
             // 
             lblDateOfBirth.AutoSize = true;
-            lblDateOfBirth.Location = new Point(44, 210);
+            lblDateOfBirth.Location = new Point(44, 245);
             lblDateOfBirth.Name = "lblDateOfBirth";
             lblDateOfBirth.Size = new Size(102, 22);
             lblDateOfBirth.TabIndex = 5;
@@ -419,68 +416,57 @@
             lblProfile.TabIndex = 0;
             lblProfile.Text = "Profile";
             // 
-            // lblCustomerOrder
-            // 
-            lblCustomerOrder.AutoSize = true;
-            lblCustomerOrder.Cursor = Cursors.IBeam;
-            lblCustomerOrder.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCustomerOrder.Location = new Point(7, 4);
-            lblCustomerOrder.Name = "lblCustomerOrder";
-            lblCustomerOrder.Size = new Size(188, 25);
-            lblCustomerOrder.TabIndex = 15;
-            lblCustomerOrder.Text = "Customer Orders";
-            // 
             // pnStatus
             // 
-            pnStatus.Controls.Add(lblCmtProductValue);
-            pnStatus.Controls.Add(lblProductBuyValue);
-            pnStatus.Controls.Add(lblCmtProduct);
-            pnStatus.Controls.Add(lblProductBuy);
+            pnStatus.Controls.Add(lblReviewProductV);
+            pnStatus.Controls.Add(lblOrderBuyV);
+            pnStatus.Controls.Add(lblReviewProduct);
+            pnStatus.Controls.Add(lblOrderBuy);
             pnStatus.Controls.Add(lblStatus);
             pnStatus.Location = new Point(3, 394);
             pnStatus.Name = "pnStatus";
             pnStatus.Size = new Size(380, 138);
             pnStatus.TabIndex = 16;
             // 
-            // lblCmtProductValue
+            // lblReviewProductV
             // 
-            lblCmtProductValue.AutoSize = true;
-            lblCmtProductValue.Location = new Point(28, 89);
-            lblCmtProductValue.Name = "lblCmtProductValue";
-            lblCmtProductValue.Size = new Size(40, 22);
-            lblCmtProductValue.TabIndex = 6;
-            lblCmtProductValue.Text = "105";
+            lblReviewProductV.AutoSize = true;
+            lblReviewProductV.Location = new Point(28, 89);
+            lblReviewProductV.Name = "lblReviewProductV";
+            lblReviewProductV.Size = new Size(40, 22);
+            lblReviewProductV.TabIndex = 6;
+            lblReviewProductV.Text = "105";
             // 
-            // lblProductBuyValue
+            // lblOrderBuyV
             // 
-            lblProductBuyValue.AutoSize = true;
-            lblProductBuyValue.Location = new Point(28, 37);
-            lblProductBuyValue.Name = "lblProductBuyValue";
-            lblProductBuyValue.Size = new Size(30, 22);
-            lblProductBuyValue.TabIndex = 5;
-            lblProductBuyValue.Text = "32";
+            lblOrderBuyV.AutoSize = true;
+            lblOrderBuyV.Location = new Point(28, 37);
+            lblOrderBuyV.Name = "lblOrderBuyV";
+            lblOrderBuyV.Size = new Size(30, 22);
+            lblOrderBuyV.TabIndex = 5;
+            lblOrderBuyV.Text = "32";
             // 
-            // lblCmtProduct
+            // lblReviewProduct
             // 
-            lblCmtProduct.AutoSize = true;
-            lblCmtProduct.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCmtProduct.ForeColor = SystemColors.ControlDarkDark;
-            lblCmtProduct.Location = new Point(192, 91);
-            lblCmtProduct.Name = "lblCmtProduct";
-            lblCmtProduct.Size = new Size(155, 19);
-            lblCmtProduct.TabIndex = 4;
-            lblCmtProduct.Text = "Comment on Product";
+            lblReviewProduct.AutoSize = true;
+            lblReviewProduct.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblReviewProduct.ForeColor = SystemColors.ControlDarkDark;
+            lblReviewProduct.Location = new Point(209, 91);
+            lblReviewProduct.Name = "lblReviewProduct";
+            lblReviewProduct.Size = new Size(138, 19);
+            lblReviewProduct.TabIndex = 4;
+            lblReviewProduct.Text = "Review on Product";
             // 
-            // lblProductBuy
+            // lblOrderBuy
             // 
-            lblProductBuy.AutoSize = true;
-            lblProductBuy.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProductBuy.ForeColor = SystemColors.ControlDarkDark;
-            lblProductBuy.Location = new Point(257, 40);
-            lblProductBuy.Name = "lblProductBuy";
-            lblProductBuy.Size = new Size(90, 19);
-            lblProductBuy.TabIndex = 3;
-            lblProductBuy.Text = "ProductBuy";
+            lblOrderBuy.AutoSize = true;
+            lblOrderBuy.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOrderBuy.ForeColor = SystemColors.ControlDarkDark;
+            lblOrderBuy.Location = new Point(257, 40);
+            lblOrderBuy.Name = "lblOrderBuy";
+            lblOrderBuy.Size = new Size(76, 19);
+            lblOrderBuy.TabIndex = 3;
+            lblOrderBuy.Text = "OrderBuy";
             // 
             // lblStatus
             // 
@@ -491,6 +477,42 @@
             lblStatus.Size = new Size(152, 25);
             lblStatus.TabIndex = 1;
             lblStatus.Text = "Status Report";
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "OrderDate";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 6;
+            Date.Name = "Date";
+            Date.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Date.Width = 125;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Status.Width = 125;
+            // 
+            // TotalAmount
+            // 
+            TotalAmount.DataPropertyName = "TotalAmount";
+            TotalAmount.HeaderText = "Total Amount";
+            TotalAmount.MinimumWidth = 6;
+            TotalAmount.Name = "TotalAmount";
+            TotalAmount.SortMode = DataGridViewColumnSortMode.Programmatic;
+            TotalAmount.Width = 125;
             // 
             // CustomersDetails
             // 
@@ -509,6 +531,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "CustomersDetails";
             Text = "CustomersDetails";
+            Load += CustomersDetails_Load;
             pnMain.ResumeLayout(false);
             pnMain.PerformLayout();
             pnHeader.ResumeLayout(false);
@@ -520,7 +543,8 @@
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnFotter.ResumeLayout(false);
             pnFotter.PerformLayout();
-            pnPage.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             pnProfile.ResumeLayout(false);
             pnProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picbxProfile).EndInit();
@@ -543,14 +567,7 @@
         private Label lblShow;
         private Panel pnList;
         private DataGridView gridView;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn TotalAmount;
         private Panel pnFotter;
-        private Panel pnPage;
-        private MyCustomControl.RJButton btnNext;
-        private MyCustomControl.RJButton btnPre;
         private Label lblShowing;
         private Label lblHeader;
         private Panel pnLine;
@@ -562,14 +579,22 @@
         private Label lblCustomerOrder;
         private Label lblGender;
         private Label lblAddress;
-        private Label label2;
+        private Label lblEmail;
         private Label lblDateOfBirth;
         private Label lblPhone;
         private Panel pnStatus;
         private Label lblStatus;
-        private Label lblCmtProductValue;
-        private Label lblProductBuyValue;
-        private Label lblCmtProduct;
-        private Label lblProductBuy;
+        private Label lblReviewProductV;
+        private Label lblOrderBuyV;
+        private Label lblReviewProduct;
+        private Label lblOrderBuy;
+        private Panel panel1;
+        private Label labelPageInfo;
+        private MyCustomControl.RJButton rjButton1;
+        private MyCustomControl.RJButton rjButton2;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn TotalAmount;
     }
 }

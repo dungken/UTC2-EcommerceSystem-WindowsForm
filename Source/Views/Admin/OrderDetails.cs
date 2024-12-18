@@ -18,6 +18,7 @@ namespace Source.Views.Admin
         private readonly OrderService _ordersService;
         private readonly UserService _usersService;
         private readonly VoucherService _voucherService;
+        private readonly ProductService _productService;
         private List<OrderDetailsDisplayDto> _originalData; // Dữ liệu gốc
         private OrderDto _order;
         private int _pageSize = 5;                    // Số hàng trên mỗi trang
@@ -30,6 +31,7 @@ namespace Source.Views.Admin
             _ordersService = new OrderService();
             _usersService = new UserService();
             _voucherService = new VoucherService();
+            _productService = new ProductService();
         }
         public OrderDetails(OrderDto order)
         {
@@ -39,6 +41,7 @@ namespace Source.Views.Admin
             _order = order;
             _usersService = new UserService();
             _voucherService = new VoucherService();
+            _productService = new ProductService();
             LoadOrderData();
         }
         private void CustomizeDataGridView()
@@ -46,10 +49,10 @@ namespace Source.Views.Admin
             //gridView.BorderStyle = BorderStyle.None;
             //gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             //gridView.GridColor = Color.Silver;
-            gridView.Columns[0].Width = 150;
+            gridView.Columns[0].Width = 200;
             gridView.Columns[1].Width = 150;
             gridView.Columns[2].Width = 150;
-            //gridView.Columns[3].Width = 150;
+            gridView.Columns[3].Width = 150;
         }
         //private async void LoadOrdersId()
         //{
@@ -79,9 +82,9 @@ namespace Source.Views.Admin
             var response = await _usersService.GetUserById(userId.Value);
 
             // Kiểm tra kết quả trả về
-            if (response?.Success == true && response.Data?.user.FirstName != null)
+            if (response?.Success == true && response.Data?.user.FirstName != null && response.Data?.user.LastName != null)
             {
-                return response.Data.user.FirstName; 
+                return (response.Data.user.FirstName + " " + response.Data.user.LastName); 
             }
 
 
@@ -112,21 +115,48 @@ namespace Source.Views.Admin
             // Trả về null nếu không tìm thấy hoặc dữ liệu không hợp lệ
             return null;
         }
+        private async Task<string> GetProductNameById(Guid? productId = null)
+        {
+            if (!productId.HasValue)
+            {
+                // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
+                return null;
+            }
+
+            var response = await _productService.GetProductByIdAsync(productId.Value);
+
+            // Kiểm tra kết quả trả về
+            if (response?.Success == true && response.Data?.Name != null)
+            {
+                return response.Data.Name;
+            }
+
+
+            // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
+            return null;
+        }
         private async Task LoadOrderDetaills(Guid orderId)
         {
             try
             {
                 var response = await _ordersService.GetOrderByIdAsync(orderId);
-                var result = response.Data.OrderDetails;
+                var result = response.Data?.OrderDetails;
+
                 if (result != null)
                 {
-                    // Ánh xạ dữ liệu sang OrderDisplayDto
-                    _originalData = result.Select(order => new OrderDetailsDisplayDto
+                    _originalData = new List<OrderDetailsDisplayDto>();
+
+                    foreach (var order in result)
                     {
-                        Quantity = order.Quantity,
-                        UnitPrice = order.UnitPrice,
-                        Id = orderId
-                    }).ToList();
+                        var productName = await GetProductNameById(order.ProductId); // Lấy tên sản phẩm
+                        _originalData.Add(new OrderDetailsDisplayDto
+                        {
+                            Id = orderId,
+                            ProductName = productName, // Thêm tên sản phẩm
+                            Quantity = order.Quantity,
+                            UnitPrice = order.UnitPrice
+                        });
+                    }
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize); // Tính tổng số trang
                     DisplayPage(_currentPage); // Hiển thị trang đầu tiên

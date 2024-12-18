@@ -31,20 +31,13 @@
             lblHeader = new Label();
             pnLine = new Panel();
             lblShowing = new Label();
-            btnNext = new MyCustomControl.RJButton();
-            btnPre = new MyCustomControl.RJButton();
-            pnPage = new Panel();
             pnFotter = new Panel();
-            btnAdd = new MyCustomControl.RJButton();
+            panel1 = new Panel();
+            labelPageInfo = new Label();
+            rbtnNext = new MyCustomControl.RJButton();
+            rbtnPre = new MyCustomControl.RJButton();
             pnList = new Panel();
             gridView = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Customers = new DataGridViewTextBoxColumn();
-            RegisterDate = new DataGridViewTextBoxColumn();
-            Mail = new DataGridViewTextBoxColumn();
-            Phone = new DataGridViewTextBoxColumn();
-            TotalOrder = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewTextBoxColumn();
             pnMain = new Panel();
             btnEntries = new Label();
             cbxShow = new ComboBox();
@@ -55,8 +48,14 @@
             pnSearch = new Panel();
             pnHeader = new Panel();
             pnTitle = new Panel();
-            pnPage.SuspendLayout();
+            Id = new DataGridViewTextBoxColumn();
+            Customers = new DataGridViewTextBoxColumn();
+            Mail = new DataGridViewTextBoxColumn();
+            Phone = new DataGridViewTextBoxColumn();
+            TotalOrders = new DataGridViewTextBoxColumn();
+            Detail = new DataGridViewButtonColumn();
             pnFotter.SuspendLayout();
+            panel1.SuspendLayout();
             pnList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             pnMain.SuspendLayout();
@@ -99,59 +98,9 @@
             lblShowing.TabIndex = 0;
             lblShowing.Text = "Showing 1 to 10 of 13 entries";
             // 
-            // btnNext
-            // 
-            btnNext.BackColor = Color.FromArgb(249, 251, 253);
-            btnNext.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnNext.BorderColor = Color.PaleVioletRed;
-            btnNext.BorderRadius = 20;
-            btnNext.BorderSize = 0;
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.FlatAppearance.BorderSize = 0;
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.ForeColor = Color.MediumSlateBlue;
-            btnNext.Location = new Point(194, 1);
-            btnNext.Margin = new Padding(2, 3, 2, 3);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(108, 42);
-            btnNext.TabIndex = 1;
-            btnNext.Text = "Next";
-            btnNext.TextColor = Color.MediumSlateBlue;
-            btnNext.UseVisualStyleBackColor = false;
-            // 
-            // btnPre
-            // 
-            btnPre.BackColor = Color.FromArgb(249, 251, 253);
-            btnPre.BackgroundColor = Color.FromArgb(249, 251, 253);
-            btnPre.BorderColor = Color.PaleVioletRed;
-            btnPre.BorderRadius = 20;
-            btnPre.BorderSize = 0;
-            btnPre.Cursor = Cursors.Hand;
-            btnPre.FlatAppearance.BorderSize = 0;
-            btnPre.FlatStyle = FlatStyle.Flat;
-            btnPre.ForeColor = Color.MediumSlateBlue;
-            btnPre.Location = new Point(2, 1);
-            btnPre.Margin = new Padding(2, 3, 2, 3);
-            btnPre.Name = "btnPre";
-            btnPre.Size = new Size(108, 42);
-            btnPre.TabIndex = 0;
-            btnPre.Text = "Previous";
-            btnPre.TextColor = Color.MediumSlateBlue;
-            btnPre.UseVisualStyleBackColor = false;
-            // 
-            // pnPage
-            // 
-            pnPage.Controls.Add(btnNext);
-            pnPage.Controls.Add(btnPre);
-            pnPage.Location = new Point(655, 3);
-            pnPage.Margin = new Padding(2, 3, 2, 3);
-            pnPage.Name = "pnPage";
-            pnPage.Size = new Size(299, 45);
-            pnPage.TabIndex = 1;
-            // 
             // pnFotter
             // 
-            pnFotter.Controls.Add(pnPage);
+            pnFotter.Controls.Add(panel1);
             pnFotter.Controls.Add(lblShowing);
             pnFotter.Location = new Point(2, 389);
             pnFotter.Margin = new Padding(2, 3, 2, 3);
@@ -159,25 +108,66 @@
             pnFotter.Size = new Size(957, 47);
             pnFotter.TabIndex = 0;
             // 
-            // btnAdd
+            // panel1
             // 
-            btnAdd.BackColor = Color.MediumSlateBlue;
-            btnAdd.BackgroundColor = Color.MediumSlateBlue;
-            btnAdd.BorderColor = Color.PaleVioletRed;
-            btnAdd.BorderRadius = 20;
-            btnAdd.BorderSize = 0;
-            btnAdd.Cursor = Cursors.Hand;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(684, 24);
-            btnAdd.Margin = new Padding(2, 3, 2, 3);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(251, 50);
-            btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add Customers";
-            btnAdd.TextColor = Color.White;
-            btnAdd.UseVisualStyleBackColor = false;
+            panel1.Controls.Add(labelPageInfo);
+            panel1.Controls.Add(rbtnNext);
+            panel1.Controls.Add(rbtnPre);
+            panel1.Location = new Point(646, 0);
+            panel1.Margin = new Padding(2, 3, 2, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(313, 45);
+            panel1.TabIndex = 2;
+            // 
+            // labelPageInfo
+            // 
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
+            // 
+            // rbtnNext
+            // 
+            rbtnNext.BackColor = Color.FromArgb(249, 251, 253);
+            rbtnNext.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rbtnNext.BorderColor = Color.PaleVioletRed;
+            rbtnNext.BorderRadius = 20;
+            rbtnNext.BorderSize = 0;
+            rbtnNext.Cursor = Cursors.Hand;
+            rbtnNext.FlatAppearance.BorderSize = 0;
+            rbtnNext.FlatStyle = FlatStyle.Flat;
+            rbtnNext.ForeColor = Color.MediumSlateBlue;
+            rbtnNext.Location = new Point(213, 1);
+            rbtnNext.Margin = new Padding(2, 3, 2, 3);
+            rbtnNext.Name = "rbtnNext";
+            rbtnNext.Size = new Size(108, 42);
+            rbtnNext.TabIndex = 1;
+            rbtnNext.Text = "Next";
+            rbtnNext.TextColor = Color.MediumSlateBlue;
+            rbtnNext.UseVisualStyleBackColor = false;
+            rbtnNext.Click += rbtnNext_Click;
+            // 
+            // rbtnPre
+            // 
+            rbtnPre.BackColor = Color.FromArgb(249, 251, 253);
+            rbtnPre.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rbtnPre.BorderColor = Color.PaleVioletRed;
+            rbtnPre.BorderRadius = 20;
+            rbtnPre.BorderSize = 0;
+            rbtnPre.Cursor = Cursors.Hand;
+            rbtnPre.FlatAppearance.BorderSize = 0;
+            rbtnPre.FlatStyle = FlatStyle.Flat;
+            rbtnPre.ForeColor = Color.MediumSlateBlue;
+            rbtnPre.Location = new Point(2, 1);
+            rbtnPre.Margin = new Padding(2, 3, 2, 3);
+            rbtnPre.Name = "rbtnPre";
+            rbtnPre.Size = new Size(108, 42);
+            rbtnPre.TabIndex = 0;
+            rbtnPre.Text = "Previous";
+            rbtnPre.TextColor = Color.MediumSlateBlue;
+            rbtnPre.UseVisualStyleBackColor = false;
+            rbtnPre.Click += rbtnPre_Click;
             // 
             // pnList
             // 
@@ -194,7 +184,7 @@
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Customers, RegisterDate, Mail, Phone, TotalOrder, Action });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Customers, Mail, Phone, TotalOrders, Detail });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 3);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -203,55 +193,8 @@
             gridView.RowHeadersWidth = 51;
             gridView.Size = new Size(953, 328);
             gridView.TabIndex = 0;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.Width = 125;
-            // 
-            // Customers
-            // 
-            Customers.HeaderText = "Category";
-            Customers.MinimumWidth = 6;
-            Customers.Name = "Customers";
-            Customers.Width = 125;
-            // 
-            // RegisterDate
-            // 
-            RegisterDate.HeaderText = "Register Date";
-            RegisterDate.MinimumWidth = 6;
-            RegisterDate.Name = "RegisterDate";
-            RegisterDate.Width = 125;
-            // 
-            // Mail
-            // 
-            Mail.HeaderText = "Mail";
-            Mail.MinimumWidth = 6;
-            Mail.Name = "Mail";
-            Mail.Width = 125;
-            // 
-            // Phone
-            // 
-            Phone.HeaderText = "Phone";
-            Phone.MinimumWidth = 6;
-            Phone.Name = "Phone";
-            Phone.Width = 125;
-            // 
-            // TotalOrder
-            // 
-            TotalOrder.HeaderText = "Total Order";
-            TotalOrder.MinimumWidth = 6;
-            TotalOrder.Name = "TotalOrder";
-            TotalOrder.Width = 125;
-            // 
-            // Action
-            // 
-            Action.HeaderText = "Action";
-            Action.MinimumWidth = 6;
-            Action.Name = "Action";
-            Action.Width = 125;
+            gridView.CellClick += gridView_CellClick;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
             // pnMain
             // 
@@ -282,6 +225,7 @@
             cbxShow.Name = "cbxShow";
             cbxShow.Size = new Size(43, 30);
             cbxShow.TabIndex = 1;
+            cbxShow.SelectedIndexChanged += cbxShow_SelectedIndexChanged;
             // 
             // lblShow
             // 
@@ -346,13 +290,65 @@
             // 
             // pnTitle
             // 
-            pnTitle.Controls.Add(btnAdd);
             pnTitle.Controls.Add(lblHeader);
             pnTitle.Location = new Point(0, -2);
             pnTitle.Margin = new Padding(2, 3, 2, 3);
             pnTitle.Name = "pnTitle";
             pnTitle.Size = new Size(964, 91);
             pnTitle.TabIndex = 8;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Customers
+            // 
+            Customers.DataPropertyName = "UserName";
+            Customers.HeaderText = "Customers";
+            Customers.MinimumWidth = 6;
+            Customers.Name = "Customers";
+            Customers.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Customers.Width = 125;
+            // 
+            // Mail
+            // 
+            Mail.DataPropertyName = "Email";
+            Mail.HeaderText = "Mail";
+            Mail.MinimumWidth = 6;
+            Mail.Name = "Mail";
+            Mail.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Mail.Width = 125;
+            // 
+            // Phone
+            // 
+            Phone.DataPropertyName = "Phone";
+            Phone.HeaderText = "Phone";
+            Phone.MinimumWidth = 6;
+            Phone.Name = "Phone";
+            Phone.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Phone.Width = 125;
+            // 
+            // TotalOrders
+            // 
+            TotalOrders.DataPropertyName = "TotalOrders";
+            TotalOrders.HeaderText = "Total Orders";
+            TotalOrders.MinimumWidth = 6;
+            TotalOrders.Name = "TotalOrders";
+            TotalOrders.SortMode = DataGridViewColumnSortMode.Programmatic;
+            TotalOrders.Width = 125;
+            // 
+            // Detail
+            // 
+            Detail.HeaderText = "Detail";
+            Detail.MinimumWidth = 6;
+            Detail.Name = "Detail";
+            Detail.UseColumnTextForButtonValue = true;
+            Detail.Width = 125;
             // 
             // CustomersList
             // 
@@ -368,9 +364,11 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "CustomersList";
             Text = "CustomersList";
-            pnPage.ResumeLayout(false);
+            Load += CustomersList_Load;
             pnFotter.ResumeLayout(false);
             pnFotter.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             pnList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnMain.ResumeLayout(false);
@@ -389,11 +387,7 @@
         private Label lblHeader;
         private Panel pnLine;
         private Label lblShowing;
-        private MyCustomControl.RJButton btnNext;
-        private MyCustomControl.RJButton btnPre;
-        private Panel pnPage;
         private Panel pnFotter;
-        private MyCustomControl.RJButton btnAdd;
         private Panel pnList;
         private DataGridView gridView;
         private Panel pnMain;
@@ -406,12 +400,15 @@
         private Panel pnSearch;
         private Panel pnHeader;
         private Panel pnTitle;
+        private Panel panel1;
+        private Label labelPageInfo;
+        private MyCustomControl.RJButton rbtnNext;
+        private MyCustomControl.RJButton rbtnPre;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Customers;
-        private DataGridViewTextBoxColumn RegisterDate;
         private DataGridViewTextBoxColumn Mail;
         private DataGridViewTextBoxColumn Phone;
-        private DataGridViewTextBoxColumn TotalOrder;
-        private DataGridViewTextBoxColumn Action;
+        private DataGridViewTextBoxColumn TotalOrders;
+        private DataGridViewButtonColumn Detail;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Source.Views.Admin
 {
     public partial class CustomersDetails : Form
     {
+        private readonly UserService _userService;
         private readonly OrderService _ordersService;
         private readonly UserService _usersService;
         private List<OrderCustomerDisplayDto> _originalData;
@@ -24,8 +26,10 @@ namespace Source.Views.Admin
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
-        // test
+                                                  // test
         private Guid _userId;
+
+
         public CustomersDetails()
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace Source.Views.Admin
             InitializeShowing();
             pnProfile.Paint += PanelLine_Paint;
             pnStatus.Paint += PanelLine_Paint;
+
             //pnMain.Paint += PanelLine_Paint;
             _ordersService = new OrderService();
             _usersService = new UserService();
@@ -86,7 +91,7 @@ namespace Source.Views.Admin
 
             cbxShow.SelectedIndex = 4; // Mặc định chọn 5 hàng trên mỗi trang
         }
-        
+
         private void DisplayPage(int pageNumber)
         {
             if (_originalData == null || !_originalData.Any()) return;
@@ -136,7 +141,7 @@ namespace Source.Views.Admin
 
         private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
             // Lấy tên cột được nhấn
             string columnName = gridView.Columns[e.ColumnIndex].DataPropertyName;
 
@@ -269,7 +274,7 @@ namespace Source.Views.Admin
             // get image
             //picbxProfile.LoadAsync(_user.user.ProfilePicture);
             // get id
-            lblId.Text = _userId.ToString();    
+            lblId.Text = _userId.ToString();
             // get name
             lblName.Text = _user.user.FirstName + " " + _user.user.LastName;
             // get gender
@@ -280,14 +285,14 @@ namespace Source.Views.Admin
             // get phone
             if (!string.IsNullOrEmpty(_user.user.PhoneNumber))
                 lblPhone.Text = _user.user.PhoneNumber;
-            else 
+            else
                 lblPhone.Text = "Chưa cập nhật";
             // get email
 
             // get date of birth
             if (_user.user.DateOfBirth != null)
                 lblDateOfBirth.Text = _user.user.DateOfBirth.ToString();
-            else 
+            else
                 lblDateOfBirth.Text = "Chưa cập nhật";
             // get address
             if (!string.IsNullOrEmpty(_user.user.FullAddress))

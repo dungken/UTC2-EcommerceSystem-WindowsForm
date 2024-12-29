@@ -27,14 +27,14 @@ namespace Source.Service
 
         public async Task<BaseResponse<User>> RegisterAsync(RegisterUserDto model)
         {
-            return await _apiClient.PostAsync<BaseResponse<User>>("Account/Register", model);
+            return await _apiClient.PostAsync<BaseResponse<User>>("Account/RegisterWithCode", model);
         }
 
 
         // Can change the object to a more specific type example BaseResponse<object>
         public async Task<BaseResponse<User>> ConfirmEmail(ConfirmEmailDto model)
         {
-            return await _apiClient.PostAsync<BaseResponse<User>>("Account/ConfirmEmail", model);
+            return await _apiClient.PostAsync<BaseResponse<User>>("Account/ConfirmEmailWithCode", model);
         }
 
 
@@ -87,6 +87,7 @@ namespace Source.Service
         {
             return await _apiClient.PostAsync<BaseResponse<object>>("Account/ChangePassword", model);
         }
+
 
 
     }

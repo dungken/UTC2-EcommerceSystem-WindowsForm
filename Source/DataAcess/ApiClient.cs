@@ -19,13 +19,19 @@ namespace Source.DataAcess
       
         public ApiClient(string baseUrl)
         {
-            var authenticator = new JwtAuthenticator(Utils.Config.token);
-            var options = new RestClientOptions(Utils.Config.BaseUrl)
+            if(Utils.Config.token != "")
             {
-                Authenticator = authenticator
-            };
-            _client = new RestClient(options);
-           
+                var authenticator = new JwtAuthenticator(Utils.Config.token);
+                var options = new RestClientOptions(Utils.Config.BaseUrl)
+                {
+                    Authenticator = authenticator
+                };
+                _client = new RestClient(options);
+            }
+            else
+            {
+                _client = new RestClient(baseUrl);
+            }     
         }
 
         public async Task<T> GetAsync<T>(string endpoint)

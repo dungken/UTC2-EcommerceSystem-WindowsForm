@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Source.MyCustomControl;
+using Source.Service;
 using Source.Views;
 using Source.Views.Custommer;
 namespace Source.Views
 {
     public partial class MainForm : Form
     {
-
         public static int frmMainLocationX, frmMainLocationY;
         public static int pnlChildFormLocationX, pnlChildFormLocationY;
         public static int frmWith, frmHeight;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Source.Views
             pnlSubMenuProducts.Visible = false;
             pnlSubMenuAvata.Visible = false;
             pnlSubNotifications.Visible = false;
-            
+
         }
 
         private void hideSubMenu()
@@ -82,7 +84,7 @@ namespace Source.Views
             childForm.Dock = DockStyle.Fill;
             pnlChildForm.Controls.Add(childForm);
             pnlChildForm.Tag = childForm;
-       
+
             childForm.BringToFront();
             childForm.Show();
 
@@ -205,13 +207,13 @@ namespace Source.Views
 
         private void MainForm_ClientSizeChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Location X" + this.Location.X.ToString());
+            //MessageBox.Show("Location X" + this.Location.X.ToString());
             frmMainLocationX = this.Location.X;
             frmMainLocationY = this.Location.Y;
             pnlChildFormLocationX = pnlChildForm.Location.X;
             pnlChildFormLocationY = pnlChildForm.Location.Y;
         }
 
-       
+        
     }
 }

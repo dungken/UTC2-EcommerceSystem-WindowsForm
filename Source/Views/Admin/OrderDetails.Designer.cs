@@ -66,6 +66,7 @@
             rbtnOrderDate = new MyCustomControl.RJButton();
             pictureBox1 = new PictureBox();
             Id = new DataGridViewTextBoxColumn();
+            ProductName = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             UnitPrice = new DataGridViewTextBoxColumn();
             pnTitle.SuspendLayout();
@@ -159,7 +160,7 @@
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Quantity, UnitPrice });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, ProductName, Quantity, UnitPrice });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(5, 54);
             gridView.Margin = new Padding(2, 3, 2, 3);
@@ -539,6 +540,15 @@
             Id.Name = "Id";
             Id.Width = 125;
             // 
+            // ProductName
+            // 
+            ProductName.DataPropertyName = "ProductName";
+            ProductName.HeaderText = "Product";
+            ProductName.MinimumWidth = 6;
+            ProductName.Name = "ProductName";
+            ProductName.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ProductName.Width = 125;
+            // 
             // Quantity
             // 
             Quantity.DataPropertyName = "Quantity";
@@ -623,6 +633,7 @@
         private MyCustomControl.RJButton rjButton1;
         private MyCustomControl.RJButton rjButton2;
         private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn UnitPrice;
     }

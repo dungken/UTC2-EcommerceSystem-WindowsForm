@@ -8,35 +8,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Source.Dtos.Category;
-using Source.Dtos.User;
+using Source.Dtos.Order;
+using Source.Dtos.Product;
+using Source.Models;
 using Source.Service;
 
-namespace Source.Views.Admin
+namespace Source.Views.Admin.Inventory
 {
-    public partial class CustomersList : Form
+    public partial class StockList : Form
     {
-        private readonly UserService _usersService;
-        private readonly OrderService _ordersService;
-        private List<UserDisplayDto> _originalData; // Dữ liệu gốc
+        private readonly ProductService _productsService;
+        private readonly CategoriesService _categoriesService;
+        private List<ProductDisplayDto> _originalData; // Dữ liệu gốc
         private int _pageSize = 5;                    // Số hàng trên mỗi trang
         private int _currentPage = 1;                 // Trang hiện tại
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
-        public CustomersList()
+        public StockList()
         {
             InitializeComponent();
-            _usersService = new UserService();
-            _ordersService = new OrderService();
-            _originalData = new List<UserDisplayDto>();
+            _productsService = new ProductService();
+            _categoriesService = new CategoriesService();
+            _originalData = new List<ProductDisplayDto>();
             CustomizeDataGridView();
             InitializeShowing();
         }
         private void CustomizeDataGridView()
         {
-            gridView.BorderStyle = BorderStyle.None;
-            gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            gridView.GridColor = Color.Silver;
             gridView.Columns[0].Width = 150;
             gridView.Columns[1].Width = 150;
             gridView.Columns[2].Width = 150;
@@ -56,54 +55,59 @@ namespace Source.Views.Admin
             cbxShow.SelectedIndex = 4; // Mặc định chọn 5 hàng trên mỗi trang
         }
 
-        private async void CustomersList_Load(object sender, EventArgs e)
+        private async void StockList_Load(object sender, EventArgs e)
         {
-            await LoadCustomers();
+            await LoadStockList();
         }
-        private async Task<int> GetTotalOrderById(Guid? userId )
+        private async Task<string> GetCategoryNameById(Guid? productId = null)
         {
-            if (!userId.HasValue)
+            if (!productId.HasValue)
             {
                 // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
-                return 0;
+                return null;
             }
 
-            var orderResponse = await _ordersService.GetAllOrdersAsync();
-
+            var response = await _categoriesService.GetCategoryByIdAsync(productId.Value);
 
             // Kiểm tra kết quả trả về
-            if (orderResponse != null && orderResponse.Data != null)
+            if (response?.Success == true && response.Data?.Name != null)
             {
-                var orders = orderResponse.Data;
-                return orders.Count(order => order.UserId == userId);
+                return (response.Data.Name);
             }
+
+
             // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
-            return 0;
+            return null;
         }
-        private async Task LoadCustomers()
+        private async Task LoadStockList()
         {
             try
             {
-                // Lấy danh sách người dùng
-                var userResponse = await _usersService.GetAllUser();
-
-                if (userResponse != null && userResponse.Data != null)
+                var response = await _productsService.GetAllProductsAsync();
+                if (response != null && response.Data != null)
                 {
-                    _originalData = new List<UserDisplayDto>();
+                    // Ánh xạ dữ liệu sang OrderDisplayDto
+                    _originalData = new List<ProductDisplayDto>();
 
-                    foreach (var user in userResponse.Data.Users)
+                    foreach (var product in response.Data)
                     {
-                        // Lấy tổng số đơn hàng của từng người dùng bằng hàm GetOrderById
-                        int totalOrders = await GetTotalOrderById(user.Id);
+                        var categoryName = await GetCategoryNameById(product.CategoryId); // Lấy tên danh mục
+                        var colorList = product.Colors; // Giả sử mỗi sản phẩm có danh sách màu sắc
 
-                        _originalData.Add(new UserDisplayDto
+                        // Duyệt qua từng màu sắc và thêm vào danh sách
+                        foreach (var color in colorList)
                         {
-                            Id = user.Id,
-                            UserName = $"{user.FirstName} {user.LastName}",
-                            Email = user.Email,
-                            Phone = user.PhoneNumber,
-                            TotalOrders = totalOrders
-                        });
+                            _originalData.Add(new ProductDisplayDto
+                            {
+                                Id = product.Id,
+                                Name = product.Name,
+                                CategoryName = categoryName,
+                                DateAdded = product.CreatedAt,
+                                StockQuantity = product.StockQuantity,
+                                ColorName = color.Name, // Màu sắc của sản phẩm
+                                Status = product.Status,
+                            });
+                        }
                     }
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize); // Tính tổng số trang
@@ -111,7 +115,7 @@ namespace Source.Views.Admin
                 }
                 else
                 {
-                    MessageBox.Show("Không thể tải dữ liệu người dùng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không thể tải dữ liệu danh mục.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -164,11 +168,6 @@ namespace Source.Views.Admin
 
         private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Kiểm tra nếu cột không cho phép click vào header
-            if (gridView.Columns[e.ColumnIndex].Name == "Detail")
-            {
-                return; // Ngăn click vào header
-            }
             // Lấy tên cột được nhấn
             string columnName = gridView.Columns[e.ColumnIndex].DataPropertyName;
 
@@ -216,44 +215,6 @@ namespace Source.Views.Admin
                 else
                 {
                     column.HeaderText = column.HeaderText.TrimEnd('↑', '↓'); // Xóa ký tự mũi tên nếu không phải cột đang sắp xếp
-                }
-            }
-        }
-
-        private async void gridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Bỏ qua nếu người dùng nhấn vào tiêu đề cột hoặc vùng trống
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
-
-            // Lấy tên cột được nhấn
-            string columnName = gridView.Columns[e.ColumnIndex].Name;
-
-            // Lấy thông tin hàng hiện tại
-            var selectedRow = gridView.Rows[e.RowIndex];
-            var customerId = (Guid)selectedRow.Cells["Id"].Value;
-
-            // Kiểm tra xem có phải cột Edit hay không
-            if (columnName == "Detail")
-            {
-                // Gọi dịch vụ để lấy thông tin chi tiết
-                var response = await _usersService.GetUserById(customerId);
-
-                if (response.Success)
-                {
-                    var customer = response.Data;
-
-                    //Mở form Detail với dữ liệu lấy từ dịch vụ
-                    using (var detailForm = new CustomersDetails(customer))
-                    {
-                        if (detailForm.ShowDialog() == DialogResult.OK)
-                        {
-                            await LoadCustomers(); // Cập nhật lại dữ liệu trong DataGridView
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to retrieve category details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

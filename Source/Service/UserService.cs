@@ -117,5 +117,24 @@ namespace Source.Service
         {
             return await _apiClient.GetAsync<BaseResponse<User>>($"User/Search");
         }
+        // Get User By Token method
+        public async Task<BaseResponse<GetUserByTokenRespone>> GetUserByToken()
+        {
+            return await _apiClient.GetAsync<BaseResponse<GetUserByTokenRespone>>("User/GetUserByToken");
+        }
+        // Get UserId By Token method
+        public async Task<BaseResponse<GetUserIdByTokenRespone>> GetUserIdByToken()
+        {
+            return await _apiClient.GetAsync<BaseResponse<GetUserIdByTokenRespone>>("User/GetUserIdByToken");
+        }
+        public async Task<BaseResponse<bool>> IsEmailConfirmedAsync(string usernameOrEmail)
+        {
+            return await _apiClient.GetAsync<BaseResponse<bool>>($"User/IsEmailConfirmed/{usernameOrEmail}");
+        }
+
+        public async Task<bool> DeleteByUsernameOrEmail(string usernameOrEmail)
+        {
+            return await _apiClient.DeleteAsync($"User/DeleteByUsernameOrEmail/{usernameOrEmail}");
+        }
     }
 }

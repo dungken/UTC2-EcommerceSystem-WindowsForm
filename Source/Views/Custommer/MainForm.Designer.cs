@@ -591,12 +591,12 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.Dock = DockStyle.Fill;
             pictureBox2.Image = Properties.Resources.HinhNendep;
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(0, -3);
+            pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1015, 561);
+            pictureBox2.Size = new Size(1015, 556);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -47,6 +48,7 @@
             label9 = new Label();
             label10 = new Label();
             panel2 = new Panel();
+            modalEffect_Timer = new System.Windows.Forms.Timer(components);
             pnlAllOption1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTickGreen1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReturn).BeginInit();
@@ -104,7 +106,6 @@
             // 
             // pictureBoxTickGreen1
             // 
-            pictureBoxTickGreen1.Image = Properties.Resources.icon_tickGreen;
             pictureBoxTickGreen1.Location = new Point(653, 39);
             pictureBoxTickGreen1.Name = "pictureBoxTickGreen1";
             pictureBoxTickGreen1.Size = new Size(35, 35);
@@ -197,7 +198,6 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semilight", 9F);
             label11.ForeColor = Color.MediumSeaGreen;
-            label11.Image = Properties.Resources.icon_motorbike;
             label11.ImageAlign = ContentAlignment.MiddleLeft;
             label11.Location = new Point(29, 54);
             label11.Name = "label11";
@@ -207,7 +207,6 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icon_tickGreen;
             pictureBox1.Location = new Point(653, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(35, 35);
@@ -266,6 +265,12 @@
             panel2.Size = new Size(10, 125);
             panel2.TabIndex = 0;
             // 
+            // modalEffect_Timer
+            // 
+            modalEffect_Timer.Enabled = true;
+            modalEffect_Timer.Interval = 1;
+            modalEffect_Timer.Tick += modalEffect_Timer_Tick;
+            // 
             // OptionShippingMethod
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -313,5 +318,6 @@
         private Label label9;
         private Label label10;
         private Panel panel2;
+        private System.Windows.Forms.Timer modalEffect_Timer;
     }
 }

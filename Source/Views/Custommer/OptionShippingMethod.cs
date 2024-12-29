@@ -37,7 +37,19 @@ namespace Source.Views.Custommer
             frmOptionShippingLocationFixedY = PaymentCustomer.parentY + 50;
             this.Location = new Point(PaymentCustomer.parentX * 3 / 2 - 30, PaymentCustomer.parentY + 50);
         }
-
+        private void modalEffect_Timer_Tick(object sender, EventArgs e)
+        {
+            int y = PaymentCustomer.parentY += 3;
+            this.Location = new Point(PaymentCustomer.parentX * 3 / 2, y - 100);
+            if (Opacity >= 1 && y - 100 >= frmOptionShippingLocationFixedY)
+            {
+                modalEffect_Timer.Stop();
+            }
+            else if (Opacity != 1)
+            {
+                Opacity += 0.03;
+            }
+        }
         private void pictureBoxReturn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,5 +67,7 @@ namespace Source.Views.Custommer
         {
 
         }
+
+      
     }
 }

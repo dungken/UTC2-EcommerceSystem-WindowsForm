@@ -9,7 +9,7 @@ namespace Source.Dtos.Account
     public class ConfirmEmailDto
     {
         [Required]
-        public string Token { get; set; }
+        public string Code { get; set; }
 
         [Required]
         [EmailAddress]

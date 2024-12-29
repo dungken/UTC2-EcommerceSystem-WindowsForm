@@ -19,7 +19,7 @@ namespace Source
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new MainForm());
-            //Application.Run(new Login());
+            Application.Run(new Login());
             //Application.Run(new OrderInvoices());
             //Application.Run(new Cart());
             //Application.Run(new ProductDetails());
@@ -30,7 +30,7 @@ namespace Source
             //Application.Run(new CategoriesEdit());
             //Application.Run(new VouchersList());
             //Application.Run(new CouponsEdit());
-            Application.Run(new OrdersList());
+            //Application.Run(new OrdersList());
             //Application.Run(new OrderDetails());
             //Application.Run(new CustomersList());
             //Application.Run(new CustomersDetails());
@@ -38,6 +38,7 @@ namespace Source
             //Application.Run(new TestAccountService());
             //Application.Run(new PhuongAnh_Test());
             //Application.Run(new MainForm());
+            //Application.Run(new PaymentCustomer());
         }
     }
 

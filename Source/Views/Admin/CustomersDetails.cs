@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,14 @@ namespace Source.Views.Admin
 {
     public partial class CustomersDetails : Form
     {
+        private readonly UserService _userService;
         public CustomersDetails()
         {
             InitializeComponent();
+            _userService = new UserService();
             pnProfile.Paint += PanelLine_Paint;
             pnStatus.Paint += PanelLine_Paint;
+          
             //pnMain.Paint += PanelLine_Paint;
         }
         private void PanelLine_Paint(object sender, PaintEventArgs e)

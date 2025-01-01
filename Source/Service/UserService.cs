@@ -25,15 +25,23 @@ namespace Source.Service
         }
 
         // Upload Image method
-        public async Task<BaseResponse<MessageRespone>> UploadImage(IFormFile file, string? username = null)
+        public async Task<BaseResponse<MessageRespone>> UploadImage(string file, string username)
         {
-            var formData = new MultipartFormDataContent();
-            formData.Add(new StreamContent(file.OpenReadStream()), "file", file.FileName);
-            if (username != null)
-            {
-                formData.Add(new StringContent(username), "username");
-            }
-            return await _apiClient.PostAsync<BaseResponse<MessageRespone>>("User/UploadImage", formData);
+            //using (var formData = new MultipartFormDataContent())
+            //{
+            //    using (var streamContent = new StreamContent(file.OpenReadStream()))
+            //    {
+            //        formData.Add(streamContent, "file", file.FileName);
+
+            //        if (username != null)
+            //        {
+            //            formData.Add(new StringContent(username), "username");
+            //        }
+
+                  
+            //    }
+            //}
+            return await _apiClient.PostImageAsync<BaseResponse<MessageRespone>>("User/UploadImage", file, username);
         }
 
         // Get User by Id
@@ -68,7 +76,7 @@ namespace Source.Service
         // Update Personal Infomaion method
         public async Task<BaseResponse<UpdatePersonalInfoDto>> UpdatePersonalInformation(UpdatePersonalInfoDto model)
         {
-            return await _apiClient.PutAsync<BaseResponse<UpdatePersonalInfoDto>>("User/UpdatePersonalInformation", model);
+            return await _apiClient.PostAsync<BaseResponse<UpdatePersonalInfoDto>>("User/UpdatePersonalInfo", model);
         }
 
         // Delete Account method
@@ -136,5 +144,12 @@ namespace Source.Service
         {
             return await _apiClient.DeleteAsync($"User/DeleteByUsernameOrEmail/{usernameOrEmail}");
         }
+        public async Task<BaseResponse<GetUserNameRespone>> GetUsernameByToken()
+        {
+            return await _apiClient.GetAsync<BaseResponse<GetUserNameRespone>>("User/GetUsernameByToken");
+            
+        }
+
+
     }
 }

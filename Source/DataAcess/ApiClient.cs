@@ -77,8 +77,39 @@ namespace Source.DataAcess
             }
             MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
-        } 
-        
+        }
+        public async Task<T> PostImageAsync<T>(string endpoint, string filePath, string username)
+        {
+            var request = new RestRequest(endpoint, Method.Post);
+            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            //request.Authenticator = new JwtAuthenticator(Utils.Config.token);
+            if (filePath != null)
+            {
+                request.AddFile("file", filePath);
+            }
+            if (!string.IsNullOrEmpty(username))
+            {
+                request.AddParameter("username", username);
+            }
+            var response = await _client.ExecuteAsync<T>(request);
+            if (!response.IsSuccessful)
+            {
+                // Format JSON response
+                if (response.Content != null)
+                {
+                    var formattedJson = FormatJson(response.Content);
+                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+                throw new Exception($"API Error: {response.ErrorMessage}");
+            }
+            MessageBox.Show(response.StatusCode.ToString());
+            return response.Data;
+        }
+
         public async Task<T> PostAsync<T>(string endpoint, IFormFile[] files, Guid productId, string altText)
         {
             var request = new RestRequest(endpoint, Method.Post);
@@ -125,14 +156,14 @@ namespace Source.DataAcess
         public async Task<T> PutAsync<T>(string endpoint, object body)
         {
             var request = new RestRequest(endpoint, Method.Put);
-
+            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
             request.AddJsonBody(body);
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                var formattedJson = FormatJson(response.Content);
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //var formattedJson = FormatJson(response.Content);
+                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;

@@ -13,32 +13,28 @@ using System.Windows.Forms;
 
 namespace Source.Views
 {
-    public partial class _2StepVerification : Form
+    public partial class _2StepVerifycationForLogin : Form
     {
         public static int frmConfirmEmailLocationFixedY;
         private readonly AccountService _AccountService;
         public static bool isVerifyEmail = false;
-        public _2StepVerification()
+        public _2StepVerifycationForLogin()
         {
             InitializeComponent();
             _AccountService = new AccountService();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void _2StepVerification_Load(object sender, EventArgs e)
+        private void _2StepVerifycationForLogin_Load(object sender, EventArgs e)
         {
             frmConfirmEmailLocationFixedY = Login.parentY + 50;
-            this.Location = new Point(Setting.parentX * 3 / 2 - 30, Setting.parentY + 50);
+            var temp = Login.parentX - 200;
+            this.Location = new Point(temp * 3 / 2 - 30, Login.parentY + 50);
         }
 
         private void modalEffect_Timer_Tick(object sender, EventArgs e)
         {
             int y = Setting.parentY += 3;
-            this.Location = new Point(Setting.parentX * 3 / 2, y - 100);
+            this.Location = new Point(Login.parentX * 3 / 2, y - 100);
             if (Opacity >= 1 && y - 100 >= frmConfirmEmailLocationFixedY)
             {
                 modalEffect_Timer.Stop();

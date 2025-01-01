@@ -88,7 +88,10 @@ namespace Source.Service
             return await _apiClient.PostAsync<BaseResponse<object>>("Account/ChangePassword", model);
         }
 
-
+        public async Task<BaseResponse<CheckEnableVerifyDto>> CheckEnableVerifyAsync(string username)
+        {
+            return await _apiClient.GetAsync<BaseResponse<CheckEnableVerifyDto>>($"Account/CheckEnableVerify/{username}");
+        }
 
     }
 }

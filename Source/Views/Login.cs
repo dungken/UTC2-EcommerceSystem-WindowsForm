@@ -84,7 +84,8 @@ namespace Source.Views
                     EmailOrUsername = emailOrUsername,
                     Password = password
                 };
-
+              
+               
                 var response = await _AccountService.LoginAsync(loginUserDto);
 
 
@@ -96,9 +97,51 @@ namespace Source.Views
                 else
                 {
                     Config.token = response.Data.Token;
-                    MessageBox.Show("Login successful! ");
-                    // Handle successful login
-                    openChildForm(new MainForm());
+                    var p = await _AccountService.CheckEnableVerifyAsync(emailOrUsername);
+                    if (p.Data.TwoFactorEnabled == true)
+                    {
+                        MessageBox.Show("Please verify your email before login");
+                        Form modalBackground = new Form();
+
+                        using (_2StepVerifycationForLogin modal = new _2StepVerifycationForLogin())
+                        {
+                            modalBackground.StartPosition = FormStartPosition.Manual;
+                            modalBackground.FormBorderStyle = FormBorderStyle.None;
+                            modalBackground.Opacity = 0.50d;
+                            modalBackground.Size = new Size(this.Width, this.Height);
+
+
+                            modalBackground.Location = new Point(this.Location.X, this.Location.Y);
+                            modalBackground.ShowInTaskbar = false;
+                            modalBackground.Show();
+                            modal.Owner = modalBackground;
+
+                            parentX = this.Location.X + Login.pnlChildFormLocationX + 200;
+                            parentY = this.Location.Y + Login.pnlChildFormLocationY;
+                            modal.ShowDialog();
+                            modalBackground.Dispose();
+
+                        }
+                        if (_2StepVerifycationForLogin.isVerifyEmail)
+                        {
+                            Config.token = response.Data.Token;
+                            MessageBox.Show("Login successful! ");
+                            // Handle successful login
+                            openChildForm(new MainForm());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login failed: Your email is not verify");
+                        }
+                    }
+                    else
+                    {
+                        Config.token = response.Data.Token;
+                        MessageBox.Show("Login successful! ");
+                        // Handle successful login
+                        openChildForm(new MainForm());
+                    }
+                 
                 }
 
             }
@@ -108,5 +151,7 @@ namespace Source.Views
             }
 
         }
+    
     }
+
 }

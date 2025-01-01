@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            rjToggleButton5 = new MyCustomControl.RJToggleButton();
+            rjButton1 = new MyCustomControl.RJButton();
             label7 = new Label();
             label8 = new Label();
             label3 = new Label();
@@ -51,15 +53,13 @@
             label14 = new Label();
             label15 = new Label();
             groupBox4 = new GroupBox();
+            rjbtnDeleteAccount = new MyCustomControl.RJButton();
+            rjToggleButton4 = new MyCustomControl.RJToggleButton();
             label16 = new Label();
             label17 = new Label();
             label18 = new Label();
             label19 = new Label();
             label20 = new Label();
-            rjToggleButton4 = new MyCustomControl.RJToggleButton();
-            rjbtnEdit = new MyCustomControl.RJButton();
-            rjButton1 = new MyCustomControl.RJButton();
-            rjbtnDeleteAccount = new MyCustomControl.RJButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -68,8 +68,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(rjToggleButton5);
             groupBox1.Controls.Add(rjButton1);
-            groupBox1.Controls.Add(rjbtnEdit);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label3);
@@ -83,6 +83,42 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Tài khoản";
+            // 
+            // rjToggleButton5
+            // 
+            rjToggleButton5.AutoSize = true;
+            rjToggleButton5.BackColor = SystemColors.ActiveCaptionText;
+            rjToggleButton5.Location = new Point(28, 107);
+            rjToggleButton5.MinimumSize = new Size(45, 22);
+            rjToggleButton5.Name = "rjToggleButton5";
+            rjToggleButton5.OffBackColor = Color.Silver;
+            rjToggleButton5.OffToggleColor = Color.Gainsboro;
+            rjToggleButton5.OnBackColor = Color.MediumSlateBlue;
+            rjToggleButton5.OnToggleColor = Color.WhiteSmoke;
+            rjToggleButton5.Size = new Size(45, 22);
+            rjToggleButton5.TabIndex = 9;
+            rjToggleButton5.UseVisualStyleBackColor = false;
+            rjToggleButton5.CheckedChanged += rjToggleButton5_CheckedChanged;
+            rjToggleButton5.Click += rjToggleButton5_Click;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.MediumSlateBlue;
+            rjButton1.BackgroundColor = Color.MediumSlateBlue;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.Location = new Point(28, 209);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(108, 37);
+            rjButton1.TabIndex = 8;
+            rjButton1.Text = "Chỉnh sửa";
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -125,9 +161,9 @@
             label2.ForeColor = Color.FromArgb(64, 0, 64);
             label2.Location = new Point(28, 72);
             label2.Name = "label2";
-            label2.Size = new Size(293, 20);
+            label2.Size = new Size(176, 20);
             label2.TabIndex = 1;
-            label2.Text = "Cập nhật thông tin và ảnh đại diện của bạn";
+            label2.Text = "Cập nhật xác ninh 2 bước";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -137,9 +173,9 @@
             label1.ForeColor = Color.FromArgb(64, 0, 64);
             label1.Location = new Point(27, 42);
             label1.Name = "label1";
-            label1.Size = new Size(162, 23);
+            label1.Size = new Size(238, 23);
             label1.TabIndex = 0;
-            label1.Text = "Thông tin cá nhân";
+            label1.Text = "Tính năng xác minh 2 bước";
             // 
             // groupBox2
             // 
@@ -363,6 +399,40 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Nâng cao";
             // 
+            // rjbtnDeleteAccount
+            // 
+            rjbtnDeleteAccount.BackColor = Color.Crimson;
+            rjbtnDeleteAccount.BackgroundColor = Color.Crimson;
+            rjbtnDeleteAccount.BorderColor = Color.PaleVioletRed;
+            rjbtnDeleteAccount.BorderRadius = 20;
+            rjbtnDeleteAccount.BorderSize = 0;
+            rjbtnDeleteAccount.FlatAppearance.BorderSize = 0;
+            rjbtnDeleteAccount.FlatStyle = FlatStyle.Flat;
+            rjbtnDeleteAccount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjbtnDeleteAccount.ForeColor = Color.White;
+            rjbtnDeleteAccount.Location = new Point(28, 209);
+            rjbtnDeleteAccount.Name = "rjbtnDeleteAccount";
+            rjbtnDeleteAccount.Size = new Size(125, 37);
+            rjbtnDeleteAccount.TabIndex = 10;
+            rjbtnDeleteAccount.Text = "Xoá tài khoản";
+            rjbtnDeleteAccount.TextColor = Color.White;
+            rjbtnDeleteAccount.UseVisualStyleBackColor = false;
+            // 
+            // rjToggleButton4
+            // 
+            rjToggleButton4.AutoSize = true;
+            rjToggleButton4.BackColor = SystemColors.ActiveCaptionText;
+            rjToggleButton4.Location = new Point(28, 107);
+            rjToggleButton4.MinimumSize = new Size(45, 22);
+            rjToggleButton4.Name = "rjToggleButton4";
+            rjToggleButton4.OffBackColor = Color.Silver;
+            rjToggleButton4.OffToggleColor = Color.Gainsboro;
+            rjToggleButton4.OnBackColor = Color.MediumSlateBlue;
+            rjToggleButton4.OnToggleColor = Color.WhiteSmoke;
+            rjToggleButton4.Size = new Size(45, 22);
+            rjToggleButton4.TabIndex = 9;
+            rjToggleButton4.UseVisualStyleBackColor = false;
+            // 
             // label16
             // 
             label16.AutoSize = true;
@@ -420,78 +490,6 @@
             label20.TabIndex = 0;
             label20.Text = "Hiển thị trạng thái";
             // 
-            // rjToggleButton4
-            // 
-            rjToggleButton4.AutoSize = true;
-            rjToggleButton4.BackColor = SystemColors.ActiveCaptionText;
-            rjToggleButton4.Location = new Point(28, 107);
-            rjToggleButton4.MinimumSize = new Size(45, 22);
-            rjToggleButton4.Name = "rjToggleButton4";
-            rjToggleButton4.OffBackColor = Color.Silver;
-            rjToggleButton4.OffToggleColor = Color.Gainsboro;
-            rjToggleButton4.OnBackColor = Color.MediumSlateBlue;
-            rjToggleButton4.OnToggleColor = Color.WhiteSmoke;
-            rjToggleButton4.Size = new Size(45, 22);
-            rjToggleButton4.TabIndex = 9;
-            rjToggleButton4.UseVisualStyleBackColor = false;
-            // 
-            // rjbtnEdit
-            // 
-            rjbtnEdit.BackColor = Color.MediumSlateBlue;
-            rjbtnEdit.BackgroundColor = Color.MediumSlateBlue;
-            rjbtnEdit.BorderColor = Color.PaleVioletRed;
-            rjbtnEdit.BorderRadius = 20;
-            rjbtnEdit.BorderSize = 0;
-            rjbtnEdit.FlatAppearance.BorderSize = 0;
-            rjbtnEdit.FlatStyle = FlatStyle.Flat;
-            rjbtnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjbtnEdit.ForeColor = Color.White;
-            rjbtnEdit.Location = new Point(28, 102);
-            rjbtnEdit.Name = "rjbtnEdit";
-            rjbtnEdit.Size = new Size(108, 37);
-            rjbtnEdit.TabIndex = 7;
-            rjbtnEdit.Text = "Chỉnh sửa";
-            rjbtnEdit.TextColor = Color.White;
-            rjbtnEdit.UseVisualStyleBackColor = false;
-            // 
-            // rjButton1
-            // 
-            rjButton1.BackColor = Color.MediumSlateBlue;
-            rjButton1.BackgroundColor = Color.MediumSlateBlue;
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 20;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(28, 209);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(108, 37);
-            rjButton1.TabIndex = 8;
-            rjButton1.Text = "Chỉnh sửa";
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            // 
-            // rjbtnDeleteAccount
-            // 
-            rjbtnDeleteAccount.BackColor = Color.Crimson;
-            rjbtnDeleteAccount.BackgroundColor = Color.Crimson;
-            rjbtnDeleteAccount.BorderColor = Color.PaleVioletRed;
-            rjbtnDeleteAccount.BorderRadius = 20;
-            rjbtnDeleteAccount.BorderSize = 0;
-            rjbtnDeleteAccount.FlatAppearance.BorderSize = 0;
-            rjbtnDeleteAccount.FlatStyle = FlatStyle.Flat;
-            rjbtnDeleteAccount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjbtnDeleteAccount.ForeColor = Color.White;
-            rjbtnDeleteAccount.Location = new Point(28, 209);
-            rjbtnDeleteAccount.Name = "rjbtnDeleteAccount";
-            rjbtnDeleteAccount.Size = new Size(125, 37);
-            rjbtnDeleteAccount.TabIndex = 10;
-            rjbtnDeleteAccount.Text = "Xoá tài khoản";
-            rjbtnDeleteAccount.TextColor = Color.White;
-            rjbtnDeleteAccount.UseVisualStyleBackColor = false;
-            // 
             // Setting
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -546,7 +544,7 @@
         private MyCustomControl.RJToggleButton rjToggleButton3;
         private MyCustomControl.RJToggleButton rjToggleButton4;
         private MyCustomControl.RJButton rjButton1;
-        private MyCustomControl.RJButton rjbtnEdit;
         private MyCustomControl.RJButton rjbtnDeleteAccount;
+        private MyCustomControl.RJToggleButton rjToggleButton5;
     }
 }

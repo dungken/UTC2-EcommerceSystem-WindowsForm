@@ -68,10 +68,10 @@ namespace Source.Views
         private Form? activeForm = null;
         private void openChildForm(Form childForm)
         {
-            frmMainLocationX = this.Location.X;
-            frmMainLocationY = this.Location.Y;
-            frmHeight = this.Height;
-            frmWith = this.Width;
+            frmMainLocationX = Login.frmLoginLocationX;
+            frmMainLocationY = Login.frmLoginLocationY;
+            frmHeight = Login.frmHeight;
+            frmWith = Login.frmWith;
             pnlChildFormLocationX = pnlChildForm.Location.X;
             pnlChildFormLocationY = pnlChildForm.Location.Y;
             if (activeForm != null)
@@ -117,6 +117,7 @@ namespace Source.Views
         {
             lblNavigationImage.Image = btnAboutUs.Image;
             lblNavigation.Text = "About us";
+            openChildForm(new AboutUs());
             hideSubMenu();
         }
 
@@ -124,6 +125,7 @@ namespace Source.Views
         {
             lblNavigationImage.Image = btnAboutUs.Image;
             lblNavigation.Text = "Support";
+            openChildForm(new Support());
             hideSubMenu();
         }
 
@@ -131,6 +133,7 @@ namespace Source.Views
         {
             lblNavigationImage.Image = btnSetting.Image;
             lblNavigation.Text = "Setting";
+            openChildForm(new Setting());
             hideSubMenu();
         }
 
@@ -142,7 +145,7 @@ namespace Source.Views
         private void lblAvarata_Click(object sender, EventArgs e)
         {
 
-            pnlSubMenuAvata.Location = new Point(741, 6);
+            pnlSubMenuAvata.Location = new Point(810, 6);
             pnlSubMenuAvata.BringToFront();
             showSubMenu(pnlSubMenuAvata);
 
@@ -189,7 +192,7 @@ namespace Source.Views
         {
 
 
-            pnlSubNotifications.Location = new Point(536, 0);
+            pnlSubNotifications.Location = new Point(660, 0);
             pnlSubNotifications.BringToFront();
             showSubMenu(pnlSubNotifications);
 

@@ -26,7 +26,7 @@ namespace Source.Views.Custommer
                 modalBackground.StartPosition = FormStartPosition.Manual;
                 modalBackground.FormBorderStyle = FormBorderStyle.None;
                 modalBackground.Opacity = 0.50d;
-                modalBackground.Size = new Size(MainForm.frmWith, MainForm.frmHeight);
+                modalBackground.Size = new Size(Login.frmWith, MainForm.frmHeight);
 
 
                 modalBackground.Location = new Point(MainForm.frmMainLocationX, MainForm.frmMainLocationY);

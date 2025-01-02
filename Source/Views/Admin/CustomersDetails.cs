@@ -27,7 +27,7 @@ namespace Source.Views.Admin
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
                                                   // test
-        private Guid _userId;
+        //private Guid _userId;
 
 
         public CustomersDetails()
@@ -56,7 +56,7 @@ namespace Source.Views.Admin
 
             LoadCustomerData();
             //test
-            _userId = Guid.Parse("AB8DD9FF-0FA5-4EF2-CCFE-08DD1BF41832");
+            //_userId = Guid.Parse("AB8DD9FF-0FA5-4EF2-CCFE-08DD1BF41832");
         }
         private void PanelLine_Paint(object sender, PaintEventArgs e)
         {
@@ -274,7 +274,8 @@ namespace Source.Views.Admin
             // get image
             //picbxProfile.LoadAsync(_user.user.ProfilePicture);
             // get id
-            lblId.Text = _userId.ToString();
+            //var user = await _userService.GetUserIdByToken(); 
+            //lblId.Text =  user.Data.UserId.ToString();
             // get name
             lblName.Text = _user.user.FirstName + " " + _user.user.LastName;
             // get gender
@@ -300,11 +301,11 @@ namespace Source.Views.Admin
             else
                 lblPhone.Text = "Chưa cập nhật";
             // get order buy
-            lblOrderBuyV.Text = (await GetTotalOrderById(_userId)).ToString();
+            //lblOrderBuyV.Text = (await GetTotalOrderById(user.Data.UserId)).ToString();
             // get review
 
             // get order
-            await LoadOrders(_userId);
+            //await LoadOrders(user.Data.UserId);
         }
     }
 }

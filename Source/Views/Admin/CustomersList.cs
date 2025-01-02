@@ -96,6 +96,7 @@ namespace Source.Views.Admin
                         // Lấy tổng số đơn hàng của từng người dùng bằng hàm GetOrderById
                         int totalOrders = await GetTotalOrderById(user.Id);
 
+                        if (user.PhoneNumber == null) { user.PhoneNumber = "Chưa cập nhật"; }
                         _originalData.Add(new UserDisplayDto
                         {
                             Id = user.Id,
@@ -104,6 +105,7 @@ namespace Source.Views.Admin
                             Phone = user.PhoneNumber,
                             TotalOrders = totalOrders
                         });
+                        
                     }
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize); // Tính tổng số trang

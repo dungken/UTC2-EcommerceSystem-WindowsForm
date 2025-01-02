@@ -20,7 +20,22 @@
     <Compile Update="Views\Admin\CategoriesEdit.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Admin\DiscountsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\DiscountsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\DiscountsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Admin\OrdersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ProductEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\VouchersAdd.cs">

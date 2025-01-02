@@ -7,26 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Source.Dtos.Category;
+using Source.Dtos.Product;
 using Source.Dtos.Voucher;
 using Source.Service;
 
 namespace Source.Views.Admin
 {
-    public partial class VouchersList : Form
+    public partial class DiscountsList : Form
     {
-        private readonly VoucherService _vouchersService;
-        private List<VoucherDisplayDto> _originalData; // Dữ liệu gốc
+        private readonly DiscountsService _discountsService;
+        private List<DiscountDisplayDto> _originalData; // Dữ liệu gốc
         private int _pageSize = 5;                    // Số hàng trên mỗi trang
         private int _currentPage = 1;                 // Trang hiện tại
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
-        public VouchersList()
+        public DiscountsList()
         {
             InitializeComponent();
-            _vouchersService = new VoucherService();
-            _originalData = new List<VoucherDisplayDto>();
+            _discountsService = new DiscountsService();
+            _originalData = new List<DiscountDisplayDto>();
             CustomizeDataGridView();
             InitializeShowing();
         }
@@ -56,27 +56,25 @@ namespace Source.Views.Admin
             cbxShow.SelectedIndex = 4; // Mặc định chọn 5 hàng trên mỗi trang
         }
 
-        private async void VouchersList_Load(object sender, EventArgs e)
+        private async void DiscountsList_Load(object sender, EventArgs e)
         {
-            await LoadVouchers();
+            await LoadDiscounts();
         }
-        private async Task LoadVouchers()
+        private async Task LoadDiscounts()
         {
             try
             {
-                var response = await _vouchersService.GetAllVouchersAsync();
+                var response = await _discountsService.GetAllDiscounts();
                 if (response != null && response.Data != null)
                 {
                     // Ánh xạ dữ liệu sang VoucherDisplayDto
-                    _originalData = response.Data.Select(voucher => new VoucherDisplayDto
+                    _originalData = response.Data.Select(discount => new DiscountDisplayDto
                     {
-                        Id = voucher.VoucherID,
-                        Code = voucher.VoucherCode,
-                        Amount = voucher.DiscountAmount,
-                        StartDate = voucher.StartDate,
-                        EndDate = voucher.EndDate,
-                        MinOrder = voucher.MinimumOrderValue,
-                        Limit = voucher.UsageLimit,
+                        Id = discount.Id,
+                        Name = discount.Name,
+                        Percentage = discount.Percentage,
+                        StartDate = discount.StartDate,
+                        EndDate = discount.EndDate,
 
                     }).ToList();
 
@@ -115,6 +113,7 @@ namespace Source.Views.Admin
                 DisplayPage(_currentPage);
             }
         }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (_currentPage < _totalPages)
@@ -203,7 +202,7 @@ namespace Source.Views.Admin
 
             // Lấy thông tin hàng hiện tại
             var selectedRow = gridView.Rows[e.RowIndex];
-            var voucherId = (Guid)selectedRow.Cells["Id"].Value;
+            var discountId = (Guid)selectedRow.Cells["Id"].Value;
 
             // Kiểm tra nếu người dùng nhấn vào cột "Remove"
             if (columnName == "Remove")
@@ -217,14 +216,14 @@ namespace Source.Views.Admin
                 if (confirmResult == DialogResult.Yes)
                 {
                     // Gọi hàm xóa từ service
-                    var isDeleted = await _vouchersService.DeleteVoucherAsync(voucherId);
+                    var isDeleted = await _discountsService.DeleteDiscount(discountId);
 
-                    if (isDeleted.Success)
+                    if (isDeleted)
                     {
                         MessageBox.Show("Item removed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Xóa hàng khỏi DataGridView
-                        await LoadVouchers();
+                        await LoadDiscounts();
                     }
                     else
                     {
@@ -239,18 +238,18 @@ namespace Source.Views.Admin
             else if (columnName == "Edit")
             {
                 // Gọi dịch vụ để lấy thông tin chi tiết
-                var response = await _vouchersService.GetVoucherByIdAsync(voucherId);
+                var response = await _discountsService.GetDiscountByIdAsync(discountId);
 
                 if (response.Success)
                 {
-                    var voucher = response.Data;
+                    var discount = response.Data;
 
                     // Mở form Edit với dữ liệu lấy từ dịch vụ
-                    using (var editForm = new VouchersEdit(voucher))
+                    using (var editForm = new DiscountsEdit(discount))
                     {
                         if (editForm.ShowDialog() == DialogResult.OK)
                         {
-                            await LoadVouchers(); // Cập nhật lại dữ liệu trong DataGridView
+                            await LoadDiscounts(); // Cập nhật lại dữ liệu trong DataGridView
                         }
                     }
                 }
@@ -264,13 +263,13 @@ namespace Source.Views.Admin
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Mở form AddCategoryForm
-            var addVoucherForm = new VouchersAdd();
+            var addDiscountForm = new DiscountsAdd();
 
             // Nếu người dùng thêm thành công, form sẽ đóng lại và danh sách cần được cập nhật
-            if (addVoucherForm.ShowDialog() == DialogResult.OK)
+            if (addDiscountForm.ShowDialog() == DialogResult.OK)
             {
                 // Cập nhật lại danh sách (ví dụ: refresh lại DataGridView hoặc ListBox)
-                LoadVouchers();
+                LoadDiscounts();
             }
 
             // Đóng form hiện tại (CategoryListForm)

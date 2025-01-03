@@ -42,7 +42,7 @@ namespace Source.Service
         }
 
         // Delete size
-        public async Task<bool> DeleteSize(Guid id)
+        public async Task<bool> DeleteSize(Guid? id)
         {
             return await _apiClient.DeleteAsync($"Sizes/{id}");
         }

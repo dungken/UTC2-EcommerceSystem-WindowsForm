@@ -5,6 +5,7 @@ using Source.Dtos.Account;
 using Source.Models;
 using Source.Service;
 using Source.Utils;
+using Source.Views.Admin;
 using Source.Views.Custommer;
 using System;
 using System.Collections.Generic;
@@ -132,8 +133,9 @@ namespace Source.Views
                         {
                             Config.token = response.Data.Token;
                             MessageBox.Show("Login successful! ");
-                            
+
                             // Handle successful login
+                            //openChildForm(new OrdersList());
                             openChildForm(new MainForm());
                         }
                         else
@@ -148,6 +150,7 @@ namespace Source.Views
                         // Handle successful login
                         
                         openChildForm(new MainForm());
+                        //openChildForm(new DiscountsList());
                     }
 
                 }

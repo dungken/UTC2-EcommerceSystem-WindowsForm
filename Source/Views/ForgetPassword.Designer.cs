@@ -111,7 +111,7 @@
             btnConfirm.Anchor = AnchorStyles.Top;
             btnConfirm.BackColor = Color.FromArgb(114, 88, 219);
             btnConfirm.ForeColor = Color.White;
-            btnConfirm.Location = new Point(118, 248);
+            btnConfirm.Location = new Point(121, 234);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(297, 44);
             btnConfirm.TabIndex = 47;
@@ -123,7 +123,7 @@
             // 
             txtNewPassword.Anchor = AnchorStyles.Top;
             txtNewPassword.BorderStyle = BorderStyle.None;
-            txtNewPassword.Location = new Point(161, 144);
+            txtNewPassword.Location = new Point(161, 208);
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.PlaceholderText = "New Password";
             txtNewPassword.Size = new Size(230, 20);
@@ -133,7 +133,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackColor = Color.Black;
-            panel4.Location = new Point(118, 170);
+            panel4.Location = new Point(118, 234);
             panel4.Name = "panel4";
             panel4.Size = new Size(297, 1);
             panel4.TabIndex = 45;
@@ -143,7 +143,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.BackColor = Color.White;
             label3.Image = Properties.Resources.icon_lock;
-            label3.Location = new Point(125, 122);
+            label3.Location = new Point(125, 186);
             label3.Name = "label3";
             label3.Size = new Size(30, 49);
             label3.TabIndex = 44;
@@ -154,7 +154,7 @@
             btnGetLink.Anchor = AnchorStyles.Top;
             btnGetLink.BackColor = Color.FromArgb(114, 88, 219);
             btnGetLink.ForeColor = Color.White;
-            btnGetLink.Location = new Point(118, 198);
+            btnGetLink.Location = new Point(118, 120);
             btnGetLink.Name = "btnGetLink";
             btnGetLink.Size = new Size(297, 44);
             btnGetLink.TabIndex = 43;
@@ -201,6 +201,7 @@
             Controls.Add(panel1);
             Name = "ForgetPassword";
             Text = "Login";
+            Load += ForgetPassword_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

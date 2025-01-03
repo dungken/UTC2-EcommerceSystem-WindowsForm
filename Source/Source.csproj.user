@@ -11,6 +11,9 @@
     <Compile Update="Views\2StepVerification.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\2StepVerificationForForgetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\2StepVerifycationForLogin.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -20,30 +20,30 @@ namespace Source.Service
             _apiClient = new ApiClient(Utils.Config.BaseUrl);
         }
         // Create a new product
-        public async Task<BaseResponse<ProductDTO>> CreateProductAsync(CreateProductDto productDto)
+        public async Task<BaseResponse<Dtos.Product.ProductDTO>> CreateProductAsync(CreateProductDto productDto)
         {
-            return await _apiClient.PostAsync<BaseResponse<ProductDTO>>("Products/Create", productDto);
+            return await _apiClient.PostAsync<BaseResponse<Dtos.Product.ProductDTO>>("Products/Create", productDto);
         }
         // Get product by id
-        public async Task<BaseResponse<ProductDTO>> GetProductByIdAsync(Guid id)
+        public async Task<BaseResponse<Dtos.Product.ProductDTO>> GetProductByIdAsync(Guid id)
         {
-            return await _apiClient.GetAsync<BaseResponse<ProductDTO>>($"Products/{id}");
+            return await _apiClient.GetAsync<BaseResponse<Dtos.Product.ProductDTO>>($"Products/{id}");
         }
         // Get all products
-        public async Task<BaseResponse<IEnumerable<ProductDTO>>> GetAllProductsAsync()
+        public async Task<BaseResponse<IEnumerable<Dtos.Product.ProductDTO>>> GetAllProductsAsync()
         {
-            return await _apiClient.GetAsync<BaseResponse<IEnumerable<ProductDTO>>>($"Products");
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<Dtos.Product.ProductDTO>>>($"Products");
         }
         // Get Products by category
-        public async Task<BaseResponse<IEnumerable<ProductDTO>>> GetProductsByCategory(Guid categoryId)
+        public async Task<BaseResponse<IEnumerable<Dtos.Product.ProductDTO>>> GetProductsByCategory(Guid categoryId)
         {
-            return await _apiClient.GetAsync<BaseResponse<IEnumerable<ProductDTO>>>($"Products/Category/{categoryId}");
+            return await _apiClient.GetAsync<BaseResponse<IEnumerable<Dtos.Product.ProductDTO>>>($"Products/Category/{categoryId}");
         }
 
         // Update product
-        public async Task<BaseResponse<Product>> UpdateProductAsync(Guid id, UpdateProductDTO productDto)
+        public async Task<BaseResponse<Models.ProductDTO>> UpdateProductAsync(Guid id, UpdateProductDTO productDto)
         {
-            return await _apiClient.PutAsync<BaseResponse<Product>>($"Products/{id}", productDto);
+            return await _apiClient.PutAsync<BaseResponse<Models.ProductDTO>>($"Products/{id}", productDto);
         }
 
         // Delete product
@@ -83,9 +83,9 @@ namespace Source.Service
         }
 
         // Add existing color to product
-        public async Task<BaseResponse<ProductDTO>> AddExistingColorToProduct(Guid productId, Guid colorId)
+        public async Task<BaseResponse<Dtos.Product.ProductDTO>> AddExistingColorToProduct(Guid productId, Guid colorId)
         {
-            return await _apiClient.PostAsync<BaseResponse<ProductDTO>>($"Products/{productId}/AddExistingColorToProduct/{colorId}");
+            return await _apiClient.PostAsync<BaseResponse<Dtos.Product.ProductDTO>>($"Products/{productId}/AddExistingColorToProduct/{colorId}");
         }
     }
 }

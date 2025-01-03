@@ -49,9 +49,9 @@ namespace Source.Service
         }
 
         // Add new product to discount
-        public async Task<Product> AddNewProductToDiscount(Guid discountId, CreateProductDto product)
+        public async Task<Models.ProductDTO> AddNewProductToDiscount(Guid discountId, CreateProductDto product)
         {
-            return await _apiClient.PostAsync<Product>($"Discounts/{discountId}/AddNewProduct", product);
+            return await _apiClient.PostAsync<Models.ProductDTO>($"Discounts/{discountId}/AddNewProduct", product);
         }
 
         // Add existing product to discount
@@ -67,9 +67,9 @@ namespace Source.Service
         }
 
         // Get products in discount
-        public async Task<IEnumerable<Product>> GetProductsInDiscount(Guid discountId)
+        public async Task<IEnumerable<Models.ProductDTO>> GetProductsInDiscount(Guid discountId)
         {
-            return await _apiClient.GetAsync<IEnumerable<Product>>($"Discounts/{discountId}/GetProducts");
+            return await _apiClient.GetAsync<IEnumerable<Models.ProductDTO>>($"Discounts/{discountId}/GetProducts");
         }
 
        

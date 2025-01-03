@@ -50,6 +50,9 @@
     <Compile Update="Views\Admin\ProductList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\ConfirmEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,10 +113,10 @@
     <Compile Update="Views\Custommer\WatchReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Login.cs">
+    <Compile Update="Views\ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\LoginWithGoogle.cs">
+    <Compile Update="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\MainFormAdmin.cs">

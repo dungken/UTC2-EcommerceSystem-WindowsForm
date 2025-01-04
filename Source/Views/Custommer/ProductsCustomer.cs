@@ -276,30 +276,13 @@ namespace Source.Views.Custommer
         private void UpdatePaginationButtons()
         {
             // Bật/tắt nút Previous và Next
-            btnPrevious.Enabled = _currentPage > 1;
+            btnPre.Enabled = _currentPage > 1;
             btnNext.Enabled = _currentPage < _totalPages;
 
             // Hiển thị thông tin trang
             lblPaginationInfo.Text = $"Page {_currentPage} of {_totalPages}";
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if (_currentPage > 1)
-            {
-                _currentPage--;
-                DisplayProductsForCurrentPage();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (_currentPage < _totalPages)
-            {
-                _currentPage++;
-                DisplayProductsForCurrentPage();
-            }
-        }
 
 
         private void ClearProductPanels()
@@ -389,6 +372,22 @@ namespace Source.Views.Custommer
 
         }
 
-        
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            if (_currentPage > 1)
+            {
+                _currentPage--;
+                DisplayProductsForCurrentPage();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_currentPage < _totalPages)
+            {
+                _currentPage++;
+                DisplayProductsForCurrentPage();
+            }
+        }
     }
 }

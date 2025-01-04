@@ -54,7 +54,10 @@ namespace Source.DataAcess
         public async Task<T> PostAsync<T>(string endpoint, object? body = null)
         {
             var request = new RestRequest(endpoint, Method.Post);
-            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            if(Utils.Config.token != null)
+            {
+                request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            }      
 
             if (body != null)
             {

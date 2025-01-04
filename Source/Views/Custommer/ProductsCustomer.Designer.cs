@@ -47,23 +47,23 @@
             lblNameProduct3 = new Label();
             pictureBox3 = new PictureBox();
             pnlProduct4 = new Panel();
-            lblNameProduct4 = new Label();
-            pictureBox4 = new PictureBox();
-            panel19 = new Panel();
             lblPriceProduct4 = new Label();
             lblCateProduct4 = new Label();
+            panel19 = new Panel();
+            lblNameProduct4 = new Label();
+            pictureBox4 = new PictureBox();
             pnlProduct5 = new Panel();
-            lblNameProduct5 = new Label();
-            pictureBox5 = new PictureBox();
-            panel16 = new Panel();
             lblPriceProduct5 = new Label();
             lblCateProduct5 = new Label();
+            panel16 = new Panel();
+            lblNameProduct5 = new Label();
+            pictureBox5 = new PictureBox();
             pnlProduct6 = new Panel();
-            lblNameProduct6 = new Label();
-            pictureBox6 = new PictureBox();
-            panel12 = new Panel();
             lblPriceProduct6 = new Label();
             lblCateProduct6 = new Label();
+            panel12 = new Panel();
+            lblNameProduct6 = new Label();
+            pictureBox6 = new PictureBox();
             pnlMain = new Panel();
             btnBuyNow = new Button();
             btnAddTheCart = new Button();
@@ -81,9 +81,9 @@
             pictureBoxMain = new PictureBox();
             txtSearch = new TextBox();
             panel1 = new Panel();
+            btnNext = new Button();
+            btnPre = new Button();
             lblPaginationInfo = new Label();
-            btnNext = new FontAwesome.Sharp.IconButton();
-            btnPrevious = new FontAwesome.Sharp.IconButton();
             btnSearch = new PictureBox();
             pnlProduct1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -319,48 +319,16 @@
             // pnlProduct4
             // 
             pnlProduct4.BackColor = Color.FromArgb(235, 224, 234);
-            pnlProduct4.Controls.Add(lblNameProduct4);
-            pnlProduct4.Controls.Add(pictureBox4);
-            pnlProduct4.Controls.Add(panel19);
             pnlProduct4.Controls.Add(lblPriceProduct4);
             pnlProduct4.Controls.Add(lblCateProduct4);
+            pnlProduct4.Controls.Add(panel19);
+            pnlProduct4.Controls.Add(lblNameProduct4);
+            pnlProduct4.Controls.Add(pictureBox4);
             pnlProduct4.Location = new Point(405, 290);
             pnlProduct4.Name = "pnlProduct4";
             pnlProduct4.Size = new Size(169, 184);
             pnlProduct4.TabIndex = 27;
             pnlProduct4.Click += Panel_Click;
-            // 
-            // lblNameProduct4
-            // 
-            lblNameProduct4.AutoSize = true;
-            lblNameProduct4.Dock = DockStyle.Top;
-            lblNameProduct4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNameProduct4.ForeColor = Color.FromArgb(80, 40, 60);
-            lblNameProduct4.Location = new Point(0, 108);
-            lblNameProduct4.Name = "lblNameProduct4";
-            lblNameProduct4.Size = new Size(80, 28);
-            lblNameProduct4.TabIndex = 2;
-            lblNameProduct4.Text = "Name4";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Dock = DockStyle.Top;
-            pictureBox4.Image = Properties.Resources.capybara3;
-            pictureBox4.Location = new Point(0, 1);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(169, 107);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
-            // 
-            // panel19
-            // 
-            panel19.BackColor = SystemColors.ActiveCaptionText;
-            panel19.Dock = DockStyle.Top;
-            panel19.Location = new Point(0, 0);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(169, 1);
-            panel19.TabIndex = 1;
             // 
             // lblPriceProduct4
             // 
@@ -386,51 +354,51 @@
             lblCateProduct4.TabIndex = 5;
             lblCateProduct4.Text = "Category1";
             // 
+            // panel19
+            // 
+            panel19.BackColor = SystemColors.ActiveCaptionText;
+            panel19.Dock = DockStyle.Top;
+            panel19.Location = new Point(0, 135);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(169, 1);
+            panel19.TabIndex = 1;
+            // 
+            // lblNameProduct4
+            // 
+            lblNameProduct4.AutoSize = true;
+            lblNameProduct4.Dock = DockStyle.Top;
+            lblNameProduct4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameProduct4.ForeColor = Color.FromArgb(80, 40, 60);
+            lblNameProduct4.Location = new Point(0, 107);
+            lblNameProduct4.Name = "lblNameProduct4";
+            lblNameProduct4.Size = new Size(80, 28);
+            lblNameProduct4.TabIndex = 2;
+            lblNameProduct4.Text = "Name4";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Dock = DockStyle.Top;
+            pictureBox4.Image = Properties.Resources.capybara3;
+            pictureBox4.Location = new Point(0, 0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(169, 107);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 0;
+            pictureBox4.TabStop = false;
+            // 
             // pnlProduct5
             // 
             pnlProduct5.BackColor = Color.FromArgb(235, 224, 234);
-            pnlProduct5.Controls.Add(lblNameProduct5);
-            pnlProduct5.Controls.Add(pictureBox5);
-            pnlProduct5.Controls.Add(panel16);
             pnlProduct5.Controls.Add(lblPriceProduct5);
             pnlProduct5.Controls.Add(lblCateProduct5);
+            pnlProduct5.Controls.Add(panel16);
+            pnlProduct5.Controls.Add(lblNameProduct5);
+            pnlProduct5.Controls.Add(pictureBox5);
             pnlProduct5.Location = new Point(609, 290);
             pnlProduct5.Name = "pnlProduct5";
             pnlProduct5.Size = new Size(169, 184);
             pnlProduct5.TabIndex = 28;
             pnlProduct5.Click += Panel_Click;
-            // 
-            // lblNameProduct5
-            // 
-            lblNameProduct5.AutoSize = true;
-            lblNameProduct5.Dock = DockStyle.Top;
-            lblNameProduct5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNameProduct5.ForeColor = Color.FromArgb(80, 40, 60);
-            lblNameProduct5.Location = new Point(0, 108);
-            lblNameProduct5.Name = "lblNameProduct5";
-            lblNameProduct5.Size = new Size(80, 28);
-            lblNameProduct5.TabIndex = 2;
-            lblNameProduct5.Text = "Name5";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Dock = DockStyle.Top;
-            pictureBox5.Image = Properties.Resources.capybara3;
-            pictureBox5.Location = new Point(0, 1);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(169, 107);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
-            // panel16
-            // 
-            panel16.BackColor = SystemColors.ActiveCaptionText;
-            panel16.Dock = DockStyle.Top;
-            panel16.Location = new Point(0, 0);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(169, 1);
-            panel16.TabIndex = 1;
             // 
             // lblPriceProduct5
             // 
@@ -456,51 +424,51 @@
             lblCateProduct5.TabIndex = 5;
             lblCateProduct5.Text = "Category1";
             // 
+            // panel16
+            // 
+            panel16.BackColor = SystemColors.ActiveCaptionText;
+            panel16.Dock = DockStyle.Top;
+            panel16.Location = new Point(0, 135);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(169, 1);
+            panel16.TabIndex = 1;
+            // 
+            // lblNameProduct5
+            // 
+            lblNameProduct5.AutoSize = true;
+            lblNameProduct5.Dock = DockStyle.Top;
+            lblNameProduct5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameProduct5.ForeColor = Color.FromArgb(80, 40, 60);
+            lblNameProduct5.Location = new Point(0, 107);
+            lblNameProduct5.Name = "lblNameProduct5";
+            lblNameProduct5.Size = new Size(80, 28);
+            lblNameProduct5.TabIndex = 2;
+            lblNameProduct5.Text = "Name5";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Dock = DockStyle.Top;
+            pictureBox5.Image = Properties.Resources.capybara3;
+            pictureBox5.Location = new Point(0, 0);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(169, 107);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
+            // 
             // pnlProduct6
             // 
             pnlProduct6.BackColor = Color.FromArgb(235, 224, 234);
-            pnlProduct6.Controls.Add(lblNameProduct6);
-            pnlProduct6.Controls.Add(pictureBox6);
-            pnlProduct6.Controls.Add(panel12);
             pnlProduct6.Controls.Add(lblPriceProduct6);
             pnlProduct6.Controls.Add(lblCateProduct6);
+            pnlProduct6.Controls.Add(panel12);
+            pnlProduct6.Controls.Add(lblNameProduct6);
+            pnlProduct6.Controls.Add(pictureBox6);
             pnlProduct6.Location = new Point(814, 290);
             pnlProduct6.Name = "pnlProduct6";
             pnlProduct6.Size = new Size(169, 184);
             pnlProduct6.TabIndex = 29;
             pnlProduct6.Click += Panel_Click;
-            // 
-            // lblNameProduct6
-            // 
-            lblNameProduct6.AutoSize = true;
-            lblNameProduct6.Dock = DockStyle.Top;
-            lblNameProduct6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNameProduct6.ForeColor = Color.FromArgb(80, 40, 60);
-            lblNameProduct6.Location = new Point(0, 108);
-            lblNameProduct6.Name = "lblNameProduct6";
-            lblNameProduct6.Size = new Size(80, 28);
-            lblNameProduct6.TabIndex = 2;
-            lblNameProduct6.Text = "Name6";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Dock = DockStyle.Top;
-            pictureBox6.Image = Properties.Resources.capybara3;
-            pictureBox6.Location = new Point(0, 1);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(169, 107);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 0;
-            pictureBox6.TabStop = false;
-            // 
-            // panel12
-            // 
-            panel12.BackColor = SystemColors.ActiveCaptionText;
-            panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 0);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(169, 1);
-            panel12.TabIndex = 1;
             // 
             // lblPriceProduct6
             // 
@@ -525,6 +493,38 @@
             lblCateProduct6.Size = new Size(77, 20);
             lblCateProduct6.TabIndex = 5;
             lblCateProduct6.Text = "Category1";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = SystemColors.ActiveCaptionText;
+            panel12.Dock = DockStyle.Top;
+            panel12.Location = new Point(0, 135);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(169, 1);
+            panel12.TabIndex = 1;
+            // 
+            // lblNameProduct6
+            // 
+            lblNameProduct6.AutoSize = true;
+            lblNameProduct6.Dock = DockStyle.Top;
+            lblNameProduct6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameProduct6.ForeColor = Color.FromArgb(80, 40, 60);
+            lblNameProduct6.Location = new Point(0, 107);
+            lblNameProduct6.Name = "lblNameProduct6";
+            lblNameProduct6.Size = new Size(80, 28);
+            lblNameProduct6.TabIndex = 2;
+            lblNameProduct6.Text = "Name6";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Dock = DockStyle.Top;
+            pictureBox6.Image = Properties.Resources.capybara3;
+            pictureBox6.Location = new Point(0, 0);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(169, 107);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 0;
+            pictureBox6.TabStop = false;
             // 
             // pnlMain
             // 
@@ -719,9 +719,9 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(lblPaginationInfo);
             panel1.Controls.Add(btnNext);
-            panel1.Controls.Add(btnPrevious);
+            panel1.Controls.Add(btnPre);
+            panel1.Controls.Add(lblPaginationInfo);
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(txtSearch);
             panel1.Controls.Add(pnlMain);
@@ -737,38 +737,37 @@
             panel1.Size = new Size(1047, 509);
             panel1.TabIndex = 0;
             // 
+            // btnNext
+            // 
+            btnNext.BackgroundImageLayout = ImageLayout.None;
+            btnNext.Cursor = Cursors.Hand;
+            btnNext.Image = Properties.Resources.NextIcon2;
+            btnNext.Location = new Point(1000, 254);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(26, 28);
+            btnNext.TabIndex = 37;
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
+            // 
+            // btnPre
+            // 
+            btnPre.Cursor = Cursors.Hand;
+            btnPre.Image = Properties.Resources.PreviousIcon;
+            btnPre.Location = new Point(362, 254);
+            btnPre.Name = "btnPre";
+            btnPre.Size = new Size(28, 28);
+            btnPre.TabIndex = 36;
+            btnPre.UseVisualStyleBackColor = true;
+            btnPre.Click += btnPre_Click;
+            // 
             // lblPaginationInfo
             // 
             lblPaginationInfo.AutoSize = true;
-            lblPaginationInfo.Location = new Point(490, 19);
+            lblPaginationInfo.Location = new Point(406, 22);
             lblPaginationInfo.Name = "lblPaginationInfo";
             lblPaginationInfo.Size = new Size(41, 20);
             lblPaginationInfo.TabIndex = 35;
             lblPaginationInfo.Text = "Page";
-            // 
-            // btnNext
-            // 
-            btnNext.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnNext.IconColor = Color.Black;
-            btnNext.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNext.Location = new Point(405, 14);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(48, 28);
-            btnNext.TabIndex = 34;
-            btnNext.Text = "next";
-            btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnPrevious
-            // 
-            btnPrevious.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnPrevious.IconColor = Color.Black;
-            btnPrevious.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnPrevious.Location = new Point(349, 14);
-            btnPrevious.Name = "btnPrevious";
-            btnPrevious.Size = new Size(48, 28);
-            btnPrevious.TabIndex = 33;
-            btnPrevious.Text = "prev";
-            btnPrevious.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -877,8 +876,8 @@
         private Button btnIncrease;
         private PictureBox btnSearch;
         private Button btnProductDetail;
-        private FontAwesome.Sharp.IconButton btnNext;
-        private FontAwesome.Sharp.IconButton btnPrevious;
         private Label lblPaginationInfo;
+        private Button btnPre;
+        private Button btnNext;
     }
 }

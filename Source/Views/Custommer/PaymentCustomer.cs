@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Dtos.Order;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,12 @@ namespace Source.Views.Custommer
 {
     public partial class PaymentCustomer : Form
     {
+        private CreateOrderDetailDto _orderDetail;
+        public PaymentCustomer(CreateOrderDetailDto createOrderDto)
+        {
+            InitializeComponent();
+            _orderDetail = createOrderDto;
+        }
         public PaymentCustomer()
         {
             InitializeComponent();

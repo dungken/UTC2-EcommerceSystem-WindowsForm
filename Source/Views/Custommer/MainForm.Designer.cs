@@ -63,7 +63,6 @@
             label7 = new Label();
             btnLogOutSubAvata = new Button();
             pnlChildForm = new Panel();
-            pictureBox2 = new PictureBox();
             pnlSubNotifications = new Panel();
             button7 = new Button();
             button2 = new Button();
@@ -83,7 +82,6 @@
             pnlSubMenuAvata.SuspendLayout();
             panel5.SuspendLayout();
             pnlChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlSubNotifications.SuspendLayout();
             panel9.SuspendLayout();
             SuspendLayout();
@@ -580,7 +578,6 @@
             // 
             // pnlChildForm
             // 
-            pnlChildForm.Controls.Add(pictureBox2);
             pnlChildForm.Controls.Add(pnlSubMenuAvata);
             pnlChildForm.Controls.Add(pnlSubNotifications);
             pnlChildForm.Dock = DockStyle.Fill;
@@ -588,17 +585,6 @@
             pnlChildForm.Name = "pnlChildForm";
             pnlChildForm.Size = new Size(1015, 556);
             pnlChildForm.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.HinhNendep;
-            pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(70, 101);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1015, 556);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
             // 
             // pnlSubNotifications
             // 
@@ -762,7 +748,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             pnlChildForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlSubNotifications.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -815,6 +800,5 @@
         private Button button7;
         private PictureBox pictureBox1;
         private ImageList imageList1;
-        private PictureBox pictureBox2;
     }
 }

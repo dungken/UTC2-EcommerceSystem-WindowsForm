@@ -67,9 +67,9 @@ namespace Source.Service
         }
 
         // Get products in discount
-        public async Task<IEnumerable<Models.ProductDTO>> GetProductsInDiscount(Guid discountId)
+        public async Task<IEnumerable<GetAllProductIdInDiscountRespone>> GetProductsInDiscount(Guid discountId)
         {
-            return await _apiClient.GetAsync<IEnumerable<Models.ProductDTO>>($"Discounts/{discountId}/GetProducts");
+            return await _apiClient.GetAsync<IEnumerable<GetAllProductIdInDiscountRespone>>($"Discounts/{discountId}/GetProducts");
         }
 
        

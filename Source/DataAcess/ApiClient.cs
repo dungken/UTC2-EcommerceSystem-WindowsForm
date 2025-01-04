@@ -37,6 +37,7 @@ namespace Source.DataAcess
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Get);
+            
 
             var response = await _client.ExecuteAsync<T>(request);
 

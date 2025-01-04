@@ -34,6 +34,7 @@ namespace Source.Views.Admin
         public ProductList()
         {
             InitializeComponent();
+
             _productsService = new ProductService();
             _categoriesService = new CategoriesService();
             _imagesService = new ImageService();
@@ -42,6 +43,7 @@ namespace Source.Views.Admin
             _originalData = new List<ProductListDisplayDto>();
             CustomizeDataGridView();
             InitializeShowing();
+            
             pnFilterCate.Paint += PanelLine_Paint;
             pnFilterPrice.Paint += PanelLine_Paint;
         }

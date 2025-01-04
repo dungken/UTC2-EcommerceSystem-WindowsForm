@@ -28,7 +28,7 @@ namespace Source.Views
 
             customuzeDesing();
             _userService = new UserService();
-
+            openChildForm(new HomeCustomer());
         }
         private void customuzeDesing()
         {
@@ -158,6 +158,7 @@ namespace Source.Views
 
             lblNavigationImage.Image = btnHome.Image;
             lblNavigation.Text = "Home";
+            openChildForm(new HomeCustomer());
             hideSubMenu();
 
         }

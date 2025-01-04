@@ -90,8 +90,8 @@ namespace Source.Views
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            pnlChildForm2.Controls.Add(childForm);
-            pnlChildForm2.Tag = childForm;
+            pnlChildForm.Controls.Add(childForm);
+            pnlChildForm.Tag = childForm;
 
             childForm.BringToFront();
             childForm.Show();

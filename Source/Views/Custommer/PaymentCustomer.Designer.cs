@@ -40,14 +40,12 @@
             label6 = new Label();
             panel5 = new Panel();
             btnOptionVourcher = new Button();
-            button4 = new Button();
             panel2 = new Panel();
             lblCurrentPrice = new Label();
             lblOldPrice = new Label();
             panel3 = new Panel();
             textBox1 = new TextBox();
             label11 = new Label();
-            btnOptionShippingMethod = new Button();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -74,6 +72,8 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            button4 = new Button();
+            btnOptionShippingMethod = new Button();
             pnlPaymentCustomer.SuspendLayout();
             pnlVourcher_Detail.SuspendLayout();
             panel6.SuspendLayout();
@@ -231,22 +231,6 @@
             btnOptionVourcher.UseVisualStyleBackColor = true;
             btnOptionVourcher.Click += btnOptionVourcher_Click;
             // 
-            // button4
-            // 
-            button4.Dock = DockStyle.Bottom;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.FromArgb(128, 64, 0);
-            button4.Image = Properties.Resources.icon_money;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(0, 39);
-            button4.Name = "button4";
-            button4.Size = new Size(488, 39);
-            button4.TabIndex = 9;
-            button4.Text = "         Payment method                                                                       >";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             panel2.Controls.Add(lblCurrentPrice);
@@ -315,20 +299,6 @@
             label11.Size = new Size(131, 20);
             label11.TabIndex = 8;
             label11.Text = "Lời nhắn cho Shop";
-            // 
-            // btnOptionShippingMethod
-            // 
-            btnOptionShippingMethod.FlatStyle = FlatStyle.Flat;
-            btnOptionShippingMethod.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOptionShippingMethod.ForeColor = Color.FromArgb(128, 64, 0);
-            btnOptionShippingMethod.Location = new Point(13, 104);
-            btnOptionShippingMethod.Name = "btnOptionShippingMethod";
-            btnOptionShippingMethod.Size = new Size(465, 38);
-            btnOptionShippingMethod.TabIndex = 7;
-            btnOptionShippingMethod.Text = "Hoặc chọn Hỏa tốc để Nhận hàng vào ngày mai                         >";
-            btnOptionShippingMethod.TextAlign = ContentAlignment.MiddleLeft;
-            btnOptionShippingMethod.UseVisualStyleBackColor = true;
-            btnOptionShippingMethod.Click += btnOptionShippingMethod_Click;
             // 
             // label9
             // 
@@ -593,6 +563,36 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // button4
+            // 
+            button4.Dock = DockStyle.Bottom;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.FromArgb(128, 64, 0);
+            button4.Image = Properties.Resources.icon_money;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(0, 39);
+            button4.Name = "button4";
+            button4.Size = new Size(488, 39);
+            button4.TabIndex = 9;
+            button4.Text = "         Payment method                                                                       >";
+            button4.TextAlign = ContentAlignment.MiddleLeft;
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // btnOptionShippingMethod
+            // 
+            btnOptionShippingMethod.FlatStyle = FlatStyle.Flat;
+            btnOptionShippingMethod.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOptionShippingMethod.ForeColor = Color.FromArgb(128, 64, 0);
+            btnOptionShippingMethod.Location = new Point(13, 104);
+            btnOptionShippingMethod.Name = "btnOptionShippingMethod";
+            btnOptionShippingMethod.Size = new Size(465, 38);
+            btnOptionShippingMethod.TabIndex = 7;
+            btnOptionShippingMethod.Text = "Hoặc chọn Hỏa tốc để Nhận hàng vào ngày mai                         >";
+            btnOptionShippingMethod.TextAlign = ContentAlignment.MiddleLeft;
+            btnOptionShippingMethod.UseVisualStyleBackColor = true;
+            btnOptionShippingMethod.Click += btnOptionShippingMethod_Click;
+            // 
             // PaymentCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -651,7 +651,6 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private Button btnOptionShippingMethod;
         private TextBox textBox1;
         private Label label11;
         private Panel panel3;
@@ -660,7 +659,6 @@
         private Button btnOptionVourcher;
         private Label label13;
         private Label label12;
-        private Button button4;
         private Panel panel5;
         private Label label14;
         private Panel panel6;
@@ -674,5 +672,7 @@
         private Panel panel10;
         private Panel pnlProduct1;
         private Panel panel11;
+        private Button button4;
+        private Button btnOptionShippingMethod;
     }
 }

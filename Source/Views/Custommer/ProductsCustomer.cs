@@ -207,7 +207,10 @@ namespace Source.Views.Custommer
                 var imagePicture = panel.Controls.OfType<PictureBox>().FirstOrDefault();
 
                 nameLabel.Text = product.Name;
-                priceLabel.Text = product.Price.ToString("N0");
+                if (priceLabel != null)
+                {
+                    priceLabel.Text = product.Price.ToString();
+                }
                 await SetCategoryTextAsync(categoryLabel, product.CategoryId);
                 await SetImageAsync(imagePicture, product);
 
@@ -377,5 +380,15 @@ namespace Source.Views.Custommer
         {
             SearchProducts();
         }
+        private void btnAddTheCart_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnBuyNow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

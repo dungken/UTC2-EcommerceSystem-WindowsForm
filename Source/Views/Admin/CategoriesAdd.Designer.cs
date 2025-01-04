@@ -100,7 +100,7 @@
             pnBasicInfor.Controls.Add(lblBasic);
             pnBasicInfor.Location = new Point(336, 122);
             pnBasicInfor.Name = "pnBasicInfor";
-            pnBasicInfor.Size = new Size(616, 400);
+            pnBasicInfor.Size = new Size(676, 400);
             pnBasicInfor.TabIndex = 12;
             // 
             // lblName
@@ -233,7 +233,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(807, 24);
+            btnSave.Location = new Point(847, 24);
             btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(128, 50);
@@ -263,7 +263,7 @@
             pnTitle.Location = new Point(0, 16);
             pnTitle.Margin = new Padding(2, 3, 2, 3);
             pnTitle.Name = "pnTitle";
-            pnTitle.Size = new Size(964, 91);
+            pnTitle.Size = new Size(1012, 91);
             pnTitle.TabIndex = 9;
             // 
             // CategoriesAdd
@@ -271,12 +271,13 @@
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 251, 253);
-            ClientSize = new Size(964, 538);
+            ClientSize = new Size(1015, 551);
             Controls.Add(pnBasicInfor);
             Controls.Add(pnParentCategory);
             Controls.Add(pnStatus);
             Controls.Add(pnTitle);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "CategoriesAdd";
             Text = "CategoryAdd";

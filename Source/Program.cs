@@ -25,7 +25,7 @@ namespace Source
             //Application.Run(new ProductDetails());
             //Application.Run(new ReviewProduct());
             //Application.Run(new WatchReview());
-            Application.Run(new MainFormAdmin());
+            //Application.Run(new MainFormAdmin());
             //Application.Run(new CategoryList());
             //Application.Run(new CategoriesEdit());
             //Application.Run(new VouchersList());
@@ -41,6 +41,7 @@ namespace Source
             //Application.Run(new PaymentCustomer());
             //Application.Run(new ProductList());
             //Application.Run(new ProductAdd());
+            Application.Run(new ProductsCustomer());
         }
     }
 

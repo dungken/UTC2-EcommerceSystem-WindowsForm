@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Source.Dtos.Product;
 
 namespace api.Dtos.Product
 {

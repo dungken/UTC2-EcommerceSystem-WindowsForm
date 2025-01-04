@@ -92,6 +92,12 @@ namespace Source.Service
         {
             return await _apiClient.GetAsync<BaseResponse<CheckEnableVerifyDto>>($"Account/CheckEnableVerify/{username}");
         }
+        public async Task<BaseResponse<SendCodeForForgetPasswordRespone>> SendCodeForForgetPasswordAsync(SendCodeForForgetPassword model)
+        {
+            return await _apiClient.PostAsync<BaseResponse<SendCodeForForgetPasswordRespone>>("Account/SendCodeForForgetPassword", model);
+        }
+
+        
 
     }
 }

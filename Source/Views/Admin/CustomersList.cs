@@ -245,7 +245,7 @@ namespace Source.Views.Admin
                     var customer = response.Data;
 
                     //Mở form Detail với dữ liệu lấy từ dịch vụ
-                    using (var detailForm = new CustomersDetails(customer))
+                    using (var detailForm = new CustomersDetails(customer, customerId))
                     {
                         if (detailForm.ShowDialog() == DialogResult.OK)
                         {

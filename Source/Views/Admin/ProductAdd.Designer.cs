@@ -36,6 +36,8 @@
             lblPrice = new Label();
             lblStock = new Label();
             pnBasicInfor = new Panel();
+            lbxDiscount = new ListBox();
+            lblDiscount = new Label();
             flowLayoutPanel = new FlowLayoutPanel();
             btnPickImg = new MyCustomControl.RJButton();
             numeric = new NumericUpDown();
@@ -64,8 +66,6 @@
             pnColor = new Panel();
             btnPickColor = new MyCustomControl.RJButton();
             lblColor = new Label();
-            lblDiscount = new Label();
-            lbxDiscount = new ListBox();
             pnTitle.SuspendLayout();
             pnBasicInfor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numeric).BeginInit();
@@ -179,6 +179,26 @@
             pnBasicInfor.Size = new Size(616, 431);
             pnBasicInfor.TabIndex = 20;
             // 
+            // lbxDiscount
+            // 
+            lbxDiscount.FormattingEnabled = true;
+            lbxDiscount.ItemHeight = 22;
+            lbxDiscount.Location = new Point(401, 94);
+            lbxDiscount.Name = "lbxDiscount";
+            lbxDiscount.Size = new Size(212, 92);
+            lbxDiscount.TabIndex = 12;
+            // 
+            // lblDiscount
+            // 
+            lblDiscount.AutoSize = true;
+            lblDiscount.Cursor = Cursors.IBeam;
+            lblDiscount.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDiscount.Location = new Point(401, 58);
+            lblDiscount.Name = "lblDiscount";
+            lblDiscount.Size = new Size(83, 23);
+            lblDiscount.TabIndex = 11;
+            lblDiscount.Text = "Discount";
+            // 
             // flowLayoutPanel
             // 
             flowLayoutPanel.Location = new Point(28, 298);
@@ -220,7 +240,7 @@
             tbxDescription.Location = new Point(28, 137);
             tbxDescription.Multiline = true;
             tbxDescription.Name = "tbxDescription";
-            tbxDescription.Size = new Size(258, 49);
+            tbxDescription.Size = new Size(354, 49);
             tbxDescription.TabIndex = 4;
             // 
             // lblDescription
@@ -238,7 +258,7 @@
             // 
             tbxName.Location = new Point(165, 56);
             tbxName.Name = "tbxName";
-            tbxName.Size = new Size(121, 30);
+            tbxName.Size = new Size(217, 30);
             tbxName.TabIndex = 2;
             // 
             // lblName
@@ -476,26 +496,6 @@
             lblColor.Size = new Size(68, 25);
             lblColor.TabIndex = 1;
             lblColor.Text = "Color";
-            // 
-            // lblDiscount
-            // 
-            lblDiscount.AutoSize = true;
-            lblDiscount.Cursor = Cursors.IBeam;
-            lblDiscount.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDiscount.Location = new Point(336, 58);
-            lblDiscount.Name = "lblDiscount";
-            lblDiscount.Size = new Size(83, 23);
-            lblDiscount.TabIndex = 11;
-            lblDiscount.Text = "Discount";
-            // 
-            // lbxDiscount
-            // 
-            lbxDiscount.FormattingEnabled = true;
-            lbxDiscount.ItemHeight = 22;
-            lbxDiscount.Location = new Point(336, 94);
-            lbxDiscount.Name = "lbxDiscount";
-            lbxDiscount.Size = new Size(277, 92);
-            lbxDiscount.TabIndex = 12;
             // 
             // ProductAdd
             // 

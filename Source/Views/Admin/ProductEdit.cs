@@ -17,6 +17,7 @@ using Image = System.Drawing.Image;
 using Guna.UI2.WinForms.Suite;
 using Source.Dtos.Category;
 using api.Dtos.Product;
+using static System.Windows.Forms.DataFormats;
 
 namespace Source.Views.Admin
 {
@@ -25,6 +26,7 @@ namespace Source.Views.Admin
     {
         private readonly ProductService _productService;
         private readonly ImageService _imageService;
+        private readonly ColorsService _colorsService;
         private readonly SizeService _sizeService;
         private readonly CategoriesService _categoriesService;
 
@@ -35,6 +37,8 @@ namespace Source.Views.Admin
         private ProductDTO _product;
         public List<IFormFile> _formFiles = new List<IFormFile>();
         private string _selectedFilePath = "";
+        private bool _flagColor = false;
+        private bool _flagImg = false;
         public ProductEdit()
         {
             InitializeComponent();
@@ -46,6 +50,7 @@ namespace Source.Views.Admin
 
             _productService = new ProductService();
             _imageService = new ImageService();
+            _colorsService = new ColorsService();
             _sizeService = new SizeService();
             _categoriesService = new CategoriesService();
         }
@@ -60,6 +65,7 @@ namespace Source.Views.Admin
 
             _productService = new ProductService();
             _imageService = new ImageService();
+            _colorsService = new ColorsService();
             _sizeService = new SizeService();
             _categoriesService = new CategoriesService();
 
@@ -120,77 +126,7 @@ namespace Source.Views.Admin
                 return Text;
             }
         }
-        // Phương thức để lấy tên màu
-        //private string GetColorName(Color color)
-        //{
-        //    // Kiểm tra xem màu có phải là một màu chuẩn đã định nghĩa trong Color hay không
-        //    var colorProperty = typeof(Color).GetProperties()
-        //        .FirstOrDefault(p => p.PropertyType == typeof(Color) && (Color)p.GetValue(null) == color);
 
-        //    return colorProperty?.Name ?? "Unknown"; // Nếu không tìm thấy tên, trả về "Unknown"
-        //}
-        // vẽ màu
-        // Xử lý sự kiện vẽ để hiển thị màu
-        //private void LbxColor_DrawItem(object sender, DrawItemEventArgs e)
-        //{
-        //    if (e.Index < 0) return;
-
-        //    // Lấy màu từ ListBox
-        //    Color color = (Color)lbxColor.Items[e.Index];
-
-        //    // Vẽ nền mục
-        //    e.DrawBackground();
-
-        //    // Vẽ ô vuông màu
-        //    using (Brush brush = new SolidBrush(color))
-        //    {
-        //        e.Graphics.FillRectangle(brush, e.Bounds.X + 2, e.Bounds.Y + 2, 20, e.Bounds.Height - 4);
-        //    }
-
-        //    // Hiển thị tên màu (nếu cần)
-        //    string colorName = $"ARGB: {color.ToArgb()}";
-        //    using (Brush textBrush = new SolidBrush(e.ForeColor))
-        //    {
-        //        e.Graphics.DrawString(colorName, e.Font, textBrush, e.Bounds.X + 25, e.Bounds.Y + 2);
-        //    }
-
-        //    e.DrawFocusRectangle();
-        //}
-        // Hàm xử lý sự kiện vẽ item của ListBox
-        //private void ListBoxColors_DrawItem(object sender, DrawItemEventArgs e)
-        //{
-        //    // Kiểm tra nếu item không phải là "None"
-        //    if (e.Index >= 0)
-        //    {
-        //        // Lấy tên màu từ item trong ListBox
-        //        string colorName = lbxColor.Items[e.Index].ToString();
-
-        //        // Chuyển tên màu thành đối tượng Color
-        //        Color color = Color.FromName(colorName);
-
-        //        // Vẽ nền của item theo màu đã chọn
-        //        e.Graphics.FillRectangle(new SolidBrush(color), e.Bounds);
-
-        //        // Vẽ tên màu trên nền
-        //        e.Graphics.DrawString(colorName, e.Font, Brushes.White, e.Bounds);
-        //    }
-        //}
-        //private void LoadColorData()
-        //{
-        //    // Cấu hình ListBox để sử dụng chế độ vẽ tùy chỉnh
-        //    lbxColor.DrawMode = DrawMode.OwnerDrawFixed;
-        //    lbxColor.ItemHeight = 30; // Thiết lập chiều cao cho mỗi item (để dễ nhìn hơn)
-
-        //    // Thêm các màu vào ListBox
-        //    List<string> colors = _product.Colors.Select(s => s.Name).ToList();
-        //    foreach (var color in colors)
-        //    {
-        //        lbxColor.Items.Add(color); // Thêm tên màu vào ListBox
-        //    }
-
-        //    // Đăng ký sự kiện vẽ tùy chỉnh
-        //    lbxColor.DrawItem += ListBoxColors_DrawItem;
-        //}
         private void LoadProductData()
         {
             if (_product.Status == "Active")
@@ -224,7 +160,7 @@ namespace Source.Views.Admin
             //            break;
             //    }
             //}
-            
+
 
             //LoadColorData();
             tbxName.Text = _product.Name;
@@ -234,84 +170,102 @@ namespace Source.Views.Admin
             LoadCategories();
         }
 
-        private void btnPickColor_Click(object sender, EventArgs e)
+        private async void btnPickColor_Click(object sender, EventArgs e)
         {
-            //// Mở hộp thoại chọn màu
-            //if (colorDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    // Lấy màu đã chọn
-            //    Color selectedColor = colorDialog.Color;
 
-            //    // Chuyển đổi thành mã màu Hex
-            //    string hexColor = $"#{selectedColor.R:X2}{selectedColor.G:X2}{selectedColor.B:X2}";
+            // Mở hộp thoại chọn màu
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Lấy màu đã chọn
+                Color selectedColor = colorDialog.Color;
+                if (selectedColor != Color.Empty && _flagColor == false)
+                {
+                    foreach (var color in _product.Colors.Select(s => s.Id).ToList())
+                    {
+                        var respone = await _colorsService.DeleteColorAsync(color);
+                    }
+                    _flagColor = true;
+                }
+                // Chuyển đổi thành mã màu Hex
+                string hexColor = $"#{selectedColor.R:X2}{selectedColor.G:X2}{selectedColor.B:X2}";
 
-            //    // Tìm tên màu gần nhất
-            //    string colorName = GetColorName(selectedColor);
+                // Tìm tên màu gần nhất
+                string colorName = GetColorName(selectedColor);
 
-            //    MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
+                MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
 
-            //    var newColorDto = new ColorDTO
-            //    {
-            //        Name = colorName,
-            //        ColorCode = hexColor,
-            //    };
-            //    _colors.Add(newColorDto);
-            //}
+                var newColorDto = new ColorDTO
+                {
+                    Id = Guid.NewGuid(),
+                    Name = colorName,
+                    ColorCode = hexColor,
+                };
+                _colors.Add(newColorDto);
+            }
 
-            //// Hiển thị danh sách màu đã chọn
-            //lbxColor.Items.Add(colorDialog.Color);
+            // Hiển thị danh sách màu đã chọn
+            lbxColor.Items.Add(colorDialog.Color);
         }
 
-        private void btnPickImg_Click(object sender, EventArgs e)
+        private async void btnPickImg_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog openFileDialog = new OpenFileDialog
-            //{
-            //    Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All Files|*.*",
-            //    Title = "Select a File to Upload"
-            //};
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All Files|*.*",
+                Title = "Select a File to Upload"
+            };
 
-            //if (openFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    foreach (var filePath in openFileDialog.FileNames)
-            //    {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                foreach (var filePath in openFileDialog.FileNames)
+                {
 
-            //        _selectedFilePath = openFileDialog.FileName;
-            //        string directoryPath = Path.GetDirectoryName(_selectedFilePath);
-            //        string combinedPath = Path.Combine(directoryPath, Path.GetFileName(_selectedFilePath));
-            //        _selectedFilePath = combinedPath;
-            //        MessageBox.Show($"File selected: {combinedPath}");
+                    _selectedFilePath = openFileDialog.FileName;
+                    string directoryPath = Path.GetDirectoryName(_selectedFilePath);
+                    string combinedPath = Path.Combine(directoryPath, Path.GetFileName(_selectedFilePath));
+                    _selectedFilePath = combinedPath;
+                    MessageBox.Show($"File selected: {combinedPath}");
 
-            //        using (var stream = new MemoryStream(File.ReadAllBytes(_selectedFilePath)))
-            //        {
 
-            //            PictureBox pictureBox = new PictureBox
-            //            {
-            //                Image = Image.FromStream(stream),
-            //                SizeMode = PictureBoxSizeMode.Zoom,
-            //                Width = 100, // Điều chỉnh kích thước theo ý muốn
-            //                Height = 100,
-            //                Margin = new Padding(5)
-            //            };
+                    if (File.Exists(_selectedFilePath) && _flagImg == false)
+                    {
+                        foreach (var image1 in _product.Images.Select(s => s.Id).ToList())
+                        {
+                            var respone = await _imageService.DeleteImage((Guid)image1);
+                        }
+                        _flagImg = false;
+                    }
+                    using (var stream = new MemoryStream(File.ReadAllBytes(_selectedFilePath)))
+                    {
 
-            //            flowLayoutPanel.Controls.Add(pictureBox); // Thêm PictureBox vào FlowLayoutPanel
-            //        }
+                        PictureBox pictureBox = new PictureBox
+                        {
+                            Image = Image.FromStream(stream),
+                            SizeMode = PictureBoxSizeMode.Zoom,
+                            Width = 100, // Điều chỉnh kích thước theo ý muốn
+                            Height = 100,
+                            Margin = new Padding(5)
+                        };
 
-            //        // Tạo file giả lập đầu tiên
-            //        byte[] imageData1 = File.ReadAllBytes(_selectedFilePath);
-            //        var fileStream1 = new MemoryStream(imageData1);
-            //        _formFiles.Add(new FormFile(
-            //            baseStream: fileStream1,
-            //            baseStreamOffset: 0,
-            //            length: fileStream1.Length,
-            //            name: "file1",
-            //            fileName: _selectedFilePath
-            //        )
-            //        {
-            //            Headers = new HeaderDictionary(),
-            //            ContentType = "image/png"
-            //        });
-            //    }
-            //}
+                        flowLayoutPanel.Controls.Add(pictureBox); // Thêm PictureBox vào FlowLayoutPanel
+                    }
+
+                    // Tạo file giả lập đầu tiên
+                    byte[] imageData1 = File.ReadAllBytes(_selectedFilePath);
+                    var fileStream1 = new MemoryStream(imageData1);
+                    _formFiles.Add(new FormFile(
+                        baseStream: fileStream1,
+                        baseStreamOffset: 0,
+                        length: fileStream1.Length,
+                        name: "file1",
+                        fileName: _selectedFilePath
+                    )
+                    {
+                        Headers = new HeaderDictionary(),
+                        ContentType = "image/png"
+                    });
+                }
+            }
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -344,47 +298,51 @@ namespace Source.Views.Admin
                 return;
             }
 
-            // size
-            //foreach (var size1 in _product.Sizes.Select(s => s.Id).ToList())
-            //{
-            //    var respone = await _sizeService.DeleteSize(size1);
-            //}
-            //    List<string> size;
-            //size = new List<string>();
-            //if (cbxXS.Checked)
-            //{
-            //    size.Add("XS");
-            //}
-            //if (cbxS.Checked)
-            //{
-            //    size.Add("S");
-            //}
-            //if (cbxM.Checked)
-            //{
-            //    size.Add("M");
-            //}
-            //if (cbxL.Checked)
-            //{
-            //    size.Add("L");
-            //}
-            //if (cbxXL.Checked)
-            //{
-            //    size.Add("XL");
-            //}
-            //if (size != null)
-            //{
-            //    foreach (var index in size)
-            //    {
-            //        var newSizeDto = new SizeDTO
-            //        {
-            //            Id = Guid.NewGuid(),
-            //            Name = index,
-            //        };
-            //        _sizes.Add(newSizeDto);
-            //    }
+            //size
+            // Kiểm tra nếu có ít nhất một checkbox được tích
+            bool isAnyChecked = pnSize.Controls.OfType<CheckBox>().Any(cb => cb.Checked);
+            if (isAnyChecked)
+            {
+                foreach (var size1 in _product.Sizes.Select(s => s.Id).ToList())
+                {
+                    var respone = await _sizeService.DeleteSize(size1);
+                }
+                List<string> size;
+                size = new List<string>();
+                if (cbxXS.Checked)
+                {
+                    size.Add("XS");
+                }
+                if (cbxS.Checked)
+                {
+                    size.Add("S");
+                }
+                if (cbxM.Checked)
+                {
+                    size.Add("M");
+                }
+                if (cbxL.Checked)
+                {
+                    size.Add("L");
+                }
+                if (cbxXL.Checked)
+                {
+                    size.Add("XL");
+                }
+                if (size != null)
+                {
+                    foreach (var index in size)
+                    {
+                        var newSizeDto = new SizeDTO
+                        {
+                            Id = Guid.NewGuid(),
+                            Name = index,
+                        };
+                        _sizes.Add(newSizeDto);
+                    }
 
-            //}
-
+                }
+            }
             if (string.IsNullOrEmpty(tbxName.Text))
             {
                 MessageBox.Show("Product name cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -418,6 +376,14 @@ namespace Source.Views.Admin
 
             if (result.Success)
             {
+                //if (_formFiles.Count > 0 && _formFiles != null)
+                //{
+                //    UploadMultiImg(result.Data.Id, _product.Name);
+                //    int index = 0;
+                //    await _imageService.
+                //}
+
+                // Thông báo thành công và đóng form
                 MessageBox.Show("Category updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK; // Đóng form và báo thành công
             }
@@ -428,21 +394,81 @@ namespace Source.Views.Admin
         }
         private async void UploadMultiImg(Guid productId, string altText)
         {
-            //var response = await _imageService.UploadMultipleImages(_formFiles.ToArray(), productId, altText);
-            //if (response != null && response.Success)
-            //{
-            //    MessageBox.Show($"Registration Successful\nMessage: {response.Message}");
-            //    foreach (var item in response.Data)
-            //    {
-            //        _images.Add(item);
-            //        MessageBox.Show($"{item.CreatedAt}: {item.Url}");
-            //    }
+            var response = await _imageService.UploadMultipleImages(_formFiles.ToArray(), productId, altText);
+            if (response != null && response.Success)
+            {
+                MessageBox.Show($"Registration Successful\nMessage: {response.Message}");
+                foreach (var item in response.Data)
+                {
+                    _images.Add(item);
+                    MessageBox.Show($"{item.CreatedAt}: {item.Url}");
+                }
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show($"Registration Failed\nError: {string.Join(", ", response.Errors)}");
-            //}
+            }
+            else
+            {
+                MessageBox.Show($"Registration Failed\nError: {string.Join(", ", response.Errors)}");
+            }
+        }
+
+        private void ProductEdit_Load(object sender, EventArgs e)
+        {
+            lbxColor.DrawMode = DrawMode.OwnerDrawFixed; // Kích hoạt chế độ vẽ tùy chỉnh
+            lbxColor.DrawItem += lbxColor_DrawItem; // Liên kết sự kiện vẽ
+        }
+        // Phương thức để lấy tên màu
+        private string GetColorName(Color color)
+        {
+            // Kiểm tra xem màu có phải là một màu chuẩn đã định nghĩa trong Color hay không
+            var colorProperty = typeof(Color).GetProperties()
+                .FirstOrDefault(p => p.PropertyType == typeof(Color) && (Color)p.GetValue(null) == color);
+
+            return colorProperty?.Name ?? "Unknown"; // Nếu không tìm thấy tên, trả về "Unknown"
+        }
+        // vẽ màu
+        // Xử lý sự kiện vẽ để hiển thị màu
+        private void lbxColor_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            // Lấy màu từ ListBox
+            Color color = (Color)lbxColor.Items[e.Index];
+
+            // Vẽ nền mục
+            e.DrawBackground();
+
+            // Vẽ ô vuông màu
+            using (Brush brush = new SolidBrush(color))
+            {
+                e.Graphics.FillRectangle(brush, e.Bounds.X + 2, e.Bounds.Y + 2, 20, e.Bounds.Height - 4);
+            }
+
+            // Hiển thị tên màu (nếu cần)
+            string colorName = $"ARGB: {color.ToArgb()}";
+            using (Brush textBrush = new SolidBrush(e.ForeColor))
+            {
+                e.Graphics.DrawString(colorName, e.Font, textBrush, e.Bounds.X + 25, e.Bounds.Y + 2);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void rbtnDeleteImg_Click(object sender, EventArgs e)
+        {
+            if (_imageService.GetImagesByProductId(_product.Id) != null)
+            {
+
+                // Mở form Edit với dữ liệu lấy từ dịch vụ
+                using (var editForm = new ImageDelete(_product.Id))
+                {
+                    if (editForm.ShowDialog() == DialogResult.OK) ;
+                  
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Product do not have image");
+            }
         }
     }
 }

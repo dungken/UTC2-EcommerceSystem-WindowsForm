@@ -38,6 +38,13 @@
             rbtnNext = new MyCustomControl.RJButton();
             rbtnPre = new MyCustomControl.RJButton();
             gridView = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Products = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            DateAdded = new DataGridViewTextBoxColumn();
+            Instock = new DataGridViewTextBoxColumn();
+            ProductColor = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             pnList = new Panel();
             pnMain = new Panel();
             btnEntries = new Label();
@@ -48,13 +55,6 @@
             lblSearch = new Label();
             pnSearch = new Panel();
             pnHeader = new Panel();
-            Id = new DataGridViewTextBoxColumn();
-            Products = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            DateAdded = new DataGridViewTextBoxColumn();
-            Instock = new DataGridViewTextBoxColumn();
-            ProductColor = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             pnTitle.SuspendLayout();
             pnFotter.SuspendLayout();
             panel1.SuspendLayout();
@@ -195,6 +195,69 @@
             gridView.TabIndex = 0;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Products
+            // 
+            Products.DataPropertyName = "Name";
+            Products.HeaderText = "Products";
+            Products.MinimumWidth = 6;
+            Products.Name = "Products";
+            Products.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Products.Width = 125;
+            // 
+            // Category
+            // 
+            Category.DataPropertyName = "CategoryName";
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Category.Width = 125;
+            // 
+            // DateAdded
+            // 
+            DateAdded.DataPropertyName = "DateAdded";
+            DateAdded.HeaderText = "Date Added";
+            DateAdded.MinimumWidth = 6;
+            DateAdded.Name = "DateAdded";
+            DateAdded.SortMode = DataGridViewColumnSortMode.Programmatic;
+            DateAdded.Width = 125;
+            // 
+            // Instock
+            // 
+            Instock.DataPropertyName = "StockQuantity";
+            Instock.HeaderText = "Instock";
+            Instock.MinimumWidth = 6;
+            Instock.Name = "Instock";
+            Instock.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Instock.Width = 125;
+            // 
+            // ProductColor
+            // 
+            ProductColor.DataPropertyName = "ColorName";
+            ProductColor.HeaderText = "Color";
+            ProductColor.MinimumWidth = 6;
+            ProductColor.Name = "ProductColor";
+            ProductColor.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ProductColor.Width = 125;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Status.Width = 125;
+            // 
             // pnList
             // 
             pnList.Controls.Add(gridView);
@@ -296,69 +359,6 @@
             pnHeader.Name = "pnHeader";
             pnHeader.Size = new Size(963, 47);
             pnHeader.TabIndex = 7;
-            // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Id.Width = 125;
-            // 
-            // Products
-            // 
-            Products.DataPropertyName = "Name";
-            Products.HeaderText = "Products";
-            Products.MinimumWidth = 6;
-            Products.Name = "Products";
-            Products.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Products.Width = 125;
-            // 
-            // Category
-            // 
-            Category.DataPropertyName = "CategoryName";
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Category.Width = 125;
-            // 
-            // DateAdded
-            // 
-            DateAdded.DataPropertyName = "DateAdded";
-            DateAdded.HeaderText = "Date Added";
-            DateAdded.MinimumWidth = 6;
-            DateAdded.Name = "DateAdded";
-            DateAdded.SortMode = DataGridViewColumnSortMode.Programmatic;
-            DateAdded.Width = 125;
-            // 
-            // Instock
-            // 
-            Instock.DataPropertyName = "StockQuantity";
-            Instock.HeaderText = "Instock";
-            Instock.MinimumWidth = 6;
-            Instock.Name = "Instock";
-            Instock.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Instock.Width = 125;
-            // 
-            // ProductColor
-            // 
-            ProductColor.DataPropertyName = "ColorName";
-            ProductColor.HeaderText = "Color";
-            ProductColor.MinimumWidth = 6;
-            ProductColor.Name = "ProductColor";
-            ProductColor.SortMode = DataGridViewColumnSortMode.Programmatic;
-            ProductColor.Width = 125;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Status.Width = 125;
             // 
             // StockList
             // 

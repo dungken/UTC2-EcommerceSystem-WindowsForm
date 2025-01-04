@@ -140,7 +140,8 @@ namespace Source.Views
                         Config.token = response.Data.Token;
                         MessageBox.Show("Login successful! ");
                         // Handle successful login
-                        openChildForm(new DiscountsList());
+                        openChildForm(new MainFormAdmin());
+
                     }
                  
                 }

@@ -56,10 +56,10 @@
             panel1 = new Panel();
             btnLogOut = new Button();
             btnSetting = new Button();
-            btnInventory = new Button();
+            btnDiscount = new Button();
             btnSale = new Button();
+            pnlChildForm2 = new Panel();
             pnlChildForm = new Panel();
-            panel5 = new Panel();
             pnThongKe = new Panel();
             lblTotalProductV = new Label();
             lblTotalProduct = new Label();
@@ -67,6 +67,7 @@
             lblTotalSaleV = new Label();
             lblTotalSale = new Label();
             rbtnTotalSale = new MyCustomControl.RJButton();
+            lblItemSaleV = new Label();
             lblAvgItemSale = new Label();
             rbtnAvgItemSale = new MyCustomControl.RJButton();
             lblAvgSaleV = new Label();
@@ -79,15 +80,15 @@
             lblCustomer = new Label();
             rbtnCustomer = new MyCustomControl.RJButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            lblItemSaleV = new Label();
+            gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
+            pnlChildForm2.SuspendLayout();
             pnlChildForm.SuspendLayout();
-            panel5.SuspendLayout();
             pnThongKe.SuspendLayout();
             SuspendLayout();
             // 
@@ -134,6 +135,7 @@
             btnProducts.Text = "         Products";
             btnProducts.TextAlign = ContentAlignment.MiddleLeft;
             btnProducts.UseVisualStyleBackColor = true;
+            btnProducts.Click += btnProducts_Click;
             // 
             // btnHome
             // 
@@ -206,6 +208,7 @@
             btnCustomers.Text = "         Customers";
             btnCustomers.TextAlign = ContentAlignment.MiddleLeft;
             btnCustomers.UseVisualStyleBackColor = true;
+            btnCustomers.Click += btnCustomers_Click;
             // 
             // btnOrders
             // 
@@ -223,6 +226,7 @@
             btnOrders.Text = "         Orders";
             btnOrders.TextAlign = ContentAlignment.MiddleLeft;
             btnOrders.UseVisualStyleBackColor = true;
+            btnOrders.Click += btnOrders_Click;
             // 
             // btnCategories
             // 
@@ -240,6 +244,7 @@
             btnCategories.Text = "         Categories";
             btnCategories.TextAlign = ContentAlignment.MiddleLeft;
             btnCategories.UseVisualStyleBackColor = true;
+            btnCategories.Click += btnCategories_Click;
             // 
             // panel3
             // 
@@ -381,7 +386,7 @@
             panel1.BackColor = Color.FromArgb(154, 156, 233);
             panel1.Controls.Add(btnLogOut);
             panel1.Controls.Add(btnSetting);
-            panel1.Controls.Add(btnInventory);
+            panel1.Controls.Add(btnDiscount);
             panel1.Controls.Add(btnSale);
             panel1.Controls.Add(btnCustomers);
             panel1.Controls.Add(btnOrders);
@@ -431,23 +436,25 @@
             btnSetting.Text = "         Setting";
             btnSetting.TextAlign = ContentAlignment.MiddleLeft;
             btnSetting.UseVisualStyleBackColor = true;
+            btnSetting.Click += btnSetting_Click;
             // 
-            // btnInventory
+            // btnDiscount
             // 
-            btnInventory.Dock = DockStyle.Top;
-            btnInventory.FlatAppearance.BorderSize = 0;
-            btnInventory.FlatStyle = FlatStyle.Flat;
-            btnInventory.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
-            btnInventory.ForeColor = Color.White;
-            btnInventory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInventory.Location = new Point(0, 381);
-            btnInventory.Margin = new Padding(4, 3, 4, 3);
-            btnInventory.Name = "btnInventory";
-            btnInventory.Size = new Size(221, 50);
-            btnInventory.TabIndex = 10;
-            btnInventory.Text = "         Inventory";
-            btnInventory.TextAlign = ContentAlignment.MiddleLeft;
-            btnInventory.UseVisualStyleBackColor = true;
+            btnDiscount.Dock = DockStyle.Top;
+            btnDiscount.FlatAppearance.BorderSize = 0;
+            btnDiscount.FlatStyle = FlatStyle.Flat;
+            btnDiscount.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
+            btnDiscount.ForeColor = Color.White;
+            btnDiscount.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDiscount.Location = new Point(0, 381);
+            btnDiscount.Margin = new Padding(4, 3, 4, 3);
+            btnDiscount.Name = "btnDiscount";
+            btnDiscount.Size = new Size(221, 50);
+            btnDiscount.TabIndex = 10;
+            btnDiscount.Text = "         Discount";
+            btnDiscount.TextAlign = ContentAlignment.MiddleLeft;
+            btnDiscount.UseVisualStyleBackColor = true;
+            btnDiscount.Click += btnDiscount_Click;
             // 
             // btnSale
             // 
@@ -465,24 +472,25 @@
             btnSale.Text = "         Sales Promotion";
             btnSale.TextAlign = ContentAlignment.MiddleLeft;
             btnSale.UseVisualStyleBackColor = true;
+            btnSale.Click += btnSale_Click;
+            // 
+            // pnlChildForm2
+            // 
+            pnlChildForm2.BackColor = Color.FromArgb(249, 251, 253);
+            pnlChildForm2.Controls.Add(pnlChildForm);
+            pnlChildForm2.Dock = DockStyle.Fill;
+            pnlChildForm2.Location = new Point(0, 0);
+            pnlChildForm2.Name = "pnlChildForm2";
+            pnlChildForm2.Size = new Size(1203, 628);
+            pnlChildForm2.TabIndex = 7;
             // 
             // pnlChildForm
             // 
-            pnlChildForm.BackColor = Color.FromArgb(249, 251, 253);
-            pnlChildForm.Controls.Add(panel5);
-            pnlChildForm.Dock = DockStyle.Fill;
-            pnlChildForm.Location = new Point(0, 0);
+            pnlChildForm.Controls.Add(pnThongKe);
+            pnlChildForm.Location = new Point(225, 81);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(1203, 628);
-            pnlChildForm.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(pnThongKe);
-            panel5.Location = new Point(228, 86);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(963, 486);
-            panel5.TabIndex = 23;
+            pnlChildForm.Size = new Size(978, 486);
+            pnlChildForm.TabIndex = 23;
             // 
             // pnThongKe
             // 
@@ -500,14 +508,14 @@
             pnThongKe.Controls.Add(rbtnAvgSale);
             pnThongKe.Controls.Add(lblOrderV);
             pnThongKe.Controls.Add(lblOrder);
-            pnThongKe.Controls.Add(rbtnOrder);
             pnThongKe.Controls.Add(lblCustomerV);
             pnThongKe.Controls.Add(lblCustomer);
             pnThongKe.Controls.Add(rbtnCustomer);
             pnThongKe.Controls.Add(iconButton1);
-            pnThongKe.Location = new Point(13, 13);
+            pnThongKe.Controls.Add(rbtnOrder);
+            pnThongKe.Location = new Point(3, 3);
             pnThongKe.Name = "pnThongKe";
-            pnThongKe.Size = new Size(816, 232);
+            pnThongKe.Size = new Size(972, 105);
             pnThongKe.TabIndex = 22;
             // 
             // lblTotalProductV
@@ -515,18 +523,18 @@
             lblTotalProductV.AutoSize = true;
             lblTotalProductV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotalProductV.ForeColor = Color.Black;
-            lblTotalProductV.Location = new Point(573, 172);
+            lblTotalProductV.Location = new Point(797, 61);
             lblTotalProductV.Name = "lblTotalProductV";
-            lblTotalProductV.Size = new Size(69, 22);
+            lblTotalProductV.Size = new Size(30, 22);
             lblTotalProductV.TabIndex = 39;
-            lblTotalProductV.Text = "184511";
+            lblTotalProductV.Text = "56";
             // 
             // lblTotalProduct
             // 
             lblTotalProduct.AutoSize = true;
             lblTotalProduct.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotalProduct.ForeColor = SystemColors.ControlDarkDark;
-            lblTotalProduct.Location = new Point(573, 136);
+            lblTotalProduct.Location = new Point(797, 25);
             lblTotalProduct.Name = "lblTotalProduct";
             lblTotalProduct.Size = new Size(117, 22);
             lblTotalProduct.TabIndex = 38;
@@ -543,9 +551,9 @@
             rbtnTotalProduct.FlatStyle = FlatStyle.Flat;
             rbtnTotalProduct.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnTotalProduct.ForeColor = Color.Black;
-            rbtnTotalProduct.Location = new Point(551, 125);
+            rbtnTotalProduct.Location = new Point(786, 6);
             rbtnTotalProduct.Name = "rbtnTotalProduct";
-            rbtnTotalProduct.Size = new Size(234, 83);
+            rbtnTotalProduct.Size = new Size(151, 83);
             rbtnTotalProduct.TabIndex = 37;
             rbtnTotalProduct.TextAlign = ContentAlignment.TopCenter;
             rbtnTotalProduct.TextColor = Color.Black;
@@ -556,18 +564,18 @@
             lblTotalSaleV.AutoSize = true;
             lblTotalSaleV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotalSaleV.ForeColor = Color.Black;
-            lblTotalSaleV.Location = new Point(573, 72);
+            lblTotalSaleV.Location = new Point(331, 61);
             lblTotalSaleV.Name = "lblTotalSaleV";
-            lblTotalSaleV.Size = new Size(70, 22);
+            lblTotalSaleV.Size = new Size(30, 22);
             lblTotalSaleV.TabIndex = 36;
-            lblTotalSaleV.Text = "$35000";
+            lblTotalSaleV.Text = "67";
             // 
             // lblTotalSale
             // 
             lblTotalSale.AutoSize = true;
             lblTotalSale.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotalSale.ForeColor = SystemColors.ControlDarkDark;
-            lblTotalSale.Location = new Point(573, 36);
+            lblTotalSale.Location = new Point(331, 25);
             lblTotalSale.Name = "lblTotalSale";
             lblTotalSale.Size = new Size(91, 22);
             lblTotalSale.TabIndex = 35;
@@ -584,20 +592,31 @@
             rbtnTotalSale.FlatStyle = FlatStyle.Flat;
             rbtnTotalSale.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnTotalSale.ForeColor = Color.Black;
-            rbtnTotalSale.Location = new Point(551, 25);
+            rbtnTotalSale.Location = new Point(314, 6);
             rbtnTotalSale.Name = "rbtnTotalSale";
-            rbtnTotalSale.Size = new Size(234, 83);
+            rbtnTotalSale.Size = new Size(151, 83);
             rbtnTotalSale.TabIndex = 34;
             rbtnTotalSale.TextAlign = ContentAlignment.TopCenter;
             rbtnTotalSale.TextColor = Color.Black;
             rbtnTotalSale.UseVisualStyleBackColor = false;
+            // 
+            // lblItemSaleV
+            // 
+            lblItemSaleV.AutoSize = true;
+            lblItemSaleV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblItemSaleV.ForeColor = Color.Black;
+            lblItemSaleV.Location = new Point(644, 61);
+            lblItemSaleV.Name = "lblItemSaleV";
+            lblItemSaleV.Size = new Size(30, 22);
+            lblItemSaleV.TabIndex = 33;
+            lblItemSaleV.Text = "89";
             // 
             // lblAvgItemSale
             // 
             lblAvgItemSale.AutoSize = true;
             lblAvgItemSale.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAvgItemSale.ForeColor = SystemColors.ControlDarkDark;
-            lblAvgItemSale.Location = new Point(318, 136);
+            lblAvgItemSale.Location = new Point(634, 25);
             lblAvgItemSale.Name = "lblAvgItemSale";
             lblAvgItemSale.Size = new Size(121, 22);
             lblAvgItemSale.TabIndex = 32;
@@ -614,9 +633,9 @@
             rbtnAvgItemSale.FlatStyle = FlatStyle.Flat;
             rbtnAvgItemSale.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnAvgItemSale.ForeColor = Color.Black;
-            rbtnAvgItemSale.Location = new Point(296, 125);
+            rbtnAvgItemSale.Location = new Point(628, 6);
             rbtnAvgItemSale.Name = "rbtnAvgItemSale";
-            rbtnAvgItemSale.Size = new Size(234, 83);
+            rbtnAvgItemSale.Size = new Size(151, 83);
             rbtnAvgItemSale.TabIndex = 31;
             rbtnAvgItemSale.TextAlign = ContentAlignment.TopCenter;
             rbtnAvgItemSale.TextColor = Color.Black;
@@ -627,18 +646,18 @@
             lblAvgSaleV.AutoSize = true;
             lblAvgSaleV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAvgSaleV.ForeColor = Color.Black;
-            lblAvgSaleV.Location = new Point(318, 72);
+            lblAvgSaleV.Location = new Point(170, 61);
             lblAvgSaleV.Name = "lblAvgSaleV";
-            lblAvgSaleV.Size = new Size(60, 22);
+            lblAvgSaleV.Size = new Size(30, 22);
             lblAvgSaleV.TabIndex = 30;
-            lblAvgSaleV.Text = "$1770";
+            lblAvgSaleV.Text = "78";
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ControlDarkDark;
-            label10.Location = new Point(318, 36);
+            label10.Location = new Point(164, 25);
             label10.Name = "label10";
             label10.Size = new Size(82, 22);
             label10.TabIndex = 29;
@@ -655,9 +674,9 @@
             rbtnAvgSale.FlatStyle = FlatStyle.Flat;
             rbtnAvgSale.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnAvgSale.ForeColor = Color.Black;
-            rbtnAvgSale.Location = new Point(296, 25);
+            rbtnAvgSale.Location = new Point(157, 3);
             rbtnAvgSale.Name = "rbtnAvgSale";
-            rbtnAvgSale.Size = new Size(234, 83);
+            rbtnAvgSale.Size = new Size(151, 83);
             rbtnAvgSale.TabIndex = 28;
             rbtnAvgSale.TextAlign = ContentAlignment.TopCenter;
             rbtnAvgSale.TextColor = Color.Black;
@@ -668,18 +687,18 @@
             lblOrderV.AutoSize = true;
             lblOrderV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblOrderV.ForeColor = Color.Black;
-            lblOrderV.Location = new Point(54, 172);
+            lblOrderV.Location = new Point(491, 61);
             lblOrderV.Name = "lblOrderV";
-            lblOrderV.Size = new Size(50, 22);
+            lblOrderV.Size = new Size(30, 22);
             lblOrderV.TabIndex = 27;
-            lblOrderV.Text = "2314";
+            lblOrderV.Text = "56";
             // 
             // lblOrder
             // 
             lblOrder.AutoSize = true;
             lblOrder.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblOrder.ForeColor = SystemColors.ControlDarkDark;
-            lblOrder.Location = new Point(54, 136);
+            lblOrder.Location = new Point(488, 25);
             lblOrder.Name = "lblOrder";
             lblOrder.Size = new Size(57, 22);
             lblOrder.TabIndex = 26;
@@ -696,9 +715,9 @@
             rbtnOrder.FlatStyle = FlatStyle.Flat;
             rbtnOrder.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnOrder.ForeColor = Color.Black;
-            rbtnOrder.Location = new Point(32, 125);
+            rbtnOrder.Location = new Point(471, 6);
             rbtnOrder.Name = "rbtnOrder";
-            rbtnOrder.Size = new Size(234, 83);
+            rbtnOrder.Size = new Size(151, 83);
             rbtnOrder.TabIndex = 25;
             rbtnOrder.TextAlign = ContentAlignment.TopCenter;
             rbtnOrder.TextColor = Color.Black;
@@ -709,18 +728,18 @@
             lblCustomerV.AutoSize = true;
             lblCustomerV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCustomerV.ForeColor = Color.Black;
-            lblCustomerV.Location = new Point(54, 72);
+            lblCustomerV.Location = new Point(12, 61);
             lblCustomerV.Name = "lblCustomerV";
-            lblCustomerV.Size = new Size(65, 22);
+            lblCustomerV.Size = new Size(30, 22);
             lblCustomerV.TabIndex = 24;
-            lblCustomerV.Text = "14,208";
+            lblCustomerV.Text = "56";
             // 
             // lblCustomer
             // 
             lblCustomer.AutoSize = true;
             lblCustomer.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCustomer.ForeColor = SystemColors.ControlDarkDark;
-            lblCustomer.Location = new Point(54, 36);
+            lblCustomer.Location = new Point(12, 25);
             lblCustomer.Name = "lblCustomer";
             lblCustomer.Size = new Size(85, 22);
             lblCustomer.TabIndex = 23;
@@ -737,9 +756,9 @@
             rbtnCustomer.FlatStyle = FlatStyle.Flat;
             rbtnCustomer.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnCustomer.ForeColor = Color.Black;
-            rbtnCustomer.Location = new Point(32, 25);
+            rbtnCustomer.Location = new Point(0, 6);
             rbtnCustomer.Name = "rbtnCustomer";
-            rbtnCustomer.Size = new Size(234, 83);
+            rbtnCustomer.Size = new Size(151, 83);
             rbtnCustomer.TabIndex = 22;
             rbtnCustomer.TextAlign = ContentAlignment.TopCenter;
             rbtnCustomer.TextColor = Color.Black;
@@ -757,16 +776,11 @@
             iconButton1.Text = "iconButton1";
             iconButton1.UseVisualStyleBackColor = true;
             // 
-            // lblItemSaleV
+            // gunaAreaDataset1
             // 
-            lblItemSaleV.AutoSize = true;
-            lblItemSaleV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblItemSaleV.ForeColor = Color.Black;
-            lblItemSaleV.Location = new Point(318, 172);
-            lblItemSaleV.Name = "lblItemSaleV";
-            lblItemSaleV.Size = new Size(40, 22);
-            lblItemSaleV.TabIndex = 33;
-            lblItemSaleV.Text = "185";
+            gunaAreaDataset1.BorderColor = Color.Empty;
+            gunaAreaDataset1.FillColor = Color.Empty;
+            gunaAreaDataset1.Label = "Area1";
             // 
             // MainFormAdmin
             // 
@@ -776,7 +790,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(pnlChildForm);
+            Controls.Add(pnlChildForm2);
             Name = "MainFormAdmin";
             Text = "MainFormAdmin";
             panel4.ResumeLayout(false);
@@ -786,8 +800,8 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
+            pnlChildForm2.ResumeLayout(false);
             pnlChildForm.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             pnThongKe.ResumeLayout(false);
             pnThongKe.PerformLayout();
             ResumeLayout(false);
@@ -815,18 +829,18 @@
         private Panel panel2;
         private Label lblNavigationImage;
         private Panel panel1;
-        private Panel pnlChildForm;
+        private Panel pnlChildForm2;
         private Label label7;
         private Label lblNotifications;
         private Label lblAvarata;
         private PictureBox pictureBox2;
         private Label label8;
         private PictureBox pictureBox3;
-        private Button btnInventory;
+        private Button btnDiscount;
         private Button btnSale;
         private Button btnSetting;
         private Button btnLogOut;
-        private Panel panel5;
+        private Panel pnlChildForm;
         private Panel pnThongKe;
         private Label lblTotalProductV;
         private Label lblTotalProduct;
@@ -834,6 +848,7 @@
         private Label lblTotalSaleV;
         private Label lblTotalSale;
         private MyCustomControl.RJButton rbtnTotalSale;
+        private Label lblItemSaleV;
         private Label lblAvgItemSale;
         private MyCustomControl.RJButton rbtnAvgItemSale;
         private Label lblAvgSaleV;
@@ -846,6 +861,6 @@
         private Label lblCustomer;
         private MyCustomControl.RJButton rbtnCustomer;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private Label lblItemSaleV;
+        private Guna.Charts.WinForms.GunaAreaDataset gunaAreaDataset1;
     }
 }

@@ -232,8 +232,12 @@ namespace Source.Views.Admin
                 {
                     response.Data.DiscountId = _discountId;
                 }
+                if (_formFiles.Count > 0)
+                {
+
                 UploadMultiImg(response.Data.Id, _name);
                 response.Data.Images = _images;
+                }
                 // Thông báo thành công và đóng form
                 MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

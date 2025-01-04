@@ -18,8 +18,9 @@ namespace Source
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new MainForm());
+            //Application.Run(new AdminMainForm());
             Application.Run(new Login());
+            //Application.Run(new TextDashBoard());
             //Application.Run(new OrderInvoices());
             //Application.Run(new Cart());
             //Application.Run(new ProductDetails());

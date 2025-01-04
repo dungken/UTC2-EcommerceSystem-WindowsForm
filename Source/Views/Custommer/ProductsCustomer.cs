@@ -1,15 +1,7 @@
 ﻿using Source.Dtos.Product;
 using Source.Service;
-using System;
-using System.Collections.Generic;
-using System.IO.Packaging;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Forms;
-
+using System.Drawing;
 using Control = System.Windows.Forms.Control;
-using Image = System.Windows.Controls.Image;
 using Label = System.Windows.Forms.Label;
 using Panel = System.Windows.Forms.Panel;
 
@@ -47,8 +39,6 @@ namespace Source.Views.Custommer
             pnlProduct6.Click += Panel_Click;
         }
 
-        // Gán sự kiện click cho tất cả các panel
-        // Field to keep track of the previously clicked panel
         private Panel _previousClickedPanel;
 
         private void Panel_Click(object sender, EventArgs e)
@@ -219,7 +209,7 @@ namespace Source.Views.Custommer
                 nameLabel.Text = product.Name;
                 priceLabel.Text = product.Price.ToString("N0");
                 await SetCategoryTextAsync(categoryLabel, product.CategoryId);
-                await SetImageAsync(imagePicture, product.Id);
+                await SetImageAsync(imagePicture, product);
 
                 panel.Visible = true;
             }
@@ -244,39 +234,40 @@ namespace Source.Views.Custommer
             }
         }
 
-        private async Task SetImageAsync(PictureBox imagePicture, Guid productId)
+        private async Task SetImageAsync(PictureBox imagePicture, ProductDTO product)
         {
             if (imagePicture == null) return;
 
             try
             {
-                // Gọi API để lấy ảnh
-                var response = await _imageService.GetImagesByProductId(productId);
-
-                if (response?.Success == true && response.Data != null)
+                var image = product.Images?.FirstOrDefault();
+                if (image == null || string.IsNullOrEmpty(image.Url))
                 {
-                    var firstImagePath = response.Data.Url;
-
-                    if (!string.IsNullOrEmpty(firstImagePath))
-                    {
-                        imagePicture.LoadAsync(firstImagePath);
-                        imagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Đường dẫn ảnh không hợp lệ.");
-                    }
+                    Console.WriteLine("Không có URL hợp lệ để tải hình ảnh.");
+                    return;
                 }
-                else
+
+                using (HttpClient client = new HttpClient())
                 {
-                    Console.WriteLine($"Không thể tải ảnh. Thông báo: {response?.Message ?? "Không có dữ liệu"}");
+                    // Tải dữ liệu ảnh từ URL
+                    var response = await client.GetAsync(image.Url);
+                    response.EnsureSuccessStatusCode(); // Kiểm tra lỗi HTTP
+
+                    var imageData = await response.Content.ReadAsByteArrayAsync();
+                    using (var stream = new MemoryStream(imageData))
+                    {
+                        imagePicture.Image = Image.FromStream(stream);
+                        imagePicture.SizeMode = PictureBoxSizeMode.Zoom; // Đặt chế độ hiển thị ảnh
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: Không thể tải hình ảnh {ex.Message}");
+                Console.WriteLine($"Error: Không thể tải hình ảnh. Chi tiết lỗi: {ex.Message}");
             }
         }
+
+
 
 
         private void UpdatePaginationButtons()

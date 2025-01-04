@@ -25,7 +25,7 @@ namespace Source
             //Application.Run(new ProductDetails());
             //Application.Run(new ReviewProduct());
             //Application.Run(new WatchReview());
-            //Application.Run(new MainFormAdmin());
+            Application.Run(new MainFormAdmin());
             //Application.Run(new CategoryList());
             //Application.Run(new CategoriesEdit());
             //Application.Run(new VouchersList());
@@ -39,8 +39,8 @@ namespace Source
             //Application.Run(new PhuongAnh_Test());
             //Application.Run(new MainForm());
             //Application.Run(new PaymentCustomer());
-            //Application.Run(new ProductsCustomer());
-            Application.Run(new ProductAdd());
+            //Application.Run(new ProductList());
+            //Application.Run(new ProductAdd());
         }
     }
 

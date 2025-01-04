@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Source.Models
 {
-    public class Product
+    public class ProductDTO
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }

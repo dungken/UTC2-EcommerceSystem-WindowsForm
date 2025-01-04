@@ -14,7 +14,7 @@ namespace Source.Models
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         // Foreign Key
         public Guid? ProductId { get; set; }
-        public Product? Product { get; set; }
+        public ProductDTO? Product { get; set; }
 
     }
 }

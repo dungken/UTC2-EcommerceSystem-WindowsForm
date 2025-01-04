@@ -119,6 +119,7 @@
             rjButton1.Text = "Chỉnh sửa";
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // label7
             // 

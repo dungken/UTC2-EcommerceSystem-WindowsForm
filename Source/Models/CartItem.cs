@@ -8,7 +8,7 @@ namespace Source.Models
         public Guid CartId { get; set; } 
         public Cart Cart { get; set; } 
         public Guid ProductId { get; set; } 
-        public Product Product { get; set; }
+        public ProductDTO Product { get; set; }
 
       
         public string Size { get; set; }

@@ -11,6 +11,9 @@
     <Compile Update="Views\2StepVerification.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\2StepVerificationForForgetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\2StepVerifycationForLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +72,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\ConfirmEmail.cs">
@@ -131,10 +137,10 @@
     <Compile Update="Views\Custommer\WatchReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Login.cs">
+    <Compile Update="Views\ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\LoginWithGoogle.cs">
+    <Compile Update="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Admin\MainFormAdmin.cs">

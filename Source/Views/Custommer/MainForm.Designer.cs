@@ -749,6 +749,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "MainForm";
             Text = "MainForm";
+            Load += MainForm_Load;
             ClientSizeChanged += MainForm_ClientSizeChanged;
             panel1.ResumeLayout(false);
             pnlSubMenuProducts.ResumeLayout(false);

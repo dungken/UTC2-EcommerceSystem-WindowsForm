@@ -42,6 +42,10 @@ namespace Source.Service
         {
             return await _apiClient.DeleteAsync($"colors/{id}");
         }
+        public async Task<bool> DeleteColorsByProductIdAsync(Guid productId)
+        {
+            return await _apiClient.DeleteAsync($"colors/DeleteByProductId/{productId}");
+        }
 
       
 

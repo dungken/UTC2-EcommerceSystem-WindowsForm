@@ -388,12 +388,13 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(964, 538);
+            ClientSize = new Size(1015, 551);
             Controls.Add(pnHeader);
             Controls.Add(pnMain);
             Controls.Add(pnLine);
             Controls.Add(pnTitle);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "DiscountsList";
             Text = "DiscountsList";

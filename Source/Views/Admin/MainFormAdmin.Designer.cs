@@ -40,7 +40,6 @@
             btnCustomers = new Button();
             btnOrders = new Button();
             btnCategories = new Button();
-            panel3 = new Panel();
             label1 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel4 = new Panel();
@@ -58,7 +57,6 @@
             btnSetting = new Button();
             btnDiscount = new Button();
             btnSale = new Button();
-            pnlChildForm2 = new Panel();
             pnlChildForm = new Panel();
             pnThongKe = new Panel();
             lblTotalProductV = new Label();
@@ -75,11 +73,11 @@
             rbtnAvgSale = new MyCustomControl.RJButton();
             lblOrderV = new Label();
             lblOrder = new Label();
-            rbtnOrder = new MyCustomControl.RJButton();
             lblCustomerV = new Label();
             lblCustomer = new Label();
             rbtnCustomer = new MyCustomControl.RJButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            rbtnOrder = new MyCustomControl.RJButton();
             gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -87,7 +85,6 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
-            pnlChildForm2.SuspendLayout();
             pnlChildForm.SuspendLayout();
             pnThongKe.SuspendLayout();
             SuspendLayout();
@@ -157,7 +154,7 @@
             // 
             // label6
             // 
-            label6.Location = new Point(493, 26);
+            label6.Location = new Point(508, 26);
             label6.Name = "label6";
             label6.Size = new Size(50, 40);
             label6.TabIndex = 4;
@@ -246,16 +243,6 @@
             btnCategories.UseVisualStyleBackColor = true;
             btnCategories.Click += btnCategories_Click;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(162, 185, 237);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(221, 578);
-            panel3.Margin = new Padding(4, 3, 4, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(982, 50);
-            panel3.TabIndex = 6;
-            // 
             // label1
             // 
             label1.Location = new Point(893, 26);
@@ -277,22 +264,22 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Anchor = AnchorStyles.Left;
             pictureBox3.Image = Properties.Resources.logo;
-            pictureBox3.Location = new Point(3, 0);
+            pictureBox3.Location = new Point(0, 0);
             pictureBox3.Margin = new Padding(4, 3, 4, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(218, 80);
+            pictureBox3.Size = new Size(221, 80);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 14;
             pictureBox3.TabStop = false;
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Location = new Point(0, 1);
+            pictureBoxLogo.Dock = DockStyle.Top;
+            pictureBoxLogo.Location = new Point(0, 0);
             pictureBoxLogo.Margin = new Padding(4, 3, 4, 3);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(218, 80);
+            pictureBoxLogo.Size = new Size(221, 80);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
@@ -319,7 +306,7 @@
             panel2.Location = new Point(221, 0);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(982, 77);
+            panel2.Size = new Size(1015, 77);
             panel2.TabIndex = 5;
             // 
             // label8
@@ -335,7 +322,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources.imagesHome;
-            pictureBox2.Location = new Point(639, 3);
+            pictureBox2.Location = new Point(622, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(80, 72);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -347,7 +334,7 @@
             lblAvarata.Anchor = AnchorStyles.Right;
             lblAvarata.Cursor = Cursors.Hand;
             lblAvarata.Image = Properties.Resources.ImageAvarata;
-            lblAvarata.Location = new Point(908, 26);
+            lblAvarata.Location = new Point(941, 26);
             lblAvarata.Name = "lblAvarata";
             lblAvarata.Size = new Size(42, 40);
             lblAvarata.TabIndex = 11;
@@ -357,7 +344,7 @@
             // 
             lblNotifications.Anchor = AnchorStyles.Right;
             lblNotifications.Image = Properties.Resources.bell;
-            lblNotifications.Location = new Point(784, 26);
+            lblNotifications.Location = new Point(776, 26);
             lblNotifications.Name = "lblNotifications";
             lblNotifications.Size = new Size(32, 40);
             lblNotifications.TabIndex = 10;
@@ -367,7 +354,7 @@
             // 
             label7.Anchor = AnchorStyles.Right;
             label7.Image = Properties.Resources.circle;
-            label7.Location = new Point(730, 26);
+            label7.Location = new Point(720, 26);
             label7.Name = "label7";
             label7.Size = new Size(42, 40);
             label7.TabIndex = 9;
@@ -474,22 +461,13 @@
             btnSale.UseVisualStyleBackColor = true;
             btnSale.Click += btnSale_Click;
             // 
-            // pnlChildForm2
-            // 
-            pnlChildForm2.BackColor = Color.FromArgb(249, 251, 253);
-            pnlChildForm2.Controls.Add(pnlChildForm);
-            pnlChildForm2.Dock = DockStyle.Fill;
-            pnlChildForm2.Location = new Point(0, 0);
-            pnlChildForm2.Name = "pnlChildForm2";
-            pnlChildForm2.Size = new Size(1203, 628);
-            pnlChildForm2.TabIndex = 7;
-            // 
             // pnlChildForm
             // 
             pnlChildForm.Controls.Add(pnThongKe);
-            pnlChildForm.Location = new Point(225, 81);
+            pnlChildForm.Dock = DockStyle.Fill;
+            pnlChildForm.Location = new Point(221, 77);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(978, 486);
+            pnlChildForm.Size = new Size(1015, 551);
             pnlChildForm.TabIndex = 23;
             // 
             // pnThongKe
@@ -513,9 +491,9 @@
             pnThongKe.Controls.Add(rbtnCustomer);
             pnThongKe.Controls.Add(iconButton1);
             pnThongKe.Controls.Add(rbtnOrder);
-            pnThongKe.Location = new Point(3, 3);
+            pnThongKe.Location = new Point(0, 0);
             pnThongKe.Name = "pnThongKe";
-            pnThongKe.Size = new Size(972, 105);
+            pnThongKe.Size = new Size(1015, 105);
             pnThongKe.TabIndex = 22;
             // 
             // lblTotalProductV
@@ -704,25 +682,6 @@
             lblOrder.TabIndex = 26;
             lblOrder.Text = "Order";
             // 
-            // rbtnOrder
-            // 
-            rbtnOrder.BackColor = Color.White;
-            rbtnOrder.BackgroundColor = Color.White;
-            rbtnOrder.BorderColor = Color.Silver;
-            rbtnOrder.BorderRadius = 10;
-            rbtnOrder.BorderSize = 1;
-            rbtnOrder.FlatAppearance.BorderSize = 0;
-            rbtnOrder.FlatStyle = FlatStyle.Flat;
-            rbtnOrder.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnOrder.ForeColor = Color.Black;
-            rbtnOrder.Location = new Point(471, 6);
-            rbtnOrder.Name = "rbtnOrder";
-            rbtnOrder.Size = new Size(151, 83);
-            rbtnOrder.TabIndex = 25;
-            rbtnOrder.TextAlign = ContentAlignment.TopCenter;
-            rbtnOrder.TextColor = Color.Black;
-            rbtnOrder.UseVisualStyleBackColor = false;
-            // 
             // lblCustomerV
             // 
             lblCustomerV.AutoSize = true;
@@ -776,6 +735,25 @@
             iconButton1.Text = "iconButton1";
             iconButton1.UseVisualStyleBackColor = true;
             // 
+            // rbtnOrder
+            // 
+            rbtnOrder.BackColor = Color.White;
+            rbtnOrder.BackgroundColor = Color.White;
+            rbtnOrder.BorderColor = Color.Silver;
+            rbtnOrder.BorderRadius = 10;
+            rbtnOrder.BorderSize = 1;
+            rbtnOrder.FlatAppearance.BorderSize = 0;
+            rbtnOrder.FlatStyle = FlatStyle.Flat;
+            rbtnOrder.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnOrder.ForeColor = Color.Black;
+            rbtnOrder.Location = new Point(471, 6);
+            rbtnOrder.Name = "rbtnOrder";
+            rbtnOrder.Size = new Size(151, 83);
+            rbtnOrder.TabIndex = 25;
+            rbtnOrder.TextAlign = ContentAlignment.TopCenter;
+            rbtnOrder.TextColor = Color.Black;
+            rbtnOrder.UseVisualStyleBackColor = false;
+            // 
             // gunaAreaDataset1
             // 
             gunaAreaDataset1.BorderColor = Color.Empty;
@@ -786,11 +764,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1203, 628);
-            Controls.Add(panel3);
+            ClientSize = new Size(1236, 628);
+            Controls.Add(pnlChildForm);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(pnlChildForm2);
             Name = "MainFormAdmin";
             Text = "MainFormAdmin";
             panel4.ResumeLayout(false);
@@ -800,7 +777,6 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
-            pnlChildForm2.ResumeLayout(false);
             pnlChildForm.ResumeLayout(false);
             pnThongKe.ResumeLayout(false);
             pnThongKe.PerformLayout();
@@ -821,7 +797,6 @@
         private Button btnCustomers;
         private Button btnOrders;
         private Button btnCategories;
-        private Panel panel3;
         private Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel4;
@@ -829,7 +804,6 @@
         private Panel panel2;
         private Label lblNavigationImage;
         private Panel panel1;
-        private Panel pnlChildForm2;
         private Label label7;
         private Label lblNotifications;
         private Label lblAvarata;

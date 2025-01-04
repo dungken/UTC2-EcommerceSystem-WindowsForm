@@ -98,7 +98,7 @@
             pnTitle.Location = new Point(0, -2);
             pnTitle.Margin = new Padding(2, 3, 2, 3);
             pnTitle.Name = "pnTitle";
-            pnTitle.Size = new Size(964, 91);
+            pnTitle.Size = new Size(1014, 91);
             pnTitle.TabIndex = 8;
             // 
             // btnAdd
@@ -139,7 +139,7 @@
             pnFotter.Location = new Point(2, 389);
             pnFotter.Margin = new Padding(2, 3, 2, 3);
             pnFotter.Name = "pnFotter";
-            pnFotter.Size = new Size(957, 47);
+            pnFotter.Size = new Size(1011, 47);
             pnFotter.TabIndex = 0;
             // 
             // gridView
@@ -150,12 +150,12 @@
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridView.Columns.AddRange(new DataGridViewColumn[] { Id, Code, Amount, StartDate, EndDate, MinOrder, Limit, Edit, Remove });
             gridView.GridColor = Color.Gray;
-            gridView.Location = new Point(5, 3);
+            gridView.Location = new Point(19, 3);
             gridView.Margin = new Padding(2, 3, 2, 3);
             gridView.Name = "gridView";
             gridView.RowHeadersVisible = false;
             gridView.RowHeadersWidth = 51;
-            gridView.Size = new Size(953, 328);
+            gridView.Size = new Size(996, 328);
             gridView.TabIndex = 0;
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
@@ -387,7 +387,7 @@
             // 
             pnSearch.Controls.Add(tbxSearch);
             pnSearch.Controls.Add(lblSearch);
-            pnSearch.Location = new Point(596, 0);
+            pnSearch.Location = new Point(646, 0);
             pnSearch.Margin = new Padding(2, 3, 2, 3);
             pnSearch.Name = "pnSearch";
             pnSearch.Size = new Size(363, 45);
@@ -401,7 +401,7 @@
             pnHeader.Location = new Point(0, 104);
             pnHeader.Margin = new Padding(2, 3, 2, 3);
             pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(963, 47);
+            pnHeader.Size = new Size(1014, 47);
             pnHeader.TabIndex = 7;
             // 
             // VouchersList
@@ -409,12 +409,13 @@
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 251, 253);
-            ClientSize = new Size(964, 538);
+            ClientSize = new Size(1015, 551);
             Controls.Add(pnLine);
             Controls.Add(pnTitle);
             Controls.Add(pnHeader);
             Controls.Add(pnMain);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "VouchersList";
             Text = "CouponsList";

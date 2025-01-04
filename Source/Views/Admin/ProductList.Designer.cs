@@ -88,7 +88,7 @@ namespace Source.Views.Admin
             pnTitle.Controls.Add(lblHeader);
             pnTitle.Location = new Point(0, -2);
             pnTitle.Name = "pnTitle";
-            pnTitle.Size = new Size(964, 91);
+            pnTitle.Size = new Size(1015, 91);
             pnTitle.TabIndex = 0;
             // 
             // btnAdd
@@ -163,7 +163,7 @@ namespace Source.Views.Admin
             pnMain.Controls.Add(pnFotter);
             pnMain.Location = new Point(1, 101);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(963, 440);
+            pnMain.Size = new Size(1014, 448);
             pnMain.TabIndex = 2;
             // 
             // pnSearch
@@ -173,7 +173,7 @@ namespace Source.Views.Admin
             pnSearch.Location = new Point(589, 3);
             pnSearch.Margin = new Padding(2, 3, 2, 3);
             pnSearch.Name = "pnSearch";
-            pnSearch.Size = new Size(363, 45);
+            pnSearch.Size = new Size(423, 45);
             pnSearch.TabIndex = 2;
             // 
             // tbxSearch
@@ -203,7 +203,7 @@ namespace Source.Views.Admin
             panel1.Location = new Point(643, 389);
             panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(313, 45);
+            panel1.Size = new Size(369, 45);
             panel1.TabIndex = 2;
             // 
             // labelPageInfo
@@ -225,7 +225,7 @@ namespace Source.Views.Admin
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.MediumSlateBlue;
-            rjButton1.Location = new Point(213, 1);
+            rjButton1.Location = new Point(243, 3);
             rjButton1.Margin = new Padding(2, 3, 2, 3);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(108, 42);
@@ -246,7 +246,7 @@ namespace Source.Views.Admin
             rjButton2.FlatAppearance.BorderSize = 0;
             rjButton2.FlatStyle = FlatStyle.Flat;
             rjButton2.ForeColor = Color.MediumSlateBlue;
-            rjButton2.Location = new Point(2, 1);
+            rjButton2.Location = new Point(40, 1);
             rjButton2.Margin = new Padding(2, 3, 2, 3);
             rjButton2.Name = "rjButton2";
             rjButton2.Size = new Size(108, 42);
@@ -419,7 +419,7 @@ namespace Source.Views.Admin
             pnList.Cursor = Cursors.IBeam;
             pnList.Location = new Point(254, 51);
             pnList.Name = "pnList";
-            pnList.Size = new Size(705, 336);
+            pnList.Size = new Size(760, 336);
             pnList.TabIndex = 1;
             // 
             // gridView
@@ -433,7 +433,7 @@ namespace Source.Views.Admin
             gridView.Name = "gridView";
             gridView.RowHeadersVisible = false;
             gridView.RowHeadersWidth = 51;
-            gridView.Size = new Size(629, 328);
+            gridView.Size = new Size(626, 328);
             gridView.TabIndex = 0;
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
@@ -504,11 +504,12 @@ namespace Source.Views.Admin
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 251, 253);
-            ClientSize = new Size(964, 538);
+            ClientSize = new Size(1015, 551);
             Controls.Add(pnMain);
             Controls.Add(pnLine);
             Controls.Add(pnTitle);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "ProductList";
             Text = "ProductList";

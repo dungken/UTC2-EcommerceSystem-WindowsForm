@@ -128,7 +128,7 @@ namespace Source.Views
                             Config.token = response.Data.Token;
                             MessageBox.Show("Login successful! ");
                             // Handle successful login
-                            openChildForm(new OrdersList());
+                            openChildForm(new MainFormAdmin());
                         }
                         else
                         {

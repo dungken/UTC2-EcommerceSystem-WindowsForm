@@ -38,6 +38,12 @@
             rbtnPre = new MyCustomControl.RJButton();
             pnList = new Panel();
             gridView = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Customers = new DataGridViewTextBoxColumn();
+            Mail = new DataGridViewTextBoxColumn();
+            Phone = new DataGridViewTextBoxColumn();
+            TotalOrders = new DataGridViewTextBoxColumn();
+            Detail = new DataGridViewButtonColumn();
             pnMain = new Panel();
             btnEntries = new Label();
             cbxShow = new ComboBox();
@@ -48,12 +54,6 @@
             pnSearch = new Panel();
             pnHeader = new Panel();
             pnTitle = new Panel();
-            Id = new DataGridViewTextBoxColumn();
-            Customers = new DataGridViewTextBoxColumn();
-            Mail = new DataGridViewTextBoxColumn();
-            Phone = new DataGridViewTextBoxColumn();
-            TotalOrders = new DataGridViewTextBoxColumn();
-            Detail = new DataGridViewButtonColumn();
             pnFotter.SuspendLayout();
             panel1.SuspendLayout();
             pnList.SuspendLayout();
@@ -196,6 +196,59 @@
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Customers
+            // 
+            Customers.DataPropertyName = "UserName";
+            Customers.HeaderText = "Customers";
+            Customers.MinimumWidth = 6;
+            Customers.Name = "Customers";
+            Customers.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Customers.Width = 125;
+            // 
+            // Mail
+            // 
+            Mail.DataPropertyName = "Email";
+            Mail.HeaderText = "Mail";
+            Mail.MinimumWidth = 6;
+            Mail.Name = "Mail";
+            Mail.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Mail.Width = 125;
+            // 
+            // Phone
+            // 
+            Phone.DataPropertyName = "Phone";
+            Phone.HeaderText = "Phone";
+            Phone.MinimumWidth = 6;
+            Phone.Name = "Phone";
+            Phone.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Phone.Width = 125;
+            // 
+            // TotalOrders
+            // 
+            TotalOrders.DataPropertyName = "TotalOrders";
+            TotalOrders.HeaderText = "Total Orders";
+            TotalOrders.MinimumWidth = 6;
+            TotalOrders.Name = "TotalOrders";
+            TotalOrders.SortMode = DataGridViewColumnSortMode.Programmatic;
+            TotalOrders.Width = 125;
+            // 
+            // Detail
+            // 
+            Detail.HeaderText = "Detail";
+            Detail.MinimumWidth = 6;
+            Detail.Name = "Detail";
+            Detail.UseColumnTextForButtonValue = true;
+            Detail.Width = 125;
+            // 
             // pnMain
             // 
             pnMain.BackColor = Color.White;
@@ -297,70 +350,18 @@
             pnTitle.Size = new Size(964, 91);
             pnTitle.TabIndex = 8;
             // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Id.Width = 125;
-            // 
-            // Customers
-            // 
-            Customers.DataPropertyName = "UserName";
-            Customers.HeaderText = "Customers";
-            Customers.MinimumWidth = 6;
-            Customers.Name = "Customers";
-            Customers.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Customers.Width = 125;
-            // 
-            // Mail
-            // 
-            Mail.DataPropertyName = "Email";
-            Mail.HeaderText = "Mail";
-            Mail.MinimumWidth = 6;
-            Mail.Name = "Mail";
-            Mail.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Mail.Width = 125;
-            // 
-            // Phone
-            // 
-            Phone.DataPropertyName = "Phone";
-            Phone.HeaderText = "Phone";
-            Phone.MinimumWidth = 6;
-            Phone.Name = "Phone";
-            Phone.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Phone.Width = 125;
-            // 
-            // TotalOrders
-            // 
-            TotalOrders.DataPropertyName = "TotalOrders";
-            TotalOrders.HeaderText = "Total Orders";
-            TotalOrders.MinimumWidth = 6;
-            TotalOrders.Name = "TotalOrders";
-            TotalOrders.SortMode = DataGridViewColumnSortMode.Programmatic;
-            TotalOrders.Width = 125;
-            // 
-            // Detail
-            // 
-            Detail.HeaderText = "Detail";
-            Detail.MinimumWidth = 6;
-            Detail.Name = "Detail";
-            Detail.UseColumnTextForButtonValue = true;
-            Detail.Width = 125;
-            // 
             // CustomersList
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 251, 253);
-            ClientSize = new Size(964, 538);
+            ClientSize = new Size(1015, 551);
             Controls.Add(pnLine);
             Controls.Add(pnHeader);
             Controls.Add(pnTitle);
             Controls.Add(pnMain);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "CustomersList";
             Text = "CustomersList";

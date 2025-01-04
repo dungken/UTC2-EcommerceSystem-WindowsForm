@@ -9,8 +9,6 @@ namespace Source.Models
         public Cart Cart { get; set; } 
         public Guid ProductId { get; set; } 
         public ProductDTO Product { get; set; }
-
-      
         public string Size { get; set; }
         public string Color { get; set; }
         public int Quantity { get; set; } 

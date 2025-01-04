@@ -139,9 +139,9 @@ namespace Source.Views
                             Config.token = response.Data.Token;
                             MessageBox.Show("Login successful! ");
 
-                            openChildForm(new MainForm());
+                            //openChildForm(new MainForm());
 
-                            //openChildForm(new MainFormAdmin());
+                            openChildForm(new MainFormAdmin());
 
                         }
                         else
@@ -153,9 +153,9 @@ namespace Source.Views
                     {
                         Config.token = response.Data.Token;
                         MessageBox.Show("Login successful! ");
-                        
-                        //openChildForm(new MainForm());
-                        openChildForm(new MainFormAdmin());
+
+                        openChildForm(new MainForm());
+                        //openChildForm(new MainFormAdmin());
 
                     }
 

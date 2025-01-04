@@ -39,7 +39,6 @@ namespace Source
             //Application.Run(new PhuongAnh_Test());
             //Application.Run(new MainForm());
             //Application.Run(new PaymentCustomer());
-            //Application.Run(new ProductList());
             //Application.Run(new ProductAdd());
             Application.Run(new ProductsCustomer());
         }

@@ -41,7 +41,7 @@ namespace Source.Views.Admin
         public Guid _categoryId { get; set; }
 
         public string _status { get; set; }
-        public Guid _discountId { get; set; }
+        public Guid? _discountId { get; set; }
 
         public List<ColorDTO> _colors { get; set; } = new List<ColorDTO>();
         public List<CreateSizeforProductDto> _sizes { get; set; } = new List<CreateSizeforProductDto>();
@@ -152,6 +152,10 @@ namespace Source.Views.Admin
             {
                 _discountId = ((DiscountDto)lbxDiscount.SelectedItem).Id;
             }
+            else
+            {
+                _discountId = null;
+            }
 
             // Kiểm tra trạng thái từ RadioButton
             if (rbtnActive.Checked)
@@ -209,6 +213,7 @@ namespace Source.Views.Admin
                 CategoryId = _categoryId,
                 Status = _status,
                 Price = _price,
+                DiscountId = _discountId,
             };
 
             
@@ -253,10 +258,7 @@ namespace Source.Views.Admin
                         await _colorsService.CreateCollorAsync(newColorDto);
                     }
                 }
-                if (_discountId != null)
-                {
-                    response.Data.DiscountId = _discountId;
-                }
+                
                 if (_formFiles.Count > 0 )
                 {
                     UploadMultiImg(response.Data.Id, _name);

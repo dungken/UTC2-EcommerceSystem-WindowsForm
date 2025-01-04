@@ -11,6 +11,13 @@ using Source.Service;
 using ScottPlot;
 using Source.Views.Admin;
 using Source.Views.Custommer;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using Guna.Charts.WinForms;
+using static SkiaSharp.HarfBuzz.SKShaper;
+using NPOI.SS.Formula.Functions;
+using ScottPlot.TickGenerators.Financial;
+using NPOI.XSSF.Streaming.Values;
 namespace Source.Views
 {
     public partial class MainFormAdmin : Form
@@ -18,6 +25,7 @@ namespace Source.Views
         private readonly UserService _userService;
         private readonly OrderService _orderService;
         private readonly ProductService _productService;
+        private int _year;
 
         public static int frmAdminMainFormLocationX, frmAdminMainFormLocationY;
         public static int pnlChildFormMainLocationX, pnlChildFormMainLocationY;
@@ -30,7 +38,14 @@ namespace Source.Views
             _productService = new ProductService();
 
             LoadData();
+            LoadDataDashBoard();
 
+            for (int year = 2015; year <= 2025; year++)
+            {
+                cbxYear.Items.Add(year);
+            }
+            cbxYear.SelectedIndex = 10;
+            _year = 2025;
             // Tạo ScottPlot control
             //plt = new FormsPlot
             //{
@@ -49,27 +64,44 @@ namespace Source.Views
 
         public async void LoadData()
         {
-            //lblCustomerV.Text = _userService.GetAllUser().Result.Data.Users.
-            //    Select(user => user.UserRoles.
-            //    FirstOrDefault(role => role.Name == "User")).Count().ToString();
-            //lblOrderV.Text = _orderService.GetAllOrdersAsync().Result.Data.Count().ToString();
+            var responeCus = await _userService.GetAllUser();
+            if (responeCus != null)
+            {
+                lblCustomerV.Text = responeCus.Data.Users.
+                    Select(user => user.UserRoles.
+                    FirstOrDefault(role => role.Name == "User")).Count().ToString();
+            }
+            var responeOrder = await _orderService.GetAllOrdersAsync();
+            decimal totalSale = 0;
+            int product = 0;
+            if (responeOrder != null)
+            {
+                lblOrderV.Text = responeOrder.Data.Count().ToString();
+                var responeSale = responeOrder.Data.ToList().Select(s => s.TotalAmount);
+                foreach (var order in responeSale)
+                {
+                    totalSale += order;
+                }
 
-            //var responeOrder = _orderService.GetAllOrdersAsync().Result.Data.ToList().
-            //    Select(s => s.TotalAmount);
-            //decimal totalSale = 0;
-            //foreach (var order in responeOrder)
-            //{
-            //    totalSale += order;
-            //}
+                lblTotalSaleV.Text = totalSale.ToString();
+                decimal value = (totalSale / int.Parse(lblOrderV.Text));
+                decimal roundedValue = Math.Round(value, 2);
+                lblAvgSaleV.Text = roundedValue.ToString();
 
-            //lblTotalSaleV.Text = totalSale.ToString();
+            }
+            var responeProduct = await _productService.GetAllProductsAsync();
+            if (responeProduct != null)
+            {
+                product = responeProduct.Data.Count();
+                lblTotalProductV.Text = product.ToString();
+            }
+            if (responeOrder != null && responeProduct != null)
+            {
+                decimal value = (totalSale / product);
+                decimal roundedValue = Math.Round(value, 2);
+                lblItemSaleV.Text = roundedValue.ToString();
+            }
 
-            //lblAvgSaleV.Text = (totalSale / int.Parse(lblOrderV.Text)).ToString();
-
-            //int product = _productService.GetAllProductsAsync().Result.Data.Count();
-            //lblTotalProductV.Text = product.ToString();
-
-            //lblAvgItemSale.Text = (totalSale/product).ToString();
         }
 
         // Tạo Form con 
@@ -131,6 +163,112 @@ namespace Source.Views
         private void btnSetting_Click(object sender, EventArgs e)
         {
             openChildForm(new Setting());
+        }
+        private async Task<List<decimal>> GetSaleForMonth()
+        {
+            var lstSale = new List<decimal>();
+
+
+            var responeOrder = await _orderService.GetAllOrdersAsync();
+
+            if (responeOrder != null)
+            {
+                var responeSale = responeOrder.Data.ToList();
+                for (int index = 1; index <= 12; index++)
+                {
+
+                    var sale = responeSale.Where(s => s.OrderDate.Month == index && s.OrderDate.Year == _year)
+                                            .Select(s => s.TotalAmount);
+                    decimal totalSale = 0;
+                    foreach (var s in sale)
+                    {
+                        totalSale += s;
+                    }
+                    lstSale.Add(totalSale);
+
+                }
+            }
+            return lstSale;
+        }
+        private async void LoadDataDashBoard()
+        {
+
+            string[] months = { "January", "February", "March", "April", "May", "June",
+                                "July", "August", "September", "October", "November", "December"};
+
+
+            var lstSale = await GetSaleForMonth();
+            var lPointCollection = new LPointCollection();
+            int i = 0;
+            foreach (var item in lstSale)
+            {
+
+                lPointCollection.Add(months[i], Convert.ToDouble(item));
+                i++;
+            }
+            gunaBarDataset.DataPoints = lPointCollection;
+        }
+        private async void rbtnExport_Click(object sender, EventArgs e)
+        {
+            string[] months = { "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December" };
+            var lstSale = await GetSaleForMonth(); // Danh sách tổng doanh thu cho từng tháng
+
+            // Tạo workbook và worksheet mới
+            IWorkbook workbook = new XSSFWorkbook();
+            ISheet sheet = workbook.CreateSheet("Data Sale Order");
+
+            // Tạo hàng đầu tiên với tiêu đề năm
+            IRow headerRow = sheet.CreateRow(0);
+            headerRow.CreateCell(0).SetCellValue($"Year: {_year}");
+
+            // Tạo hàng tiêu đề cột
+            IRow nextRow = sheet.CreateRow(1);
+            nextRow.CreateCell(0).SetCellValue("Month");
+            nextRow.CreateCell(1).SetCellValue("Total Sale");
+
+            // Thêm dữ liệu vào Excel từ months và lstSale
+            for (int i = 0; i < months.Length; i++)
+            {
+                IRow row = sheet.CreateRow(i + 2); // Bắt đầu từ dòng thứ 3 (index = 2)
+                row.CreateCell(0).SetCellValue(months[i]);         // Tên tháng
+                row.CreateCell(1).SetCellValue((double)lstSale[i]); // Tổng doanh thu
+            }
+
+            // Lấy thư mục gốc của dự án
+            string projectPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
+            string outputPath = Path.Combine(projectPath, "Statistics", "output.xlsx");
+
+            // Kiểm tra và tạo thư mục nếu chưa tồn tại
+            string directoryPath = Path.GetDirectoryName(outputPath);
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            // Lưu workbook vào file
+            using (FileStream fileStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write))
+            {
+                workbook.Write(fileStream);
+                workbook.Close();
+            }
+
+            MessageBox.Show($"Dữ liệu đã được xuất thành công ra file Excel tại: {outputPath}", "Success");
+
+        }
+
+        private void MainFormAdmin_Load(object sender, EventArgs e)
+        {
+            LoadDataDashBoard();
+        }
+
+        private void cbxYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(cbxYear.SelectedItem.ToString(), out int newYear))
+            {
+                _year = newYear;
+                LoadDataDashBoard();
+            }
         }
     }
 }

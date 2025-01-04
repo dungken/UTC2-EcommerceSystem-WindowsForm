@@ -21,6 +21,8 @@ using api.Dtos.Product;
 using ProductDTO = Source.Dtos.Product.ProductDTO;
 
 using static System.Windows.Forms.DataFormats;
+using Source.Dtos.Discount;
+using static Google.Apis.Requests.BatchRequest;
 
 
 namespace Source.Views.Admin
@@ -33,7 +35,7 @@ namespace Source.Views.Admin
         private readonly ColorsService _colorsService;
         private readonly SizeService _sizeService;
         private readonly CategoriesService _categoriesService;
-
+        private readonly DiscountsService _discountsService;
         public List<ColorDTO> _colors { get; set; } = new List<ColorDTO>();
         public List<CreateSizeforProductDto> _sizes { get; set; } = new List<CreateSizeforProductDto>();
         public List<ImageDTO> _images { get; set; } = new List<ImageDTO>();
@@ -57,6 +59,7 @@ namespace Source.Views.Admin
             _colorsService = new ColorsService();
             _sizeService = new SizeService();
             _categoriesService = new CategoriesService();
+            _discountsService = new DiscountsService();
         }
         public ProductEdit(ProductDTO product)
         {
@@ -72,6 +75,7 @@ namespace Source.Views.Admin
             _colorsService = new ColorsService();
             _sizeService = new SizeService();
             _categoriesService = new CategoriesService();
+            _discountsService = new DiscountsService();
 
             _product = product;
             LoadProductData();
@@ -130,7 +134,36 @@ namespace Source.Views.Admin
                 return Text;
             }
         }
+        private async void LoadDiscounts()
+        {
+            var response = await _discountsService.GetAllDiscounts();
+            if (response.Success)
+            {
+                // Thêm danh mục cha vào ListBox
+                lbxDiscount.DataSource = response.Data;
+                lbxDiscount.DisplayMember = "Percentage";
+                lbxDiscount.ValueMember = "Id";
+                // Tìm phần tử tương ứng với _product.DiscountId
+                var selectedDiscount = response.Data.FirstOrDefault(d => d.Id == _product.DiscountId);
 
+                if (selectedDiscount != null)
+                {
+                    // Tìm chỉ số của phần tử
+                    var selectedItemIndex = response.Data.ToList().IndexOf(selectedDiscount);
+
+                    // Đặt SelectedIndex nếu tìm thấy
+                    lbxDiscount.SelectedIndex = selectedItemIndex;
+                }
+                else
+                {
+                    lbxDiscount.SelectedIndex = -1;  // Không tìm thấy, bỏ chọn
+                }
+            }
+            else
+            {
+                MessageBox.Show("Failed to load discount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void LoadProductData()
         {
             if (_product.Status == "Active")
@@ -172,6 +205,7 @@ namespace Source.Views.Admin
             tbxPrice.Text = _product.Price.ToString();
             numeric.Value = _product.StockQuantity;
             LoadCategories();
+            LoadDiscounts();
         }
 
         private async void btnPickColor_Click(object sender, EventArgs e)
@@ -345,7 +379,14 @@ namespace Source.Views.Admin
                 return;
             }
             _product.Price = decimal.Parse(tbxPrice.Text);
-
+            if (lbxDiscount.SelectedItem != null)
+            {
+                _product.DiscountId = ((DiscountDto)lbxDiscount.SelectedItem).Id;
+            }
+            else
+            {
+                _product.DiscountId = null;
+            }
             // Gọi API để cập nhật
             var result = await _productService.UpdateProductAsync(_product.Id, new UpdateProductDTO
             {
@@ -355,6 +396,7 @@ namespace Source.Views.Admin
                 StockQuantity = _product.StockQuantity,
                 CategoryId = _product.CategoryId,
                 Status = _product.Status,
+                DiscountId = _product.DiscountId,
             });
 
             if (result.Success)
@@ -387,6 +429,7 @@ namespace Source.Views.Admin
                             }
                         }
                     }
+                
                 if (_formFiles.Count > 0 && _formFiles != null)
                 {
                     foreach (var image1 in _product.Images.Select(s => s.Id).ToList())

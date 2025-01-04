@@ -43,10 +43,10 @@ namespace Source.DataAcess
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                var formattedJson = FormatJson(response.Content);
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
-
-                throw new Exception($"API Error: {response.ErrorMessage}");
+                //var formattedJson = FormatJson(response.Content);
+                MessageBox.Show(response.StatusCode.ToString());
+                
+                //throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;
         }
@@ -224,7 +224,7 @@ namespace Source.DataAcess
             var response = await _client.ExecuteAsync(request);
             if (!response.IsSuccessful)
             {
-                // Format JSON response
+                //Format JSON response
                 var formattedJson = FormatJson(response.Content);
                 MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");

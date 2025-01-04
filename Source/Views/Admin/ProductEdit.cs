@@ -31,7 +31,7 @@ namespace Source.Views.Admin
         private readonly CategoriesService _categoriesService;
 
         public List<ColorDTO> _colors { get; set; } = new List<ColorDTO>();
-        public List<SizeDTO> _sizes { get; set; } = new List<SizeDTO>();
+        public List<CreateSizeforProductDto> _sizes { get; set; } = new List<CreateSizeforProductDto>();
         public List<ImageDTO> _images { get; set; } = new List<ImageDTO>();
 
         private ProductDTO _product;
@@ -178,14 +178,6 @@ namespace Source.Views.Admin
             {
                 // Lấy màu đã chọn
                 Color selectedColor = colorDialog.Color;
-                if (selectedColor != Color.Empty && _flagColor == false)
-                {
-                    foreach (var color in _product.Colors.Select(s => s.Id).ToList())
-                    {
-                        var respone = await _colorsService.DeleteColorAsync(color);
-                    }
-                    _flagColor = true;
-                }
                 // Chuyển đổi thành mã màu Hex
                 string hexColor = $"#{selectedColor.R:X2}{selectedColor.G:X2}{selectedColor.B:X2}";
 
@@ -199,6 +191,7 @@ namespace Source.Views.Admin
                     Id = Guid.NewGuid(),
                     Name = colorName,
                     ColorCode = hexColor,
+                    ProductId = _product.Id,    
                 };
                 _colors.Add(newColorDto);
             }
@@ -227,14 +220,11 @@ namespace Source.Views.Admin
                     MessageBox.Show($"File selected: {combinedPath}");
 
 
-                    if (File.Exists(_selectedFilePath) && _flagImg == false)
-                    {
-                        foreach (var image1 in _product.Images.Select(s => s.Id).ToList())
-                        {
-                            var respone = await _imageService.DeleteImage((Guid)image1);
-                        }
-                        _flagImg = false;
-                    }
+                    //if (File.Exists(_selectedFilePath) && _flagImg == false)
+                    //{
+                        
+                    //    _flagImg = true;
+                    //}
                     using (var stream = new MemoryStream(File.ReadAllBytes(_selectedFilePath)))
                     {
 
@@ -301,14 +291,15 @@ namespace Source.Views.Admin
             //size
             // Kiểm tra nếu có ít nhất một checkbox được tích
             bool isAnyChecked = pnSize.Controls.OfType<CheckBox>().Any(cb => cb.Checked);
+            List<string> size;
+            size = new List<string>();
             if (isAnyChecked)
             {
                 foreach (var size1 in _product.Sizes.Select(s => s.Id).ToList())
                 {
                     var respone = await _sizeService.DeleteSize(size1);
                 }
-                List<string> size;
-                size = new List<string>();
+                
                 if (cbxXS.Checked)
                 {
                     size.Add("XS");
@@ -329,19 +320,7 @@ namespace Source.Views.Admin
                 {
                     size.Add("XL");
                 }
-                if (size != null)
-                {
-                    foreach (var index in size)
-                    {
-                        var newSizeDto = new SizeDTO
-                        {
-                            Id = Guid.NewGuid(),
-                            Name = index,
-                        };
-                        _sizes.Add(newSizeDto);
-                    }
-
-                }
+               
             }
             if (string.IsNullOrEmpty(tbxName.Text))
             {
@@ -376,13 +355,42 @@ namespace Source.Views.Admin
 
             if (result.Success)
             {
-                //if (_formFiles.Count > 0 && _formFiles != null)
-                //{
-                //    UploadMultiImg(result.Data.Id, _product.Name);
-                //    int index = 0;
-                //    await _imageService.
-                //}
-
+                if (_colors.Count > 0 && _colors != null)
+                {
+                    await _colorsService.DeleteColorsByProductIdAsync(_product.Id);
+                    foreach (var color in _colors)
+                    {
+                        await _colorsService.CreateCollorAsync(color);
+                    }
+                }
+                    if (size != null)
+                    {
+                        foreach (var index in size)
+                        {
+                            var newSizeDto = new CreateSizeforProductDto
+                            {
+                                Id = Guid.NewGuid(),
+                                Name = index,
+                                ProductId = _product.Id,
+                            };
+                            _sizes.Add(newSizeDto);
+                        }
+                        if (_sizes.Count > 0 && _sizes != null)
+                        {
+                            foreach (var size1 in _sizes)
+                            {
+                                await _sizeService.CreateSizeAsync(size1);
+                            }
+                        }
+                    }
+                if (_formFiles.Count > 0 && _formFiles != null)
+                {
+                    foreach (var image1 in _product.Images.Select(s => s.Id).ToList())
+                    {
+                        var respone = await _imageService.DeleteImage((Guid)image1);
+                    }
+                    UploadMultiImg(_product.Id, _product.Name);
+                }
                 // Thông báo thành công và đóng form
                 MessageBox.Show("Category updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK; // Đóng form và báo thành công

@@ -17,8 +17,10 @@ using Source.Dtos.Discount;
 using Source.Dtos.Product;
 using Source.Dtos.Reponse;
 using Source.Dtos.Voucher;
+using Source.Models;
 using Source.Service;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
+using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
 using Panel = System.Windows.Forms.Panel;
 
@@ -28,6 +30,7 @@ namespace Source.Views.Admin
     {
         private readonly ProductService _productService;
         private readonly ImageService _imageService;
+        private readonly ColorsService _colorsService;
         private readonly SizeService _sizeService;
         private readonly CategoriesService _categoriesService;
         private readonly DiscountsService _discountsService;
@@ -41,7 +44,7 @@ namespace Source.Views.Admin
         public Guid _discountId { get; set; }
 
         public List<ColorDTO> _colors { get; set; } = new List<ColorDTO>();
-        public List<SizeDTO> _sizes { get; set; } = new List<SizeDTO>();
+        public List<CreateSizeforProductDto> _sizes { get; set; } = new List<CreateSizeforProductDto>();
         public List<ImageDTO> _images { get; set; } = new List<ImageDTO>();
 
         public List<IFormFile> _formFiles = new List<IFormFile>();
@@ -59,6 +62,7 @@ namespace Source.Views.Admin
 
             _productService = new ProductService();
             _imageService = new ImageService();
+            _colorsService = new ColorsService();
             _sizeService = new SizeService();
             _categoriesService = new CategoriesService();
             _discountsService = new DiscountsService();
@@ -193,19 +197,7 @@ namespace Source.Views.Admin
             }
 
 
-            if (size != null)
-            {
-                foreach (var index in size)
-                {
-                    var newSizeDto = new SizeDTO
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = index,
-                    };
-                    _sizes.Add(newSizeDto);
-                }
-
-            }
+            
 
 
 
@@ -217,10 +209,9 @@ namespace Source.Views.Admin
                 CategoryId = _categoryId,
                 Status = _status,
                 Price = _price,
-                Colors = _colors,
-                Sizes = _sizes
             };
 
+            
 
 
             // Gọi service để thêm danh mục vào backend
@@ -228,15 +219,48 @@ namespace Source.Views.Admin
 
             if (response.Success)
             {
+                if (size != null)
+                {
+                    foreach (var index in size)
+                    {
+                        var newSizeDto = new CreateSizeforProductDto
+                        {
+                            Id = Guid.NewGuid(),
+                            Name = index,
+                            ProductId = response.Data.Id,
+                        };
+                        _sizes.Add(newSizeDto);
+                    }
+                    if (_sizes.Count > 0 && _sizes != null)
+                    {
+                        foreach (var size1 in _sizes)
+                        {
+                            await _sizeService.CreateSizeAsync(size1);
+                        }
+                    }
+                }
+                if (_colors.Count > 0 && _colors != null)
+                {
+                    foreach (var color in _colors)
+                    {
+                        var newColorDto = new ColorDTO
+                        {
+                            Id = color.Id,
+                            Name = color.Name,
+                            ColorCode = color.ColorCode,
+                            ProductId = response.Data.Id,
+                        };
+                        await _colorsService.CreateCollorAsync(newColorDto);
+                    }
+                }
                 if (_discountId != null)
                 {
                     response.Data.DiscountId = _discountId;
                 }
-                if (_formFiles.Count > 0)
+                if (_formFiles.Count > 0 )
                 {
-
-                UploadMultiImg(response.Data.Id, _name);
-                response.Data.Images = _images;
+                    UploadMultiImg(response.Data.Id, _name);
+                    response.Data.Images = _images;
                 }
                 // Thông báo thành công và đóng form
                 MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -311,7 +335,6 @@ namespace Source.Views.Admin
             {
                 // Lấy màu đã chọn
                 Color selectedColor = colorDialog.Color;
-
                 // Chuyển đổi thành mã màu Hex
                 string hexColor = $"#{selectedColor.R:X2}{selectedColor.G:X2}{selectedColor.B:X2}";
 

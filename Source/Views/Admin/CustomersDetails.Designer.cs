@@ -40,6 +40,10 @@
             lblShow = new Label();
             pnList = new Panel();
             gridView = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            TotalAmount = new DataGridViewTextBoxColumn();
             pnFotter = new Panel();
             panel1 = new Panel();
             labelPageInfo = new Label();
@@ -64,10 +68,6 @@
             lblReviewProduct = new Label();
             lblOrderBuy = new Label();
             lblStatus = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            TotalAmount = new DataGridViewTextBoxColumn();
             pnMain.SuspendLayout();
             pnHeader.SuspendLayout();
             pnSearch.SuspendLayout();
@@ -209,6 +209,42 @@
             gridView.Size = new Size(567, 328);
             gridView.TabIndex = 0;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Id.Width = 125;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "OrderDate";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 6;
+            Date.Name = "Date";
+            Date.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Date.Width = 125;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Status.Width = 125;
+            // 
+            // TotalAmount
+            // 
+            TotalAmount.DataPropertyName = "TotalAmount";
+            TotalAmount.HeaderText = "Total Amount";
+            TotalAmount.MinimumWidth = 6;
+            TotalAmount.Name = "TotalAmount";
+            TotalAmount.SortMode = DataGridViewColumnSortMode.Programmatic;
+            TotalAmount.Width = 125;
             // 
             // pnFotter
             // 
@@ -392,7 +428,7 @@
             lblId.AutoSize = true;
             lblId.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblId.ForeColor = SystemColors.ControlDarkDark;
-            lblId.Location = new Point(123, 88);
+            lblId.Location = new Point(44, 100);
             lblId.Name = "lblId";
             lblId.Size = new Size(119, 19);
             lblId.TabIndex = 2;
@@ -400,6 +436,7 @@
             // 
             // picbxProfile
             // 
+            picbxProfile.ErrorImage = Properties.Resources._58928c362c80f405cce3f8ac2981d81f;
             picbxProfile.Location = new Point(138, 23);
             picbxProfile.Name = "picbxProfile";
             picbxProfile.Size = new Size(90, 62);
@@ -477,42 +514,6 @@
             lblStatus.Size = new Size(152, 25);
             lblStatus.TabIndex = 1;
             lblStatus.Text = "Status Report";
-            // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Id.Width = 125;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "OrderDate";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 6;
-            Date.Name = "Date";
-            Date.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Date.Width = 125;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Status.Width = 125;
-            // 
-            // TotalAmount
-            // 
-            TotalAmount.DataPropertyName = "TotalAmount";
-            TotalAmount.HeaderText = "Total Amount";
-            TotalAmount.MinimumWidth = 6;
-            TotalAmount.Name = "TotalAmount";
-            TotalAmount.SortMode = DataGridViewColumnSortMode.Programmatic;
-            TotalAmount.Width = 125;
             // 
             // CustomersDetails
             // 

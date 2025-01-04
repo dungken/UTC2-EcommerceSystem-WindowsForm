@@ -16,9 +16,9 @@ namespace Source.Views.Admin
 {
     public partial class CustomersDetails : Form
     {
-        private readonly UserService _userService;
         private readonly OrderService _ordersService;
         private readonly UserService _usersService;
+        private readonly FeedbackService _feedbackService;
         private List<OrderCustomerDisplayDto> _originalData;
         private GetUserRespone _user;
         private int _pageSize = 5;                    // Số hàng trên mỗi trang
@@ -41,6 +41,7 @@ namespace Source.Views.Admin
             //pnMain.Paint += PanelLine_Paint;
             _ordersService = new OrderService();
             _usersService = new UserService();
+            _feedbackService = new FeedbackService();
         }
         public CustomersDetails(GetUserRespone user, Guid customerId)
         {
@@ -52,6 +53,7 @@ namespace Source.Views.Admin
             //pnMain.Paint += PanelLine_Paint;
             _ordersService = new OrderService();
             _usersService = new UserService();
+            _feedbackService = new FeedbackService();
             _user = user;
             _customerId = customerId;
             LoadCustomerData();
@@ -212,26 +214,26 @@ namespace Source.Views.Admin
             // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
             return 0;
         }
-        //private async Task<int> GetTotalReviewById(Guid? userId)
-        //{
-        //    if (!userId.HasValue)
-        //    {
-        //        // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
-        //        return 0;
-        //    }
+        private async Task<int> GetTotalReviewById(Guid? userId)
+        {
+            if (!userId.HasValue)
+            {
+                // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
+                return 0;
+            }
 
-        //    var reviewResponse = await _usersService.GetF
+            var reviewResponse = await _feedbackService.GetAllFeedbacksForAProductAsync(userId.Value);
 
 
-        //    // Kiểm tra kết quả trả về
-        //    if (orderResponse != null && orderResponse.Data != null)
-        //    {
-        //        var orders = orderResponse.Data;
-        //        return orders.Count(order => order.UserId == userId);
-        //    }
-        //    // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
-        //    return 0;
-        //}
+            // Kiểm tra kết quả trả về
+            if (reviewResponse != null && reviewResponse.Data != null)
+            {
+                var orders = reviewResponse.Data.ToList().Count;
+                return orders;
+            }
+            // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
+            return 0;
+        }
         private async Task LoadOrders(Guid userId)
         {
             try
@@ -272,7 +274,10 @@ namespace Source.Views.Admin
         private async void LoadCustomerData()
         {
             // get image
-            //picbxProfile.LoadAsync(_user.user.ProfilePicture);
+            if (_user.user.ProfilePicture != null)
+            {
+                picbxProfile.Load(_user.user.ProfilePicture);
+            }
             // get id
             lblId.Text =  _customerId.ToString();
             // get name
@@ -300,11 +305,14 @@ namespace Source.Views.Admin
             else
                 lblPhone.Text = "Chưa cập nhật";
             // get order buy
-            //lblOrderBuyV.Text = (await GetTotalOrderById(user.Data.UserId)).ToString();
+            int orderCount = (await GetTotalOrderById(_customerId));
+            lblOrderBuyV.Text = orderCount.ToString();
             // get review
+            int feedBackCount = (await GetTotalReviewById(_customerId));
+            lblReviewProductV.Text = feedBackCount.ToString();
 
             // get order
-            //await LoadOrders(user.Data.UserId);
+            await LoadOrders(_customerId);
         }
     }
 }

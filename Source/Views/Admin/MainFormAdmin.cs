@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Source.Service;
 using ScottPlot;
+using Source.Views.Admin;
+using Source.Views.Custommer;
 namespace Source.Views
 {
     public partial class MainFormAdmin : Form
@@ -17,7 +19,9 @@ namespace Source.Views
         private readonly OrderService _orderService;
         private readonly ProductService _productService;
 
-        //private FormsPlot plt;
+        public static int frmAdminMainFormLocationX, frmAdminMainFormLocationY;
+        public static int pnlChildFormMainLocationX, pnlChildFormMainLocationY;
+        public static int frmWith, frmHeight;
         public MainFormAdmin()
         {
             InitializeComponent();
@@ -40,60 +44,93 @@ namespace Source.Views
             //// Thống kê và hiển thị doanh thu theo tháng
             //var monthlyData = GetRevenueByMonth(_orders);
             //DisplayChart(monthlyData, "Thống Kê Doanh Thu Theo Tháng");
-        
-        }
-
-        public void LoadData()
-        {
-            //lblCustomerV = _userService.GetAllUser().Result.Data.Users.Where(s => s.UserRoles.Name == "User")
-            lblOrderV.Text = _orderService.GetAllOrdersAsync().Result.Data.Count().ToString();
-
-            var responeOrder = _orderService.GetAllOrdersAsync().Result.Data.ToList().Select(s => s.TotalAmount);
-            decimal totalSale = 0;
-            foreach (var order in responeOrder)
-            {
-                totalSale += order;
-            }
-
-            lblTotalSaleV.Text = totalSale.ToString();
-
-            lblAvgSaleV.Text = (totalSale / int.Parse(lblOrderV.Text)).ToString();
-
-            lblTotalProductV.Text = _productService.GetAllProductsAsync().Result.Data.Count().ToString();
-
 
         }
 
-        public void Draw()
+        public async void LoadData()
         {
-        
+            //lblCustomerV.Text = _userService.GetAllUser().Result.Data.Users.
+            //    Select(user => user.UserRoles.
+            //    FirstOrDefault(role => role.Name == "User")).Count().ToString();
+            //lblOrderV.Text = _orderService.GetAllOrdersAsync().Result.Data.Count().ToString();
 
-            //// Tạo ScottPlot control
-            //var plt = new FormsPlot
+            //var responeOrder = _orderService.GetAllOrdersAsync().Result.Data.ToList().
+            //    Select(s => s.TotalAmount);
+            //decimal totalSale = 0;
+            //foreach (var order in responeOrder)
             //{
-            //    Dock = DockStyle.Fill
-            //};
-            //this.Controls.Add(plt);
+            //    totalSale += order;
+            //}
 
-            //// Dữ liệu biểu đồ
-            //double[] xs = { 1, 2, 3, 4, 5 }; // Giá trị trên trục X
-            //double[] ys = { 5, 10, 8, 12, 7 }; // Giá trị trên trục Y
+            //lblTotalSaleV.Text = totalSale.ToString();
 
-            //// Thêm biểu đồ dạng scatter (điểm nối với nhau bằng đường thẳng)
-            //plt.Plot.AddScatter(xs, ys, color: System.Drawing.Color.Blue, label: "Đơn hàng");
+            //lblAvgSaleV.Text = (totalSale / int.Parse(lblOrderV.Text)).ToString();
 
-            //// Thêm tiêu đề và chú thích
-            //plt.Plot.Title("Thống Kê Đơn Hàng");
-            //plt.Plot.XLabel("Ngày");
-            //plt.Plot.YLabel("Số Lượng Đơn Hàng");
-            //plt.Plot.Legend(location: ScottPlot.Alignment.LowerRight);
+            //int product = _productService.GetAllProductsAsync().Result.Data.Count();
+            //lblTotalProductV.Text = product.ToString();
 
-            //// Tùy chỉnh trục
-            //plt.Plot.SetAxisLimits(yMin: 0, yMax: 15);
+            //lblAvgItemSale.Text = (totalSale/product).ToString();
+        }
 
-            //// Làm mới biểu đồ để hiển thị
-            //plt.Refresh();
+        // Tạo Form con 
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            frmAdminMainFormLocationX = Login.frmLoginLocationX;
+            frmAdminMainFormLocationY = Login.frmLoginLocationY;
+            frmHeight = Login.frmHeight;
+            frmWith = Login.frmWith;
+            pnlChildFormMainLocationX = pnlChildForm.Location.X;
+            pnlChildFormMainLocationY = pnlChildForm.Location.Y;
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlChildForm.Controls.Add(childForm);
+            pnlChildForm.Tag = childForm;
 
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProductList());
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CategoryList());
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OrdersList());
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CustomersList());
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            openChildForm(new VouchersList());
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DiscountsList());
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Setting());
         }
     }
 }

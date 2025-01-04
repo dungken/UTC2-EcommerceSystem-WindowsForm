@@ -27,7 +27,7 @@ namespace Source.Views.Admin
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
                                                   // test
-        //private Guid _userId;
+        private Guid _customerId;
 
 
         public CustomersDetails()
@@ -42,7 +42,7 @@ namespace Source.Views.Admin
             _ordersService = new OrderService();
             _usersService = new UserService();
         }
-        public CustomersDetails(GetUserRespone user)
+        public CustomersDetails(GetUserRespone user, Guid customerId)
         {
             InitializeComponent();
             CustomizeDataGridView();
@@ -53,7 +53,7 @@ namespace Source.Views.Admin
             _ordersService = new OrderService();
             _usersService = new UserService();
             _user = user;
-
+            _customerId = customerId;
             LoadCustomerData();
             //test
             //_userId = Guid.Parse("AB8DD9FF-0FA5-4EF2-CCFE-08DD1BF41832");
@@ -274,8 +274,7 @@ namespace Source.Views.Admin
             // get image
             //picbxProfile.LoadAsync(_user.user.ProfilePicture);
             // get id
-            //var user = await _userService.GetUserIdByToken(); 
-            //lblId.Text =  user.Data.UserId.ToString();
+            lblId.Text =  _customerId.ToString();
             // get name
             lblName.Text = _user.user.FirstName + " " + _user.user.LastName;
             // get gender

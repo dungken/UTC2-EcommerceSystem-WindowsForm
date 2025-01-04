@@ -30,9 +30,9 @@ namespace Source.Service
         }
 
         // Get all sizes
-        public async Task<BaseResponse<List<SizeDTO>>> GetAllSizes()
+        public async Task<BaseResponse<List<GetAllSizeRespone>>> GetAllSizes()
         {
-            return await _apiClient.GetAsync<BaseResponse<List<SizeDTO>>>($"Sizes");
+            return await _apiClient.GetAsync<BaseResponse<List<GetAllSizeRespone>>>($"Sizes");
         }
 
         // Update size
@@ -46,5 +46,11 @@ namespace Source.Service
         {
             return await _apiClient.DeleteAsync($"Sizes/{id}");
         }
+        // Delete size by product id
+        public async Task<bool> DeleteSizeByProductIdAsync(Guid productId)
+        {
+            return await _apiClient.DeleteAsync($"Sizes/product/{productId}");
+        }
+
     }
 }

@@ -134,9 +134,10 @@ namespace Source.Views
                             Config.token = response.Data.Token;
                             MessageBox.Show("Login successful! ");
 
-                            // Handle successful login
-                            //openChildForm(new OrdersList());
                             openChildForm(new MainForm());
+
+                            //openChildForm(new MainFormAdmin());
+
                         }
                         else
                         {
@@ -147,10 +148,10 @@ namespace Source.Views
                     {
                         Config.token = response.Data.Token;
                         MessageBox.Show("Login successful! ");
-                        // Handle successful login
                         
                         openChildForm(new MainForm());
-                        //openChildForm(new DiscountsList());
+                        //openChildForm(new MainFormAdmin());
+
                     }
 
                 }

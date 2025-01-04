@@ -64,6 +64,7 @@
             lblName = new Label();
             label1 = new Label();
             pnTitle = new Panel();
+            rbtnDeleteImg = new MyCustomControl.RJButton();
             pnCategory.SuspendLayout();
             pnColor.SuspendLayout();
             pnSize.SuspendLayout();
@@ -175,6 +176,7 @@
             lbxColor.Name = "lbxColor";
             lbxColor.Size = new Size(280, 70);
             lbxColor.TabIndex = 9;
+            lbxColor.DrawItem += lbxColor_DrawItem;
             // 
             // pnCategory
             // 
@@ -362,6 +364,7 @@
             // pnBasicInfor
             // 
             pnBasicInfor.BackColor = Color.White;
+            pnBasicInfor.Controls.Add(rbtnDeleteImg);
             pnBasicInfor.Controls.Add(flowLayoutPanel);
             pnBasicInfor.Controls.Add(btnPickImg);
             pnBasicInfor.Controls.Add(numeric);
@@ -473,6 +476,28 @@
             pnTitle.Size = new Size(951, 91);
             pnTitle.TabIndex = 25;
             // 
+            // rbtnDeleteImg
+            // 
+            rbtnDeleteImg.BackColor = Color.MediumSlateBlue;
+            rbtnDeleteImg.BackgroundColor = Color.MediumSlateBlue;
+            rbtnDeleteImg.BorderColor = Color.PaleVioletRed;
+            rbtnDeleteImg.BorderRadius = 20;
+            rbtnDeleteImg.BorderSize = 0;
+            rbtnDeleteImg.Cursor = Cursors.Hand;
+            rbtnDeleteImg.FlatAppearance.BorderSize = 0;
+            rbtnDeleteImg.FlatStyle = FlatStyle.Flat;
+            rbtnDeleteImg.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnDeleteImg.ForeColor = Color.White;
+            rbtnDeleteImg.Location = new Point(272, 255);
+            rbtnDeleteImg.Margin = new Padding(2, 3, 2, 3);
+            rbtnDeleteImg.Name = "rbtnDeleteImg";
+            rbtnDeleteImg.Size = new Size(128, 37);
+            rbtnDeleteImg.TabIndex = 11;
+            rbtnDeleteImg.Text = "Delete Image";
+            rbtnDeleteImg.TextColor = Color.White;
+            rbtnDeleteImg.UseVisualStyleBackColor = false;
+            rbtnDeleteImg.Click += rbtnDeleteImg_Click;
+            // 
             // ProductEdit
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -489,6 +514,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "ProductEdit";
             Text = "ProductEdit";
+            Load += ProductEdit_Load;
             pnCategory.ResumeLayout(false);
             pnCategory.PerformLayout();
             pnColor.ResumeLayout(false);
@@ -543,5 +569,6 @@
         private Label lblName;
         private Label label1;
         private Panel pnTitle;
+        private MyCustomControl.RJButton rbtnDeleteImg;
     }
 }

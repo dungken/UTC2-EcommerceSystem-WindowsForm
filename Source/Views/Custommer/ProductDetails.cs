@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Source.Dtos.Product;
+using Source.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +15,42 @@ namespace Source.Views.Custommer
 {
     public partial class ProductDetails : Form
     {
-        public ProductDetails()
+
+        private readonly ProductService _productService;
+
+        private readonly ProductDTO _product;
+        public ProductDetails(ProductDTO product)
         {
             InitializeComponent();
+            
+            _productService = new ProductService();
+            _product = product;
+            LoadProductDetails();
         }
-
-        private void lblName_Click(object sender, EventArgs e)
+        private async void LoadProductDetails()
         {
-
+            try
+            {
+                var response = await _productService.GetProductByIdAsync(_product.Id);
+                if (response != null)
+                {
+                    // Assuming the response contains the product details.
+                    lblName.Text = response.Data.Name;
+                    lblPrice.Text = response.Data.Price.ToString("C");
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Không thể tải thông tin sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải thông tin sản phẩm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnDecrease_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
+

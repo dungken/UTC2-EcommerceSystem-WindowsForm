@@ -35,14 +35,14 @@ namespace Source.Views.Custommer
         }
         private async void rjToggleButton5_CheckedChanged(object sender, EventArgs e)
         {
-           
-            
+
+
 
         }
 
 
 
-      
+
         private async void rjToggleButton5_Click(object sender, EventArgs e)
         {
             rjToggleButton5.Enabled = false; // Disable the toggle button to prevent multiple clicks
@@ -91,7 +91,7 @@ namespace Source.Views.Custommer
                     {
                         MessageBox.Show("2FA failed: " + response.Message);
                     }
-                
+
                 }
                 else
                 {
@@ -116,5 +116,10 @@ namespace Source.Views.Custommer
             await _accountService.Disable2FA();
         }
 
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            ChangePassword form = new ChangePassword();
+            form.Show();
+        }
     }
 }

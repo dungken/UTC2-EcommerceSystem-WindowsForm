@@ -55,7 +55,7 @@
             pnPrice = new Panel();
             lblDiscount = new Label();
             lblOldPrice = new Label();
-            lblTotalPrice = new Label();
+            lblPrice = new Label();
             pnDetail = new Panel();
             lblDaBan = new Label();
             lblSold = new Label();
@@ -367,7 +367,7 @@
             pnPrice.BackColor = Color.FromArgb(250, 250, 250);
             pnPrice.Controls.Add(lblDiscount);
             pnPrice.Controls.Add(lblOldPrice);
-            pnPrice.Controls.Add(lblTotalPrice);
+            pnPrice.Controls.Add(lblPrice);
             pnPrice.Location = new Point(8, 138);
             pnPrice.Name = "pnPrice";
             pnPrice.Size = new Size(548, 53);
@@ -399,17 +399,17 @@
             lblOldPrice.TabIndex = 21;
             lblOldPrice.Text = "289.00";
             // 
-            // lblTotalPrice
+            // lblPrice
             // 
-            lblTotalPrice.AutoSize = true;
-            lblTotalPrice.Cursor = Cursors.IBeam;
-            lblTotalPrice.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalPrice.ForeColor = Color.OrangeRed;
-            lblTotalPrice.Location = new Point(26, 9);
-            lblTotalPrice.Name = "lblTotalPrice";
-            lblTotalPrice.Size = new Size(91, 32);
-            lblTotalPrice.TabIndex = 20;
-            lblTotalPrice.Text = "167.00";
+            lblPrice.AutoSize = true;
+            lblPrice.Cursor = Cursors.IBeam;
+            lblPrice.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrice.ForeColor = Color.OrangeRed;
+            lblPrice.Location = new Point(26, 9);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(91, 32);
+            lblPrice.TabIndex = 20;
+            lblPrice.Text = "167.00";
             // 
             // pnDetail
             // 
@@ -585,7 +585,6 @@
             lblName.TabIndex = 0;
             lblName.Text = "Áo Thun Baby Tee Choice AH39 In Chữ POSITIVE MENTAL 100% Cotton Mẫu Mới";
             lblName.TextAlign = ContentAlignment.MiddleLeft;
-            lblName.Click += lblName_Click;
             // 
             // ProductDetails
             // 
@@ -654,7 +653,7 @@
         private Panel panel2;
         private Panel pnPrice;
         private Label lblDaBan;
-        private Label lblTotalPrice;
+        private Label lblPrice;
         private Label lblDiscount;
         private Label lblOldPrice;
         private Panel pnChoose;

@@ -17,7 +17,11 @@ using Image = System.Drawing.Image;
 using Guna.UI2.WinForms.Suite;
 using Source.Dtos.Category;
 using api.Dtos.Product;
+
+using ProductDTO = Source.Dtos.Product.ProductDTO;
+
 using static System.Windows.Forms.DataFormats;
+
 
 namespace Source.Views.Admin
 {

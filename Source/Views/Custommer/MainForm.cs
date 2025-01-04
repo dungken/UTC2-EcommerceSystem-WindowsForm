@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Source.Models;
 using Source.MyCustomControl;
 using Source.Service;
 using Source.Views;
@@ -20,12 +21,13 @@ namespace Source.Views
         public static int pnlChildFormLocationX, pnlChildFormLocationY;
         public static int frmWith, frmHeight;
 
-
+        private readonly UserService _userService;
         public MainForm()
         {
             InitializeComponent();
 
             customuzeDesing();
+            _userService = new UserService();
 
         }
         private void customuzeDesing()
@@ -109,7 +111,7 @@ namespace Source.Views
         {
             lblNavigationImage.Image = btnCart.Image;
             lblNavigation.Text = "My Cart";
-            openChildForm(new Cart());
+            openChildForm(new Custommer.Cart());
             hideSubMenu();
         }
 
@@ -139,7 +141,7 @@ namespace Source.Views
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void lblAvarata_Click(object sender, EventArgs e)
@@ -217,6 +219,10 @@ namespace Source.Views
             pnlChildFormLocationY = pnlChildForm.Location.Y;
         }
 
-        
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+            var username = await _userService.GetUserByToken();
+        }
+
     }
 }

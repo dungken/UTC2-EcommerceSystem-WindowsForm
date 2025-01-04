@@ -216,6 +216,16 @@ namespace Source.Views.Admin
                 if (confirmResult == DialogResult.Yes)
                 {
                     // Gọi hàm xóa từ service
+                    var productList = await _discountsService.GetProductsInDiscount(discountId);
+                    if (productList != null)
+                    {
+
+                        foreach (var product in productList)
+                        {
+                            var productId = product.Id;
+                            var responeProduct = await _discountsService.RemoveProductFromDiscount(discountId, productId);
+                        }
+                    }
                     var isDeleted = await _discountsService.DeleteDiscount(discountId);
 
                     if (isDeleted)

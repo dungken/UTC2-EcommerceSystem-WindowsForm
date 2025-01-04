@@ -32,6 +32,9 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            txtConfirm = new TextBox();
+            panel3 = new Panel();
+            label4 = new Label();
             lblExit = new Label();
             btnConfirm = new Button();
             txtNewPassword = new TextBox();
@@ -81,6 +84,9 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(txtConfirm);
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(lblExit);
             panel2.Controls.Add(btnConfirm);
             panel2.Controls.Add(txtNewPassword);
@@ -97,6 +103,36 @@
             panel2.Size = new Size(584, 479);
             panel2.TabIndex = 5;
             // 
+            // txtConfirm
+            // 
+            txtConfirm.Anchor = AnchorStyles.Top;
+            txtConfirm.BorderStyle = BorderStyle.None;
+            txtConfirm.Location = new Point(161, 151);
+            txtConfirm.Name = "txtConfirm";
+            txtConfirm.PlaceholderText = "Confirm New Password";
+            txtConfirm.Size = new Size(230, 20);
+            txtConfirm.TabIndex = 51;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top;
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(118, 177);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(297, 1);
+            panel3.TabIndex = 50;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.BackColor = Color.White;
+            label4.Image = Properties.Resources.icon_lock;
+            label4.Location = new Point(125, 132);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 39);
+            label4.TabIndex = 49;
+            label4.Text = " ";
+            // 
             // lblExit
             // 
             lblExit.Cursor = Cursors.Hand;
@@ -111,7 +147,7 @@
             btnConfirm.Anchor = AnchorStyles.Top;
             btnConfirm.BackColor = Color.FromArgb(114, 88, 219);
             btnConfirm.ForeColor = Color.White;
-            btnConfirm.Location = new Point(121, 234);
+            btnConfirm.Location = new Point(118, 184);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(297, 44);
             btnConfirm.TabIndex = 47;
@@ -123,7 +159,7 @@
             // 
             txtNewPassword.Anchor = AnchorStyles.Top;
             txtNewPassword.BorderStyle = BorderStyle.None;
-            txtNewPassword.Location = new Point(161, 208);
+            txtNewPassword.Location = new Point(161, 94);
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.PlaceholderText = "New Password";
             txtNewPassword.Size = new Size(230, 20);
@@ -133,7 +169,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackColor = Color.Black;
-            panel4.Location = new Point(118, 234);
+            panel4.Location = new Point(118, 120);
             panel4.Name = "panel4";
             panel4.Size = new Size(297, 1);
             panel4.TabIndex = 45;
@@ -143,9 +179,9 @@
             label3.Anchor = AnchorStyles.Top;
             label3.BackColor = Color.White;
             label3.Image = Properties.Resources.icon_lock;
-            label3.Location = new Point(125, 186);
+            label3.Location = new Point(125, 76);
             label3.Name = "label3";
-            label3.Size = new Size(30, 49);
+            label3.Size = new Size(30, 41);
             label3.TabIndex = 44;
             label3.Text = " ";
             // 
@@ -168,7 +204,7 @@
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Location = new Point(161, 80);
             txtEmail.Name = "txtEmail";
-            txtEmail.PlaceholderText = "Email";
+            txtEmail.PlaceholderText = "Username";
             txtEmail.Size = new Size(230, 20);
             txtEmail.TabIndex = 36;
             // 
@@ -225,5 +261,8 @@
         private Label label3;
         private Button btnConfirm;
         private Label lblExit;
+        private TextBox txtConfirm;
+        private Panel panel3;
+        private Label label4;
     }
 }

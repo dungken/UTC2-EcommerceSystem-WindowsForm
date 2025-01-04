@@ -73,7 +73,7 @@
             pnlMain = new Panel();
             btnBuyNow = new Button();
             btnAddTheCart = new Button();
-            button1 = new Button();
+            btnProductDetail = new Button();
             panel20 = new Panel();
             lblCategoryMain = new Label();
             panel7 = new Panel();
@@ -85,9 +85,12 @@
             lblPriceMain = new Label();
             lblNameMain = new Label();
             pictureBoxMain = new PictureBox();
-            tbxSearch = new TextBox();
+            txtSearch = new TextBox();
             panel1 = new Panel();
-            pictureBox7 = new PictureBox();
+            lblPaginationInfo = new Label();
+            btnNext = new FontAwesome.Sharp.IconButton();
+            btnPrevious = new FontAwesome.Sharp.IconButton();
+            btnSearch = new PictureBox();
             pnlProduct1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlProduct2.SuspendLayout();
@@ -110,7 +113,7 @@
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMain).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnSearch).BeginInit();
             SuspendLayout();
             // 
             // pnlProduct1
@@ -126,7 +129,7 @@
             pnlProduct1.Name = "pnlProduct1";
             pnlProduct1.Size = new Size(169, 181);
             pnlProduct1.TabIndex = 24;
-            pnlProduct1.Click += pnlProduct1_Click;
+            pnlProduct1.Click += Panel_Click;
             // 
             // lblPriceProduct1
             // 
@@ -205,7 +208,7 @@
             pnlProduct2.Name = "pnlProduct2";
             pnlProduct2.Size = new Size(169, 181);
             pnlProduct2.TabIndex = 25;
-            pnlProduct2.Click += pnlProduct2_Click;
+            pnlProduct2.Click += Panel_Click;
             // 
             // lblPriceProduct2
             // 
@@ -282,7 +285,7 @@
             pnlProduct3.Name = "pnlProduct3";
             pnlProduct3.Size = new Size(169, 181);
             pnlProduct3.TabIndex = 26;
-            pnlProduct3.Click += pnlProduct3_Click;
+            pnlProduct3.Click += Panel_Click;
             // 
             // panel8
             // 
@@ -361,7 +364,7 @@
             pnlProduct4.Name = "pnlProduct4";
             pnlProduct4.Size = new Size(169, 184);
             pnlProduct4.TabIndex = 27;
-            pnlProduct4.Click += pnlProduct4_Click;
+            pnlProduct4.Click += Panel_Click;
             // 
             // panel18
             // 
@@ -440,7 +443,7 @@
             pnlProduct5.Name = "pnlProduct5";
             pnlProduct5.Size = new Size(169, 184);
             pnlProduct5.TabIndex = 28;
-            pnlProduct5.Click += pnlProduct5_Click;
+            pnlProduct5.Click += Panel_Click;
             // 
             // panel15
             // 
@@ -519,7 +522,7 @@
             pnlProduct6.Name = "pnlProduct6";
             pnlProduct6.Size = new Size(169, 184);
             pnlProduct6.TabIndex = 29;
-            pnlProduct6.Click += pnlProduct6_Click;
+            pnlProduct6.Click += Panel_Click;
             // 
             // panel11
             // 
@@ -593,7 +596,7 @@
             pnlMain.BorderStyle = BorderStyle.FixedSingle;
             pnlMain.Controls.Add(btnBuyNow);
             pnlMain.Controls.Add(btnAddTheCart);
-            pnlMain.Controls.Add(button1);
+            pnlMain.Controls.Add(btnProductDetail);
             pnlMain.Controls.Add(panel20);
             pnlMain.Controls.Add(lblPriceMain);
             pnlMain.Controls.Add(lblNameMain);
@@ -629,18 +632,19 @@
             btnAddTheCart.Text = "Add The Cart";
             btnAddTheCart.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnProductDetail
             // 
-            button1.BackColor = Color.FromArgb(239, 189, 117);
-            button1.Dock = DockStyle.Top;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            button1.ForeColor = Color.FromArgb(80, 40, 60);
-            button1.Location = new Point(0, 308);
-            button1.Name = "button1";
-            button1.Size = new Size(283, 55);
-            button1.TabIndex = 8;
-            button1.Text = "View Detail";
-            button1.UseVisualStyleBackColor = false;
+            btnProductDetail.BackColor = Color.FromArgb(239, 189, 117);
+            btnProductDetail.Dock = DockStyle.Top;
+            btnProductDetail.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnProductDetail.ForeColor = Color.FromArgb(80, 40, 60);
+            btnProductDetail.Location = new Point(0, 308);
+            btnProductDetail.Name = "btnProductDetail";
+            btnProductDetail.Size = new Size(283, 55);
+            btnProductDetail.TabIndex = 8;
+            btnProductDetail.Text = "View Detail";
+            btnProductDetail.UseVisualStyleBackColor = false;
+            btnProductDetail.Click += btnProductDetail_Click;
             // 
             // panel20
             // 
@@ -764,20 +768,24 @@
             pictureBoxMain.TabIndex = 1;
             pictureBoxMain.TabStop = false;
             // 
-            // tbxSearch
+            // txtSearch
             // 
-            tbxSearch.BackColor = SystemColors.ButtonFace;
-            tbxSearch.BorderStyle = BorderStyle.None;
-            tbxSearch.Location = new Point(768, 22);
-            tbxSearch.Name = "tbxSearch";
-            tbxSearch.PlaceholderText = "Search Product";
-            tbxSearch.Size = new Size(214, 20);
-            tbxSearch.TabIndex = 31;
+            txtSearch.BackColor = SystemColors.ButtonFace;
+            txtSearch.BorderStyle = BorderStyle.None;
+            txtSearch.Location = new Point(768, 22);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search Product";
+            txtSearch.Size = new Size(214, 20);
+            txtSearch.TabIndex = 31;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // panel1
             // 
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(tbxSearch);
+            panel1.Controls.Add(lblPaginationInfo);
+            panel1.Controls.Add(btnNext);
+            panel1.Controls.Add(btnPrevious);
+            panel1.Controls.Add(btnSearch);
+            panel1.Controls.Add(txtSearch);
             panel1.Controls.Add(pnlMain);
             panel1.Controls.Add(pnlProduct6);
             panel1.Controls.Add(pnlProduct5);
@@ -791,15 +799,48 @@
             panel1.Size = new Size(1047, 509);
             panel1.TabIndex = 0;
             // 
-            // pictureBox7
+            // lblPaginationInfo
             // 
-            pictureBox7.Image = Properties.Resources._4552616_glass_loupe_magnifier_magnifying_magnifying_glass_icon;
-            pictureBox7.Location = new Point(722, 22);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(40, 42);
-            pictureBox7.TabIndex = 32;
-            pictureBox7.TabStop = false;
-            pictureBox7.Click += pictureBox7_Click;
+            lblPaginationInfo.AutoSize = true;
+            lblPaginationInfo.Location = new Point(490, 19);
+            lblPaginationInfo.Name = "lblPaginationInfo";
+            lblPaginationInfo.Size = new Size(41, 20);
+            lblPaginationInfo.TabIndex = 35;
+            lblPaginationInfo.Text = "Page";
+            // 
+            // btnNext
+            // 
+            btnNext.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnNext.IconColor = Color.Black;
+            btnNext.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNext.Location = new Point(405, 14);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(48, 28);
+            btnNext.TabIndex = 34;
+            btnNext.Text = "next";
+            btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnPrevious
+            // 
+            btnPrevious.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnPrevious.IconColor = Color.Black;
+            btnPrevious.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPrevious.Location = new Point(349, 14);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(48, 28);
+            btnPrevious.TabIndex = 33;
+            btnPrevious.Text = "prev";
+            btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Image = Properties.Resources._4552616_glass_loupe_magnifier_magnifying_magnifying_glass_icon;
+            btnSearch.Location = new Point(722, 22);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(40, 42);
+            btnSearch.TabIndex = 32;
+            btnSearch.TabStop = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // ProductsCustomer
             // 
@@ -846,7 +887,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxMain).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnSearch).EndInit();
             ResumeLayout(false);
         }
 
@@ -902,7 +943,7 @@
         private Label lblCategoryMain;
         private Label lblNameMain;
         private PictureBox pictureBoxMain;
-        private TextBox tbxSearch;
+        private TextBox txtSearch;
         private Panel panel1;
         private Panel panel7;
         private Label label1;
@@ -910,7 +951,10 @@
         private Label lblQuantity;
         private Button btnDecrease;
         private Button btnIncrease;
-        private PictureBox pictureBox7;
-        private Button button1;
+        private PictureBox btnSearch;
+        private Button btnProductDetail;
+        private FontAwesome.Sharp.IconButton btnNext;
+        private FontAwesome.Sharp.IconButton btnPrevious;
+        private Label lblPaginationInfo;
     }
 }

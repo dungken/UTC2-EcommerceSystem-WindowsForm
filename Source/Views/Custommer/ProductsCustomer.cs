@@ -1,10 +1,13 @@
-﻿using Source.Service;
+﻿using Source.Dtos.Product;
+using Source.Service;
 using System;
 using System.Collections.Generic;
+using System.IO.Packaging;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+
 using Control = System.Windows.Forms.Control;
 using Image = System.Windows.Controls.Image;
 using Label = System.Windows.Forms.Label;
@@ -16,85 +19,128 @@ namespace Source.Views.Custommer
     {
         private readonly ProductService _productService;
         private readonly CategoriesService _categoryService;
+        private readonly ImageService _imageService;
+
+        private int _pageSize = 6; // Số sản phẩm trên mỗi trang
+        private int _currentPage = 1; // Trang hiện tại
+        private int _totalPages = 1; // Tổng số trang
+
         private List<Source.Dtos.Product.ProductDTO> _products; // Danh sách sản phẩm DTO
+        private string _selectedProductId;
+        private List<Source.Dtos.Product.ProductDTO> _originalProducts;
 
         public ProductsCustomer()
         {
             InitializeComponent();
             btnDecrease.Enabled = false;
+
+            // Khởi tạo dịch vụ
             _productService = new ProductService();
             _categoryService = new CategoriesService();
+            _imageService = new ImageService();
+
+            pnlProduct1.Click += Panel_Click;
+            pnlProduct2.Click += Panel_Click;
+            pnlProduct3.Click += Panel_Click;
+            pnlProduct4.Click += Panel_Click;
+            pnlProduct5.Click += Panel_Click;
+            pnlProduct6.Click += Panel_Click;
         }
 
-        private void changeInforMain(Panel panela)
+        // Gán sự kiện click cho tất cả các panel
+        // Field to keep track of the previously clicked panel
+        private Panel _previousClickedPanel;
+
+        private void Panel_Click(object sender, EventArgs e)
         {
-            // Lấy các Label cần thiết
-            var nameLabel = panela.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Name"));
-            var priceLabel = panela.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Price"));
-            var categoryLabel = panela.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Cate"));
-
-            // Lấy PictureBox (nếu có)
-            var pictureBox = panela.Controls.OfType<PictureBox>().FirstOrDefault();
-
-            // Gán thông tin từ các Label
-            if (nameLabel != null)
+            if (sender is Panel clickedPanel)
             {
-                lblNameMain.Text = nameLabel.Text;
+                // Lấy sản phẩm từ Tag của Panel
+                var product = clickedPanel.Tag as ProductDTO;
+                if (product != null)
+                {
+                    _selectedProductId = product.Id.ToString();
+                    ChangeInforMain(clickedPanel);
+                }
+
+                // Reset Panel trước đó (nếu cần)
+                if (_previousClickedPanel != null && _previousClickedPanel != clickedPanel)
+                {
+                    ResetPanel(_previousClickedPanel);
+                }
+
+                // Highlight Panel hiện tại
+                HighlightPanel(clickedPanel);
+
+                // Cập nhật tham chiếu Panel hiện tại
+                _previousClickedPanel = clickedPanel;
+            }
+        }
+
+
+        // Method to reset a panel's appearance or text
+        private void ResetPanel(Panel panel)
+        {
+            // Reset the appearance of the panel (e.g., color, text)
+            panel.BackColor = Color.FromArgb(255, 235, 224, 234); // Alpha 255 = fully opaque
+            panel.Text = ""; // Optional: Reset any text on the panel
+        }
+
+
+
+        private void ChangeInforMain(Panel selectedPanel)
+        {
+            // Lấy các Label cần thiết từ panel
+            var nameLabel = selectedPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Name"));
+            var priceLabel = selectedPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Price"));
+            var categoryLabel = selectedPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Cate"));
+            var pictureBox = selectedPanel.Controls.OfType<PictureBox>().FirstOrDefault();
+
+            // Gán thông tin từ panel vào các thành phần chính
+            lblNameMain.Text = nameLabel?.Text ?? "Tên sản phẩm";
+            lblPriceMain.Text = priceLabel?.Text ?? "Giá";
+            lblCategoryMain.Text = categoryLabel?.Text ?? "Danh mục";
+            pictureBoxMain.Image = pictureBox?.Image;
+            pictureBoxMain.Visible = pictureBox?.Image != null;
+
+
+        }
+
+        // Sự kiện khi click vào panel sản phẩm
+
+
+        private void HighlightPanel(Panel selectedPanel)
+        {
+            foreach (var panel in Controls.OfType<Panel>().Where(p => p.Name.StartsWith("pnlProduct")))
+            {
+                panel.BackColor = Color.White; // Màu mặc định
             }
 
-            if (priceLabel != null)
-            {
-                lblPriceMain.Text = priceLabel.Text;
-            }
+            selectedPanel.BackColor = Color.LightBlue; // Màu nổi bật
+        }
 
-            if (categoryLabel != null)
+        // Hiển thị chi tiết sản phẩm khi nhấn nút
+        private void btnProductDetail_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_selectedProductId))
             {
-                lblCategoryMain.Text = categoryLabel.Text;
+                MessageBox.Show("Vui lòng chọn một sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            MessageBox.Show($"ID: {_selectedProductId}");
+            var product = _products.FirstOrDefault(p => p.Id.ToString() == _selectedProductId);
 
-            // Gán hình ảnh nếu có
-            if (pictureBox != null && pictureBox.Image != null)
+            if (product != null)
             {
-                pictureBoxMain.Image = pictureBox.Image;
-                pictureBoxMain.Visible = true;
+                var detailForm = new ProductDetails(product); // Form chi tiết sản phẩm
+                detailForm.Show();
             }
             else
             {
-                pictureBoxMain.Image = null;
-                pictureBoxMain.Visible = false;
+                MessageBox.Show("Không tìm thấy thông tin sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-        private void pnlProduct1_Click(object sender, EventArgs e)
-        {
-            changeInforMain(pnlProduct1);
-        }
-
-        private void pnlProduct2_Click(object sender, EventArgs e)
-        {
-            changeInforMain(pnlProduct2);
-        }
-
-        private void pnlProduct3_Click(object sender, EventArgs e)
-        {
-            changeInforMain(pnlProduct3);
-        }
-
-        private void pnlProduct4_Click(object sender, EventArgs e)
-        {
-            changeInforMain(pnlProduct4);
-        }
-
-        private void pnlProduct5_Click(object sender, EventArgs e)
-        {
-            changeInforMain(pnlProduct5);
-        }
-
-        private void pnlProduct6_Click(object sender, EventArgs e)
-        {
-            changeInforMain(pnlProduct6);
-        }
 
         private void btnDecrease_Click(object sender, EventArgs e)
         {
@@ -121,8 +167,9 @@ namespace Source.Views.Custommer
                 var response = await _productService.GetAllProductsAsync();
                 if (response.Success)
                 {
-                    _products = response.Data.ToList(); // Lấy tất cả sản phẩm từ API
-                    DisplayAllProducts(); // Hiển thị tất cả sản phẩm
+                    _products = response.Data.ToList(); // Lấy danh sách sản phẩm
+                    _originalProducts = new List<ProductDTO>(_products); // Sao chép danh sách gốc
+                    UpdatePagination(); // Tính toán và hiển thị phân trang
                 }
                 else
                 {
@@ -135,61 +182,130 @@ namespace Source.Views.Custommer
             }
         }
 
-        private async void DisplayAllProducts()
+        private void UpdatePagination()
+        {
+            if (_products != null && _products.Any())
+            {
+                _totalPages = (int)Math.Ceiling((double)_products.Count / _pageSize);
+                DisplayProductsForCurrentPage();
+            }
+        }
+
+        private async void DisplayProductsForCurrentPage()
         {
             ClearProductPanels();
 
-            if (_products == null || !_products.Any())
-            {
-                MessageBox.Show("Không có sản phẩm nào để hiển thị.");
-                return;
-            }
+            var productsToDisplay = _products
+                .Skip((_currentPage - 1) * _pageSize)
+                .Take(_pageSize)
+                .ToList();
 
-            for (int i = 0; i < _products.Count; i++)
+            for (int i = 0; i < productsToDisplay.Count; i++)
             {
-                var product = _products[i];
+                var product = productsToDisplay[i];
                 var panel = GetProductPanel(i + 1);
 
-                if (panel == null)
-                {
-                    MessageBox.Show($"Panel {i + 1} không tồn tại.");
-                    continue;
-                }
+                if (panel == null) continue;
 
-                var nameLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == $"lblNameProduct{i + 1}");
-                var priceLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == $"lblPriceProduct{i + 1}");
-                var categoryLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == $"lblCateProduct{i + 1}");
+                // Gán sản phẩm vào Tag của panel
+                panel.Tag = product;
 
-                // Hiển thị tên sản phẩm
-                if (nameLabel != null)
-                    nameLabel.Text = product.Name;
+                // Gán thông tin vào các Label và PictureBox
+                var nameLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Name"));
+                var priceLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Price"));
+                var categoryLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Cate"));
+                var imagePicture = panel.Controls.OfType<PictureBox>().FirstOrDefault();
 
-                // Hiển thị giá sản phẩm
-                if (priceLabel != null)
-                    priceLabel.Text = product.Price.ToString("N0");
-
-                // Hiển thị danh mục sản phẩm
-                if (categoryLabel != null)
-                {
-                    try
-                    {
-
-                        var category = await _categoryService.GetCategoryByIdAsync(product.CategoryId);
-                        categoryLabel.Text = category?.Data?.Name ?? "Unknown Category";
-                    }
-                    catch (Exception ex)
-                    {
-                        categoryLabel.Text = "Error fetching";
-                        Console.WriteLine($"Error: {ex.Message}");
-                    }
-                }
+                nameLabel.Text = product.Name;
+                priceLabel.Text = product.Price.ToString("N0");
+                await SetCategoryTextAsync(categoryLabel, product.CategoryId);
+                await SetImageAsync(imagePicture, product.Id);
 
                 panel.Visible = true;
+            }
+
+            UpdatePaginationButtons();
+        }
+
+
+        private async Task SetCategoryTextAsync(Label categoryLabel, Guid categoryId)
+        {
+            if (categoryLabel == null) return;
+
+            try
+            {
+                var category = await _categoryService.GetCategoryByIdAsync(categoryId);
+                categoryLabel.Text = category?.Data?.Name ?? "Unknown Category";
+            }
+            catch (Exception ex)
+            {
+                categoryLabel.Text = "Error fetching";
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+
+        private async Task SetImageAsync(PictureBox imagePicture, Guid productId)
+        {
+            if (imagePicture == null) return;
+
+            try
+            {
+                // Gọi API để lấy ảnh
+                var response = await _imageService.GetImagesByProductId(productId);
+
+                if (response?.Success == true && response.Data != null)
+                {
+                    var firstImagePath = response.Data.Url;
+
+                    if (!string.IsNullOrEmpty(firstImagePath))
+                    {
+                        imagePicture.LoadAsync(firstImagePath);
+                        imagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Đường dẫn ảnh không hợp lệ.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Không thể tải ảnh. Thông báo: {response?.Message ?? "Không có dữ liệu"}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: Không thể tải hình ảnh {ex.Message}");
             }
         }
 
 
+        private void UpdatePaginationButtons()
+        {
+            // Bật/tắt nút Previous và Next
+            btnPrevious.Enabled = _currentPage > 1;
+            btnNext.Enabled = _currentPage < _totalPages;
 
+            // Hiển thị thông tin trang
+            lblPaginationInfo.Text = $"Page {_currentPage} of {_totalPages}";
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (_currentPage > 1)
+            {
+                _currentPage--;
+                DisplayProductsForCurrentPage();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_currentPage < _totalPages)
+            {
+                _currentPage++;
+                DisplayProductsForCurrentPage();
+            }
+        }
 
 
         private void ClearProductPanels()
@@ -224,11 +340,51 @@ namespace Source.Views.Custommer
             }
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            var search = tbxSearch.Text;
+            SearchProducts();
         }
 
+        private void SearchProducts()
+        {
+            var search = txtSearch.Text.Trim().ToLower(); // Lấy nội dung tìm kiếm và chuyển về chữ thường
+            _products = new List<ProductDTO>(_originalProducts);
+            if (string.IsNullOrEmpty(search))
+            {
+                // Nếu không có từ khóa tìm kiếm, hiển thị toàn bộ sản phẩm
+                DisplayProductsForCurrentPage();
+                return;
+            }
 
+            // Lọc danh sách sản phẩm dựa trên từ khóa tìm kiếm
+            var filteredProducts = _products
+                .Where(p =>
+                    (p.Name?.ToLower().Contains(search) ?? false) ||   // Tìm theo tên sản phẩm
+                    (p.Description?.ToLower().Contains(search) ?? false)) // Tìm theo mô tả (nếu có)
+                .ToList();
+
+            if (filteredProducts.Any())
+            {
+                // Cập nhật danh sách sản phẩm được hiển thị
+                _products = filteredProducts;
+                _currentPage = 1; // Đặt lại trang hiện tại về trang đầu
+                UpdatePagination();
+            }
+            else
+            {
+                // Thông báo nếu không tìm thấy sản phẩm nào
+                MessageBox.Show(
+                    "Không tìm thấy sản phẩm phù hợp với từ khóa tìm kiếm.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SearchProducts();
+        }
     }
 }

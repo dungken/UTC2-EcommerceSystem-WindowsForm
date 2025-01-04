@@ -1,6 +1,9 @@
 ﻿using Google.Apis.Auth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Util;
+using Google.Apis.Util.Store;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Source.Dtos.Account;
 using Source.Models;
 using Source.Service;
@@ -14,6 +17,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +33,8 @@ namespace Source.Views
 
         public static int parentX, parentY;
         private readonly UserService _userService = new UserService();
-        private static readonly HttpClient client = new HttpClient();
+
+        private string accessToken;
         public Login()
         {
             InitializeComponent();
@@ -148,7 +153,7 @@ namespace Source.Views
                         Config.token = response.Data.Token;
                         MessageBox.Show("Login successful! ");
                         // Handle successful login
-                        
+
                         openChildForm(new MainForm());
                         //openChildForm(new DiscountsList());
                     }
@@ -162,70 +167,68 @@ namespace Source.Views
             }
 
         }
-
+        private void lblForget_Click(object sender, EventArgs e)
+        {
+            ForgetPassword forgetPassword = new ForgetPassword();
+            forgetPassword.Show();
+        }
         private async void btnLoginWGoogle_Click(object sender, EventArgs e)
         {
             try
             {
-                // Thông tin Client ID và Client Secret
-                string clientId = "929983322362-n15r2kq4njvpdd32p8nb3hmotlduoq14.apps.googleusercontent.com";
-                string clientSecret = "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";
-                string redirectUri = "http://localhost:8081/";
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "credentials.json");
+
+                // Đọc tệp credentials.json
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show("Tệp credentials.json không tồn tại.");
+                    return;
+                }
+
+                string credentialsJson = await File.ReadAllTextAsync(filePath);
+                var jsonObject = JObject.Parse(credentialsJson);
+
+                // Lấy thông tin từ JSON
+                string clientId = jsonObject["web"]?["client_id"]?.ToString();
+                string clientSecret = jsonObject["web"]?["client_secret"]?.ToString();
+                var redirectUris = jsonObject["web"]?["redirect_uris"] as JArray;
+                string redirectUri = redirectUris?.FirstOrDefault()?.ToString();
+
+                if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) || string.IsNullOrEmpty(redirectUri))
+                {
+                    MessageBox.Show("Thông tin trong credentials.json không hợp lệ.");
+                    return;
+                }
 
                 // Lấy mã xác thực từ Google
                 string authCode = await GetAuthCodeAsync(clientId, redirectUri);
-
-                // Trao đổi mã xác thực để lấy Access Token và ID Token
-                var tokenResponse = await ExchangeAuthCodeForTokens(authCode, clientId, clientSecret, redirectUri);
-
-                // Đọc ID Token từ phản hồi
-                string idToken = tokenResponse.id_token;
-                if (string.IsNullOrWhiteSpace(idToken))
+                if (string.IsNullOrEmpty(authCode))
                 {
-                    throw new Exception("Không lấy được ID Token từ phản hồi của Google.");
+                    MessageBox.Show("Không nhận được mã xác thực từ Google.");
+                    return;
                 }
 
-                // Giải mã ID Token để lấy thông tin người dùng
-                var userInfo = DecodeJwt(idToken);
-
-                // Hiển thị thông tin người dùng
-                MessageBox.Show($"Đăng nhập thành công!\nTên: {userInfo["name"]}\nEmail: {userInfo["email"]}");
-
-                // Chuyển đến MainForm
-                this.Hide();
-                new MainForm().Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi đăng nhập với Google: {ex.Message}");
-            }
-        }
-
-        private async Task<dynamic> ExchangeAuthCodeForTokens(string authCode, string clientId, string clientSecret, string redirectUri)
-        {
-            var queryParams = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("code", authCode),
-                new KeyValuePair<string, string>("client_id", clientId),
-                new KeyValuePair<string, string>("client_secret", clientSecret),
-                new KeyValuePair<string, string>("redirect_uri", redirectUri),
-                new KeyValuePair<string, string>("grant_type", "authorization_code")
-            };
-
-            using (HttpClient client = new HttpClient())
-            {
-                var content = new FormUrlEncodedContent(queryParams);
-                var response = await client.PostAsync("https://oauth2.googleapis.com/token", content);
-
-                if (response.IsSuccessStatusCode)
+                // Đổi mã xác thực lấy access_token
+                TokenResponse tokens = await ExchangeAuthCodeForTokens(authCode, clientId, clientSecret, redirectUri);
+                if (!string.IsNullOrEmpty(tokens?.AccessToken))
                 {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<dynamic>(responseContent);
+                    // Gọi API Google để lấy thông tin người dùng
+                    await GetUserInfo(tokens.AccessToken);
+                    SocialLoginDto socialLogin = new SocialLoginDto()
+                    {
+                        AccessToken = tokens.AccessToken,
+                        Provider = "Google"
+                    };
+                    var resp = await _AccountService.SocialLogin(socialLogin);
                 }
                 else
                 {
-                    throw new Exception($"Lỗi khi trao đổi mã xác thực: {response.StatusCode}");
+                    MessageBox.Show("Không thể lấy AccessToken.");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
 
@@ -236,8 +239,11 @@ namespace Source.Views
                 httpListener.Prefixes.Add(redirectUri);
                 httpListener.Start();
 
-                string authUrl = $"https://accounts.google.com/o/oauth2/v2/auth?client_id={clientId}&response_type=code&scope=openid%20email%20profile&redirect_uri={Uri.EscapeDataString(redirectUri)}&access_type=offline";
+                string authUrl = $"https://accounts.google.com/o/oauth2/v2/auth?" +
+                                 $"client_id={clientId}&response_type=code&scope=openid%20email%20profile&" +
+                                 $"redirect_uri={Uri.EscapeDataString(redirectUri)}&access_type=offline";
 
+                // Mở trình duyệt để người dùng đăng nhập
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
                     FileName = authUrl,
@@ -251,6 +257,7 @@ namespace Source.Views
                     throw new Exception("Không nhận được mã xác thực từ Google.");
                 }
 
+                // Hiển thị thông báo đăng nhập thành công trong trình duyệt
                 using (var writer = new StreamWriter(context.Response.OutputStream))
                 {
                     writer.WriteLine("<html><body><h1>Đăng nhập thành công!</h1><p>Bạn có thể quay lại ứng dụng.</p></body></html>");
@@ -263,21 +270,78 @@ namespace Source.Views
             }
         }
 
-        // Giải mã ID Token để lấy thông tin người dùng
-        private Dictionary<string, string> DecodeJwt(string idToken)
+        private async Task<TokenResponse> ExchangeAuthCodeForTokens(string authCode, string clientId, string clientSecret, string redirectUri)
         {
-            System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler handler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
-            var jwtToken = handler.ReadJwtToken(idToken);
+            var queryParams = new List<KeyValuePair<string, string>>
+        {
+            new KeyValuePair<string, string>("code", authCode),
+            new KeyValuePair<string, string>("client_id", clientId),
+            new KeyValuePair<string, string>("client_secret", clientSecret),
+            new KeyValuePair<string, string>("redirect_uri", redirectUri),
+            new KeyValuePair<string, string>("grant_type", "authorization_code")
+        };
 
-            var claims = jwtToken.Claims.ToDictionary(c => c.Type, c => c.Value);
-            return claims;
+            using (HttpClient client = new HttpClient())
+            {
+                var content = new FormUrlEncodedContent(queryParams);
+                var response = await client.PostAsync("https://oauth2.googleapis.com/token", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<TokenResponse>(responseContent);
+                }
+                else
+                {
+                    string errorContent = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"Lỗi khi trao đổi mã xác thực: {response.StatusCode}, Nội dung: {errorContent}");
+                }
+            }
         }
 
-        private void lblForget_Click(object sender, EventArgs e)
+        private async Task GetUserInfo(string accessToken)
         {
-            ForgetPassword forgetPassword = new ForgetPassword();
-            forgetPassword.Show();
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+                var response = await client.GetAsync("https://www.googleapis.com/oauth2/v3/userinfo");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var userInfo = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Thông tin người dùng: {userInfo}");
+                    //openChildForm(new MainForm());
+                }
+                else
+                {
+                    string errorContent = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"API request failed. Error: {errorContent}");
+                }
+            }
         }
     }
+
+    public class TokenResponse
+    {
+        [JsonProperty("access_token")]
+        public string AccessToken { get; set; }
+
+        [JsonProperty("id_token")]
+        public string IdToken { get; set; }
+
+        [JsonProperty("refresh_token")]
+        public string RefreshToken { get; set; }
+
+        [JsonProperty("expires_in")]
+        public int ExpiresIn { get; set; }
+
+        [JsonProperty("scope")]
+        public string Scope { get; set; }
+
+        [JsonProperty("token_type")]
+        public string TokenType { get; set; }
+    }
+
 
 }

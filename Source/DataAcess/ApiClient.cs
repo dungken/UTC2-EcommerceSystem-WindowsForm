@@ -37,33 +37,38 @@ namespace Source.DataAcess
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Get);
-           
+
             var response = await _client.ExecuteAsync<T>(request);
 
-            if (!response.IsSuccessful)
+            if (response.IsSuccessful)
             {
-                // Format JSON response
-                var formattedJson = FormatJson(response.Content);
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
-
-                throw new Exception($"API Error: {response.ErrorMessage}");
+                return response.Data;
             }
-            return response.Data;
+            //// Format JSON response
+            //var formattedJson = FormatJson(response.Content);
+            //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+
+            throw new Exception($"API Error: {response.ErrorMessage}");
         }
 
         public async Task<T> PostAsync<T>(string endpoint, object? body = null)
         {
-            var request = new RestRequest(endpoint,Method.Post);
+            var request = new RestRequest(endpoint, Method.Post);
             request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
-            //request.Authenticator = new JwtAuthenticator(Utils.Config.token);
+
             if (body != null)
             {
                 request.AddJsonBody(body);
             }
+
             var response = await _client.ExecuteAsync<T>(request);
+
             if (!response.IsSuccessful)
             {
-                // Format JSON response
+                // In chi tiết lỗi
+                MessageBox.Show($"API Error: {response.ErrorMessage}\nStatus: {response.StatusCode}\nResponse Content: {response.Content}");
+
+                // Nếu có response nội dung, hiển thị nó để debug
                 if (response.Content != null)
                 {
                     var formattedJson = FormatJson(response.Content);
@@ -75,9 +80,11 @@ namespace Source.DataAcess
                 }
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
+
             MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
+
         public async Task<T> PostImageAsync<T>(string endpoint, string filePath, string username)
         {
             var request = new RestRequest(endpoint, Method.Post);
@@ -94,16 +101,16 @@ namespace Source.DataAcess
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
             {
-                // Format JSON response
-                if (response.Content != null)
-                {
-                    var formattedJson = FormatJson(response.Content);
-                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
-                }
-                else
-                {
-                    MessageBox.Show(response.StatusCode.ToString());
-                }
+                //// Format JSON response
+                //if (response.Content != null)
+                //{
+                //    var formattedJson = FormatJson(response.Content);
+                //    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //}
+                //else
+                //{
+                //    MessageBox.Show(response.StatusCode.ToString());
+                //}
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             MessageBox.Show(response.StatusCode.ToString());
@@ -134,16 +141,16 @@ namespace Source.DataAcess
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
             {
-                // Format JSON response
-                if (response.Content != null)
-                {
-                    var formattedJson = FormatJson(response.Content);
-                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
-                }
-                else
-                {
-                    MessageBox.Show(response.StatusCode.ToString());
-                }
+                //// Format JSON response
+                //if (response.Content != null)
+                //{
+                //    var formattedJson = FormatJson(response.Content);
+                //    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //}
+                //else
+                //{
+                //    MessageBox.Show(response.StatusCode.ToString());
+                //}
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             MessageBox.Show(response.StatusCode.ToString());
@@ -209,9 +216,9 @@ namespace Source.DataAcess
             var response = await _client.ExecuteAsync<T>(request);
             if (!response.IsSuccessful)
             {
-                // Format JSON response
-                var formattedJson = FormatJson(response.Content);
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //// Format JSON response
+                //var formattedJson = FormatJson(response.Content);
+                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;
@@ -225,8 +232,8 @@ namespace Source.DataAcess
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                var formattedJson = FormatJson(response.Content);
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //var formattedJson = FormatJson(response.Content);
+                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return true;
@@ -242,8 +249,8 @@ namespace Source.DataAcess
             if (!response.IsSuccessful)
             {
                 // Format JSON response
-                var formattedJson = FormatJson(response.Content);
-                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //var formattedJson = FormatJson(response.Content);
+                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;

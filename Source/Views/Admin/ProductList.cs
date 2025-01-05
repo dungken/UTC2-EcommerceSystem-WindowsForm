@@ -8,10 +8,12 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NPOI.POIFS.Properties;
 using Source.Dtos.Order;
 using Source.Dtos.Product;
 using Source.Models;
 using Source.Service;
+using Source.Views.Custommer;
 using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
 
@@ -507,6 +509,8 @@ namespace Source.Views.Admin
 
             // Đóng form hiện tại (CategoryListForm)
             this.Close();
+
+           
         }
     }
 }

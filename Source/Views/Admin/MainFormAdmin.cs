@@ -270,5 +270,10 @@ namespace Source.Views
                 LoadDataDashBoard();
             }
         }
+
+        private async void btnHome_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

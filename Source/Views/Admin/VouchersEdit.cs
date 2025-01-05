@@ -124,7 +124,7 @@ namespace Source.Views.Admin
             if (response.Success)
             {
                 // Thông báo thành công và đóng form
-                MessageBox.Show("Voucher added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Voucher edited successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

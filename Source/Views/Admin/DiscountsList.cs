@@ -38,10 +38,10 @@ namespace Source.Views.Admin
             gridView.Columns[0].Width = 100;
             gridView.Columns[1].Width = 100;
             gridView.Columns[2].Width = 100;
-            gridView.Columns[3].Width = 150;
-            gridView.Columns[4].Width = 150;
-            gridView.Columns[5].Width = 100;
-            gridView.Columns[6].Width = 100;
+            gridView.Columns[3].Width = 200;
+            gridView.Columns[4].Width = 200;
+            gridView.Columns[5].Width = 80;
+            gridView.Columns[6].Width = 80;
             gridView.AutoGenerateColumns = false;
         }
         private void InitializeShowing()
@@ -216,10 +216,10 @@ namespace Source.Views.Admin
                 if (confirmResult == DialogResult.Yes)
                 {
                     // Gọi hàm xóa từ service
-                    var productList = await _discountsService.GetProductsInDiscount(discountId);
-                    if (productList != null)
+                    var respone = await _discountsService.GetProductsInDiscount(discountId);
+                    if (respone != null)
                     {
-
+                        var productList = respone.Data.ToList();
                         foreach (var product in productList)
                         {
                             var productId = product.Id;

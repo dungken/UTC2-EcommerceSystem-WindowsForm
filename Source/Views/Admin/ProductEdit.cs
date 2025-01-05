@@ -222,7 +222,7 @@ namespace Source.Views.Admin
                 // Tìm tên màu gần nhất
                 string colorName = GetColorName(selectedColor);
 
-                MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
+                //MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
 
                 var newColorDto = new ColorDTO
                 {

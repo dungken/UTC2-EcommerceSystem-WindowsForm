@@ -19,7 +19,7 @@ namespace Source.Views.Custommer
         private int _currentPage = 1; // Trang hiện tại
         private int _totalPages = 1; // Tổng số trang
 
-        private List<Voucher> _vouchers; // Danh sách sản phẩm DTO
+        private List<Voucher> _vouchers; 
         private List<Voucher> _originalVouchers;
         public HomeCustomer()
         {

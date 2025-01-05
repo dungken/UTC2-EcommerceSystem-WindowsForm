@@ -50,7 +50,7 @@
             lblNavigation = new Label();
             lblNotifications = new Label();
             label4 = new Label();
-            label3 = new Label();
+            lblUsername = new Label();
             label2 = new Label();
             lblAvarata = new Label();
             pnlSubMenuAvata = new Panel();
@@ -358,7 +358,7 @@
             panel2.Controls.Add(lblNavigation);
             panel2.Controls.Add(lblNotifications);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
+            panel2.Controls.Add(lblUsername);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(lblAvarata);
             panel2.Dock = DockStyle.Top;
@@ -421,16 +421,16 @@
             label4.TabIndex = 5;
             label4.Text = "Customer";
             // 
-            // label3
+            // lblUsername
             // 
-            label3.Anchor = AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(832, 26);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 20);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
+            lblUsername.Anchor = AnchorStyles.Right;
+            lblUsername.AutoSize = true;
+            lblUsername.ForeColor = Color.White;
+            lblUsername.Location = new Point(821, 26);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(114, 20);
+            lblUsername.TabIndex = 4;
+            lblUsername.Text = "lblUsername";
             // 
             // label2
             // 
@@ -773,7 +773,7 @@
         private Button btnSupport;
         private Label lblAvarata;
         private Label label4;
-        private Label label3;
+        private Label lblUsername;
         private Label label2;
         private Label lblNotifications;
         private Label lblNavigation;

@@ -154,6 +154,10 @@ namespace Source.Views.Custommer
 
         private async void ProductsCustomer_Load(object sender, EventArgs e)
         {
+            LoadingForm loadingForm = new LoadingForm();
+
+            // Hiển thị form loading trên một luồng khác
+            Task showLoading = Task.Run(() => loadingForm.ShowDialog());
             try
             {
                 var response = await _productService.GetAllProductsAsync();
@@ -171,6 +175,11 @@ namespace Source.Views.Custommer
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi tải sản phẩm: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Đóng form loading
+                loadingForm.Invoke((Action)(() => loadingForm.Close()));
             }
         }
 
@@ -278,30 +287,13 @@ namespace Source.Views.Custommer
         private void UpdatePaginationButtons()
         {
             // Bật/tắt nút Previous và Next
-            btnPrevious.Enabled = _currentPage > 1;
+            btnPre.Enabled = _currentPage > 1;
             btnNext.Enabled = _currentPage < _totalPages;
 
             // Hiển thị thông tin trang
             lblPaginationInfo.Text = $"Page {_currentPage} of {_totalPages}";
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if (_currentPage > 1)
-            {
-                _currentPage--;
-                DisplayProductsForCurrentPage();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (_currentPage < _totalPages)
-            {
-                _currentPage++;
-                DisplayProductsForCurrentPage();
-            }
-        }
 
 
         private void ClearProductPanels()
@@ -396,6 +388,23 @@ namespace Source.Views.Custommer
 
         }
 
-      
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            if (_currentPage > 1)
+            {
+                _currentPage--;
+                DisplayProductsForCurrentPage();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_currentPage < _totalPages)
+            {
+                _currentPage++;
+                DisplayProductsForCurrentPage();
+            }
+        }
+
     }
 }

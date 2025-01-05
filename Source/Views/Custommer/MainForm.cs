@@ -222,8 +222,10 @@ namespace Source.Views
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            var username = await _userService.GetUserByToken();
+            var username = await _userService.GetUsernameByToken();
+            lblUsername.Text = username.Data.UserName;
         }
+
 
     }
 }

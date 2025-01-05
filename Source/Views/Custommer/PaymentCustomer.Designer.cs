@@ -30,16 +30,20 @@
         {
             pnlPaymentCustomer = new Panel();
             pnlVourcher_Detail = new Panel();
+            lblShip = new Label();
+            lblToTalPayment = new Label();
+            lblToTalPriceProducts = new Label();
             panel8 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
-            button5 = new Button();
-            label16 = new Label();
+            btnOrder = new Button();
+            lblToTalPrice = new Label();
             label15 = new Label();
             label14 = new Label();
             label6 = new Label();
             panel5 = new Panel();
             btnOptionVourcher = new Button();
+            button4 = new Button();
             panel2 = new Panel();
             lblCurrentPrice = new Label();
             lblOldPrice = new Label();
@@ -55,25 +59,29 @@
             pnlInfor_Adress = new Panel();
             pnlInforProducts = new Panel();
             pnlProduct1 = new Panel();
-            pnlPicture_LableProduct1 = new Panel();
+            pnlInforProduct1 = new Panel();
+            lblProductColor1 = new Label();
+            lblPrice1 = new Label();
+            lblProductSize1 = new Label();
+            label19 = new Label();
             panel9 = new Panel();
             label17 = new Label();
-            label5 = new Label();
+            lblQuantity1 = new Label();
             label4 = new Label();
             label3 = new Label();
-            label2 = new Label();
-            pictureBox2 = new PictureBox();
+            lblNameProduct1 = new Label();
+            pictureProduct1 = new PictureBox();
             panel11 = new Panel();
             panel10 = new Panel();
             pnlAdresss = new Panel();
             pnlInforAdress = new Panel();
+            label18 = new Label();
+            lblPhoneNumber = new Label();
             lblAdress = new Label();
             lblNameCus = new Label();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            button4 = new Button();
-            btnOptionShippingMethod = new Button();
             pnlPaymentCustomer.SuspendLayout();
             pnlVourcher_Detail.SuspendLayout();
             panel6.SuspendLayout();
@@ -83,9 +91,9 @@
             pnlInfor_Adress.SuspendLayout();
             pnlInforProducts.SuspendLayout();
             pnlProduct1.SuspendLayout();
-            pnlPicture_LableProduct1.SuspendLayout();
+            pnlInforProduct1.SuspendLayout();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureProduct1).BeginInit();
             pnlAdresss.SuspendLayout();
             pnlInforAdress.SuspendLayout();
             panel1.SuspendLayout();
@@ -104,6 +112,9 @@
             // pnlVourcher_Detail
             // 
             pnlVourcher_Detail.BorderStyle = BorderStyle.FixedSingle;
+            pnlVourcher_Detail.Controls.Add(lblShip);
+            pnlVourcher_Detail.Controls.Add(lblToTalPayment);
+            pnlVourcher_Detail.Controls.Add(lblToTalPriceProducts);
             pnlVourcher_Detail.Controls.Add(panel8);
             pnlVourcher_Detail.Controls.Add(panel6);
             pnlVourcher_Detail.Controls.Add(label14);
@@ -119,6 +130,43 @@
             pnlVourcher_Detail.Size = new Size(490, 509);
             pnlVourcher_Detail.TabIndex = 1;
             // 
+            // lblShip
+            // 
+            lblShip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblShip.AutoSize = true;
+            lblShip.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblShip.Location = new Point(344, 328);
+            lblShip.Name = "lblShip";
+            lblShip.Size = new Size(145, 20);
+            lblShip.TabIndex = 16;
+            lblShip.Text = "Tổng phí vận chuyển";
+            lblShip.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblToTalPayment
+            // 
+            lblToTalPayment.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblToTalPayment.AutoSize = true;
+            lblToTalPayment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblToTalPayment.ForeColor = Color.IndianRed;
+            lblToTalPayment.Location = new Point(330, 348);
+            lblToTalPayment.Name = "lblToTalPayment";
+            lblToTalPayment.Size = new Size(157, 28);
+            lblToTalPayment.TabIndex = 14;
+            lblToTalPayment.Text = "Tổng thanh toán";
+            lblToTalPayment.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblToTalPriceProducts
+            // 
+            lblToTalPriceProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblToTalPriceProducts.AutoSize = true;
+            lblToTalPriceProducts.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblToTalPriceProducts.Location = new Point(380, 308);
+            lblToTalPriceProducts.Name = "lblToTalPriceProducts";
+            lblToTalPriceProducts.Size = new Size(109, 20);
+            lblToTalPriceProducts.TabIndex = 15;
+            lblToTalPriceProducts.Text = "Tổng tiền hàng";
+            lblToTalPriceProducts.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // panel8
             // 
             panel8.BackColor = SystemColors.ActiveCaptionText;
@@ -131,7 +179,7 @@
             // panel6
             // 
             panel6.Controls.Add(panel7);
-            panel6.Controls.Add(label16);
+            panel6.Controls.Add(lblToTalPrice);
             panel6.Controls.Add(label15);
             panel6.Dock = DockStyle.Bottom;
             panel6.Location = new Point(0, 438);
@@ -141,36 +189,37 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(button5);
+            panel7.Controls.Add(btnOrder);
             panel7.Dock = DockStyle.Right;
             panel7.Location = new Point(338, 0);
             panel7.Name = "panel7";
             panel7.Size = new Size(150, 69);
             panel7.TabIndex = 5;
             // 
-            // button5
+            // btnOrder
             // 
-            button5.BackColor = Color.Red;
-            button5.Dock = DockStyle.Fill;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(0, 0);
-            button5.Name = "button5";
-            button5.Size = new Size(150, 69);
-            button5.TabIndex = 0;
-            button5.Text = "Đặt hàng";
-            button5.UseVisualStyleBackColor = false;
+            btnOrder.BackColor = Color.Red;
+            btnOrder.Dock = DockStyle.Fill;
+            btnOrder.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = SystemColors.ButtonHighlight;
+            btnOrder.Location = new Point(0, 0);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(150, 69);
+            btnOrder.TabIndex = 0;
+            btnOrder.Text = "Đặt hàng";
+            btnOrder.UseVisualStyleBackColor = false;
+            btnOrder.Click += btnOrder_Click;
             // 
-            // label16
+            // lblToTalPrice
             // 
-            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.IndianRed;
-            label16.Location = new Point(175, 33);
-            label16.Name = "label16";
-            label16.Size = new Size(157, 28);
-            label16.TabIndex = 4;
-            label16.Text = "đ330.400";
-            label16.TextAlign = ContentAlignment.MiddleRight;
+            lblToTalPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblToTalPrice.ForeColor = Color.IndianRed;
+            lblToTalPrice.Location = new Point(175, 33);
+            lblToTalPrice.Name = "lblToTalPrice";
+            lblToTalPrice.Size = new Size(157, 28);
+            lblToTalPrice.TabIndex = 4;
+            lblToTalPrice.Text = "đ330.400";
+            lblToTalPrice.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label15
             // 
@@ -209,7 +258,7 @@
             panel5.Controls.Add(btnOptionVourcher);
             panel5.Controls.Add(button4);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 187);
+            panel5.Location = new Point(0, 173);
             panel5.Name = "panel5";
             panel5.Size = new Size(488, 78);
             panel5.TabIndex = 10;
@@ -224,12 +273,28 @@
             btnOptionVourcher.ImageAlign = ContentAlignment.MiddleLeft;
             btnOptionVourcher.Location = new Point(0, 0);
             btnOptionVourcher.Name = "btnOptionVourcher";
-            btnOptionVourcher.Size = new Size(488, 40);
+            btnOptionVourcher.Size = new Size(488, 39);
             btnOptionVourcher.TabIndex = 8;
             btnOptionVourcher.Text = "         Coolmate Vourcher                                                                   >";
             btnOptionVourcher.TextAlign = ContentAlignment.MiddleLeft;
             btnOptionVourcher.UseVisualStyleBackColor = true;
             btnOptionVourcher.Click += btnOptionVourcher_Click;
+            // 
+            // button4
+            // 
+            button4.Dock = DockStyle.Bottom;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.FromArgb(128, 64, 0);
+            button4.Image = Properties.Resources.icon_money;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(0, 45);
+            button4.Name = "button4";
+            button4.Size = new Size(488, 33);
+            button4.TabIndex = 9;
+            button4.Text = "         Thanh toán khi nhận hàng                                                                    >";
+            button4.TextAlign = ContentAlignment.MiddleLeft;
+            button4.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -238,14 +303,13 @@
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(btnOptionShippingMethod);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(488, 187);
+            panel2.Size = new Size(488, 173);
             panel2.TabIndex = 3;
             // 
             // lblCurrentPrice
@@ -273,7 +337,7 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.ActiveCaptionText;
-            panel3.Location = new Point(175, 171);
+            panel3.Location = new Point(175, 135);
             panel3.Name = "panel3";
             panel3.Size = new Size(302, 1);
             panel3.TabIndex = 10;
@@ -283,7 +347,7 @@
             textBox1.BackColor = Color.FromArgb(239, 239, 239);
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(179, 151);
+            textBox1.Location = new Point(179, 115);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Để lại lời nhắn";
@@ -294,7 +358,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(5, 152);
+            label11.Location = new Point(5, 116);
             label11.Name = "label11";
             label11.Size = new Size(131, 20);
             label11.TabIndex = 8;
@@ -383,7 +447,7 @@
             // 
             // pnlProduct1
             // 
-            pnlProduct1.Controls.Add(pnlPicture_LableProduct1);
+            pnlProduct1.Controls.Add(pnlInforProduct1);
             pnlProduct1.Controls.Add(panel11);
             pnlProduct1.Dock = DockStyle.Top;
             pnlProduct1.Location = new Point(0, 1);
@@ -391,19 +455,62 @@
             pnlProduct1.Size = new Size(474, 133);
             pnlProduct1.TabIndex = 3;
             // 
-            // pnlPicture_LableProduct1
+            // pnlInforProduct1
             // 
-            pnlPicture_LableProduct1.Controls.Add(panel9);
-            pnlPicture_LableProduct1.Controls.Add(label5);
-            pnlPicture_LableProduct1.Controls.Add(label4);
-            pnlPicture_LableProduct1.Controls.Add(label3);
-            pnlPicture_LableProduct1.Controls.Add(label2);
-            pnlPicture_LableProduct1.Controls.Add(pictureBox2);
-            pnlPicture_LableProduct1.Dock = DockStyle.Top;
-            pnlPicture_LableProduct1.Location = new Point(0, 0);
-            pnlPicture_LableProduct1.Name = "pnlPicture_LableProduct1";
-            pnlPicture_LableProduct1.Size = new Size(474, 130);
-            pnlPicture_LableProduct1.TabIndex = 0;
+            pnlInforProduct1.Controls.Add(lblProductColor1);
+            pnlInforProduct1.Controls.Add(lblPrice1);
+            pnlInforProduct1.Controls.Add(lblProductSize1);
+            pnlInforProduct1.Controls.Add(label19);
+            pnlInforProduct1.Controls.Add(panel9);
+            pnlInforProduct1.Controls.Add(lblQuantity1);
+            pnlInforProduct1.Controls.Add(label4);
+            pnlInforProduct1.Controls.Add(label3);
+            pnlInforProduct1.Controls.Add(lblNameProduct1);
+            pnlInforProduct1.Controls.Add(pictureProduct1);
+            pnlInforProduct1.Dock = DockStyle.Top;
+            pnlInforProduct1.Location = new Point(0, 0);
+            pnlInforProduct1.Name = "pnlInforProduct1";
+            pnlInforProduct1.Size = new Size(474, 130);
+            pnlInforProduct1.TabIndex = 0;
+            // 
+            // lblProductColor1
+            // 
+            lblProductColor1.AutoSize = true;
+            lblProductColor1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProductColor1.Location = new Point(262, 87);
+            lblProductColor1.Name = "lblProductColor1";
+            lblProductColor1.Size = new Size(45, 20);
+            lblProductColor1.TabIndex = 11;
+            lblProductColor1.Text = "Color";
+            // 
+            // lblPrice1
+            // 
+            lblPrice1.AutoSize = true;
+            lblPrice1.Location = new Point(266, 108);
+            lblPrice1.Name = "lblPrice1";
+            lblPrice1.Size = new Size(41, 20);
+            lblPrice1.TabIndex = 10;
+            lblPrice1.Text = "Price";
+            // 
+            // lblProductSize1
+            // 
+            lblProductSize1.AutoSize = true;
+            lblProductSize1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProductSize1.Location = new Point(266, 67);
+            lblProductSize1.Name = "lblProductSize1";
+            lblProductSize1.Size = new Size(36, 20);
+            lblProductSize1.TabIndex = 9;
+            lblProductSize1.Text = "Size";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Location = new Point(150, 89);
+            label19.Name = "label19";
+            label19.Size = new Size(45, 20);
+            label19.TabIndex = 8;
+            label19.Text = "Color";
             // 
             // panel9
             // 
@@ -426,19 +533,19 @@
             label17.TabIndex = 0;
             label17.Text = "Đổi ý miễn phí";
             // 
-            // label5
+            // lblQuantity1
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(422, 95);
-            label5.Name = "label5";
-            label5.Size = new Size(24, 20);
-            label5.TabIndex = 6;
-            label5.Text = "x1";
+            lblQuantity1.AutoSize = true;
+            lblQuantity1.Location = new Point(433, 89);
+            lblQuantity1.Name = "lblQuantity1";
+            lblQuantity1.Size = new Size(24, 20);
+            lblQuantity1.TabIndex = 6;
+            lblQuantity1.Text = "x1";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(150, 95);
+            label4.Location = new Point(150, 109);
             label4.Name = "label4";
             label4.Size = new Size(41, 20);
             label4.TabIndex = 5;
@@ -448,32 +555,32 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(150, 64);
+            label3.Location = new Point(155, 69);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(36, 20);
             label3.TabIndex = 2;
-            label3.Text = "Category";
+            label3.Text = "Size";
             // 
-            // label2
+            // lblNameProduct1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(150, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(199, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Nước Giặt OmoMatic";
+            lblNameProduct1.AutoSize = true;
+            lblNameProduct1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNameProduct1.Location = new Point(150, 3);
+            lblNameProduct1.Name = "lblNameProduct1";
+            lblNameProduct1.Size = new Size(199, 28);
+            lblNameProduct1.TabIndex = 1;
+            lblNameProduct1.Text = "Nước Giặt OmoMatic";
             // 
-            // pictureBox2
+            // pictureProduct1
             // 
-            pictureBox2.Dock = DockStyle.Left;
-            pictureBox2.Image = Properties.Resources.capybara3;
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(144, 130);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            pictureProduct1.Dock = DockStyle.Left;
+            pictureProduct1.Image = Properties.Resources.capybara3;
+            pictureProduct1.Location = new Point(0, 0);
+            pictureProduct1.Name = "pictureProduct1";
+            pictureProduct1.Size = new Size(144, 130);
+            pictureProduct1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureProduct1.TabIndex = 0;
+            pictureProduct1.TabStop = false;
             // 
             // panel11
             // 
@@ -505,6 +612,8 @@
             // 
             // pnlInforAdress
             // 
+            pnlInforAdress.Controls.Add(label18);
+            pnlInforAdress.Controls.Add(lblPhoneNumber);
             pnlInforAdress.Controls.Add(lblAdress);
             pnlInforAdress.Controls.Add(lblNameCus);
             pnlInforAdress.Dock = DockStyle.Right;
@@ -512,6 +621,24 @@
             pnlInforAdress.Name = "pnlInforAdress";
             pnlInforAdress.Size = new Size(423, 106);
             pnlInforAdress.TabIndex = 2;
+            // 
+            // label18
+            // 
+            label18.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.Location = new Point(146, 7);
+            label18.Name = "label18";
+            label18.Size = new Size(22, 28);
+            label18.TabIndex = 4;
+            label18.Text = "|";
+            // 
+            // lblPhoneNumber
+            // 
+            lblPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPhoneNumber.Location = new Point(164, 6);
+            lblPhoneNumber.Name = "lblPhoneNumber";
+            lblPhoneNumber.Size = new Size(281, 28);
+            lblPhoneNumber.TabIndex = 3;
+            lblPhoneNumber.Text = " (+84) 857476020";
             // 
             // lblAdress
             // 
@@ -527,7 +654,7 @@
             lblNameCus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNameCus.Location = new Point(3, 6);
             lblNameCus.Name = "lblNameCus";
-            lblNameCus.Size = new Size(414, 28);
+            lblNameCus.Size = new Size(137, 28);
             lblNameCus.TabIndex = 0;
             lblNameCus.Text = "Nguyễn Văn A | (+84) 857476020";
             // 
@@ -563,36 +690,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // button4
-            // 
-            button4.Dock = DockStyle.Bottom;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.FromArgb(128, 64, 0);
-            button4.Image = Properties.Resources.icon_money;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(0, 39);
-            button4.Name = "button4";
-            button4.Size = new Size(488, 39);
-            button4.TabIndex = 9;
-            button4.Text = "         Payment method                                                                       >";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // btnOptionShippingMethod
-            // 
-            btnOptionShippingMethod.FlatStyle = FlatStyle.Flat;
-            btnOptionShippingMethod.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOptionShippingMethod.ForeColor = Color.FromArgb(128, 64, 0);
-            btnOptionShippingMethod.Location = new Point(13, 104);
-            btnOptionShippingMethod.Name = "btnOptionShippingMethod";
-            btnOptionShippingMethod.Size = new Size(465, 38);
-            btnOptionShippingMethod.TabIndex = 7;
-            btnOptionShippingMethod.Text = "Hoặc chọn Hỏa tốc để Nhận hàng vào ngày mai                         >";
-            btnOptionShippingMethod.TextAlign = ContentAlignment.MiddleLeft;
-            btnOptionShippingMethod.UseVisualStyleBackColor = true;
-            btnOptionShippingMethod.Click += btnOptionShippingMethod_Click;
-            // 
             // PaymentCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -601,6 +698,7 @@
             Controls.Add(pnlPaymentCustomer);
             Name = "PaymentCustomer";
             Text = "PaymentCustomer";
+            Load += PaymentCustomer_Load;
             pnlPaymentCustomer.ResumeLayout(false);
             pnlVourcher_Detail.ResumeLayout(false);
             pnlVourcher_Detail.PerformLayout();
@@ -613,11 +711,11 @@
             pnlInfor_Adress.ResumeLayout(false);
             pnlInforProducts.ResumeLayout(false);
             pnlProduct1.ResumeLayout(false);
-            pnlPicture_LableProduct1.ResumeLayout(false);
-            pnlPicture_LableProduct1.PerformLayout();
+            pnlInforProduct1.ResumeLayout(false);
+            pnlInforProduct1.PerformLayout();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureProduct1).EndInit();
             pnlAdresss.ResumeLayout(false);
             pnlInforAdress.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -638,12 +736,12 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label lblNameCus;
-        private Panel pnlPicture_LableProduct1;
+        private Panel pnlInforProduct1;
         private Label lblAdress;
-        private PictureBox pictureBox2;
+        private PictureBox pictureProduct1;
         private Label label3;
-        private Label label2;
-        private Label label5;
+        private Label lblNameProduct1;
+        private Label lblQuantity1;
         private Label label4;
         private Label label6;
         private Panel panel2;
@@ -662,17 +760,25 @@
         private Panel panel5;
         private Label label14;
         private Panel panel6;
-        private Label label16;
+        private Label lblToTalPrice;
         private Label label15;
         private Panel panel8;
         private Panel panel7;
-        private Button button5;
+        private Button btnOrder;
         private Panel panel9;
         private Label label17;
         private Panel panel10;
         private Panel pnlProduct1;
         private Panel panel11;
         private Button button4;
-        private Button btnOptionShippingMethod;
+        private Label label18;
+        private Label lblPhoneNumber;
+        private Label lblProductColor1;
+        private Label lblPrice1;
+        private Label lblProductSize1;
+        private Label label19;
+        private Label lblShip;
+        private Label lblToTalPayment;
+        private Label lblToTalPriceProducts;
     }
 }

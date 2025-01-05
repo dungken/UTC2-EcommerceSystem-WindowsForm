@@ -260,8 +260,8 @@ namespace Source.Views.Admin
                         await _colorsService.CreateCollorAsync(newColorDto);
                     }
                 }
-                
-                if (_formFiles.Count > 0 )
+
+                if (_formFiles.Count > 0)
                 {
                     UploadMultiImg(response.Data.Id, _name);
                     response.Data.Images = _images;

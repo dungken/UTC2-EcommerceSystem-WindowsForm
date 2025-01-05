@@ -43,7 +43,7 @@ namespace Source.Views.Admin
             _originalData = new List<ProductListDisplayDto>();
             CustomizeDataGridView();
             InitializeShowing();
-            
+
             pnFilterCate.Paint += PanelLine_Paint;
             pnFilterPrice.Paint += PanelLine_Paint;
         }
@@ -69,6 +69,8 @@ namespace Source.Views.Admin
             gridView.Columns[2].Width = 120;
             gridView.Columns[3].Width = 120;
             gridView.Columns[4].Width = 120;
+            gridView.Columns[5].Width = 75;
+            gridView.Columns[6].Width = 75;
         }
         private async void InitializeShowing()
         {

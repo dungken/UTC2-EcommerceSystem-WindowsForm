@@ -135,6 +135,16 @@ namespace Source.Views.Admin
                 return;
             }
             _description = tbxDescription.Text;
+            //if (int.Parse(numeric.Value.ToString()) < _sizes.Count)
+            //{
+            //    MessageBox.Show("The number of products must not be less than the number of sizes.!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //if (int.Parse(numeric.Value.ToString()) < _colors.Count)
+            //{
+            //    MessageBox.Show("The number of products must not be less than the number of colors.!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
             _stockQuantity = int.Parse(numeric.Value.ToString());
             if (lbxCategory.SelectedItem == null)
             {
@@ -200,11 +210,6 @@ namespace Source.Views.Admin
                 size.Add("XL");
             }
 
-
-            
-
-
-
             var newProductDto = new CreateProductDto
             {
                 Name = _name,
@@ -215,9 +220,6 @@ namespace Source.Views.Admin
                 Price = _price,
                 DiscountId = _discountId,
             };
-
-            
-
 
             // Gọi service để thêm danh mục vào backend
             var response = await _productService.CreateProductAsync(newProductDto);
@@ -258,8 +260,8 @@ namespace Source.Views.Admin
                         await _colorsService.CreateCollorAsync(newColorDto);
                     }
                 }
-                
-                if (_formFiles.Count > 0 )
+
+                if (_formFiles.Count > 0)
                 {
                     UploadMultiImg(response.Data.Id, _name);
                     response.Data.Images = _images;
@@ -343,7 +345,7 @@ namespace Source.Views.Admin
                 // Tìm tên màu gần nhất
                 string colorName = GetColorName(selectedColor);
 
-                MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
+                //MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
 
                 var newColorDto = new ColorDTO
                 {

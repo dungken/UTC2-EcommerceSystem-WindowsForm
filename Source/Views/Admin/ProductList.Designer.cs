@@ -61,13 +61,15 @@ namespace Source.Views.Admin
             lblFilter = new Label();
             pnList = new Panel();
             gridView = new DataGridView();
+            pnFotter = new Panel();
+            lblShowing = new Label();
             Id = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            CategoryId = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Remove = new DataGridViewButtonColumn();
-            pnFotter = new Panel();
-            lblShowing = new Label();
             pnTitle.SuspendLayout();
             pnMain.SuspendLayout();
             pnSearch.SuspendLayout();
@@ -427,16 +429,34 @@ namespace Source.Views.Admin
             gridView.BorderStyle = BorderStyle.None;
             gridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, ProductName, Stock, Edit, Remove });
+            gridView.Columns.AddRange(new DataGridViewColumn[] { Id, ProductName, Stock, Price, CategoryId, Edit, Remove });
             gridView.GridColor = Color.Gray;
             gridView.Location = new Point(3, 4);
             gridView.Name = "gridView";
             gridView.RowHeadersVisible = false;
             gridView.RowHeadersWidth = 51;
-            gridView.Size = new Size(626, 328);
+            gridView.Size = new Size(754, 328);
             gridView.TabIndex = 0;
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
+            // 
+            // pnFotter
+            // 
+            pnFotter.Controls.Add(lblShowing);
+            pnFotter.Location = new Point(364, 389);
+            pnFotter.Name = "pnFotter";
+            pnFotter.Size = new Size(593, 48);
+            pnFotter.TabIndex = 0;
+            // 
+            // lblShowing
+            // 
+            lblShowing.AutoSize = true;
+            lblShowing.Cursor = Cursors.IBeam;
+            lblShowing.Location = new Point(21, 14);
+            lblShowing.Name = "lblShowing";
+            lblShowing.Size = new Size(243, 22);
+            lblShowing.TabIndex = 0;
+            lblShowing.Text = "Showing 1 to 10 of 13 entries";
             // 
             // Id
             // 
@@ -465,6 +485,24 @@ namespace Source.Views.Admin
             Stock.SortMode = DataGridViewColumnSortMode.Programmatic;
             Stock.Width = 125;
             // 
+            // Price
+            // 
+            Price.DataPropertyName = "Price";
+            Price.HeaderText = "Price";
+            Price.MinimumWidth = 6;
+            Price.Name = "Price";
+            Price.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Price.Width = 125;
+            // 
+            // CategoryId
+            // 
+            CategoryId.DataPropertyName = "CategoryId";
+            CategoryId.HeaderText = "CategoryId";
+            CategoryId.MinimumWidth = 6;
+            CategoryId.Name = "CategoryId";
+            CategoryId.SortMode = DataGridViewColumnSortMode.Programmatic;
+            CategoryId.Width = 125;
+            // 
             // Edit
             // 
             Edit.HeaderText = "Edit";
@@ -480,24 +518,6 @@ namespace Source.Views.Admin
             Remove.Name = "Remove";
             Remove.Resizable = DataGridViewTriState.True;
             Remove.Width = 125;
-            // 
-            // pnFotter
-            // 
-            pnFotter.Controls.Add(lblShowing);
-            pnFotter.Location = new Point(364, 389);
-            pnFotter.Name = "pnFotter";
-            pnFotter.Size = new Size(593, 48);
-            pnFotter.TabIndex = 0;
-            // 
-            // lblShowing
-            // 
-            lblShowing.AutoSize = true;
-            lblShowing.Cursor = Cursors.IBeam;
-            lblShowing.Location = new Point(21, 14);
-            lblShowing.Name = "lblShowing";
-            lblShowing.Size = new Size(243, 22);
-            lblShowing.TabIndex = 0;
-            lblShowing.Text = "Showing 1 to 10 of 13 entries";
             // 
             // ProductList
             // 
@@ -570,12 +590,14 @@ namespace Source.Views.Admin
         private Label labelPageInfo;
         private MyCustomControl.RJButton rjButton1;
         private MyCustomControl.RJButton rjButton2;
+        private MyCustomControl.RJButton rbtnFilter;
+        private ComboBox cbxCate;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Stock;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn CategoryId;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Remove;
-        private MyCustomControl.RJButton rbtnFilter;
-        private ComboBox cbxCate;
     }
 }

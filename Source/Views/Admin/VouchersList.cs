@@ -38,10 +38,13 @@ namespace Source.Views.Admin
             gridView.Columns[0].Width = 100;
             gridView.Columns[1].Width = 100;
             gridView.Columns[2].Width = 100;
-            gridView.Columns[3].Width = 150;
-            gridView.Columns[4].Width = 150;
-            gridView.Columns[5].Width = 100;
+            gridView.Columns[3].Width = 130;
+            gridView.Columns[4].Width = 130;
+            gridView.Columns[5].Width = 120;
             gridView.Columns[6].Width = 100;
+            gridView.Columns[7].Width = 80;
+            gridView.Columns[8].Width = 80;
+
             gridView.AutoGenerateColumns = false;
         }
         private void InitializeShowing()

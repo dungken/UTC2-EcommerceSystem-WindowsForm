@@ -222,14 +222,14 @@ namespace Source.Views.Admin
                 // Tìm tên màu gần nhất
                 string colorName = GetColorName(selectedColor);
 
-                MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
+                //MessageBox.Show($"Color Name: {colorName}\nHex Color: {hexColor}\nRGB: {selectedColor.R}, {selectedColor.G}, {selectedColor.B}");
 
                 var newColorDto = new ColorDTO
                 {
                     Id = Guid.NewGuid(),
                     Name = colorName,
                     ColorCode = hexColor,
-                    ProductId = _product.Id,    
+                    ProductId = _product.Id,
                 };
                 _colors.Add(newColorDto);
             }
@@ -260,7 +260,7 @@ namespace Source.Views.Admin
 
                     //if (File.Exists(_selectedFilePath) && _flagImg == false)
                     //{
-                        
+
                     //    _flagImg = true;
                     //}
                     using (var stream = new MemoryStream(File.ReadAllBytes(_selectedFilePath)))
@@ -337,7 +337,7 @@ namespace Source.Views.Admin
                 {
                     var respone = await _sizeService.DeleteSize(size1);
                 }
-                
+
                 if (cbxXS.Checked)
                 {
                     size.Add("XS");
@@ -358,7 +358,7 @@ namespace Source.Views.Admin
                 {
                     size.Add("XL");
                 }
-               
+
             }
             if (string.IsNullOrEmpty(tbxName.Text))
             {
@@ -409,27 +409,27 @@ namespace Source.Views.Admin
                         await _colorsService.CreateCollorAsync(color);
                     }
                 }
-                    if (size != null)
+                if (size != null)
+                {
+                    foreach (var index in size)
                     {
-                        foreach (var index in size)
+                        var newSizeDto = new CreateSizeforProductDto
                         {
-                            var newSizeDto = new CreateSizeforProductDto
-                            {
-                                Id = Guid.NewGuid(),
-                                Name = index,
-                                ProductId = _product.Id,
-                            };
-                            _sizes.Add(newSizeDto);
-                        }
-                        if (_sizes.Count > 0 && _sizes != null)
+                            Id = Guid.NewGuid(),
+                            Name = index,
+                            ProductId = _product.Id,
+                        };
+                        _sizes.Add(newSizeDto);
+                    }
+                    if (_sizes.Count > 0 && _sizes != null)
+                    {
+                        foreach (var size1 in _sizes)
                         {
-                            foreach (var size1 in _sizes)
-                            {
-                                await _sizeService.CreateSizeAsync(size1);
-                            }
+                            await _sizeService.CreateSizeAsync(size1);
                         }
                     }
-                
+                }
+
                 if (_formFiles.Count > 0 && _formFiles != null)
                 {
                     foreach (var image1 in _product.Images.Select(s => s.Id).ToList())
@@ -517,7 +517,7 @@ namespace Source.Views.Admin
                 using (var editForm = new ImageDelete(_product.Id))
                 {
                     if (editForm.ShowDialog() == DialogResult.OK) ;
-                  
+
                 }
             }
             else

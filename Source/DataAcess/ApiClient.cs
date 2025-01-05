@@ -45,7 +45,7 @@ namespace Source.DataAcess
             {
                 // Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //////MessageBox.Show(response.StatusCode.ToString());
+                //MessageBox.Show(response.StatusCode.ToString());
                 
                 //throw new Exception($"API Error: {response.ErrorMessage}");
                 return response.Data;
@@ -242,7 +242,7 @@ namespace Source.DataAcess
             {
                 //Format JSON response
                 var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return true;

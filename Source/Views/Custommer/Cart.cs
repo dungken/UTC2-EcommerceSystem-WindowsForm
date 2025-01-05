@@ -19,6 +19,8 @@ namespace Source.Views.Custommer
         private readonly UserService _userService;
         private readonly ProductService _productService;
         private readonly DiscountsService _discountService;
+        private readonly List<CartItem> _selectedItemsInCart;
+        private readonly List<CartItem> _cartItems;
         public Cart()
         {
             InitializeComponent();
@@ -26,6 +28,13 @@ namespace Source.Views.Custommer
             _userService = new UserService();
             _productService = new ProductService();
             _discountService = new DiscountsService();
+            _selectedItemsInCart = new List<CartItem>();
+            _cartItems = new List<CartItem>();
+            if (_selectedItemsInCart.Count == 0 && !cbxAllBot.Checked)
+            {
+                lblTotalProduct.Text = "Tổng thanh toán là: 0";
+                lblTotalPrice.Text = "0";
+            }
         }
 
         private void pnProduct_Paint(object sender, PaintEventArgs e)
@@ -113,8 +122,10 @@ namespace Source.Views.Custommer
                         ForeColor = checkBox.ForeColor,
                         BackColor = checkBox.BackColor,
                         Checked = checkBox.Checked,
-                        Name = checkBox.Name // Sao chép thuộc tính Name
+                        Name = checkBox.Name, // Sao chép thuộc tính Name
+                        Tag = item
                     };
+                    ((CheckBox)clonedControl).CheckedChanged += cbxProduct_CheckedChanged;
                 }
                 else if (control is Panel panel)
                 {
@@ -152,18 +163,21 @@ namespace Source.Views.Custommer
                     }
 
                     MessageBox.Show($"Deleted item: {item.Product.Name}");
+                    
                 }
             }
         }
 
         private async void Cart_Load(object sender, EventArgs e)
         {
+            pnlProductList.Controls.Clear();
+            _cartItems.Clear();
             var response = await _userService.GetUserIdByToken(); // Replace with actual user ID
             var userId = response.Data.UserId;
             var response1 = await _cartService.GetCartByUserIdAsync(userId);
 
             var cart = response1.Data;
-
+            _cartItems.AddRange(cart.CartItems);
             foreach (var item in cart.CartItems)
             {
                 var productPanel = ClonePanel(pnlProduct, item);
@@ -173,22 +187,41 @@ namespace Source.Views.Custommer
                 {
                     nameLabel.Text = item.Product.Name;
                 }
+                var colorSize = productPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == "lblColorSize");
+                if (colorSize != null)
+                {
+                    colorSize.Text = item.Color + "," + item.Size;
+                }
 
                 var priceOldLabel = productPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == "lblOldPrice");
                 if (priceOldLabel != null)
                 {
                     priceOldLabel.Text = item.Product.Price.ToString("C");
                 }
+
                 var priceCurLabel = productPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == "lblCurrentPrice");
                 if (priceCurLabel != null)
                 {
-                    //var respone3 = _discountService.GetProductsInDiscount();
-                    priceCurLabel.Text = item.Product.Price.ToString("C");
+
+                    var product = (await _productService.GetProductByIdAsync(item.ProductId)).Data;
+                    var discount = product.DiscountId.HasValue ? (await _discountService.GetDiscountByIdAsync(product.DiscountId.Value)).Data : null;
+                    var priceAfterDiscount = discount != null ? item.Product.Price * (1 - discount.Percentage / 100) : item.Product.Price;
+                    priceCurLabel.Text = priceAfterDiscount.ToString("C");
+
+
                 }
+
                 var quantityLabel = productPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == "lblQuantity");
                 if (quantityLabel != null)
                 {
                     quantityLabel.Text = item.Quantity.ToString();
+                }
+                var PriceProduct = productPanel.Controls.OfType<Label>().FirstOrDefault(l => l.Name == "lblPriceProduct");
+                if (PriceProduct != null)
+                {
+
+                    var resutl = Decimal.Parse(priceCurLabel.Text.TrimStart('$')) * item.Quantity;
+                    PriceProduct.Text = resutl.ToString("C");
                 }
                 var productPictureBox = productPanel.Controls.OfType<PictureBox>().FirstOrDefault(pb => pb.Name == "pictureBoxProduct");
                 if (productPictureBox != null)
@@ -213,13 +246,102 @@ namespace Source.Views.Custommer
                 }
                 pnlProductList.Controls.Add(productPanel);
             }
+            lblCount.Text = "Chọn tất cả (" + _selectedItemsInCart.Count.ToString() + ")";
+            lblTotalProduct.Text = "Tổng thanh toán(" + _selectedItemsInCart.Count + " Sản phẩm):";
         }
 
-        private void cbxProduct_CheckedChanged(object sender, EventArgs e)
+        private async void cbxProduct_CheckedChanged(object sender, EventArgs e)
         {
+            if (sender is CheckBox checkBox && checkBox.Tag is CartItem item)
+            {
+                if (checkBox.Checked)
+                {
+                    _selectedItemsInCart.Add(item);
+                }
+                else
+                {
+                    _selectedItemsInCart.Remove(item);
+                }
+            }
 
+            lblCount.Text = "Chọn tất cả (" + _selectedItemsInCart.Count.ToString() + ")";
+            if (_selectedItemsInCart.Count == 0 && !cbxAllBot.Checked)
+            {
+                lblTotalProduct.Text = "Tổng thanh toán là: 0";
+                lblTotalPrice.Text = "0";
+            }
+            else
+            {
+                decimal total = 0;
+                var itemsToProcess = _selectedItemsInCart.ToList(); // Create a copy of the collection
+                foreach (var selectedItem in itemsToProcess)
+                {
+                    var product = (await _productService.GetProductByIdAsync(selectedItem.ProductId)).Data;
+                    var discount = product.DiscountId.HasValue ? (await _discountService.GetDiscountByIdAsync(product.DiscountId.Value)).Data : null;
+                    var priceAfterDiscount = discount != null ? selectedItem.Product.Price * (1 - discount.Percentage / 100) : selectedItem.Product.Price;
+                    total += priceAfterDiscount * selectedItem.Quantity;
+                }
+                lblTotalProduct.Text = "Tổng thanh toán là (" + _selectedItemsInCart.Count + ") sản phẩm: ";
+                lblTotalPrice.Text = total.ToString("C");
+            }
+            if (_selectedItemsInCart.Count == 0 && !cbxAllBot.Checked)
+            {
+                lblTotalProduct.Text = "Tổng thanh toán là: 0";
+                lblTotalPrice.Text = "0";
+            }
         }
 
+
+
+        private async void cbxAllBot_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isChecked = cbxAllBot.Checked;
+
+            foreach (Control control in pnlProductList.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    foreach (Control innerControl in panel.Controls)
+                    {
+                        if (innerControl is CheckBox checkBox && checkBox.Name == "cbxProduct")
+                        {
+                            checkBox.Checked = isChecked;
+                        }
+                    }
+                }
+            }
+
+            // Clear or add all items to _selectedItemsInCart based on the state of cbxAllBot
+            if (isChecked)
+            {
+                _selectedItemsInCart.Clear();
+                _selectedItemsInCart.AddRange(_cartItems);
+            }
+            else
+            {
+                _selectedItemsInCart.Clear();
+            }
+
+            lblCount.Text = "Chọn tất cả (" + _selectedItemsInCart.Count.ToString() + ")";
+            if (_selectedItemsInCart.Count == 0)
+            {
+                lblTotalProduct.Text = "Tổng thanh toán là: 0";
+                lblTotalPrice.Text = "0";
+            }
+            else
+            {
+                decimal total = 0;
+                foreach (var selectedItem in _selectedItemsInCart)
+                {
+                    var product = (await _productService.GetProductByIdAsync(selectedItem.ProductId)).Data;
+                    var discount = product.DiscountId.HasValue ? (await _discountService.GetDiscountByIdAsync(product.DiscountId.Value)).Data : null;
+                    var priceAfterDiscount = discount != null ? selectedItem.Product.Price * (1 - discount.Percentage / 100) : selectedItem.Product.Price;
+                    total += priceAfterDiscount * selectedItem.Quantity;
+                }
+                lblTotalProduct.Text = "Tổng thanh toán là (" + _selectedItemsInCart.Count + ") sản phẩm: ";
+                lblTotalPrice.Text = total.ToString("C");
+            }
+        }
         private void btnIncrease_Click(object sender, EventArgs e)
         {
 
@@ -247,5 +369,6 @@ namespace Source.Views.Custommer
                 }
             }
         }
+
     }
 }

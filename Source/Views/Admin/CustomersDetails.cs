@@ -77,9 +77,9 @@ namespace Source.Views.Admin
         }
         private void CustomizeDataGridView()
         {
-            gridView.Columns[0].Width = 200;
+            gridView.Columns[0].Width = 150;
             gridView.Columns[1].Width = 150;
-            gridView.Columns[2].Width = 150;
+            gridView.Columns[2].Width = 130;
             gridView.Columns[3].Width = 150;
         }
         private void InitializeShowing()
@@ -214,26 +214,26 @@ namespace Source.Views.Admin
             // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
             return 0;
         }
-        private async Task<int> GetTotalReviewById(Guid? userId)
-        {
-            if (!userId.HasValue)
-            {
-                // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
-                return 0;
-            }
+        //private async Task<int> GetTotalReviewById(Guid? userId)
+        //{
+        //    if (!userId.HasValue)
+        //    {
+        //        // Nếu userId là null, có thể xử lý theo yêu cầu của bạn (ví dụ: trả về null hoặc throw lỗi)
+        //        return 0;
+        //    }
 
-            var reviewResponse = await _feedbackService.GetAllFeedbacksForAProductAsync(userId.Value);
+        //    var reviewResponse = await _feedbackService. (userId.Value);
 
 
-            // Kiểm tra kết quả trả về
-            if (reviewResponse != null && reviewResponse.Data != null)
-            {
-                var orders = reviewResponse.Data.ToList().Count;
-                return orders;
-            }
-            // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
-            return 0;
-        }
+        //    // Kiểm tra kết quả trả về
+        //    if (reviewResponse != null && reviewResponse.Data != null)
+        //    {
+        //        var orders = reviewResponse.Data.ToList().Count;
+        //        return orders;
+        //    }
+        //    // Trả về null nếu không tìm thấy người dùng hoặc dữ liệu không hợp lệ
+        //    return 0;
+        //}
         private async Task LoadOrders(Guid userId)
         {
             try
@@ -279,7 +279,7 @@ namespace Source.Views.Admin
                 picbxProfile.Load(_user.user.ProfilePicture);
             }
             // get id
-            lblId.Text =  _customerId.ToString();
+            lblId.Text = _customerId.ToString();
             // get name
             lblName.Text = _user.user.FirstName + " " + _user.user.LastName;
             // get gender
@@ -308,8 +308,8 @@ namespace Source.Views.Admin
             int orderCount = (await GetTotalOrderById(_customerId));
             lblOrderBuyV.Text = orderCount.ToString();
             // get review
-            int feedBackCount = (await GetTotalReviewById(_customerId));
-            lblReviewProductV.Text = feedBackCount.ToString();
+            //int feedBackCount = (await GetTotalReviewById(_customerId));
+            //lblReviewProductV.Text = feedBackCount.ToString();
 
             // get order
             await LoadOrders(_customerId);

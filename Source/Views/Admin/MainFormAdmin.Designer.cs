@@ -170,6 +170,7 @@
             btnHome.Text = "         Home";
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // label6
             // 

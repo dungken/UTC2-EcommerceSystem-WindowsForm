@@ -312,7 +312,7 @@
             // 
             lblTotalProduct.AutoSize = true;
             lblTotalProduct.Cursor = Cursors.IBeam;
-            lblTotalProduct.Location = new Point(396, 29);
+            lblTotalProduct.Location = new Point(357, 31);
             lblTotalProduct.Name = "lblTotalProduct";
             lblTotalProduct.Size = new Size(250, 22);
             lblTotalProduct.TabIndex = 20;
@@ -324,7 +324,7 @@
             lblTotalPrice.Cursor = Cursors.IBeam;
             lblTotalPrice.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalPrice.ForeColor = Color.OrangeRed;
-            lblTotalPrice.Location = new Point(660, 26);
+            lblTotalPrice.Location = new Point(625, 28);
             lblTotalPrice.Name = "lblTotalPrice";
             lblTotalPrice.Size = new Size(78, 25);
             lblTotalPrice.TabIndex = 19;
@@ -336,7 +336,7 @@
             btnBuy.Cursor = Cursors.Hand;
             btnBuy.FlatStyle = FlatStyle.Flat;
             btnBuy.ForeColor = Color.White;
-            btnBuy.Location = new Point(744, 17);
+            btnBuy.Location = new Point(768, 17);
             btnBuy.Name = "btnBuy";
             btnBuy.Size = new Size(196, 46);
             btnBuy.TabIndex = 18;
@@ -376,6 +376,7 @@
             cbxAllBot.TabIndex = 9;
             cbxAllBot.TextAlign = ContentAlignment.MiddleCenter;
             cbxAllBot.UseVisualStyleBackColor = true;
+            cbxAllBot.CheckedChanged += cbxAllBot_CheckedChanged;
             // 
             // pnHeader
             // 

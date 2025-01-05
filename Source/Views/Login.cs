@@ -32,13 +32,14 @@ namespace Source.Views
         public static int frmWith, frmHeight;
 
         public static int parentX, parentY;
-        private readonly UserService _userService = new UserService();
+        private readonly UserService _userService;
 
         private string accessToken;
         public Login()
         {
             InitializeComponent();
             _AccountService = new AccountService();
+            _userService = new UserService();
         }
         // Tạo Form con 
         private Form? activeForm = null;
@@ -138,10 +139,18 @@ namespace Source.Views
                         {
                             Config.token = response.Data.Token;
                             MessageBox.Show("Login successful! ");
-
+                            var user = await _userService.GetUserByToken();
+                            if(user.Data.Roles.FirstOrDefault() == "Customer")
+                            {
+                                openChildForm(new MainForm());
+                            }
+                            else if (user.Data.Roles.FirstOrDefault() == "Admin")
+                            {
+                                openChildForm(new MainFormAdmin());
+                            }
                             //openChildForm(new MainForm());
 
-                            openChildForm(new MainFormAdmin());
+                            //openChildForm(new MainFormAdmin());
 
                         }
                         else
@@ -151,11 +160,22 @@ namespace Source.Views
                     }
                     else
                     {
-                        Config.token = response.Data.Token;
+                        //Config.token = response.Data.Token;
+                      
+                        var userId = await _userService.GetUserIdByToken();
+               
+                        var user = await _userService.GetUserById(userId.Data.UserId);
+                        if (user.Data.Roles.FirstOrDefault() == "Customer")
+                        {
+                            openChildForm(new MainForm());
+                        }
+                        else if (user.Data.Roles.FirstOrDefault() == "Admin")
+                        {
+                            openChildForm(new MainFormAdmin());
+                        }
                         MessageBox.Show("Login successful! ");
-
                         //openChildForm(new MainForm());
-                        openChildForm(new MainFormAdmin());
+                        //openChildForm(new MainFormAdmin());
 
                     }
 

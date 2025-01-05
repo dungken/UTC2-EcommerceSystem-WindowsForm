@@ -37,7 +37,7 @@ namespace Source.DataAcess
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Get);
-            
+            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
 
             var response = await _client.ExecuteAsync<T>(request);
 

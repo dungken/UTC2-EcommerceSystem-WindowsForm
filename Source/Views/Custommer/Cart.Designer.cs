@@ -62,19 +62,19 @@
             lblDonGia = new Label();
             lblSanPham = new Label();
             cbxAll = new CheckBox();
+            pnlChildFormCart = new Panel();
             pnlCart.SuspendLayout();
             pnlProductList.SuspendLayout();
             pnlProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct).BeginInit();
             pnFooter.SuspendLayout();
             pnHeader.SuspendLayout();
+            pnlChildFormCart.SuspendLayout();
             SuspendLayout();
             // 
             // pnlCart
             // 
-            pnlCart.Controls.Add(pnlProductList);
-            pnlCart.Controls.Add(pnFooter);
-            pnlCart.Controls.Add(pnHeader);
+            pnlCart.Controls.Add(pnlChildFormCart);
             pnlCart.Dock = DockStyle.Fill;
             pnlCart.Location = new Point(0, 0);
             pnlCart.Name = "pnlCart";
@@ -456,6 +456,17 @@
             cbxAll.TextAlign = ContentAlignment.MiddleCenter;
             cbxAll.UseVisualStyleBackColor = true;
             // 
+            // pnlChildFormCart
+            // 
+            pnlChildFormCart.Controls.Add(pnlProductList);
+            pnlChildFormCart.Controls.Add(pnFooter);
+            pnlChildFormCart.Controls.Add(pnHeader);
+            pnlChildFormCart.Dock = DockStyle.Fill;
+            pnlChildFormCart.Location = new Point(0, 0);
+            pnlChildFormCart.Name = "pnlChildFormCart";
+            pnlChildFormCart.Size = new Size(964, 538);
+            pnlChildFormCart.TabIndex = 15;
+            // 
             // Cart
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -464,6 +475,7 @@
             ClientSize = new Size(964, 538);
             Controls.Add(pnlCart);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Cart";
             Text = "Cart";
@@ -477,6 +489,7 @@
             pnFooter.PerformLayout();
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
+            pnlChildFormCart.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -521,5 +534,6 @@
         private PictureBox pictureBoxProduct;
         private Panel pnlQuantuty;
         private Label lblDelMul;
+        private Panel pnlChildFormCart;
     }
 }

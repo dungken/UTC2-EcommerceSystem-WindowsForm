@@ -11,6 +11,7 @@ using RestSharp.Authenticators;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
+using static Google.Apis.Requests.BatchRequest;
 namespace Source.DataAcess
 {
     public class ApiClient
@@ -72,23 +73,24 @@ namespace Source.DataAcess
 
             var response = await _client.ExecuteAsync<T>(request);
 
-            if (!response.IsSuccessful)
-            {
-                // In chi tiết lỗi
-                MessageBox.Show($"API Error: {response.ErrorMessage}\nStatus: {response.StatusCode}\nResponse Content: {response.Content}");
+            //if (!response.IsSuccessful)
+            //{
+            //    // In chi tiết lỗi
+            //    //MessageBox.Show($"API Error: {response.ErrorMessage}\nStatus: {response.StatusCode}\nResponse Content: {response.Content}");
 
-                // Nếu có response nội dung, hiển thị nó để debug
-                if (response.Content != null)
-                {
-                    var formattedJson = FormatJson(response.Content);
-                    ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
-                }
-                else
-                {
-                    ////MessageBox.Show(response.StatusCode.ToString());
-                }
-                throw new Exception($"API Error: {response.ErrorMessage}");
-            }
+            //    // Nếu có response nội dung, hiển thị nó để debug
+            //    if (response.Content != null)
+            //    {
+            //        MessageBox.Show("API Error: " + response.ErrorMessage + "\nLỗi " + response.StatusCode.ToString() + "\nResponse Content: " + response.Content);
+            //        //var formattedJson = FormatJson(response.Content);
+            //        //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Lỗi " + response.StatusCode.ToString() + "\nResponse Content: " + response.ErrorMessage);
+            //    }
+            //    //throw new Exception($"API Error: {response.ErrorMessage}");
+            //}
 
             ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;

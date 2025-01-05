@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlPaymentCustomer = new Panel();
+            pnlChildFormPaymentCustomer = new Panel();
             pnlVourcher_Detail = new Panel();
             lblShip = new Label();
             lblToTalPayment = new Label();
@@ -83,6 +84,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             pnlPaymentCustomer.SuspendLayout();
+            pnlChildFormPaymentCustomer.SuspendLayout();
             pnlVourcher_Detail.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
@@ -102,12 +104,21 @@
             // 
             // pnlPaymentCustomer
             // 
-            pnlPaymentCustomer.Controls.Add(pnlVourcher_Detail);
-            pnlPaymentCustomer.Controls.Add(pnlInfor_Adress);
+            pnlPaymentCustomer.Controls.Add(pnlChildFormPaymentCustomer);
             pnlPaymentCustomer.Location = new Point(0, 0);
             pnlPaymentCustomer.Name = "pnlPaymentCustomer";
             pnlPaymentCustomer.Size = new Size(964, 509);
             pnlPaymentCustomer.TabIndex = 0;
+            // 
+            // pnlChildFormPaymentCustomer
+            // 
+            pnlChildFormPaymentCustomer.Controls.Add(pnlVourcher_Detail);
+            pnlChildFormPaymentCustomer.Controls.Add(pnlInfor_Adress);
+            pnlChildFormPaymentCustomer.Dock = DockStyle.Fill;
+            pnlChildFormPaymentCustomer.Location = new Point(0, 0);
+            pnlChildFormPaymentCustomer.Name = "pnlChildFormPaymentCustomer";
+            pnlChildFormPaymentCustomer.Size = new Size(964, 509);
+            pnlChildFormPaymentCustomer.TabIndex = 2;
             // 
             // pnlVourcher_Detail
             // 
@@ -171,7 +182,7 @@
             // 
             panel8.BackColor = SystemColors.ActiveCaptionText;
             panel8.Dock = DockStyle.Bottom;
-            panel8.Location = new Point(0, 437);
+            panel8.Location = new Point(0, 443);
             panel8.Name = "panel8";
             panel8.Size = new Size(488, 1);
             panel8.TabIndex = 13;
@@ -182,9 +193,9 @@
             panel6.Controls.Add(lblToTalPrice);
             panel6.Controls.Add(label15);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 438);
+            panel6.Location = new Point(0, 444);
             panel6.Name = "panel6";
-            panel6.Size = new Size(488, 69);
+            panel6.Size = new Size(488, 63);
             panel6.TabIndex = 12;
             // 
             // panel7
@@ -193,7 +204,7 @@
             panel7.Dock = DockStyle.Right;
             panel7.Location = new Point(338, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(150, 69);
+            panel7.Size = new Size(150, 63);
             panel7.TabIndex = 5;
             // 
             // btnOrder
@@ -204,7 +215,7 @@
             btnOrder.ForeColor = SystemColors.ButtonHighlight;
             btnOrder.Location = new Point(0, 0);
             btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(150, 69);
+            btnOrder.Size = new Size(150, 63);
             btnOrder.TabIndex = 0;
             btnOrder.Text = "Đặt hàng";
             btnOrder.UseVisualStyleBackColor = false;
@@ -652,7 +663,7 @@
             // lblNameCus
             // 
             lblNameCus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNameCus.Location = new Point(3, 6);
+            lblNameCus.Location = new Point(21, 6);
             lblNameCus.Name = "lblNameCus";
             lblNameCus.Size = new Size(137, 28);
             lblNameCus.TabIndex = 0;
@@ -700,6 +711,7 @@
             Text = "PaymentCustomer";
             Load += PaymentCustomer_Load;
             pnlPaymentCustomer.ResumeLayout(false);
+            pnlChildFormPaymentCustomer.ResumeLayout(false);
             pnlVourcher_Detail.ResumeLayout(false);
             pnlVourcher_Detail.PerformLayout();
             panel6.ResumeLayout(false);
@@ -780,5 +792,6 @@
         private Label lblShip;
         private Label lblToTalPayment;
         private Label lblToTalPriceProducts;
+        private Panel pnlChildFormPaymentCustomer;
     }
 }

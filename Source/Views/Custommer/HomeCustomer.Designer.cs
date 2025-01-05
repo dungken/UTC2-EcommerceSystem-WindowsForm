@@ -93,7 +93,7 @@
             pnlHomeCustomer.Dock = DockStyle.Fill;
             pnlHomeCustomer.Location = new Point(0, 0);
             pnlHomeCustomer.Name = "pnlHomeCustomer";
-            pnlHomeCustomer.Size = new Size(964, 509);
+            pnlHomeCustomer.Size = new Size(997, 509);
             pnlHomeCustomer.TabIndex = 0;
             // 
             // pnlHomeCustomerChild
@@ -466,7 +466,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(964, 509);
+            ClientSize = new Size(997, 509);
             Controls.Add(pnlHomeCustomer);
             Name = "HomeCustomer";
             Text = "HomeCustomer";

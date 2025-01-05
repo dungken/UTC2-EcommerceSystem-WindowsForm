@@ -52,7 +52,7 @@
             pnlDesign.Dock = DockStyle.Fill;
             pnlDesign.Location = new Point(0, 0);
             pnlDesign.Name = "pnlDesign";
-            pnlDesign.Size = new Size(964, 446);
+            pnlDesign.Size = new Size(997, 509);
             pnlDesign.TabIndex = 0;
             // 
             // button4
@@ -61,7 +61,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             button4.ForeColor = Color.FromArgb(80, 40, 60);
-            button4.Location = new Point(657, 309);
+            button4.Location = new Point(664, 406);
             button4.Name = "button4";
             button4.Size = new Size(285, 45);
             button4.TabIndex = 11;
@@ -74,7 +74,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             button3.ForeColor = Color.FromArgb(80, 40, 60);
-            button3.Location = new Point(331, 309);
+            button3.Location = new Point(338, 406);
             button3.Name = "button3";
             button3.Size = new Size(285, 45);
             button3.TabIndex = 10;
@@ -87,7 +87,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             button2.ForeColor = Color.FromArgb(80, 40, 60);
-            button2.Location = new Point(18, 309);
+            button2.Location = new Point(25, 406);
             button2.Name = "button2";
             button2.Size = new Size(285, 45);
             button2.TabIndex = 9;
@@ -99,7 +99,7 @@
             btnRequest.FlatStyle = FlatStyle.Flat;
             btnRequest.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRequest.ForeColor = SystemColors.ActiveCaption;
-            btnRequest.Location = new Point(389, 230);
+            btnRequest.Location = new Point(394, 280);
             btnRequest.Name = "btnRequest";
             btnRequest.Size = new Size(157, 45);
             btnRequest.TabIndex = 8;
@@ -112,9 +112,9 @@
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(279, 46);
+            panel2.Location = new Point(282, 89);
             panel2.Name = "panel2";
-            panel2.Size = new Size(411, 160);
+            panel2.Size = new Size(411, 140);
             panel2.TabIndex = 7;
             // 
             // panel3
@@ -145,7 +145,7 @@
             label2.ForeColor = Color.FromArgb(80, 40, 60);
             label2.Location = new Point(3, 91);
             label2.Name = "label2";
-            label2.Size = new Size(405, 64);
+            label2.Size = new Size(405, 42);
             label2.TabIndex = 1;
             label2.Text = "Đặt sản xuất chưa bao giờ đơn giản đến vậy ";
             // 
@@ -154,9 +154,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(964, 446);
+            ClientSize = new Size(997, 509);
             Controls.Add(pnlDesign);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "DesignCustomer";
             Text = "DesignCustomer";
             pnlDesign.ResumeLayout(false);

@@ -785,6 +785,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1047, 509);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ProductsCustomer";
             Text = "ProductsCustomer";
             Load += ProductsCustomer_Load;

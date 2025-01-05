@@ -61,8 +61,6 @@ namespace Source.Views.Admin
             lblFilter = new Label();
             pnList = new Panel();
             gridView = new DataGridView();
-            pnFotter = new Panel();
-            lblShowing = new Label();
             Id = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
@@ -70,6 +68,8 @@ namespace Source.Views.Admin
             CategoryId = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Remove = new DataGridViewButtonColumn();
+            pnFotter = new Panel();
+            lblShowing = new Label();
             pnTitle.SuspendLayout();
             pnMain.SuspendLayout();
             pnSearch.SuspendLayout();
@@ -158,7 +158,6 @@ namespace Source.Views.Admin
             // 
             pnMain.BackColor = Color.White;
             pnMain.Controls.Add(pnSearch);
-            pnMain.Controls.Add(panel1);
             pnMain.Controls.Add(pnHeader);
             pnMain.Controls.Add(pnFilter);
             pnMain.Controls.Add(pnList);
@@ -202,7 +201,7 @@ namespace Source.Views.Admin
             panel1.Controls.Add(labelPageInfo);
             panel1.Controls.Add(rjButton1);
             panel1.Controls.Add(rjButton2);
-            panel1.Location = new Point(643, 389);
+            panel1.Location = new Point(388, 3);
             panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(369, 45);
@@ -227,7 +226,7 @@ namespace Source.Views.Admin
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.MediumSlateBlue;
-            rjButton1.Location = new Point(243, 3);
+            rjButton1.Location = new Point(261, 3);
             rjButton1.Margin = new Padding(2, 3, 2, 3);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(108, 42);
@@ -248,7 +247,7 @@ namespace Source.Views.Admin
             rjButton2.FlatAppearance.BorderSize = 0;
             rjButton2.FlatStyle = FlatStyle.Flat;
             rjButton2.ForeColor = Color.MediumSlateBlue;
-            rjButton2.Location = new Point(40, 1);
+            rjButton2.Location = new Point(7, 0);
             rjButton2.Margin = new Padding(2, 3, 2, 3);
             rjButton2.Name = "rjButton2";
             rjButton2.Size = new Size(108, 42);
@@ -440,24 +439,6 @@ namespace Source.Views.Admin
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
-            // pnFotter
-            // 
-            pnFotter.Controls.Add(lblShowing);
-            pnFotter.Location = new Point(364, 389);
-            pnFotter.Name = "pnFotter";
-            pnFotter.Size = new Size(593, 48);
-            pnFotter.TabIndex = 0;
-            // 
-            // lblShowing
-            // 
-            lblShowing.AutoSize = true;
-            lblShowing.Cursor = Cursors.IBeam;
-            lblShowing.Location = new Point(21, 14);
-            lblShowing.Name = "lblShowing";
-            lblShowing.Size = new Size(243, 22);
-            lblShowing.TabIndex = 0;
-            lblShowing.Text = "Showing 1 to 10 of 13 entries";
-            // 
             // Id
             // 
             Id.DataPropertyName = "Id";
@@ -518,6 +499,25 @@ namespace Source.Views.Admin
             Remove.Name = "Remove";
             Remove.Resizable = DataGridViewTriState.True;
             Remove.Width = 125;
+            // 
+            // pnFotter
+            // 
+            pnFotter.Controls.Add(lblShowing);
+            pnFotter.Controls.Add(panel1);
+            pnFotter.Location = new Point(254, 390);
+            pnFotter.Name = "pnFotter";
+            pnFotter.Size = new Size(757, 48);
+            pnFotter.TabIndex = 0;
+            // 
+            // lblShowing
+            // 
+            lblShowing.AutoSize = true;
+            lblShowing.Cursor = Cursors.IBeam;
+            lblShowing.Location = new Point(20, 13);
+            lblShowing.Name = "lblShowing";
+            lblShowing.Size = new Size(243, 22);
+            lblShowing.TabIndex = 0;
+            lblShowing.Text = "Showing 1 to 10 of 13 entries";
             // 
             // ProductList
             // 

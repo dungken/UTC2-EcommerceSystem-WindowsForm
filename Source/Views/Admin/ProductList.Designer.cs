@@ -39,10 +39,6 @@ namespace Source.Views.Admin
             pnSearch = new Panel();
             tbxSearch = new TextBox();
             lblSearch = new Label();
-            panel1 = new Panel();
-            labelPageInfo = new Label();
-            rjButton1 = new MyCustomControl.RJButton();
-            rjButton2 = new MyCustomControl.RJButton();
             pnHeader = new Panel();
             pnLeftHeader = new Panel();
             btnEntries = new Label();
@@ -61,8 +57,6 @@ namespace Source.Views.Admin
             lblFilter = new Label();
             pnList = new Panel();
             gridView = new DataGridView();
-            pnFotter = new Panel();
-            lblShowing = new Label();
             Id = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
@@ -70,10 +64,15 @@ namespace Source.Views.Admin
             CategoryId = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Remove = new DataGridViewButtonColumn();
+            pnFotter = new Panel();
+            lblShowing = new Label();
+            panel1 = new Panel();
+            labelPageInfo = new Label();
+            rjButton1 = new MyCustomControl.RJButton();
+            rjButton2 = new MyCustomControl.RJButton();
             pnTitle.SuspendLayout();
             pnMain.SuspendLayout();
             pnSearch.SuspendLayout();
-            panel1.SuspendLayout();
             pnHeader.SuspendLayout();
             pnLeftHeader.SuspendLayout();
             pnFilter.SuspendLayout();
@@ -82,6 +81,7 @@ namespace Source.Views.Admin
             pnList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             pnFotter.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pnTitle
@@ -158,7 +158,6 @@ namespace Source.Views.Admin
             // 
             pnMain.BackColor = Color.White;
             pnMain.Controls.Add(pnSearch);
-            pnMain.Controls.Add(panel1);
             pnMain.Controls.Add(pnHeader);
             pnMain.Controls.Add(pnFilter);
             pnMain.Controls.Add(pnList);
@@ -196,67 +195,6 @@ namespace Source.Views.Admin
             lblSearch.Size = new Size(70, 22);
             lblSearch.TabIndex = 0;
             lblSearch.Text = "Search:";
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(labelPageInfo);
-            panel1.Controls.Add(rjButton1);
-            panel1.Controls.Add(rjButton2);
-            panel1.Location = new Point(643, 389);
-            panel1.Margin = new Padding(2, 3, 2, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(369, 45);
-            panel1.TabIndex = 2;
-            // 
-            // labelPageInfo
-            // 
-            labelPageInfo.AutoSize = true;
-            labelPageInfo.Location = new Point(115, 11);
-            labelPageInfo.Name = "labelPageInfo";
-            labelPageInfo.Size = new Size(0, 22);
-            labelPageInfo.TabIndex = 5;
-            // 
-            // rjButton1
-            // 
-            rjButton1.BackColor = Color.FromArgb(249, 251, 253);
-            rjButton1.BackgroundColor = Color.FromArgb(249, 251, 253);
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 20;
-            rjButton1.BorderSize = 0;
-            rjButton1.Cursor = Cursors.Hand;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.ForeColor = Color.MediumSlateBlue;
-            rjButton1.Location = new Point(243, 3);
-            rjButton1.Margin = new Padding(2, 3, 2, 3);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(108, 42);
-            rjButton1.TabIndex = 1;
-            rjButton1.Text = "Next";
-            rjButton1.TextColor = Color.MediumSlateBlue;
-            rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += rjButton1_Click;
-            // 
-            // rjButton2
-            // 
-            rjButton2.BackColor = Color.FromArgb(249, 251, 253);
-            rjButton2.BackgroundColor = Color.FromArgb(249, 251, 253);
-            rjButton2.BorderColor = Color.PaleVioletRed;
-            rjButton2.BorderRadius = 20;
-            rjButton2.BorderSize = 0;
-            rjButton2.Cursor = Cursors.Hand;
-            rjButton2.FlatAppearance.BorderSize = 0;
-            rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.ForeColor = Color.MediumSlateBlue;
-            rjButton2.Location = new Point(40, 1);
-            rjButton2.Margin = new Padding(2, 3, 2, 3);
-            rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(108, 42);
-            rjButton2.TabIndex = 0;
-            rjButton2.Text = "Previous";
-            rjButton2.TextColor = Color.MediumSlateBlue;
-            rjButton2.UseVisualStyleBackColor = false;
-            rjButton2.Click += rjButton2_Click;
             // 
             // pnHeader
             // 
@@ -440,24 +378,6 @@ namespace Source.Views.Admin
             gridView.CellClick += gridView_CellClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
-            // pnFotter
-            // 
-            pnFotter.Controls.Add(lblShowing);
-            pnFotter.Location = new Point(364, 389);
-            pnFotter.Name = "pnFotter";
-            pnFotter.Size = new Size(593, 48);
-            pnFotter.TabIndex = 0;
-            // 
-            // lblShowing
-            // 
-            lblShowing.AutoSize = true;
-            lblShowing.Cursor = Cursors.IBeam;
-            lblShowing.Location = new Point(21, 14);
-            lblShowing.Name = "lblShowing";
-            lblShowing.Size = new Size(243, 22);
-            lblShowing.TabIndex = 0;
-            lblShowing.Text = "Showing 1 to 10 of 13 entries";
-            // 
             // Id
             // 
             Id.DataPropertyName = "Id";
@@ -519,6 +439,86 @@ namespace Source.Views.Admin
             Remove.Resizable = DataGridViewTriState.True;
             Remove.Width = 125;
             // 
+            // pnFotter
+            // 
+            pnFotter.Controls.Add(lblShowing);
+            pnFotter.Controls.Add(panel1);
+            pnFotter.Location = new Point(254, 390);
+            pnFotter.Name = "pnFotter";
+            pnFotter.Size = new Size(757, 48);
+            pnFotter.TabIndex = 0;
+            // 
+            // lblShowing
+            // 
+            lblShowing.AutoSize = true;
+            lblShowing.Cursor = Cursors.IBeam;
+            lblShowing.Location = new Point(20, 13);
+            lblShowing.Name = "lblShowing";
+            lblShowing.Size = new Size(243, 22);
+            lblShowing.TabIndex = 0;
+            lblShowing.Text = "Showing 1 to 10 of 13 entries";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(labelPageInfo);
+            panel1.Controls.Add(rjButton1);
+            panel1.Controls.Add(rjButton2);
+            panel1.Location = new Point(388, 3);
+            panel1.Margin = new Padding(2, 3, 2, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(369, 45);
+            panel1.TabIndex = 2;
+            // 
+            // labelPageInfo
+            // 
+            labelPageInfo.AutoSize = true;
+            labelPageInfo.Location = new Point(115, 11);
+            labelPageInfo.Name = "labelPageInfo";
+            labelPageInfo.Size = new Size(0, 22);
+            labelPageInfo.TabIndex = 5;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.Cursor = Cursors.Hand;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.MediumSlateBlue;
+            rjButton1.Location = new Point(261, 3);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(108, 42);
+            rjButton1.TabIndex = 1;
+            rjButton1.Text = "Next";
+            rjButton1.TextColor = Color.MediumSlateBlue;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BackgroundColor = Color.FromArgb(249, 251, 253);
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 20;
+            rjButton2.BorderSize = 0;
+            rjButton2.Cursor = Cursors.Hand;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.MediumSlateBlue;
+            rjButton2.Location = new Point(7, 0);
+            rjButton2.Margin = new Padding(2, 3, 2, 3);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(108, 42);
+            rjButton2.TabIndex = 0;
+            rjButton2.Text = "Previous";
+            rjButton2.TextColor = Color.MediumSlateBlue;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
+            // 
             // ProductList
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -539,8 +539,6 @@ namespace Source.Views.Admin
             pnMain.ResumeLayout(false);
             pnSearch.ResumeLayout(false);
             pnSearch.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             pnHeader.ResumeLayout(false);
             pnLeftHeader.ResumeLayout(false);
             pnLeftHeader.PerformLayout();
@@ -554,6 +552,8 @@ namespace Source.Views.Admin
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnFotter.ResumeLayout(false);
             pnFotter.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 

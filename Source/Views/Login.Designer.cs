@@ -61,7 +61,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.img_posterResgister;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(3, -3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(355, 628);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -214,13 +214,14 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(345, 39);
+            label1.Location = new Point(345, 34);
             label1.Name = "label1";
-            label1.Size = new Size(157, 75);
+            label1.Size = new Size(160, 60);
             label1.TabIndex = 2;
-            label1.Text = "Login";
+            label1.Text = "LOGIN";
             // 
             // Login
             // 

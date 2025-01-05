@@ -61,7 +61,20 @@ namespace Source.Views
             //DisplayChart(monthlyData, "Thống Kê Doanh Thu Theo Tháng");
 
         }
+        private void OpenDefaultForm()
+{
+    // Đóng form con hiện tại nếu có
+    if (activeForm != null)
+    {
+        activeForm.Close();
+    }
 
+    // Thiết lập lại trạng thái của form chính
+    pnlChildForm.Controls.Clear();
+    pnlChildForm.Controls.Add(pnThongKe); // pnThongKe là panel chứa nội dung mặc định
+    pnThongKe.BringToFront();
+    pnThongKe.Show();
+}
         public async void LoadData()
         {
             var responeCus = await _userService.GetAllUser();
@@ -273,7 +286,16 @@ namespace Source.Views
 
         private async void btnHome_Click(object sender, EventArgs e)
         {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

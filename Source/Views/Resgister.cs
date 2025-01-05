@@ -178,6 +178,7 @@ namespace Source.Views
                 if (result.Data)
                 {
                     MessageBox.Show("Resgister successfull, now you can log in with new account of you");
+                    openChildForm(new Login());
                 }
                 else
                 {

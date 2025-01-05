@@ -1,4 +1,5 @@
-﻿using Source.Dtos.Account;
+﻿using Newtonsoft.Json.Linq;
+using Source.Dtos.Account;
 using Source.Dtos.Reponse;
 using Source.Service;
 using Source.Utils;
@@ -22,8 +23,8 @@ namespace Source.Views
         public static int parentX, parentY;
         private readonly UserService _userService = new UserService();
         private static readonly HttpClient client = new HttpClient();
-
-
+        public string EmailOFUser;
+        public string ResetToken;
         public ForgetPassword()
         {
             InitializeComponent();
@@ -49,62 +50,59 @@ namespace Source.Views
                 return;
             }
 
-            MessageBox.Show("Vui lòng xác minh email trước khi đăng nhập.");
+            MessageBox.Show("Vui lòng xác minh Email để đổi mật khẩu.");
 
             var SendCodeForForgetPassword = new SendCodeForForgetPassword()
             {
                 Email = userEmail
             };
-            this.Hide();
+  
             var response = await _accountService.SendCodeForForgetPasswordAsync(SendCodeForForgetPassword);
-            userId = response.Data.userId;
-            var p = await _accountService.CheckEnableVerifyAsync(userEmail);
-            
-            if (p.Data.TwoFactorEnabled == true)
+            if (response.Success)
             {
-                MessageBox.Show("Xác thực hai yếu tố đã được bật. Vui lòng xác minh email của bạn.");
-
-                Form modalBackground = new Form();
-
-                using (_2StepVerificationForForgetPass modal = new _2StepVerificationForForgetPass())
-                {
-                    modalBackground.StartPosition = FormStartPosition.Manual;
-                    modalBackground.FormBorderStyle = FormBorderStyle.None;
-                    modalBackground.Opacity = 0.50d;
-                    modalBackground.Size = new System.Drawing.Size(this.Width, this.Height);
-                    modalBackground.Location = new Point(this.Location.X, this.Location.Y);
-                    modalBackground.ShowInTaskbar = false;
-                    modalBackground.Show();
-                    modal.Owner = modalBackground;
-
-                    parentX = this.Location.X + Login.pnlChildFormLocationX + 200;
-                    parentY = this.Location.Y + Login.pnlChildFormLocationY;
-                    modal.ShowDialog();
-                    modalBackground.Dispose();
-                }
-
-                if (_2StepVerificationForForgetPass.isVerifyEmail)
-                {
-                    this.Show();
-                    txtNewPassword.Show();
-                    btnConfirm.Show();
-                    label3.Show();
-                    panel4.Show();
-                    panel3.Show();
-                    label4.Show();
-                    txtConfirm.Show();  
-                    txtEmail.Hide();
-                    btnGetLink.Hide();
-                    label2.Hide();
-                    panel7.Hide();
-                    
-                }
+                userId = response.Data.userId;
+                Utils.Config.token = response.Data.Token;
+                EmailOFUser = response.Data.Email;
+                ResetToken = response.Data.ResetToken;
             }
-            else
+            Form modalBackground = new Form();
+
+            using (_2StepVerificationForForgetPass modal = new _2StepVerificationForForgetPass())
             {
-                MessageBox.Show("Xác thực hai yếu tố không được bật. Bạn có thể tiếp tục với việc đặt lại mật khẩu.");
+                modalBackground.StartPosition = FormStartPosition.Manual;
+                modalBackground.FormBorderStyle = FormBorderStyle.None;
+                modalBackground.Opacity = 0.50d;
+                modalBackground.Size = new System.Drawing.Size(this.Width, this.Height);
+                modalBackground.Location = new Point(this.Location.X, this.Location.Y);
+                modalBackground.ShowInTaskbar = false;
+                modalBackground.Show();
+                modal.Owner = modalBackground;
+
+                parentX = this.Location.X + Login.pnlChildFormLocationX + 200;
+                parentY = this.Location.Y + Login.pnlChildFormLocationY;
+                modal.ShowDialog();
+                modalBackground.Dispose();
             }
-        }
+
+            if (_2StepVerificationForForgetPass.isVerifyEmail)
+            {
+                this.Show();
+                txtNewPassword.Show();
+                btnConfirm.Show();
+                label3.Show();
+                panel4.Show();
+                panel3.Show();
+                label4.Show();
+                txtConfirm.Show();
+                txtEmail.Hide();
+                btnGetLink.Hide();
+                label2.Hide();
+                panel7.Hide();
+
+            }
+
+        }   
+        
 
         private async void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -143,16 +141,17 @@ namespace Source.Views
 
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
-            
+
         }
         private async Task ChangePasswordAsync()
         {
-            ChangePasswordDto changePasswordDto = new ChangePasswordDto
+            ResetPasswordDto changePasswordDto = new ResetPasswordDto
             {
-                CurrentPassword = "1234@Abcd",
+                Token = ResetToken,
+                Email = EmailOFUser,
                 NewPassword = password
             };
-            var response = await _accountService.ChangePassword(changePasswordDto);
+            var response = await _accountService.ResetPassword(changePasswordDto);
             if (response != null && response.Success)
             {
                 MessageBox.Show($"Thay đổi mật khẩu thành công\nMessage: {response.Message}");
@@ -163,6 +162,11 @@ namespace Source.Views
                 MessageBox.Show($"Thay đổi mật khẩu thất bại\nError: {errorMessage}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 }

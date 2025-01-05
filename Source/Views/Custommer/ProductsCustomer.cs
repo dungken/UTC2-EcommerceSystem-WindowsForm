@@ -216,8 +216,11 @@ namespace Source.Views.Custommer
                 var priceLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Price"));
                 var categoryLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Cate"));
                 var imagePicture = panel.Controls.OfType<PictureBox>().FirstOrDefault();
-
-                nameLabel.Text = product.Name;
+                if (product.Name != null)
+                {
+                    nameLabel.Text = product.Name;
+                }
+                
                 if (priceLabel != null)
                 {
                     priceLabel.Text = product.Price.ToString();
@@ -405,5 +408,6 @@ namespace Source.Views.Custommer
                 DisplayProductsForCurrentPage();
             }
         }
+
     }
 }

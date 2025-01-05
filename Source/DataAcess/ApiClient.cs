@@ -52,7 +52,7 @@ namespace Source.DataAcess
             }
             //// Format JSON response
             //var formattedJson = FormatJson(response.Content);
-            //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+            ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
 
             throw new Exception($"API Error: {response.ErrorMessage}");
         }
@@ -60,7 +60,10 @@ namespace Source.DataAcess
         public async Task<T> PostAsync<T>(string endpoint, object? body = null)
         {
             var request = new RestRequest(endpoint, Method.Post);
-            request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            if(Utils.Config.token != null)
+            {
+                request.AddHeader("Authorization", $"Bearer {Utils.Config.token}");
+            }      
 
             if (body != null)
             {
@@ -78,16 +81,16 @@ namespace Source.DataAcess
                 if (response.Content != null)
                 {
                     var formattedJson = FormatJson(response.Content);
-                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                    ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 }
                 else
                 {
-                    MessageBox.Show(response.StatusCode.ToString());
+                    ////MessageBox.Show(response.StatusCode.ToString());
                 }
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
 
-            MessageBox.Show(response.StatusCode.ToString());
+            ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -111,15 +114,15 @@ namespace Source.DataAcess
                 //if (response.Content != null)
                 //{
                 //    var formattedJson = FormatJson(response.Content);
-                //    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //    //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 //}
                 //else
                 //{
-                //    MessageBox.Show(response.StatusCode.ToString());
+                //    ////MessageBox.Show(response.StatusCode.ToString());
                 //}
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
-            MessageBox.Show(response.StatusCode.ToString());
+            ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -151,15 +154,15 @@ namespace Source.DataAcess
                 //if (response.Content != null)
                 //{
                 //    var formattedJson = FormatJson(response.Content);
-                //    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //    //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 //}
                 //else
                 //{
-                //    MessageBox.Show(response.StatusCode.ToString());
+                //    ////MessageBox.Show(response.StatusCode.ToString());
                 //}
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
-            MessageBox.Show(response.StatusCode.ToString());
+            ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -176,7 +179,7 @@ namespace Source.DataAcess
             {
                 // Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;
@@ -224,7 +227,7 @@ namespace Source.DataAcess
             {
                 //// Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;
@@ -256,7 +259,7 @@ namespace Source.DataAcess
             {
                 // Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;

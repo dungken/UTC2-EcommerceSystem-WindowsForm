@@ -279,7 +279,7 @@ namespace Source.Views.Admin
                 picbxProfile.Load(_user.user.ProfilePicture);
             }
             // get id
-            lblId.Text =  _customerId.ToString();
+            lblId.Text = _customerId.ToString();
             // get name
             lblName.Text = _user.user.FirstName + " " + _user.user.LastName;
             // get gender

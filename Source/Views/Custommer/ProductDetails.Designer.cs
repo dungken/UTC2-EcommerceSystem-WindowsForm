@@ -31,11 +31,12 @@
             pnImg = new Panel();
             btnPre = new Button();
             btnNext = new Button();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            picBoxExtra = new PictureBox();
+            picBox1 = new PictureBox();
+            picBox2 = new PictureBox();
+            picBox3 = new PictureBox();
             picbxMain = new PictureBox();
             pnRating = new Panel();
+            button1 = new Button();
             btnAddCart = new Button();
             btnBuy = new Button();
             pnChoose = new Panel();
@@ -44,13 +45,15 @@
             lblQuantity = new Label();
             btnDecrease = new Button();
             lblSoLuong = new Label();
-            pnSize = new Panel();
-            button2 = new Button();
-            btnSize = new Button();
+            pnlSize = new Panel();
+            btnSize1 = new Button();
+            btnSize2 = new Button();
+            btnSize3 = new Button();
             lblSize = new Label();
-            pnColor = new Panel();
-            button1 = new Button();
-            btnColor = new Button();
+            pnlColor = new Panel();
+            btnColor1 = new Button();
+            btnColor2 = new Button();
+            btnColor3 = new Button();
             lblMauSac = new Label();
             pnPrice = new Panel();
             lblDiscount = new Label();
@@ -74,15 +77,15 @@
             pnName = new Panel();
             lblName = new Label();
             pnImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBoxExtra).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picbxMain).BeginInit();
             pnRating.SuspendLayout();
             pnChoose.SuspendLayout();
             pnQuantuty.SuspendLayout();
-            pnSize.SuspendLayout();
-            pnColor.SuspendLayout();
+            pnlSize.SuspendLayout();
+            pnlColor.SuspendLayout();
             pnPrice.SuspendLayout();
             pnDetail.SuspendLayout();
             pnLineLeft.SuspendLayout();
@@ -99,9 +102,9 @@
             // 
             pnImg.Controls.Add(btnPre);
             pnImg.Controls.Add(btnNext);
-            pnImg.Controls.Add(pictureBox2);
-            pnImg.Controls.Add(pictureBox1);
-            pnImg.Controls.Add(picBoxExtra);
+            pnImg.Controls.Add(picBox1);
+            pnImg.Controls.Add(picBox2);
+            pnImg.Controls.Add(picBox3);
             pnImg.Controls.Add(picbxMain);
             pnImg.Location = new Point(12, 12);
             pnImg.Name = "pnImg";
@@ -117,6 +120,7 @@
             btnPre.Size = new Size(20, 20);
             btnPre.TabIndex = 5;
             btnPre.UseVisualStyleBackColor = true;
+            btnPre.Click += btnPre_Click;
             // 
             // btnNext
             // 
@@ -128,39 +132,43 @@
             btnNext.Size = new Size(20, 20);
             btnNext.TabIndex = 4;
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
             // 
-            // pictureBox2
+            // picBox1
             // 
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = Properties.Resources.capybara3;
-            pictureBox2.Location = new Point(236, 403);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(93, 108);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            picBox1.Cursor = Cursors.Hand;
+            picBox1.Image = Properties.Resources.capybara3;
+            picBox1.Location = new Point(3, 403);
+            picBox1.Name = "picBox1";
+            picBox1.Size = new Size(93, 108);
+            picBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox1.TabIndex = 1;
+            picBox1.TabStop = false;
+            picBox1.Click += picBox1_Click;
             // 
-            // pictureBox1
+            // picBox2
             // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources.capybara3;
-            pictureBox1.Location = new Point(122, 403);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(93, 108);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            picBox2.Cursor = Cursors.Hand;
+            picBox2.Image = Properties.Resources.capybara3;
+            picBox2.Location = new Point(122, 403);
+            picBox2.Name = "picBox2";
+            picBox2.Size = new Size(93, 108);
+            picBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox2.TabIndex = 2;
+            picBox2.TabStop = false;
+            picBox2.Click += picBox2_Click;
             // 
-            // picBoxExtra
+            // picBox3
             // 
-            picBoxExtra.Cursor = Cursors.Hand;
-            picBoxExtra.Image = Properties.Resources.capybara3;
-            picBoxExtra.Location = new Point(3, 403);
-            picBoxExtra.Name = "picBoxExtra";
-            picBoxExtra.Size = new Size(93, 108);
-            picBoxExtra.SizeMode = PictureBoxSizeMode.Zoom;
-            picBoxExtra.TabIndex = 1;
-            picBoxExtra.TabStop = false;
+            picBox3.Cursor = Cursors.Hand;
+            picBox3.Image = Properties.Resources.capybara3;
+            picBox3.Location = new Point(236, 403);
+            picBox3.Name = "picBox3";
+            picBox3.Size = new Size(93, 108);
+            picBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox3.TabIndex = 3;
+            picBox3.TabStop = false;
+            picBox3.Click += picBox3_Click;
             // 
             // picbxMain
             // 
@@ -175,6 +183,7 @@
             // 
             // pnRating
             // 
+            pnRating.Controls.Add(button1);
             pnRating.Controls.Add(btnAddCart);
             pnRating.Controls.Add(btnBuy);
             pnRating.Controls.Add(pnChoose);
@@ -185,6 +194,15 @@
             pnRating.Name = "pnRating";
             pnRating.Size = new Size(573, 514);
             pnRating.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(556, 444);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 21;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // btnAddCart
             // 
@@ -213,14 +231,15 @@
             btnBuy.TabIndex = 19;
             btnBuy.Text = "Mua ngay";
             btnBuy.UseVisualStyleBackColor = false;
+            btnBuy.Click += btnBuy_Click;
             // 
             // pnChoose
             // 
             pnChoose.Controls.Add(pnQuantuty);
             pnChoose.Controls.Add(lblSoLuong);
-            pnChoose.Controls.Add(pnSize);
+            pnChoose.Controls.Add(pnlSize);
             pnChoose.Controls.Add(lblSize);
-            pnChoose.Controls.Add(pnColor);
+            pnChoose.Controls.Add(pnlColor);
             pnChoose.Controls.Add(lblMauSac);
             pnChoose.Location = new Point(30, 226);
             pnChoose.Name = "pnChoose";
@@ -247,6 +266,7 @@
             btnIncrease.TabIndex = 33;
             btnIncrease.Text = "+";
             btnIncrease.UseVisualStyleBackColor = true;
+            btnIncrease.Click += btnIncrease_Click;
             // 
             // lblQuantity
             // 
@@ -270,6 +290,7 @@
             btnDecrease.TabIndex = 32;
             btnDecrease.Text = "-";
             btnDecrease.UseVisualStyleBackColor = true;
+            btnDecrease.Click += btnDecrease_Click;
             // 
             // lblSoLuong
             // 
@@ -282,34 +303,42 @@
             lblSoLuong.TabIndex = 4;
             lblSoLuong.Text = "Số lượng";
             // 
-            // pnSize
+            // pnlSize
             // 
-            pnSize.Controls.Add(button2);
-            pnSize.Controls.Add(btnSize);
-            pnSize.Location = new Point(101, 67);
-            pnSize.Name = "pnSize";
-            pnSize.Size = new Size(384, 47);
-            pnSize.TabIndex = 3;
+            pnlSize.Controls.Add(btnSize1);
+            pnlSize.Controls.Add(btnSize2);
+            pnlSize.Controls.Add(btnSize3);
+            pnlSize.Location = new Point(101, 67);
+            pnlSize.Name = "pnlSize";
+            pnlSize.Size = new Size(384, 47);
+            pnlSize.TabIndex = 3;
             // 
-            // button2
+            // btnSize1
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(109, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 44);
-            button2.TabIndex = 3;
-            button2.Text = "L";
-            button2.UseVisualStyleBackColor = true;
+            btnSize1.Cursor = Cursors.Hand;
+            btnSize1.Location = new Point(9, 3);
+            btnSize1.Name = "btnSize1";
+            btnSize1.Size = new Size(94, 44);
+            btnSize1.TabIndex = 2;
+            btnSize1.UseVisualStyleBackColor = true;
             // 
-            // btnSize
+            // btnSize2
             // 
-            btnSize.Cursor = Cursors.Hand;
-            btnSize.Location = new Point(9, 3);
-            btnSize.Name = "btnSize";
-            btnSize.Size = new Size(94, 44);
-            btnSize.TabIndex = 2;
-            btnSize.Text = "M";
-            btnSize.UseVisualStyleBackColor = true;
+            btnSize2.Cursor = Cursors.Hand;
+            btnSize2.Location = new Point(109, 3);
+            btnSize2.Name = "btnSize2";
+            btnSize2.Size = new Size(94, 44);
+            btnSize2.TabIndex = 3;
+            btnSize2.UseVisualStyleBackColor = true;
+            // 
+            // btnSize3
+            // 
+            btnSize3.Cursor = Cursors.Hand;
+            btnSize3.Location = new Point(213, 3);
+            btnSize3.Name = "btnSize3";
+            btnSize3.Size = new Size(94, 44);
+            btnSize3.TabIndex = 3;
+            btnSize3.UseVisualStyleBackColor = true;
             // 
             // lblSize
             // 
@@ -322,34 +351,43 @@
             lblSize.TabIndex = 2;
             lblSize.Text = "Size";
             // 
-            // pnColor
+            // pnlColor
             // 
-            pnColor.Controls.Add(button1);
-            pnColor.Controls.Add(btnColor);
-            pnColor.Location = new Point(103, 3);
-            pnColor.Name = "pnColor";
-            pnColor.Size = new Size(384, 47);
-            pnColor.TabIndex = 1;
+            pnlColor.Controls.Add(btnColor1);
+            pnlColor.Controls.Add(btnColor2);
+            pnlColor.Controls.Add(btnColor3);
+            pnlColor.Location = new Point(103, 3);
+            pnlColor.Name = "pnlColor";
+            pnlColor.Size = new Size(384, 47);
+            pnlColor.TabIndex = 1;
             // 
-            // button1
+            // btnColor1
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(109, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 44);
-            button1.TabIndex = 3;
-            button1.Text = "Trắng";
-            button1.UseVisualStyleBackColor = true;
+            btnColor1.Cursor = Cursors.Hand;
+            btnColor1.Location = new Point(9, 3);
+            btnColor1.Name = "btnColor1";
+            btnColor1.Size = new Size(94, 44);
+            btnColor1.TabIndex = 2;
+            btnColor1.UseVisualStyleBackColor = true;
             // 
-            // btnColor
+            // btnColor2
             // 
-            btnColor.Cursor = Cursors.Hand;
-            btnColor.Location = new Point(9, 3);
-            btnColor.Name = "btnColor";
-            btnColor.Size = new Size(94, 44);
-            btnColor.TabIndex = 2;
-            btnColor.Text = "Đen";
-            btnColor.UseVisualStyleBackColor = true;
+            btnColor2.Cursor = Cursors.Hand;
+            btnColor2.Location = new Point(109, 3);
+            btnColor2.Name = "btnColor2";
+            btnColor2.Size = new Size(94, 44);
+            btnColor2.TabIndex = 3;
+            btnColor2.UseVisualStyleBackColor = true;
+            // 
+            // btnColor3
+            // 
+            btnColor3.Cursor = Cursors.Hand;
+            btnColor3.Location = new Point(211, 3);
+            btnColor3.Name = "btnColor3";
+            btnColor3.Padding = new Padding(3);
+            btnColor3.Size = new Size(94, 44);
+            btnColor3.TabIndex = 3;
+            btnColor3.UseVisualStyleBackColor = true;
             // 
             // lblMauSac
             // 
@@ -376,12 +414,12 @@
             // lblDiscount
             // 
             lblDiscount.AutoSize = true;
-            lblDiscount.BackColor = Color.FromArgb(251, 239, 234);
+            lblDiscount.BackColor = Color.Transparent;
             lblDiscount.Cursor = Cursors.IBeam;
             lblDiscount.FlatStyle = FlatStyle.Flat;
             lblDiscount.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDiscount.ForeColor = Color.OrangeRed;
-            lblDiscount.Location = new Point(190, 17);
+            lblDiscount.Location = new Point(220, 19);
             lblDiscount.Name = "lblDiscount";
             lblDiscount.Size = new Size(49, 19);
             lblDiscount.TabIndex = 22;
@@ -393,7 +431,7 @@
             lblOldPrice.Cursor = Cursors.IBeam;
             lblOldPrice.Font = new Font("Times New Roman", 12F, FontStyle.Strikeout, GraphicsUnit.Point, 0);
             lblOldPrice.ForeColor = SystemColors.ControlDarkDark;
-            lblOldPrice.Location = new Point(123, 17);
+            lblOldPrice.Location = new Point(136, 19);
             lblOldPrice.Name = "lblOldPrice";
             lblOldPrice.Size = new Size(65, 22);
             lblOldPrice.TabIndex = 21;
@@ -599,16 +637,16 @@
             Name = "ProductDetails";
             Text = "ProductDetails";
             pnImg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBoxExtra).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picbxMain).EndInit();
             pnRating.ResumeLayout(false);
             pnChoose.ResumeLayout(false);
             pnChoose.PerformLayout();
             pnQuantuty.ResumeLayout(false);
-            pnSize.ResumeLayout(false);
-            pnColor.ResumeLayout(false);
+            pnlSize.ResumeLayout(false);
+            pnlColor.ResumeLayout(false);
             pnPrice.ResumeLayout(false);
             pnPrice.PerformLayout();
             pnDetail.ResumeLayout(false);
@@ -627,11 +665,11 @@
         #endregion
 
         private Panel pnImg;
-        private PictureBox picBoxExtra;
+        private PictureBox picBox1;
         private PictureBox picbxMain;
         private Panel pnRating;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private PictureBox picBox3;
+        private PictureBox picBox2;
         private Button btnNext;
         private Button btnPre;
         private Label label1;
@@ -657,20 +695,23 @@
         private Label lblDiscount;
         private Label lblOldPrice;
         private Panel pnChoose;
-        private Panel pnColor;
+        private Panel pnlColor;
         private Label lblMauSac;
-        private Button btnColor;
+        private Button btnColor1;
         private Label lblSize;
-        private Button button1;
         private Label lblSoLuong;
-        private Panel pnSize;
-        private Button button2;
-        private Button btnSize;
+        private Panel pnlSize;
+        private Button btnSize1;
         private Panel pnQuantuty;
         private Button btnIncrease;
         private Label lblQuantity;
         private Button btnDecrease;
         private Button btnBuy;
         private Button btnAddCart;
+        private Button btnSize3;
+        private Button btnSize2;
+        private Button btnColor3;
+        private Button btnColor2;
+        private Button button1;
     }
 }

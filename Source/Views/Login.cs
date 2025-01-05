@@ -140,7 +140,7 @@ namespace Source.Views
                             Config.token = response.Data.Token;
                             MessageBox.Show("Login successful! ");
                             var user = await _userService.GetUserByToken();
-                            if(user.Data.Roles.FirstOrDefault() == "Customer")
+                            if (user.Data.Roles.FirstOrDefault() == "Customer")
                             {
                                 openChildForm(new MainForm());
                             }
@@ -161,9 +161,9 @@ namespace Source.Views
                     else
                     {
                         //Config.token = response.Data.Token;
-                      
+
                         var userId = await _userService.GetUserIdByToken();
-               
+
                         var user = await _userService.GetUserById(userId.Data.UserId);
                         if (user.Data.Roles.FirstOrDefault() == "Customer")
                         {
@@ -174,7 +174,7 @@ namespace Source.Views
                             openChildForm(new MainFormAdmin());
                         }
                         MessageBox.Show("Login successful! ");
-                       
+
 
                     }
 

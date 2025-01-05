@@ -1,4 +1,5 @@
 ﻿using Source.Dtos.Account;
+using Source.Dtos.Reponse;
 using Source.Service;
 using Source.Utils;
 using System;
@@ -16,6 +17,7 @@ namespace Source.Views
         private string userEmail;
         private string password;
         private string confirm_password;
+        public static Guid userId;
         private readonly AccountService _accountService;
         public static int parentX, parentY;
         private readonly UserService _userService = new UserService();
@@ -49,14 +51,13 @@ namespace Source.Views
 
             MessageBox.Show("Vui lòng xác minh email trước khi đăng nhập.");
 
-            var loginUserDto = new LoginUserDto
+            var SendCodeForForgetPassword = new SendCodeForForgetPassword()
             {
-                EmailOrUsername = userEmail,
-                Password = "1234@Abcd"
+                Email = userEmail
             };
             this.Hide();
-            var response = await _accountService.LoginAsync(loginUserDto);
-            Config.token = response.Data.Token;
+            var response = await _accountService.SendCodeForForgetPasswordAsync(SendCodeForForgetPassword);
+            userId = response.Data.userId;
             var p = await _accountService.CheckEnableVerifyAsync(userEmail);
 
             if (p.Data.TwoFactorEnabled == true)

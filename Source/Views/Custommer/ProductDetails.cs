@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using api.Dtos.Cart;
+using Newtonsoft.Json;
 using NPOI.HPSF;
 using Source.Dtos.Discount;
 using Source.Dtos.Order;
@@ -19,6 +20,9 @@ namespace Source.Views.Custommer
     {
         private readonly ProductService _productService;
         private readonly DiscountsService _countsService;
+        private readonly CartService _cartService;
+        private readonly UserService _userService;
+
         private readonly ProductDTO _product;
         private List<Image> _images;
         private int _currentPage = 0;
@@ -34,12 +38,16 @@ namespace Source.Views.Custommer
             InitializeComponent();
             _countsService = new DiscountsService();
             _productService = new ProductService();
+            _cartService = new CartService();
+            _userService = new UserService();
+
             _product = product;
             selectedColor = "";
             selectedSize = "";
             LoadProductDetails();
             btnSelectedColor = new Button();
             btnSelectedSize = new Button();
+            
         }
 
         private async void LoadProductDetails()
@@ -374,17 +382,7 @@ namespace Source.Views.Custommer
                 form.Show();
 
                 // Hiển thị thông báo xác nhận
-                MessageBox.Show(
-                    $"Đặt hàng thành công!\n" +
-                    $"Sản phẩm: {orderDetailDto.ProductId}\n" +
-                    $"Số lượng: {orderDetailDto.Quantity}\n" +
-                    $"Màu: {orderDetailDto.Color}\n" +
-                    $"Kích thước: {orderDetailDto.Size}\n" +
-                    $"Giá mỗi sản phẩm: {orderDetailDto.UnitPrice:C}\n" +
-                    $"Giảm giá: {orderDetailDto.DiscountAmount:C}",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {
@@ -405,6 +403,22 @@ namespace Source.Views.Custommer
         private void picBox3_Click(object sender, EventArgs e)
         {
             picbxMain.Image = picBox3.Image;
+        }
+
+        private async void btnAddCart_Click(object sender, EventArgs e)
+        {
+            var user = await _userService.GetUserIdByToken();
+
+            InforProductForCartDto inforProduct = new InforProductForCartDto()
+            {
+                ProductId = _product.Id,
+                Size = selectedSize,
+                Color = selectedColor,
+                Quantity = Convert.ToInt32(lblQuantity.Text)
+            };
+
+            await _cartService.AddToCartAsync(user.Data.UserId, inforProduct);
+            MessageBox.Show("Đã thêm vào giỏ hàng");
         }
     }
 }

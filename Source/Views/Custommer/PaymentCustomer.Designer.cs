@@ -135,11 +135,11 @@
             lblShip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblShip.AutoSize = true;
             lblShip.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblShip.Location = new Point(344, 328);
+            lblShip.Location = new Point(469, 328);
             lblShip.Name = "lblShip";
-            lblShip.Size = new Size(145, 20);
+            lblShip.Size = new Size(17, 20);
             lblShip.TabIndex = 16;
-            lblShip.Text = "Tổng phí vận chuyển";
+            lblShip.Text = "0";
             lblShip.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblToTalPayment
@@ -148,11 +148,11 @@
             lblToTalPayment.AutoSize = true;
             lblToTalPayment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblToTalPayment.ForeColor = Color.IndianRed;
-            lblToTalPayment.Location = new Point(330, 348);
+            lblToTalPayment.Location = new Point(403, 348);
             lblToTalPayment.Name = "lblToTalPayment";
-            lblToTalPayment.Size = new Size(157, 28);
+            lblToTalPayment.Size = new Size(82, 28);
             lblToTalPayment.TabIndex = 14;
-            lblToTalPayment.Text = "Tổng thanh toán";
+            lblToTalPayment.Text = "330.400";
             lblToTalPayment.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblToTalPriceProducts
@@ -160,11 +160,11 @@
             lblToTalPriceProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblToTalPriceProducts.AutoSize = true;
             lblToTalPriceProducts.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblToTalPriceProducts.Location = new Point(380, 308);
+            lblToTalPriceProducts.Location = new Point(428, 308);
             lblToTalPriceProducts.Name = "lblToTalPriceProducts";
-            lblToTalPriceProducts.Size = new Size(109, 20);
+            lblToTalPriceProducts.Size = new Size(57, 20);
             lblToTalPriceProducts.TabIndex = 15;
-            lblToTalPriceProducts.Text = "Tổng tiền hàng";
+            lblToTalPriceProducts.Text = "330400";
             lblToTalPriceProducts.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel8

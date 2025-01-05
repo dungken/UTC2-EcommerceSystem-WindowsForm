@@ -218,6 +218,7 @@
             btnAddCart.TabIndex = 20;
             btnAddCart.Text = "   Thêm vào giỏ hàng";
             btnAddCart.UseVisualStyleBackColor = false;
+            btnAddCart.Click += btnAddCart_Click;
             // 
             // btnBuy
             // 

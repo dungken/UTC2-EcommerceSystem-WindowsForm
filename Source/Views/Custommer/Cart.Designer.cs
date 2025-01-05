@@ -136,7 +136,6 @@
             btnIncrease.TabIndex = 33;
             btnIncrease.Text = "+";
             btnIncrease.UseVisualStyleBackColor = true;
-            btnIncrease.Click += btnIncrease_Click;
             // 
             // pictureBoxProduct
             // 

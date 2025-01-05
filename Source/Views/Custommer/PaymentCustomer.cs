@@ -33,6 +33,7 @@ namespace Source.Views.Custommer
             _userService = new UserService();
             _orderService = new OrderService();
             _productService = new ProductService();
+            _userService = new UserService();
         }
         public PaymentCustomer()
         {
@@ -91,6 +92,7 @@ namespace Source.Views.Custommer
 
         private async void PaymentCustomer_Load(object sender, EventArgs e)
         {
+            
             var userOrder = await _userService.GetUserByToken();
 
             if (userOrder != null)
@@ -269,9 +271,11 @@ namespace Source.Views.Custommer
 
         private async void btnOrder_Click(object sender, EventArgs e)
         {
+
             var respone = await _orderService.CreateOrderAsync(orderDto);
             if (respone != null) {
-                
+                MessageBox.Show("Đặt hàng thành công! Vui lòng kiểm tra thông tin đơn hàng trong email của bạn");
+                this.Hide();
             }
         }
     }

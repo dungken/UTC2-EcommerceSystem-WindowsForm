@@ -1,4 +1,7 @@
-﻿using Source.Models;
+﻿using NPOI.SS.Formula.Functions;
+using Org.BouncyCastle.Asn1.Ocsp;
+using Source.Dtos.Order;
+using Source.Models;
 using Source.Service;
 using System;
 using System.Collections.Generic;
@@ -21,6 +24,7 @@ namespace Source.Views.Custommer
         private readonly DiscountsService _discountService;
         private readonly List<CartItem> _selectedItemsInCart;
         private readonly List<CartItem> _cartItems;
+
         public Cart()
         {
             InitializeComponent();
@@ -30,6 +34,7 @@ namespace Source.Views.Custommer
             _discountService = new DiscountsService();
             _selectedItemsInCart = new List<CartItem>();
             _cartItems = new List<CartItem>();
+
             if (_selectedItemsInCart.Count == 0 && !cbxAllBot.Checked)
             {
                 lblTotalProduct.Text = "Tổng thanh toán là: 0";
@@ -43,26 +48,57 @@ namespace Source.Views.Custommer
         }
         // Tạo Form con 
         private Form? activeForm = null;
-        private void openChildForm(Form childForm)
+        //private void openChildForm(Form childForm)
+        //{
+        //    if (activeForm != null)
+        //    {
+        //        activeForm.Close();
+        //    }
+        //    activeForm = childForm;
+        //    childForm.TopLevel = false;
+        //    childForm.FormBorderStyle = FormBorderStyle.None;
+        //    childForm.Dock = DockStyle.Fill;
+        //    pnlCart.Controls.Add(childForm);
+        //    pnlCart.Tag = childForm;
+        //    childForm.BringToFront();
+        //    childForm.Show();
+
+        //}
+
+        private async void btnBuy_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
+            CreateOrderDto _createOrder = new CreateOrderDto()
             {
-                activeForm.Close();
+                UserId = Guid.NewGuid()
+            };
+
+            var userId = await _userService.GetUserIdByToken();
+            _createOrder.UserId = userId.Data.UserId; 
+            
+            var response_user = await _userService.GetUserByToken();
+            _createOrder.ShippingAddress = response_user.Data.User.FullAddress; 
+
+            foreach (var item in _selectedItemsInCart)
+            {
+
+                var product = (await _productService.GetProductByIdAsync(item.ProductId)).Data;
+                var discount = product.DiscountId.HasValue ? (await _discountService.GetDiscountByIdAsync(product.DiscountId.Value)).Data : null;
+                CreateOrderDetailDto _createOrderDetail = new CreateOrderDetailDto()
+                {
+                    OrderId = _createOrder.OrderId,
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Color = item.Color,
+                    Size = item.Size,
+                    UnitPrice = item.UnitPrice,
+                    DiscountAmount = discount != null ? discount.Percentage : 0
+                };
+                _createOrder.OrderDetails.Add(_createOrderDetail);
             }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnlCart.Controls.Add(childForm);
-            pnlCart.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-
-        }
-
-        private void btnBuy_Click(object sender, EventArgs e)
-        {
-            openChildForm(new PaymentCustomer());
+            //openChildForm(new PaymentCustomer(_createOrder));
+            PaymentCustomer form = new PaymentCustomer(_createOrder);
+            form.Show();
+            this.Hide();
         }
         private Panel ClonePanel(Panel original, CartItem item)
         {
@@ -163,7 +199,7 @@ namespace Source.Views.Custommer
                     }
 
                     MessageBox.Show($"Deleted item: {item.Product.Name}");
-                    
+
                 }
             }
         }
@@ -246,6 +282,7 @@ namespace Source.Views.Custommer
                 }
                 pnlProductList.Controls.Add(productPanel);
             }
+            
             lblCount.Text = "Chọn tất cả (" + _selectedItemsInCart.Count.ToString() + ")";
             lblTotalProduct.Text = "Tổng thanh toán(" + _selectedItemsInCart.Count + " Sản phẩm):";
         }
@@ -280,6 +317,8 @@ namespace Source.Views.Custommer
                     var discount = product.DiscountId.HasValue ? (await _discountService.GetDiscountByIdAsync(product.DiscountId.Value)).Data : null;
                     var priceAfterDiscount = discount != null ? selectedItem.Product.Price * (1 - discount.Percentage / 100) : selectedItem.Product.Price;
                     total += priceAfterDiscount * selectedItem.Quantity;
+
+                    
                 }
                 lblTotalProduct.Text = "Tổng thanh toán là (" + _selectedItemsInCart.Count + ") sản phẩm: ";
                 lblTotalPrice.Text = total.ToString("C");
@@ -342,10 +381,7 @@ namespace Source.Views.Custommer
                 lblTotalPrice.Text = total.ToString("C");
             }
         }
-        private void btnIncrease_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private async void lblDelMul_Click(object sender, EventArgs e)
         {
@@ -369,6 +405,7 @@ namespace Source.Views.Custommer
                 }
             }
         }
+
 
     }
 }

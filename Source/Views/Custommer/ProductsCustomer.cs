@@ -119,7 +119,7 @@ namespace Source.Views.Custommer
                 MessageBox.Show("Vui lòng chọn một sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            MessageBox.Show($"ID: {_selectedProductId}");
+            
             var product = _products.FirstOrDefault(p => p.Id.ToString() == _selectedProductId);
 
             if (product != null)

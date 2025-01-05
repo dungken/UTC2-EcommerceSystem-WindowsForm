@@ -273,7 +273,6 @@ namespace Source.Views
 
         private async void btnHome_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -405,5 +405,6 @@ namespace Source.Views.Custommer
                 DisplayProductsForCurrentPage();
             }
         }
+
     }
 }

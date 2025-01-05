@@ -337,7 +337,6 @@ namespace Source.Views.Admin
                 {
                     var respone = await _sizeService.DeleteSize(size1);
                 }
-
                 if (cbxXS.Checked)
                 {
                     size.Add("XS");
@@ -358,7 +357,6 @@ namespace Source.Views.Admin
                 {
                     size.Add("XL");
                 }
-
             }
             if (string.IsNullOrEmpty(tbxName.Text))
             {
@@ -429,7 +427,6 @@ namespace Source.Views.Admin
                         }
                     }
                 }
-
                 if (_formFiles.Count > 0 && _formFiles != null)
                 {
                     foreach (var image1 in _product.Images.Select(s => s.Id).ToList())

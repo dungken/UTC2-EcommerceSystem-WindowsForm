@@ -43,7 +43,6 @@ namespace Source.Views.Admin
             _originalData = new List<ProductListDisplayDto>();
             CustomizeDataGridView();
             InitializeShowing();
-
             pnFilterCate.Paint += PanelLine_Paint;
             pnFilterPrice.Paint += PanelLine_Paint;
         }

@@ -27,7 +27,7 @@ namespace Source.Views
         private void _2StepVerifycationForLogin_Load(object sender, EventArgs e)
         {
             frmConfirmEmailLocationFixedY = Login.parentY + 50;
-            var temp = Login.parentX - 200;
+            var temp = Login.parentX;
             this.Location = new Point(temp * 3 / 2 - 30, Login.parentY + 50);
         }
 
@@ -63,6 +63,7 @@ namespace Source.Views
 
         private void lblOther_Click(object sender, EventArgs e)
         {
+            isVerifyEmail = false;
             this.Close();
         }
     }

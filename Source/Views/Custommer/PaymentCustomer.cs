@@ -39,6 +39,24 @@ namespace Source.Views.Custommer
         {
             InitializeComponent();
         }
+
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlPaymentCustomer.Controls.Add(childForm);
+            pnlPaymentCustomer.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
         public static int parentX, parentY;
         private void btnOptionVourcher_Click(object sender, EventArgs e)
         {
@@ -102,8 +120,9 @@ namespace Source.Views.Custommer
                 if (string.IsNullOrEmpty(userOrder.Data.User.PhoneNumber) || string.IsNullOrEmpty(userOrder.Data.User.FullAddress))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin Số điện thoại và Địa chỉ");
-                    ProfilePage form = new ProfilePage();
-                    form.Show();
+                    //ProfilePage form = new ProfilePage();
+                    //form.Show();
+                    openChildForm(new ProfilePage());
                 }
                 else
                 {

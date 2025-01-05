@@ -129,8 +129,8 @@ namespace Source.Views
                             modalBackground.Show();
                             modal.Owner = modalBackground;
 
-                            parentX = this.Location.X + Login.pnlChildFormLocationX + 200;
-                            parentY = this.Location.Y + Login.pnlChildFormLocationY;
+                            parentX = this.Location.X + 50 ;
+                            parentY = this.Location.Y  ;
                             modal.ShowDialog();
                             modalBackground.Dispose();
 

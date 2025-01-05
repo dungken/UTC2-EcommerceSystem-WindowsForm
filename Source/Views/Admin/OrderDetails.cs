@@ -230,7 +230,15 @@ namespace Source.Views.Admin
             {
                 lblDiscountValue.Text = 0.ToString();
             }
-            lblTotalValue.Text = (_order.TotalAmount - discount).ToString();
+            var total = (_order.TotalAmount - discount);
+            if (total > 0)
+            {
+                lblTotalValue.Text = total.ToString();
+            }
+            else
+            {
+                lblTotalValue.Text = "0";
+            }
         }
 
         private void rjButton2_Click(object sender, EventArgs e)

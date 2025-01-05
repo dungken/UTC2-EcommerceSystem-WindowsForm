@@ -92,7 +92,7 @@ namespace Source.Views.Admin
             if (response.Id != null)
             {
                 // Thông báo thành công và đóng form
-                MessageBox.Show("Voucher added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Discount added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

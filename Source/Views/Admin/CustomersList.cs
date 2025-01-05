@@ -39,10 +39,10 @@ namespace Source.Views.Admin
             gridView.GridColor = Color.Silver;
             gridView.Columns[0].Width = 150;
             gridView.Columns[1].Width = 150;
-            gridView.Columns[2].Width = 150;
+            gridView.Columns[2].Width = 200;
             gridView.Columns[3].Width = 150;
             gridView.Columns[4].Width = 150;
-            gridView.Columns[5].Width = 150;
+            gridView.Columns[5].Width = 80;
         }
         private void InitializeShowing()
         {

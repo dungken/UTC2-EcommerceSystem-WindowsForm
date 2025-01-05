@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFormAdmin));
             Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
@@ -44,7 +45,6 @@
             Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
             Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             lblNavigation = new Label();
-            textBox1 = new TextBox();
             label5 = new Label();
             btnProducts = new Button();
             btnHome = new Button();
@@ -61,6 +61,8 @@
             pictureBox3 = new PictureBox();
             pictureBoxLogo = new PictureBox();
             panel2 = new Panel();
+            label11 = new Label();
+            label9 = new Label();
             label8 = new Label();
             pictureBox2 = new PictureBox();
             lblAvarata = new Label();
@@ -118,14 +120,6 @@
             lblNavigation.TabIndex = 7;
             lblNavigation.Text = "Home";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(212, 31);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search products";
-            textBox1.Size = new Size(290, 27);
-            textBox1.TabIndex = 6;
-            // 
             // label5
             // 
             label5.Location = new Point(730, 26);
@@ -161,6 +155,7 @@
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             btnHome.ForeColor = Color.White;
+            btnHome.Image = Properties.Resources.icon_home;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 81);
             btnHome.Margin = new Padding(4, 3, 4, 3);
@@ -216,6 +211,7 @@
             btnCustomers.FlatStyle = FlatStyle.Flat;
             btnCustomers.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             btnCustomers.ForeColor = Color.White;
+            btnCustomers.Image = (Image)resources.GetObject("btnCustomers.Image");
             btnCustomers.ImageAlign = ContentAlignment.MiddleLeft;
             btnCustomers.Location = new Point(0, 281);
             btnCustomers.Margin = new Padding(4, 3, 4, 3);
@@ -234,6 +230,7 @@
             btnOrders.FlatStyle = FlatStyle.Flat;
             btnOrders.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             btnOrders.ForeColor = Color.White;
+            btnOrders.Image = Properties.Resources.icon_invoice;
             btnOrders.ImageAlign = ContentAlignment.MiddleLeft;
             btnOrders.Location = new Point(0, 231);
             btnOrders.Margin = new Padding(4, 3, 4, 3);
@@ -252,6 +249,7 @@
             btnCategories.FlatStyle = FlatStyle.Flat;
             btnCategories.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             btnCategories.ForeColor = Color.White;
+            btnCategories.Image = (Image)resources.GetObject("btnCategories.Image");
             btnCategories.ImageAlign = ContentAlignment.MiddleLeft;
             btnCategories.Location = new Point(0, 181);
             btnCategories.Margin = new Padding(4, 3, 4, 3);
@@ -307,6 +305,8 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(162, 185, 237);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(lblAvarata);
@@ -315,7 +315,6 @@
             panel2.Controls.Add(lblNavigationImage);
             panel2.Controls.Add(lblNavigation);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
@@ -328,6 +327,28 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1015, 77);
             panel2.TabIndex = 5;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.FromArgb(64, 64, 0);
+            label11.Location = new Point(342, 31);
+            label11.Name = "label11";
+            label11.Size = new Size(203, 43);
+            label11.TabIndex = 15;
+            label11.Text = "PHÁT ĐẠT";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.FromArgb(64, 64, 0);
+            label9.Location = new Point(191, 7);
+            label9.Name = "label9";
+            label9.Size = new Size(170, 43);
+            label9.TabIndex = 14;
+            label9.Text = "LÀM ĂN ";
             // 
             // label8
             // 
@@ -342,7 +363,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources.imagesHome;
-            pictureBox2.Location = new Point(622, 3);
+            pictureBox2.Location = new Point(601, 5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(80, 72);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -425,6 +446,7 @@
             btnLogOut.Text = "         Log out";
             btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
             btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnSetting
             // 
@@ -452,6 +474,7 @@
             btnDiscount.FlatStyle = FlatStyle.Flat;
             btnDiscount.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             btnDiscount.ForeColor = Color.White;
+            btnDiscount.Image = (Image)resources.GetObject("btnDiscount.Image");
             btnDiscount.ImageAlign = ContentAlignment.MiddleLeft;
             btnDiscount.Location = new Point(0, 381);
             btnDiscount.Margin = new Padding(4, 3, 4, 3);
@@ -470,6 +493,7 @@
             btnSale.FlatStyle = FlatStyle.Flat;
             btnSale.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             btnSale.ForeColor = Color.White;
+            btnSale.Image = Properties.Resources.voucher;
             btnSale.ImageAlign = ContentAlignment.MiddleLeft;
             btnSale.Location = new Point(0, 331);
             btnSale.Margin = new Padding(4, 3, 4, 3);
@@ -886,7 +910,6 @@
         #endregion
 
         private Label lblNavigation;
-        private TextBox textBox1;
         private Label label5;
         private Button btnProducts;
         private Button btnHome;
@@ -940,5 +963,7 @@
         private Guna.Charts.WinForms.GunaBarDataset gunaBarDataset;
         private Label lblYear;
         private ComboBox cbxYear;
+        private Label label11;
+        private Label label9;
     }
 }

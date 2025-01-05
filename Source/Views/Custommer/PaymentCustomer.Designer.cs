@@ -50,7 +50,6 @@
             panel3 = new Panel();
             textBox1 = new TextBox();
             label11 = new Label();
-        
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -364,20 +363,6 @@
             label11.Size = new Size(131, 20);
             label11.TabIndex = 8;
             label11.Text = "Lời nhắn cho Shop";
-            // 
-            //// btnOptionShippingMethod
-            //// 
-            //btnOptionShippingMethod.FlatStyle = FlatStyle.Flat;
-            //btnOptionShippingMethod.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            //btnOptionShippingMethod.ForeColor = Color.FromArgb(128, 64, 0);
-            //btnOptionShippingMethod.Location = new Point(13, 104);
-            //btnOptionShippingMethod.Name = "btnOptionShippingMethod";
-            //btnOptionShippingMethod.Size = new Size(465, 38);
-            //btnOptionShippingMethod.TabIndex = 7;
-            //btnOptionShippingMethod.Text = "Hoặc chọn Hỏa tốc để Nhận hàng vào ngày mai                         >";
-            //btnOptionShippingMethod.TextAlign = ContentAlignment.MiddleLeft;
-            //btnOptionShippingMethod.UseVisualStyleBackColor = true;
-            //btnOptionShippingMethod.Click += btnOptionShippingMethod_Click;
             // 
             // label9
             // 

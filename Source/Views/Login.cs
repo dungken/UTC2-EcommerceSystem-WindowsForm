@@ -174,8 +174,7 @@ namespace Source.Views
                             openChildForm(new MainFormAdmin());
                         }
                         MessageBox.Show("Login successful! ");
-                        //openChildForm(new MainForm());
-                        //openChildForm(new MainFormAdmin());
+                       
 
                     }
 
@@ -190,8 +189,9 @@ namespace Source.Views
         }
         private void lblForget_Click(object sender, EventArgs e)
         {
-            ForgetPassword forgetPassword = new ForgetPassword();
-            forgetPassword.Show();
+            openChildForm(new ForgetPassword());
+            //ForgetPassword forgetPassword = new ForgetPassword();
+            //forgetPassword.Show();
         }
         private async void btnLoginWGoogle_Click(object sender, EventArgs e)
         {

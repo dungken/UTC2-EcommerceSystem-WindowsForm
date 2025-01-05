@@ -58,7 +58,7 @@ namespace Source.Views
             var response = await _accountService.LoginAsync(loginUserDto);
             Config.token = response.Data.Token;
             var p = await _accountService.CheckEnableVerifyAsync(userEmail);
-            
+
             if (p.Data.TwoFactorEnabled == true)
             {
                 MessageBox.Show("Xác thực hai yếu tố đã được bật. Vui lòng xác minh email của bạn.");
@@ -91,12 +91,12 @@ namespace Source.Views
                     panel4.Show();
                     panel3.Show();
                     label4.Show();
-                    txtConfirm.Show();  
+                    txtConfirm.Show();
                     txtEmail.Hide();
                     btnGetLink.Hide();
                     label2.Hide();
                     panel7.Hide();
-                    
+
                 }
             }
             else
@@ -142,7 +142,7 @@ namespace Source.Views
 
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
-            
+
         }
         private async Task ChangePasswordAsync()
         {
@@ -162,6 +162,11 @@ namespace Source.Views
                 MessageBox.Show($"Thay đổi mật khẩu thất bại\nError: {errorMessage}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

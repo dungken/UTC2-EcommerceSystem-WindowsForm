@@ -10,5 +10,7 @@ namespace Source.Dtos.Reponse
     {
         public string Email { get; set; }
         public Guid userId { get; set; }
+        public string Token { get; set; }
+        public string ResetToken { get; set; }
     }
 }

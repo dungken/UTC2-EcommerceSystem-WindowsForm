@@ -28,6 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             lblNavigation = new Label();
             textBox1 = new TextBox();
             label5 = new Label();
@@ -58,6 +73,11 @@
             btnDiscount = new Button();
             btnSale = new Button();
             pnlChildForm = new Panel();
+            lblYear = new Label();
+            cbxYear = new ComboBox();
+            rbtnExport = new MyCustomControl.RJButton();
+            gunaChart = new Guna.Charts.WinForms.GunaChart();
+            gunaBarDataset = new Guna.Charts.WinForms.GunaBarDataset();
             pnThongKe = new Panel();
             lblTotalProductV = new Label();
             lblTotalProduct = new Label();
@@ -78,7 +98,6 @@
             rbtnCustomer = new MyCustomControl.RJButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             rbtnOrder = new MyCustomControl.RJButton();
-            gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
@@ -463,12 +482,96 @@
             // 
             // pnlChildForm
             // 
+            pnlChildForm.BackColor = Color.FromArgb(249, 251, 253);
+            pnlChildForm.Controls.Add(lblYear);
+            pnlChildForm.Controls.Add(cbxYear);
+            pnlChildForm.Controls.Add(rbtnExport);
+            pnlChildForm.Controls.Add(gunaChart);
             pnlChildForm.Controls.Add(pnThongKe);
             pnlChildForm.Dock = DockStyle.Fill;
             pnlChildForm.Location = new Point(221, 77);
             pnlChildForm.Name = "pnlChildForm";
             pnlChildForm.Size = new Size(1015, 551);
             pnlChildForm.TabIndex = 23;
+            // 
+            // lblYear
+            // 
+            lblYear.AutoSize = true;
+            lblYear.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblYear.Location = new Point(98, 123);
+            lblYear.Name = "lblYear";
+            lblYear.Size = new Size(53, 22);
+            lblYear.TabIndex = 26;
+            lblYear.Text = "Year:";
+            // 
+            // cbxYear
+            // 
+            cbxYear.FormattingEnabled = true;
+            cbxYear.Location = new Point(164, 117);
+            cbxYear.Name = "cbxYear";
+            cbxYear.Size = new Size(151, 28);
+            cbxYear.TabIndex = 25;
+            cbxYear.SelectedIndexChanged += cbxYear_SelectedIndexChanged;
+            // 
+            // rbtnExport
+            // 
+            rbtnExport.BackColor = Color.MediumSlateBlue;
+            rbtnExport.BackgroundColor = Color.MediumSlateBlue;
+            rbtnExport.BorderColor = Color.PaleVioletRed;
+            rbtnExport.BorderRadius = 20;
+            rbtnExport.BorderSize = 0;
+            rbtnExport.FlatAppearance.BorderSize = 0;
+            rbtnExport.FlatStyle = FlatStyle.Flat;
+            rbtnExport.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnExport.ForeColor = Color.White;
+            rbtnExport.Location = new Point(819, 111);
+            rbtnExport.Name = "rbtnExport";
+            rbtnExport.Size = new Size(138, 34);
+            rbtnExport.TabIndex = 23;
+            rbtnExport.Text = "Export";
+            rbtnExport.TextColor = Color.White;
+            rbtnExport.UseVisualStyleBackColor = false;
+            rbtnExport.Click += rbtnExport_Click;
+            // 
+            // gunaChart
+            // 
+            gunaChart.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] { gunaBarDataset });
+            chartFont1.FontName = "Arial";
+            gunaChart.Legend.LabelFont = chartFont1;
+            gunaChart.Location = new Point(19, 151);
+            gunaChart.Name = "gunaChart";
+            gunaChart.Size = new Size(964, 397);
+            gunaChart.TabIndex = 24;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            gunaChart.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            gunaChart.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            gunaChart.Tooltips.TitleFont = chartFont4;
+            gunaChart.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            gunaChart.XAxes.Ticks = tick1;
+            gunaChart.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            gunaChart.YAxes.Ticks = tick2;
+            gunaChart.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            gunaChart.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            gunaChart.ZAxes.Ticks = tick3;
+            // 
+            // gunaBarDataset
+            // 
+            gunaBarDataset.Label = "Bar1";
+            gunaBarDataset.TargetChart = gunaChart;
             // 
             // pnThongKe
             // 
@@ -754,12 +857,6 @@
             rbtnOrder.TextColor = Color.Black;
             rbtnOrder.UseVisualStyleBackColor = false;
             // 
-            // gunaAreaDataset1
-            // 
-            gunaAreaDataset1.BorderColor = Color.Empty;
-            gunaAreaDataset1.FillColor = Color.Empty;
-            gunaAreaDataset1.Label = "Area1";
-            // 
             // MainFormAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -770,6 +867,7 @@
             Controls.Add(panel1);
             Name = "MainFormAdmin";
             Text = "MainFormAdmin";
+            Load += MainFormAdmin_Load;
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
@@ -778,6 +876,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             pnlChildForm.ResumeLayout(false);
+            pnlChildForm.PerformLayout();
             pnThongKe.ResumeLayout(false);
             pnThongKe.PerformLayout();
             ResumeLayout(false);
@@ -835,6 +934,10 @@
         private Label lblCustomer;
         private MyCustomControl.RJButton rbtnCustomer;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private Guna.Charts.WinForms.GunaAreaDataset gunaAreaDataset1;
+        private MyCustomControl.RJButton rbtnExport;
+        private Guna.Charts.WinForms.GunaChart gunaChart;
+        private Guna.Charts.WinForms.GunaBarDataset gunaBarDataset;
+        private Label lblYear;
+        private ComboBox cbxYear;
     }
 }

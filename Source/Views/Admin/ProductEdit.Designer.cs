@@ -55,6 +55,7 @@
             lblPrice = new Label();
             tbxPrice = new TextBox();
             pnBasicInfor = new Panel();
+            rbtnDeleteImg = new MyCustomControl.RJButton();
             flowLayoutPanel = new FlowLayoutPanel();
             btnPickImg = new MyCustomControl.RJButton();
             numeric = new NumericUpDown();
@@ -64,7 +65,8 @@
             lblName = new Label();
             label1 = new Label();
             pnTitle = new Panel();
-            rbtnDeleteImg = new MyCustomControl.RJButton();
+            lbxDiscount = new ListBox();
+            lblDiscount = new Label();
             pnCategory.SuspendLayout();
             pnColor.SuspendLayout();
             pnSize.SuspendLayout();
@@ -364,6 +366,8 @@
             // pnBasicInfor
             // 
             pnBasicInfor.BackColor = Color.White;
+            pnBasicInfor.Controls.Add(lbxDiscount);
+            pnBasicInfor.Controls.Add(lblDiscount);
             pnBasicInfor.Controls.Add(rbtnDeleteImg);
             pnBasicInfor.Controls.Add(flowLayoutPanel);
             pnBasicInfor.Controls.Add(btnPickImg);
@@ -380,6 +384,28 @@
             pnBasicInfor.Name = "pnBasicInfor";
             pnBasicInfor.Size = new Size(616, 431);
             pnBasicInfor.TabIndex = 26;
+            // 
+            // rbtnDeleteImg
+            // 
+            rbtnDeleteImg.BackColor = Color.MediumSlateBlue;
+            rbtnDeleteImg.BackgroundColor = Color.MediumSlateBlue;
+            rbtnDeleteImg.BorderColor = Color.PaleVioletRed;
+            rbtnDeleteImg.BorderRadius = 20;
+            rbtnDeleteImg.BorderSize = 0;
+            rbtnDeleteImg.Cursor = Cursors.Hand;
+            rbtnDeleteImg.FlatAppearance.BorderSize = 0;
+            rbtnDeleteImg.FlatStyle = FlatStyle.Flat;
+            rbtnDeleteImg.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnDeleteImg.ForeColor = Color.White;
+            rbtnDeleteImg.Location = new Point(272, 255);
+            rbtnDeleteImg.Margin = new Padding(2, 3, 2, 3);
+            rbtnDeleteImg.Name = "rbtnDeleteImg";
+            rbtnDeleteImg.Size = new Size(128, 37);
+            rbtnDeleteImg.TabIndex = 11;
+            rbtnDeleteImg.Text = "Delete Image";
+            rbtnDeleteImg.TextColor = Color.White;
+            rbtnDeleteImg.UseVisualStyleBackColor = false;
+            rbtnDeleteImg.Click += rbtnDeleteImg_Click;
             // 
             // flowLayoutPanel
             // 
@@ -422,7 +448,7 @@
             tbxDescription.Location = new Point(28, 137);
             tbxDescription.Multiline = true;
             tbxDescription.Name = "tbxDescription";
-            tbxDescription.Size = new Size(556, 49);
+            tbxDescription.Size = new Size(354, 49);
             tbxDescription.TabIndex = 4;
             // 
             // lblDescription
@@ -440,7 +466,7 @@
             // 
             tbxName.Location = new Point(165, 56);
             tbxName.Name = "tbxName";
-            tbxName.Size = new Size(419, 30);
+            tbxName.Size = new Size(217, 30);
             tbxName.TabIndex = 2;
             // 
             // lblName
@@ -476,27 +502,25 @@
             pnTitle.Size = new Size(951, 91);
             pnTitle.TabIndex = 25;
             // 
-            // rbtnDeleteImg
+            // lbxDiscount
             // 
-            rbtnDeleteImg.BackColor = Color.MediumSlateBlue;
-            rbtnDeleteImg.BackgroundColor = Color.MediumSlateBlue;
-            rbtnDeleteImg.BorderColor = Color.PaleVioletRed;
-            rbtnDeleteImg.BorderRadius = 20;
-            rbtnDeleteImg.BorderSize = 0;
-            rbtnDeleteImg.Cursor = Cursors.Hand;
-            rbtnDeleteImg.FlatAppearance.BorderSize = 0;
-            rbtnDeleteImg.FlatStyle = FlatStyle.Flat;
-            rbtnDeleteImg.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnDeleteImg.ForeColor = Color.White;
-            rbtnDeleteImg.Location = new Point(272, 255);
-            rbtnDeleteImg.Margin = new Padding(2, 3, 2, 3);
-            rbtnDeleteImg.Name = "rbtnDeleteImg";
-            rbtnDeleteImg.Size = new Size(128, 37);
-            rbtnDeleteImg.TabIndex = 11;
-            rbtnDeleteImg.Text = "Delete Image";
-            rbtnDeleteImg.TextColor = Color.White;
-            rbtnDeleteImg.UseVisualStyleBackColor = false;
-            rbtnDeleteImg.Click += rbtnDeleteImg_Click;
+            lbxDiscount.FormattingEnabled = true;
+            lbxDiscount.ItemHeight = 22;
+            lbxDiscount.Location = new Point(391, 96);
+            lbxDiscount.Name = "lbxDiscount";
+            lbxDiscount.Size = new Size(222, 92);
+            lbxDiscount.TabIndex = 14;
+            // 
+            // lblDiscount
+            // 
+            lblDiscount.AutoSize = true;
+            lblDiscount.Cursor = Cursors.IBeam;
+            lblDiscount.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDiscount.Location = new Point(391, 58);
+            lblDiscount.Name = "lblDiscount";
+            lblDiscount.Size = new Size(83, 23);
+            lblDiscount.TabIndex = 13;
+            lblDiscount.Text = "Discount";
             // 
             // ProductEdit
             // 
@@ -570,5 +594,7 @@
         private Label label1;
         private Panel pnTitle;
         private MyCustomControl.RJButton rbtnDeleteImg;
+        private ListBox lbxDiscount;
+        private Label lblDiscount;
     }
 }

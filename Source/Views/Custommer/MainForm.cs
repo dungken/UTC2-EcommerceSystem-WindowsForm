@@ -28,7 +28,7 @@ namespace Source.Views
 
             customuzeDesing();
             _userService = new UserService();
-
+            openChildForm(new HomeCustomer());
         }
         private void customuzeDesing()
         {
@@ -158,6 +158,7 @@ namespace Source.Views
 
             lblNavigationImage.Image = btnHome.Image;
             lblNavigation.Text = "Home";
+            openChildForm(new HomeCustomer());
             hideSubMenu();
 
         }
@@ -221,8 +222,10 @@ namespace Source.Views
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            var username = await _userService.GetUserByToken();
+            var username = await _userService.GetUsernameByToken();
+            lblUsername.Text = username.Data.UserName;
         }
+
 
     }
 }

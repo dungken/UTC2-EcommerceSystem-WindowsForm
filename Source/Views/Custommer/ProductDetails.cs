@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NPOI.HPSF;
 using Source.Dtos.Discount;
 using Source.Dtos.Order;
 using Source.Dtos.Product;
@@ -313,7 +314,7 @@ namespace Source.Views.Custommer
             }
         }
 
-        private void btnBuy_Click(object sender, EventArgs e)
+        private async void btnBuy_Click(object sender, EventArgs e)
         {
             try
             {
@@ -333,6 +334,8 @@ namespace Source.Views.Custommer
                     discountAmount = unitPrice * (decimal)discount.Data.Percentage;
                 }
 
+                UserService userService = new UserService();
+                CreateOrderDto dto = new CreateOrderDto();
                 CreateOrderDetailDto orderDetailDto = new CreateOrderDetailDto()
                 {
                     ProductId = _product.Id,
@@ -340,10 +343,34 @@ namespace Source.Views.Custommer
                     Color = selectedColor,
                     Size = selectedSize,
                     UnitPrice = unitPrice,
-                    DiscountAmount = discountAmount
+                    DiscountAmount = discountAmount,
+                    OrderId = dto.OrderId
                 };
 
-                PaymentCustomer form = new PaymentCustomer(orderDetailDto);
+                dto.OrderDetails.Add(orderDetailDto);
+
+                // Assuming BaseResponse<GetUserIdByTokenRespone> has a property 'Data' containing 'UserId'
+                var response_Id = await userService.GetUserIdByToken();
+                if (response_Id != null && response_Id.Data != null)
+                {
+                    dto.UserId = response_Id.Data.UserId; // Extract the Guid
+                }
+                else
+                {
+                    throw new Exception("Failed to retrieve UserId from the response.");
+                }
+
+                var response_user = await userService.GetUserByToken();
+                if (response_user != null && response_user.Data != null)
+                {
+                    dto.ShippingAddress = response_user.Data.User.FullAddress; // Extract the Guid
+                }
+                else
+                {
+                    throw new Exception("Failed to retrieve UserId from the response.");
+                }
+
+                PaymentCustomer form = new PaymentCustomer(dto);
                 form.Show();
 
                 // Hiển thị thông báo xác nhận
@@ -365,5 +392,19 @@ namespace Source.Views.Custommer
             }
         }
 
+        private void picBox1_Click(object sender, EventArgs e)
+        {
+            picbxMain.Image = picBox1.Image;
+        }
+
+        private void picBox2_Click(object sender, EventArgs e)
+        {
+            picbxMain.Image = picBox2.Image;
+        }
+
+        private void picBox3_Click(object sender, EventArgs e)
+        {
+            picbxMain.Image = picBox3.Image;
+        }
     }
 }

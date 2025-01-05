@@ -36,6 +36,7 @@
             picBox3 = new PictureBox();
             picbxMain = new PictureBox();
             pnRating = new Panel();
+            button1 = new Button();
             btnAddCart = new Button();
             btnBuy = new Button();
             pnChoose = new Panel();
@@ -75,7 +76,6 @@
             lblRating = new Label();
             pnName = new Panel();
             lblName = new Label();
-            button1 = new Button();
             pnImg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBox2).BeginInit();
@@ -144,6 +144,7 @@
             picBox1.SizeMode = PictureBoxSizeMode.Zoom;
             picBox1.TabIndex = 1;
             picBox1.TabStop = false;
+            picBox1.Click += picBox1_Click;
             // 
             // picBox2
             // 
@@ -155,6 +156,7 @@
             picBox2.SizeMode = PictureBoxSizeMode.Zoom;
             picBox2.TabIndex = 2;
             picBox2.TabStop = false;
+            picBox2.Click += picBox2_Click;
             // 
             // picBox3
             // 
@@ -166,6 +168,7 @@
             picBox3.SizeMode = PictureBoxSizeMode.Zoom;
             picBox3.TabIndex = 3;
             picBox3.TabStop = false;
+            picBox3.Click += picBox3_Click;
             // 
             // picbxMain
             // 
@@ -191,6 +194,15 @@
             pnRating.Name = "pnRating";
             pnRating.Size = new Size(573, 514);
             pnRating.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(556, 444);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 21;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // btnAddCart
             // 
@@ -611,15 +623,6 @@
             lblName.TabIndex = 0;
             lblName.Text = "Áo Thun Baby Tee Choice AH39 In Chữ POSITIVE MENTAL 100% Cotton Mẫu Mới";
             lblName.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(556, 444);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 21;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // ProductDetails
             // 

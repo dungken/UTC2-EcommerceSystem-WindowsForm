@@ -37,16 +37,22 @@ namespace Source.DataAcess
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var request = new RestRequest(endpoint, Method.Get);
+            
 
             var response = await _client.ExecuteAsync<T>(request);
 
             if (response.IsSuccessful)
             {
+                // Format JSON response
+                //var formattedJson = FormatJson(response.Content);
+                //////MessageBox.Show(response.StatusCode.ToString());
+                
+                //throw new Exception($"API Error: {response.ErrorMessage}");
                 return response.Data;
             }
             //// Format JSON response
             //var formattedJson = FormatJson(response.Content);
-            //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+            ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
 
             throw new Exception($"API Error: {response.ErrorMessage}");
         }
@@ -75,16 +81,16 @@ namespace Source.DataAcess
                 if (response.Content != null)
                 {
                     var formattedJson = FormatJson(response.Content);
-                    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                    ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 }
                 else
                 {
-                    MessageBox.Show(response.StatusCode.ToString());
+                    ////MessageBox.Show(response.StatusCode.ToString());
                 }
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
 
-            MessageBox.Show(response.StatusCode.ToString());
+            ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -108,15 +114,15 @@ namespace Source.DataAcess
                 //if (response.Content != null)
                 //{
                 //    var formattedJson = FormatJson(response.Content);
-                //    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //    //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 //}
                 //else
                 //{
-                //    MessageBox.Show(response.StatusCode.ToString());
+                //    ////MessageBox.Show(response.StatusCode.ToString());
                 //}
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
-            MessageBox.Show(response.StatusCode.ToString());
+            ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -148,15 +154,15 @@ namespace Source.DataAcess
                 //if (response.Content != null)
                 //{
                 //    var formattedJson = FormatJson(response.Content);
-                //    MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                //    //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 //}
                 //else
                 //{
-                //    MessageBox.Show(response.StatusCode.ToString());
+                //    ////MessageBox.Show(response.StatusCode.ToString());
                 //}
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
-            MessageBox.Show(response.StatusCode.ToString());
+            ////MessageBox.Show(response.StatusCode.ToString());
             return response.Data;
         }
 
@@ -173,7 +179,7 @@ namespace Source.DataAcess
             {
                 // Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;
@@ -221,7 +227,7 @@ namespace Source.DataAcess
             {
                 //// Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;
@@ -234,8 +240,8 @@ namespace Source.DataAcess
             var response = await _client.ExecuteAsync(request);
             if (!response.IsSuccessful)
             {
-                // Format JSON response
-                //var formattedJson = FormatJson(response.Content);
+                //Format JSON response
+                var formattedJson = FormatJson(response.Content);
                 //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
@@ -253,7 +259,7 @@ namespace Source.DataAcess
             {
                 // Format JSON response
                 //var formattedJson = FormatJson(response.Content);
-                //MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
+                ////MessageBox.Show(response.StatusCode.ToString() + "\n" + formattedJson);
                 throw new Exception($"API Error: {response.ErrorMessage}");
             }
             return response.Data;

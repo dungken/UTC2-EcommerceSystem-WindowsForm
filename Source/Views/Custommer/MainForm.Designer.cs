@@ -50,7 +50,7 @@
             lblNavigation = new Label();
             lblNotifications = new Label();
             label4 = new Label();
-            label3 = new Label();
+            lblUsername = new Label();
             label2 = new Label();
             lblAvarata = new Label();
             pnlSubMenuAvata = new Panel();
@@ -63,7 +63,6 @@
             label7 = new Label();
             btnLogOutSubAvata = new Button();
             pnlChildForm = new Panel();
-            pictureBox2 = new PictureBox();
             pnlSubNotifications = new Panel();
             button7 = new Button();
             button2 = new Button();
@@ -83,7 +82,6 @@
             pnlSubMenuAvata.SuspendLayout();
             panel5.SuspendLayout();
             pnlChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlSubNotifications.SuspendLayout();
             panel9.SuspendLayout();
             SuspendLayout();
@@ -360,7 +358,7 @@
             panel2.Controls.Add(lblNavigation);
             panel2.Controls.Add(lblNotifications);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
+            panel2.Controls.Add(lblUsername);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(lblAvarata);
             panel2.Dock = DockStyle.Top;
@@ -423,16 +421,16 @@
             label4.TabIndex = 5;
             label4.Text = "Customer";
             // 
-            // label3
+            // lblUsername
             // 
-            label3.Anchor = AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(832, 26);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 20);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
+            lblUsername.Anchor = AnchorStyles.Right;
+            lblUsername.AutoSize = true;
+            lblUsername.ForeColor = Color.White;
+            lblUsername.Location = new Point(821, 26);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(114, 20);
+            lblUsername.TabIndex = 4;
+            lblUsername.Text = "lblUsername";
             // 
             // label2
             // 
@@ -580,7 +578,6 @@
             // 
             // pnlChildForm
             // 
-            pnlChildForm.Controls.Add(pictureBox2);
             pnlChildForm.Controls.Add(pnlSubMenuAvata);
             pnlChildForm.Controls.Add(pnlSubNotifications);
             pnlChildForm.Dock = DockStyle.Fill;
@@ -588,17 +585,6 @@
             pnlChildForm.Name = "pnlChildForm";
             pnlChildForm.Size = new Size(1015, 556);
             pnlChildForm.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.HinhNendep;
-            pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(70, 101);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1015, 556);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
             // 
             // pnlSubNotifications
             // 
@@ -762,7 +748,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             pnlChildForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlSubNotifications.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -788,7 +773,7 @@
         private Button btnSupport;
         private Label lblAvarata;
         private Label label4;
-        private Label label3;
+        private Label lblUsername;
         private Label label2;
         private Label lblNotifications;
         private Label lblNavigation;
@@ -815,6 +800,5 @@
         private Button button7;
         private PictureBox pictureBox1;
         private ImageList imageList1;
-        private PictureBox pictureBox2;
     }
 }

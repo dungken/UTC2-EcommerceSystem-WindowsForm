@@ -31,31 +31,34 @@
             pnlHomeCustomer = new Panel();
             pnlHomeCustomerChild = new Panel();
             pnlVourcher = new Panel();
-            panel7 = new Panel();
+            lblPaginationInfo = new Label();
+            btnNext = new FontAwesome.Sharp.IconButton();
+            btnPrevious = new FontAwesome.Sharp.IconButton();
+            pnlVourcher3 = new Panel();
             panel8 = new Panel();
             button3 = new Button();
-            panel9 = new Panel();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
+            pnlInforVoucher3 = new Panel();
+            lblEndDate3 = new Label();
+            lblMinOrder3 = new Label();
+            lblNameVoucher3 = new Label();
             panel10 = new Panel();
             pictureBox3 = new PictureBox();
-            panel3 = new Panel();
+            pnlVourcher2 = new Panel();
             panel4 = new Panel();
             button2 = new Button();
-            panel5 = new Panel();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            pnlInforVoucher2 = new Panel();
+            lblEndDate2 = new Label();
+            lblMinOrder2 = new Label();
+            lblNameVoucher2 = new Label();
             panel6 = new Panel();
             pictureBox1 = new PictureBox();
             pnlVourcher1 = new Panel();
             panel2 = new Panel();
             button1 = new Button();
-            pnlInfroVourcher1 = new Panel();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
+            pnlInforVourcher1 = new Panel();
+            lblEndDate1 = new Label();
+            lblMinOrder1 = new Label();
+            lblNameVoucher1 = new Label();
             pnlImgVourcher1 = new Panel();
             pictureBoxImage = new PictureBox();
             label2 = new Label();
@@ -65,19 +68,19 @@
             pnlHomeCustomer.SuspendLayout();
             pnlHomeCustomerChild.SuspendLayout();
             pnlVourcher.SuspendLayout();
-            panel7.SuspendLayout();
+            pnlVourcher3.SuspendLayout();
             panel8.SuspendLayout();
-            panel9.SuspendLayout();
+            pnlInforVoucher3.SuspendLayout();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel3.SuspendLayout();
+            pnlVourcher2.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
+            pnlInforVoucher2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlVourcher1.SuspendLayout();
             panel2.SuspendLayout();
-            pnlInfroVourcher1.SuspendLayout();
+            pnlInforVourcher1.SuspendLayout();
             pnlImgVourcher1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).BeginInit();
             panel1.SuspendLayout();
@@ -105,8 +108,11 @@
             // pnlVourcher
             // 
             pnlVourcher.BackColor = Color.White;
-            pnlVourcher.Controls.Add(panel7);
-            pnlVourcher.Controls.Add(panel3);
+            pnlVourcher.Controls.Add(lblPaginationInfo);
+            pnlVourcher.Controls.Add(btnNext);
+            pnlVourcher.Controls.Add(btnPrevious);
+            pnlVourcher.Controls.Add(pnlVourcher3);
+            pnlVourcher.Controls.Add(pnlVourcher2);
             pnlVourcher.Controls.Add(pnlVourcher1);
             pnlVourcher.Controls.Add(label2);
             pnlVourcher.Dock = DockStyle.Fill;
@@ -115,24 +121,59 @@
             pnlVourcher.Size = new Size(595, 509);
             pnlVourcher.TabIndex = 4;
             // 
-            // panel7
+            // lblPaginationInfo
             // 
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(panel8);
-            panel7.Controls.Add(panel9);
-            panel7.Controls.Add(panel10);
-            panel7.Location = new Point(64, 344);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(495, 112);
-            panel7.TabIndex = 4;
+            lblPaginationInfo.AutoSize = true;
+            lblPaginationInfo.Location = new Point(437, 471);
+            lblPaginationInfo.Name = "lblPaginationInfo";
+            lblPaginationInfo.Size = new Size(41, 20);
+            lblPaginationInfo.TabIndex = 36;
+            lblPaginationInfo.Text = "Page";
+            // 
+            // btnNext
+            // 
+            btnNext.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnNext.IconColor = Color.Black;
+            btnNext.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNext.Location = new Point(367, 467);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(48, 28);
+            btnNext.TabIndex = 35;
+            btnNext.Text = "next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
+            // 
+            // btnPrevious
+            // 
+            btnPrevious.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnPrevious.IconColor = Color.Black;
+            btnPrevious.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPrevious.Location = new Point(313, 467);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(48, 28);
+            btnPrevious.TabIndex = 34;
+            btnPrevious.Text = "prev";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += btnPrevious_Click;
+            // 
+            // pnlVourcher3
+            // 
+            pnlVourcher3.BorderStyle = BorderStyle.FixedSingle;
+            pnlVourcher3.Controls.Add(panel8);
+            pnlVourcher3.Controls.Add(pnlInforVoucher3);
+            pnlVourcher3.Controls.Add(panel10);
+            pnlVourcher3.Location = new Point(64, 344);
+            pnlVourcher3.Name = "pnlVourcher3";
+            pnlVourcher3.Size = new Size(495, 112);
+            pnlVourcher3.TabIndex = 4;
             // 
             // panel8
             // 
             panel8.Controls.Add(button3);
             panel8.Dock = DockStyle.Right;
-            panel8.Location = new Point(349, 0);
+            panel8.Location = new Point(358, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(144, 110);
+            panel8.Size = new Size(135, 110);
             panel8.TabIndex = 2;
             // 
             // button3
@@ -142,50 +183,47 @@
             button3.ForeColor = Color.FromArgb(244, 118, 122);
             button3.Location = new Point(9, 47);
             button3.Name = "button3";
-            button3.Size = new Size(120, 30);
+            button3.Size = new Size(111, 30);
             button3.TabIndex = 0;
             button3.Text = "Dùng ngay";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // panel9
+            // pnlInforVoucher3
             // 
-            panel9.Controls.Add(label9);
-            panel9.Controls.Add(label10);
-            panel9.Controls.Add(label11);
-            panel9.Dock = DockStyle.Left;
-            panel9.Location = new Point(80, 0);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(274, 110);
-            panel9.TabIndex = 1;
+            pnlInforVoucher3.Controls.Add(lblEndDate3);
+            pnlInforVoucher3.Controls.Add(lblMinOrder3);
+            pnlInforVoucher3.Controls.Add(lblNameVoucher3);
+            pnlInforVoucher3.Dock = DockStyle.Left;
+            pnlInforVoucher3.Location = new Point(80, 0);
+            pnlInforVoucher3.Name = "pnlInforVoucher3";
+            pnlInforVoucher3.Size = new Size(278, 110);
+            pnlInforVoucher3.TabIndex = 1;
             // 
-            // label9
+            // lblEndDate3
             // 
-            label9.Dock = DockStyle.Bottom;
-            label9.Location = new Point(0, 82);
-            label9.Name = "label9";
-            label9.Size = new Size(274, 28);
-            label9.TabIndex = 2;
-            label9.Text = "Due to: 25/01/2025";
+            lblEndDate3.Location = new Point(0, 82);
+            lblEndDate3.Name = "lblEndDate3";
+            lblEndDate3.Size = new Size(275, 28);
+            lblEndDate3.TabIndex = 2;
+            lblEndDate3.Text = "Due to: 25/01/2025";
             // 
-            // label10
+            // lblMinOrder3
             // 
-            label10.Dock = DockStyle.Top;
-            label10.Location = new Point(0, 60);
-            label10.Name = "label10";
-            label10.Size = new Size(274, 28);
-            label10.TabIndex = 1;
-            label10.Text = "Min Order: 100 cá";
+            lblMinOrder3.Location = new Point(0, 60);
+            lblMinOrder3.Name = "lblMinOrder3";
+            lblMinOrder3.Size = new Size(275, 28);
+            lblMinOrder3.TabIndex = 1;
+            lblMinOrder3.Text = "Min Order: 100 cá";
             // 
-            // label11
+            // lblNameVoucher3
             // 
-            label11.Dock = DockStyle.Top;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(0, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(274, 60);
-            label11.TabIndex = 0;
-            label11.Text = "Sale 50% Maximun Sale 50 cá";
+            lblNameVoucher3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameVoucher3.Location = new Point(0, 0);
+            lblNameVoucher3.Name = "lblNameVoucher3";
+            lblNameVoucher3.Size = new Size(269, 60);
+            lblNameVoucher3.TabIndex = 0;
+            lblNameVoucher3.Text = "Sale 50% Maximun Sale 50 cá";
             // 
             // panel10
             // 
@@ -207,24 +245,24 @@
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
-            // panel3
+            // pnlVourcher2
             // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel6);
-            panel3.Location = new Point(62, 204);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(496, 112);
-            panel3.TabIndex = 3;
+            pnlVourcher2.BorderStyle = BorderStyle.FixedSingle;
+            pnlVourcher2.Controls.Add(panel4);
+            pnlVourcher2.Controls.Add(pnlInforVoucher2);
+            pnlVourcher2.Controls.Add(panel6);
+            pnlVourcher2.Location = new Point(62, 204);
+            pnlVourcher2.Name = "pnlVourcher2";
+            pnlVourcher2.Size = new Size(496, 112);
+            pnlVourcher2.TabIndex = 3;
             // 
             // panel4
             // 
             panel4.Controls.Add(button2);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(351, 0);
+            panel4.Location = new Point(360, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(143, 110);
+            panel4.Size = new Size(134, 110);
             panel4.TabIndex = 2;
             // 
             // button2
@@ -234,50 +272,47 @@
             button2.ForeColor = Color.FromArgb(244, 118, 122);
             button2.Location = new Point(9, 45);
             button2.Name = "button2";
-            button2.Size = new Size(120, 30);
+            button2.Size = new Size(111, 30);
             button2.TabIndex = 0;
             button2.Text = "Dùng ngay";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // panel5
+            // pnlInforVoucher2
             // 
-            panel5.Controls.Add(label6);
-            panel5.Controls.Add(label7);
-            panel5.Controls.Add(label8);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(80, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(274, 110);
-            panel5.TabIndex = 1;
+            pnlInforVoucher2.Controls.Add(lblEndDate2);
+            pnlInforVoucher2.Controls.Add(lblMinOrder2);
+            pnlInforVoucher2.Controls.Add(lblNameVoucher2);
+            pnlInforVoucher2.Dock = DockStyle.Left;
+            pnlInforVoucher2.Location = new Point(80, 0);
+            pnlInforVoucher2.Name = "pnlInforVoucher2";
+            pnlInforVoucher2.Size = new Size(280, 110);
+            pnlInforVoucher2.TabIndex = 1;
             // 
-            // label6
+            // lblEndDate2
             // 
-            label6.Dock = DockStyle.Bottom;
-            label6.Location = new Point(0, 82);
-            label6.Name = "label6";
-            label6.Size = new Size(274, 28);
-            label6.TabIndex = 2;
-            label6.Text = "Due to: 25/01/2025";
+            lblEndDate2.Location = new Point(0, 82);
+            lblEndDate2.Name = "lblEndDate2";
+            lblEndDate2.Size = new Size(274, 28);
+            lblEndDate2.TabIndex = 2;
+            lblEndDate2.Text = "Due to: 25/01/2025";
             // 
-            // label7
+            // lblMinOrder2
             // 
-            label7.Dock = DockStyle.Top;
-            label7.Location = new Point(0, 60);
-            label7.Name = "label7";
-            label7.Size = new Size(274, 28);
-            label7.TabIndex = 1;
-            label7.Text = "Min Order: 100 cá";
+            lblMinOrder2.Location = new Point(0, 60);
+            lblMinOrder2.Name = "lblMinOrder2";
+            lblMinOrder2.Size = new Size(274, 22);
+            lblMinOrder2.TabIndex = 1;
+            lblMinOrder2.Text = "Min Order: 100 cá";
             // 
-            // label8
+            // lblNameVoucher2
             // 
-            label8.Dock = DockStyle.Top;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(0, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(274, 60);
-            label8.TabIndex = 0;
-            label8.Text = "Sale 50% Maximun Sale 50 cá";
+            lblNameVoucher2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameVoucher2.Location = new Point(0, 0);
+            lblNameVoucher2.Name = "lblNameVoucher2";
+            lblNameVoucher2.Size = new Size(271, 60);
+            lblNameVoucher2.TabIndex = 0;
+            lblNameVoucher2.Text = "Sale 50% Maximun Sale 50 cá";
             // 
             // panel6
             // 
@@ -303,7 +338,7 @@
             // 
             pnlVourcher1.BorderStyle = BorderStyle.FixedSingle;
             pnlVourcher1.Controls.Add(panel2);
-            pnlVourcher1.Controls.Add(pnlInfroVourcher1);
+            pnlVourcher1.Controls.Add(pnlInforVourcher1);
             pnlVourcher1.Controls.Add(pnlImgVourcher1);
             pnlVourcher1.Location = new Point(63, 69);
             pnlVourcher1.Name = "pnlVourcher1";
@@ -314,9 +349,9 @@
             // 
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(350, 0);
+            panel2.Location = new Point(359, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(143, 110);
+            panel2.Size = new Size(134, 110);
             panel2.TabIndex = 2;
             // 
             // button1
@@ -331,44 +366,41 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // pnlInfroVourcher1
+            // pnlInforVourcher1
             // 
-            pnlInfroVourcher1.Controls.Add(label5);
-            pnlInfroVourcher1.Controls.Add(label4);
-            pnlInfroVourcher1.Controls.Add(label3);
-            pnlInfroVourcher1.Dock = DockStyle.Left;
-            pnlInfroVourcher1.Location = new Point(80, 0);
-            pnlInfroVourcher1.Name = "pnlInfroVourcher1";
-            pnlInfroVourcher1.Size = new Size(274, 110);
-            pnlInfroVourcher1.TabIndex = 1;
+            pnlInforVourcher1.Controls.Add(lblEndDate1);
+            pnlInforVourcher1.Controls.Add(lblMinOrder1);
+            pnlInforVourcher1.Controls.Add(lblNameVoucher1);
+            pnlInforVourcher1.Dock = DockStyle.Left;
+            pnlInforVourcher1.Location = new Point(80, 0);
+            pnlInforVourcher1.Name = "pnlInforVourcher1";
+            pnlInforVourcher1.Size = new Size(282, 110);
+            pnlInforVourcher1.TabIndex = 1;
             // 
-            // label5
+            // lblEndDate1
             // 
-            label5.Dock = DockStyle.Bottom;
-            label5.Location = new Point(0, 82);
-            label5.Name = "label5";
-            label5.Size = new Size(274, 28);
-            label5.TabIndex = 2;
-            label5.Text = "Due to: 25/01/2025";
+            lblEndDate1.Location = new Point(0, 82);
+            lblEndDate1.Name = "lblEndDate1";
+            lblEndDate1.Size = new Size(279, 28);
+            lblEndDate1.TabIndex = 2;
+            lblEndDate1.Text = "Due to: 25/01/2025";
             // 
-            // label4
+            // lblMinOrder1
             // 
-            label4.Dock = DockStyle.Top;
-            label4.Location = new Point(0, 60);
-            label4.Name = "label4";
-            label4.Size = new Size(274, 28);
-            label4.TabIndex = 1;
-            label4.Text = "Min Order: 100 cá";
+            lblMinOrder1.Location = new Point(0, 60);
+            lblMinOrder1.Name = "lblMinOrder1";
+            lblMinOrder1.Size = new Size(273, 28);
+            lblMinOrder1.TabIndex = 1;
+            lblMinOrder1.Text = "Min Order: 100 cá";
             // 
-            // label3
+            // lblNameVoucher1
             // 
-            label3.Dock = DockStyle.Top;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(0, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(274, 60);
-            label3.TabIndex = 0;
-            label3.Text = "Sale 50% Maximun Sale 50 cá";
+            lblNameVoucher1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameVoucher1.Location = new Point(0, 0);
+            lblNameVoucher1.Name = "lblNameVoucher1";
+            lblNameVoucher1.Size = new Size(270, 60);
+            lblNameVoucher1.TabIndex = 0;
+            lblNameVoucher1.Text = "Sale 50% Maximun Sale 50 cá";
             // 
             // pnlImgVourcher1
             // 
@@ -438,22 +470,24 @@
             Controls.Add(pnlHomeCustomer);
             Name = "HomeCustomer";
             Text = "HomeCustomer";
+            Load += HomeCustomer_Load;
             pnlHomeCustomer.ResumeLayout(false);
             pnlHomeCustomerChild.ResumeLayout(false);
             pnlVourcher.ResumeLayout(false);
-            panel7.ResumeLayout(false);
+            pnlVourcher.PerformLayout();
+            pnlVourcher3.ResumeLayout(false);
             panel8.ResumeLayout(false);
-            panel9.ResumeLayout(false);
+            pnlInforVoucher3.ResumeLayout(false);
             panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel3.ResumeLayout(false);
+            pnlVourcher2.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
+            pnlInforVoucher2.ResumeLayout(false);
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlVourcher1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            pnlInfroVourcher1.ResumeLayout(false);
+            pnlInforVourcher1.ResumeLayout(false);
             pnlImgVourcher1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).EndInit();
             panel1.ResumeLayout(false);
@@ -466,36 +500,39 @@
         private Panel pnlHomeCustomer;
         private Panel pnlHomeCustomerChild;
         private Panel pnlVourcher;
-        private Panel panel7;
+        private Panel pnlVourcher3;
         private Panel panel8;
         private Button button3;
-        private Panel panel9;
-        private Label label9;
-        private Label label10;
-        private Label label11;
+        private Panel pnlInforVoucher3;
+        private Label lblEndDate3;
+        private Label lblMinOrder3;
+        private Label lblNameVoucher3;
         private Panel panel10;
         private PictureBox pictureBox3;
-        private Panel panel3;
+        private Panel pnlVourcher2;
         private Panel panel4;
         private Button button2;
-        private Panel panel5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private Panel pnlInforVoucher2;
+        private Label lblEndDate2;
+        private Label lblMinOrder2;
+        private Label lblNameVoucher2;
         private Panel panel6;
         private PictureBox pictureBox1;
         private Panel pnlVourcher1;
         private Panel panel2;
         private Button button1;
-        private Panel pnlInfroVourcher1;
-        private Label label5;
-        private Label label4;
-        private Label label3;
+        private Panel pnlInforVourcher1;
+        private Label lblEndDate1;
+        private Label lblMinOrder1;
+        private Label lblNameVoucher1;
         private Panel pnlImgVourcher1;
         private PictureBox pictureBoxImage;
         private Label label2;
         private Panel panel1;
         private PictureBox pictureBox2;
         private Label label1;
+        private FontAwesome.Sharp.IconButton btnPrevious;
+        private FontAwesome.Sharp.IconButton btnNext;
+        private Label lblPaginationInfo;
     }
 }

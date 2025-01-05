@@ -12,6 +12,7 @@ namespace Source.Views.Custommer
         private readonly ProductService _productService;
         private readonly CategoriesService _categoryService;
         private readonly ImageService _imageService;
+        private readonly CartService _cartService;
 
         private int _pageSize = 6; // Số sản phẩm trên mỗi trang
         private int _currentPage = 1; // Trang hiện tại
@@ -30,6 +31,7 @@ namespace Source.Views.Custommer
             _productService = new ProductService();
             _categoryService = new CategoriesService();
             _imageService = new ImageService();
+            _cartService = new CartService();
 
             pnlProduct1.Click += Panel_Click;
             pnlProduct2.Click += Panel_Click;
@@ -152,6 +154,10 @@ namespace Source.Views.Custommer
 
         private async void ProductsCustomer_Load(object sender, EventArgs e)
         {
+            LoadingForm loadingForm = new LoadingForm();
+
+            // Hiển thị form loading trên một luồng khác
+            Task showLoading = Task.Run(() => loadingForm.ShowDialog());
             try
             {
                 var response = await _productService.GetAllProductsAsync();
@@ -169,6 +175,11 @@ namespace Source.Views.Custommer
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi tải sản phẩm: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Đóng form loading
+                loadingForm.Invoke((Action)(() => loadingForm.Close()));
             }
         }
 
@@ -365,7 +376,12 @@ namespace Source.Views.Custommer
         }
         private void btnAddTheCart_Click(object sender, EventArgs e)
         {
-
+            if(string.IsNullOrEmpty(_selectedProductId))
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
         }
         private void btnBuyNow_Click(object sender, EventArgs e)
         {

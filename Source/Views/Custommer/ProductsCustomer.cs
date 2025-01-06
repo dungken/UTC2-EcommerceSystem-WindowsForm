@@ -233,10 +233,6 @@ namespace Source.Views.Custommer
                 var priceLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Price"));
                 var categoryLabel = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("Cate"));
                 var imagePicture = panel.Controls.OfType<PictureBox>().FirstOrDefault();
-
-
-                nameLabel.Text = product.Name;
-
                 if (nameLabel != null)
                 {
                     nameLabel.Text = product.Name;

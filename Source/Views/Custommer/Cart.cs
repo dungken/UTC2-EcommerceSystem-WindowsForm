@@ -97,7 +97,6 @@ namespace Source.Views.Custommer
                 await _cartService.RemoveFromCartAsync(userId.Data.UserId, item.Id);
             }
             openChildForm(new PaymentCustomer(_createOrder));
-
         }
         private Panel ClonePanel(Panel original, CartItem item)
         {

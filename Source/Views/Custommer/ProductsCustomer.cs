@@ -22,6 +22,23 @@ namespace Source.Views.Custommer
         private string _selectedProductId;
         private List<Source.Dtos.Product.ProductDTO> _originalProducts;
 
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
         public ProductsCustomer()
         {
             InitializeComponent();
@@ -114,6 +131,7 @@ namespace Source.Views.Custommer
         // Hiển thị chi tiết sản phẩm khi nhấn nút
         private void btnProductDetail_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(_selectedProductId))
             {
                 MessageBox.Show("Vui lòng chọn một sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -121,15 +139,13 @@ namespace Source.Views.Custommer
             }
             
             var product = _products.FirstOrDefault(p => p.Id.ToString() == _selectedProductId);
-
+            
             if (product != null)
             {
-                
-                var detailForm = new ProductDetails(product); // Form chi tiết sản phẩm
-                detailForm.Show();
+                openChildForm(new ProductDetails(product));
             }
             else
-            {
+            { 
                 MessageBox.Show("Không tìm thấy thông tin sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -221,7 +237,6 @@ namespace Source.Views.Custommer
                 {
                     nameLabel.Text = product.Name;
                 }
-                
                 if (priceLabel != null)
                 {
                     priceLabel.Text = product.Price.ToString();
@@ -409,6 +424,5 @@ namespace Source.Views.Custommer
                 DisplayProductsForCurrentPage();
             }
         }
-
     }
 }

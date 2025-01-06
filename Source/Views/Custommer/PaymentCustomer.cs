@@ -293,6 +293,7 @@ namespace Source.Views.Custommer
 
             var respone = await _orderService.CreateOrderAsync(orderDto);
             if (respone != null) {
+
                 MessageBox.Show("Đặt hàng thành công! Vui lòng kiểm tra thông tin đơn hàng trong email của bạn");
                 this.Hide();
             }

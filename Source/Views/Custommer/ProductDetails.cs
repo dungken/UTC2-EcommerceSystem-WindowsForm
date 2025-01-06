@@ -47,9 +47,25 @@ namespace Source.Views.Custommer
             LoadProductDetails();
             btnSelectedColor = new Button();
             btnSelectedSize = new Button();
-            
-        }
 
+        }
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlProductDetail.Controls.Add(childForm);
+            pnlProductDetail.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
         private async void LoadProductDetails()
         {
             try
@@ -378,11 +394,10 @@ namespace Source.Views.Custommer
                     throw new Exception("Failed to retrieve UserId from the response.");
                 }
 
-                PaymentCustomer form = new PaymentCustomer(dto);
-                form.Show();
+                openChildForm(new PaymentCustomer(dto));
 
                 // Hiển thị thông báo xác nhận
-                
+
             }
             catch (Exception ex)
             {
@@ -419,6 +434,11 @@ namespace Source.Views.Custommer
 
             await _cartService.AddToCartAsync(user.Data.UserId, inforProduct);
             MessageBox.Show("Đã thêm vào giỏ hàng");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -94,11 +94,9 @@ namespace Source.Views.Custommer
                     DiscountAmount = discount != null ? discount.Percentage : 0
                 };
                 _createOrder.OrderDetails.Add(_createOrderDetail);
+                await _cartService.RemoveFromCartAsync(userId.Data.UserId, item.Id);
             }
             openChildForm(new PaymentCustomer(_createOrder));
-            //PaymentCustomer form = new PaymentCustomer(_createOrder);
-            //form.Show();
-            //this.Hide();
         }
         private Panel ClonePanel(Panel original, CartItem item)
         {

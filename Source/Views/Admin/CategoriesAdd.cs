@@ -39,6 +39,7 @@ namespace Source.Views.Admin
                 lbxParent.DataSource = response.Data;
                 lbxParent.DisplayMember = "Name";
                 lbxParent.ValueMember = "Id";
+                lbxParent.SelectedIndex = -1;
             }
             else
             {
@@ -119,6 +120,11 @@ namespace Source.Views.Admin
             {
                 MessageBox.Show("Failed to add category. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

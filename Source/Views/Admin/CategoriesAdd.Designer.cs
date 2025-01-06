@@ -47,6 +47,7 @@
             btnSave = new MyCustomControl.RJButton();
             lblHeader = new Label();
             pnTitle = new Panel();
+            rjButton1 = new MyCustomControl.RJButton();
             pnBasicInfor.SuspendLayout();
             pnParentCategory.SuspendLayout();
             pnStatus.SuspendLayout();
@@ -257,6 +258,7 @@
             // 
             // pnTitle
             // 
+            pnTitle.Controls.Add(rjButton1);
             pnTitle.Controls.Add(pnLine);
             pnTitle.Controls.Add(btnSave);
             pnTitle.Controls.Add(lblHeader);
@@ -265,6 +267,27 @@
             pnTitle.Name = "pnTitle";
             pnTitle.Size = new Size(1012, 91);
             pnTitle.TabIndex = 9;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.Red;
+            rjButton1.BackgroundColor = Color.Red;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.Cursor = Cursors.Hand;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.White;
+            rjButton1.Location = new Point(706, 24);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(128, 50);
+            rjButton1.TabIndex = 7;
+            rjButton1.Text = "Cancel";
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // CategoriesAdd
             // 
@@ -314,5 +337,6 @@
         private MyCustomControl.RJButton btnSave;
         private Label lblHeader;
         private Panel pnTitle;
+        private MyCustomControl.RJButton rjButton1;
     }
 }

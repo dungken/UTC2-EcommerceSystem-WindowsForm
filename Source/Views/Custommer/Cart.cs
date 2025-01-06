@@ -48,22 +48,22 @@ namespace Source.Views.Custommer
         }
         // Tạo Form con 
         private Form? activeForm = null;
-        //private void openChildForm(Form childForm)
-        //{
-        //    if (activeForm != null)
-        //    {
-        //        activeForm.Close();
-        //    }
-        //    activeForm = childForm;
-        //    childForm.TopLevel = false;
-        //    childForm.FormBorderStyle = FormBorderStyle.None;
-        //    childForm.Dock = DockStyle.Fill;
-        //    pnlCart.Controls.Add(childForm);
-        //    pnlCart.Tag = childForm;
-        //    childForm.BringToFront();
-        //    childForm.Show();
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlCart.Controls.Add(childForm);
+            pnlCart.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
 
-        //}
+        }
 
         private async void btnBuy_Click(object sender, EventArgs e)
         {
@@ -94,11 +94,10 @@ namespace Source.Views.Custommer
                     DiscountAmount = discount != null ? discount.Percentage : 0
                 };
                 _createOrder.OrderDetails.Add(_createOrderDetail);
+                await _cartService.RemoveFromCartAsync(userId.Data.UserId, item.Id);
             }
-            //openChildForm(new PaymentCustomer(_createOrder));
-            PaymentCustomer form = new PaymentCustomer(_createOrder);
-            form.Show();
-            this.Hide();
+            openChildForm(new PaymentCustomer(_createOrder));
+
         }
         private Panel ClonePanel(Panel original, CartItem item)
         {

@@ -129,8 +129,8 @@ namespace Source.Views
                             modalBackground.Show();
                             modal.Owner = modalBackground;
 
-                            parentX = this.Location.X + Login.pnlChildFormLocationX + 200;
-                            parentY = this.Location.Y + Login.pnlChildFormLocationY;
+                            parentX = this.Location.X + 50 ;
+                            parentY = this.Location.Y  ;
                             modal.ShowDialog();
                             modalBackground.Dispose();
 
@@ -161,21 +161,26 @@ namespace Source.Views
                     else
                     {
                         //Config.token = response.Data.Token;
+                        if (accessToken == null)
+                        {
 
-                        var userId = await _userService.GetUserIdByToken();
+                            var userId = await _userService.GetUserIdByToken();
 
-                        var user = await _userService.GetUserById(userId.Data.UserId);
-                        if (user.Data.Roles.FirstOrDefault() == "Customer")
+                            var user = await _userService.GetUserById(userId.Data.UserId);
+                            if (user.Data.Roles.FirstOrDefault() == "Customer")
+                            {
+                                openChildForm(new MainForm());
+                            }
+                            else if (user.Data.Roles.FirstOrDefault() == "Admin")
+                            {
+                                openChildForm(new MainFormAdmin());
+                            }
+                            MessageBox.Show("Login successful! ");
+
+                        }else
                         {
                             openChildForm(new MainForm());
                         }
-                        else if (user.Data.Roles.FirstOrDefault() == "Admin")
-                        {
-                            openChildForm(new MainFormAdmin());
-                        }
-                        MessageBox.Show("Login successful! ");
-
-
                     }
 
                 }
@@ -332,7 +337,7 @@ namespace Source.Views
                 {
                     var userInfo = await response.Content.ReadAsStringAsync();
                     MessageBox.Show($"Thông tin người dùng: {userInfo}");
-                    //openChildForm(new MainForm());
+                    openChildForm(new MainForm());
                 }
                 else
                 {

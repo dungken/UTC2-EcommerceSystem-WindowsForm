@@ -28,13 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnImg = new Panel();
-            btnPre = new Button();
-            btnNext = new Button();
-            picBox1 = new PictureBox();
-            picBox2 = new PictureBox();
-            picBox3 = new PictureBox();
-            picbxMain = new PictureBox();
+            pnlProductDetail = new Panel();
             pnRating = new Panel();
             button1 = new Button();
             btnAddCart = new Button();
@@ -76,11 +70,14 @@
             lblRating = new Label();
             pnName = new Panel();
             lblName = new Label();
-            pnImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picbxMain).BeginInit();
+            pnImg = new Panel();
+            btnPre = new Button();
+            btnNext = new Button();
+            picBox1 = new PictureBox();
+            picBox2 = new PictureBox();
+            picBox3 = new PictureBox();
+            picbxMain = new PictureBox();
+            pnlProductDetail.SuspendLayout();
             pnRating.SuspendLayout();
             pnChoose.SuspendLayout();
             pnQuantuty.SuspendLayout();
@@ -96,90 +93,23 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picbxStar).BeginInit();
             pnName.SuspendLayout();
+            pnImg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picbxMain).BeginInit();
             SuspendLayout();
             // 
-            // pnImg
+            // pnlProductDetail
             // 
-            pnImg.Controls.Add(btnPre);
-            pnImg.Controls.Add(btnNext);
-            pnImg.Controls.Add(picBox1);
-            pnImg.Controls.Add(picBox2);
-            pnImg.Controls.Add(picBox3);
-            pnImg.Controls.Add(picbxMain);
-            pnImg.Location = new Point(12, 12);
-            pnImg.Name = "pnImg";
-            pnImg.Size = new Size(332, 514);
-            pnImg.TabIndex = 0;
-            // 
-            // btnPre
-            // 
-            btnPre.Cursor = Cursors.Hand;
-            btnPre.Image = Properties.Resources.PreviousIcon;
-            btnPre.Location = new Point(0, 447);
-            btnPre.Name = "btnPre";
-            btnPre.Size = new Size(20, 20);
-            btnPre.TabIndex = 5;
-            btnPre.UseVisualStyleBackColor = true;
-            btnPre.Click += btnPre_Click;
-            // 
-            // btnNext
-            // 
-            btnNext.BackgroundImageLayout = ImageLayout.None;
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.Image = Properties.Resources.NextIcon2;
-            btnNext.Location = new Point(309, 447);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(20, 20);
-            btnNext.TabIndex = 4;
-            btnNext.UseVisualStyleBackColor = true;
-            btnNext.Click += btnNext_Click;
-            // 
-            // picBox1
-            // 
-            picBox1.Cursor = Cursors.Hand;
-            picBox1.Image = Properties.Resources.capybara3;
-            picBox1.Location = new Point(3, 403);
-            picBox1.Name = "picBox1";
-            picBox1.Size = new Size(93, 108);
-            picBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox1.TabIndex = 1;
-            picBox1.TabStop = false;
-            picBox1.Click += picBox1_Click;
-            // 
-            // picBox2
-            // 
-            picBox2.Cursor = Cursors.Hand;
-            picBox2.Image = Properties.Resources.capybara3;
-            picBox2.Location = new Point(122, 403);
-            picBox2.Name = "picBox2";
-            picBox2.Size = new Size(93, 108);
-            picBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox2.TabIndex = 2;
-            picBox2.TabStop = false;
-            picBox2.Click += picBox2_Click;
-            // 
-            // picBox3
-            // 
-            picBox3.Cursor = Cursors.Hand;
-            picBox3.Image = Properties.Resources.capybara3;
-            picBox3.Location = new Point(236, 403);
-            picBox3.Name = "picBox3";
-            picBox3.Size = new Size(93, 108);
-            picBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox3.TabIndex = 3;
-            picBox3.TabStop = false;
-            picBox3.Click += picBox3_Click;
-            // 
-            // picbxMain
-            // 
-            picbxMain.Cursor = Cursors.Hand;
-            picbxMain.Image = Properties.Resources.capybara3;
-            picbxMain.Location = new Point(3, 3);
-            picbxMain.Name = "picbxMain";
-            picbxMain.Size = new Size(326, 380);
-            picbxMain.SizeMode = PictureBoxSizeMode.Zoom;
-            picbxMain.TabIndex = 0;
-            picbxMain.TabStop = false;
+            pnlProductDetail.Controls.Add(pnRating);
+            pnlProductDetail.Controls.Add(pnImg);
+            pnlProductDetail.Dock = DockStyle.Fill;
+            pnlProductDetail.Location = new Point(0, 0);
+            pnlProductDetail.Name = "pnlProductDetail";
+            pnlProductDetail.Size = new Size(964, 538);
+            pnlProductDetail.TabIndex = 0;
+            pnlProductDetail.Paint += panel1_Paint;
             // 
             // pnRating
             // 
@@ -193,7 +123,7 @@
             pnRating.Location = new Point(379, 12);
             pnRating.Name = "pnRating";
             pnRating.Size = new Size(573, 514);
-            pnRating.TabIndex = 1;
+            pnRating.TabIndex = 3;
             // 
             // button1
             // 
@@ -625,23 +555,101 @@
             lblName.Text = "Áo Thun Baby Tee Choice AH39 In Chữ POSITIVE MENTAL 100% Cotton Mẫu Mới";
             lblName.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // pnImg
+            // 
+            pnImg.Controls.Add(btnPre);
+            pnImg.Controls.Add(btnNext);
+            pnImg.Controls.Add(picBox1);
+            pnImg.Controls.Add(picBox2);
+            pnImg.Controls.Add(picBox3);
+            pnImg.Controls.Add(picbxMain);
+            pnImg.Location = new Point(12, 12);
+            pnImg.Name = "pnImg";
+            pnImg.Size = new Size(332, 514);
+            pnImg.TabIndex = 2;
+            // 
+            // btnPre
+            // 
+            btnPre.Cursor = Cursors.Hand;
+            btnPre.Image = Properties.Resources.PreviousIcon;
+            btnPre.Location = new Point(0, 447);
+            btnPre.Name = "btnPre";
+            btnPre.Size = new Size(20, 20);
+            btnPre.TabIndex = 5;
+            btnPre.UseVisualStyleBackColor = true;
+            btnPre.Click += btnPre_Click;
+            // 
+            // btnNext
+            // 
+            btnNext.BackgroundImageLayout = ImageLayout.None;
+            btnNext.Cursor = Cursors.Hand;
+            btnNext.Image = Properties.Resources.NextIcon2;
+            btnNext.Location = new Point(309, 447);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(20, 20);
+            btnNext.TabIndex = 4;
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
+            // 
+            // picBox1
+            // 
+            picBox1.Cursor = Cursors.Hand;
+            picBox1.Image = Properties.Resources.capybara3;
+            picBox1.Location = new Point(3, 403);
+            picBox1.Name = "picBox1";
+            picBox1.Size = new Size(93, 108);
+            picBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox1.TabIndex = 1;
+            picBox1.TabStop = false;
+            picBox1.Click += picBox1_Click;
+            // 
+            // picBox2
+            // 
+            picBox2.Cursor = Cursors.Hand;
+            picBox2.Image = Properties.Resources.capybara3;
+            picBox2.Location = new Point(122, 403);
+            picBox2.Name = "picBox2";
+            picBox2.Size = new Size(93, 108);
+            picBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox2.TabIndex = 2;
+            picBox2.TabStop = false;
+            picBox2.Click += picBox2_Click;
+            // 
+            // picBox3
+            // 
+            picBox3.Cursor = Cursors.Hand;
+            picBox3.Image = Properties.Resources.capybara3;
+            picBox3.Location = new Point(236, 403);
+            picBox3.Name = "picBox3";
+            picBox3.Size = new Size(93, 108);
+            picBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox3.TabIndex = 3;
+            picBox3.TabStop = false;
+            picBox3.Click += picBox3_Click;
+            // 
+            // picbxMain
+            // 
+            picbxMain.Cursor = Cursors.Hand;
+            picbxMain.Image = Properties.Resources.capybara3;
+            picbxMain.Location = new Point(3, 3);
+            picbxMain.Name = "picbxMain";
+            picbxMain.Size = new Size(326, 380);
+            picbxMain.SizeMode = PictureBoxSizeMode.Zoom;
+            picbxMain.TabIndex = 0;
+            picbxMain.TabStop = false;
+            // 
             // ProductDetails
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(964, 538);
-            Controls.Add(pnRating);
-            Controls.Add(pnImg);
+            Controls.Add(pnlProductDetail);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
             Name = "ProductDetails";
             Text = "ProductDetails";
-            pnImg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picbxMain).EndInit();
+            pnlProductDetail.ResumeLayout(false);
             pnRating.ResumeLayout(false);
             pnChoose.ResumeLayout(false);
             pnChoose.PerformLayout();
@@ -660,59 +668,64 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picbxStar).EndInit();
             pnName.ResumeLayout(false);
+            pnImg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picbxMain).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel pnImg;
-        private PictureBox picBox1;
-        private PictureBox picbxMain;
-        private Panel pnRating;
-        private PictureBox picBox3;
-        private PictureBox picBox2;
-        private Button btnNext;
-        private Button btnPre;
         private Label label1;
-        private Panel pnName;
-        private Label lblName;
+        private Panel pnlProductDetail;
+        private Panel pnRating;
+        private Button button1;
+        private Button btnAddCart;
+        private Button btnBuy;
+        private Panel pnChoose;
+        private Panel pnQuantuty;
+        private Button btnIncrease;
+        private Label lblQuantity;
+        private Button btnDecrease;
+        private Label lblSoLuong;
+        private Panel pnlSize;
+        private Button btnSize1;
+        private Button btnSize2;
+        private Button btnSize3;
+        private Label lblSize;
+        private Panel pnlColor;
+        private Button btnColor1;
+        private Button btnColor2;
+        private Button btnColor3;
+        private Label lblMauSac;
+        private Panel pnPrice;
+        private Label lblDiscount;
+        private Label lblOldPrice;
+        private Label lblPrice;
         private Panel pnDetail;
-        private Label lblRating;
-        private Panel pnStar;
+        private Label lblDaBan;
+        private Label lblSold;
+        private Panel pnLineRight;
+        private Label lblDanhGia;
+        private Label lblReview;
         private Panel pnLineLeft;
+        private Panel panel2;
+        private Panel pnStar;
         private PictureBox pictureBox6;
         private PictureBox pictureBox5;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox picbxStar;
-        private Label lblSold;
-        private Panel pnLineRight;
-        private Label lblDanhGia;
-        private Label lblReview;
-        private Panel panel2;
-        private Panel pnPrice;
-        private Label lblDaBan;
-        private Label lblPrice;
-        private Label lblDiscount;
-        private Label lblOldPrice;
-        private Panel pnChoose;
-        private Panel pnlColor;
-        private Label lblMauSac;
-        private Button btnColor1;
-        private Label lblSize;
-        private Label lblSoLuong;
-        private Panel pnlSize;
-        private Button btnSize1;
-        private Panel pnQuantuty;
-        private Button btnIncrease;
-        private Label lblQuantity;
-        private Button btnDecrease;
-        private Button btnBuy;
-        private Button btnAddCart;
-        private Button btnSize3;
-        private Button btnSize2;
-        private Button btnColor3;
-        private Button btnColor2;
-        private Button button1;
+        private Label lblRating;
+        private Panel pnName;
+        private Label lblName;
+        private Panel pnImg;
+        private Button btnPre;
+        private Button btnNext;
+        private PictureBox picBox1;
+        private PictureBox picBox2;
+        private PictureBox picBox3;
+        private PictureBox picbxMain;
     }
 }

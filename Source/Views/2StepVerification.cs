@@ -51,7 +51,7 @@ namespace Source.Views
 
         private async void btnDone_Click(object sender, EventArgs e)
         {
-            var data = new Verify2FADto { VerifyCode = tbxCode.Text, UserId = Resgister.emailForResgister };
+            var data = new Verify2FADto { VerifyCode = tbxCode.Text };
             var result = await _AccountService.Verify2FA(data);
             if (result.Success)
             {

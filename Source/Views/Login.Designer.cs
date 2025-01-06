@@ -55,7 +55,7 @@
             pnlChildForm.Dock = DockStyle.Fill;
             pnlChildForm.Location = new Point(0, 0);
             pnlChildForm.Name = "pnlChildForm";
-            pnlChildForm.Size = new Size(1236, 628);
+            pnlChildForm.Size = new Size(1232, 628);
             pnlChildForm.TabIndex = 0;
             // 
             // pictureBox1
@@ -227,7 +227,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1236, 628);
+            ClientSize = new Size(1232, 628);
             Controls.Add(pnlChildForm);
             Name = "Login";
             Text = "Login";
